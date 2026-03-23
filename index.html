@@ -2107,6 +2107,11 @@ function renderKpiSparklines(kpis){
 //  All dynamic numbers come from data.json; zero hardcoded values.
 // ====================================================================
 function renderDashboard(data) {
+  // Destroy ALL existing Chart.js instances to prevent "Canvas is already in use"
+  document.querySelectorAll('canvas').forEach(cv => {
+    try { const c = Chart.getChart(cv); if (c) c.destroy(); } catch(e){}
+  });
+
   const D = Object.assign(JSON.parse(JSON.stringify(DEFAULTS)), data || {});
   DATA = D;
   const kpis = D.kpis || DEFAULTS.kpis;
