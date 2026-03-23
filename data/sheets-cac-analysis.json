@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "source": "Google Sheets - CaC Analysis",
+    "sheet_id": "1d743wipSvWEfwwXCmy2J73yCAMNYa-hCb-nTvNf3yHc",
+    "exported_at": "2026-03-21T01:10:00+03:00",
+    "tabs_parsed": ["Sum", "2026 Channel ALL", "2025 Channels TR", "channel mapping", "tr mart proj"]
+  },
+  "sum_turkey": {
+    "description": "Monthly summary for Turkey - 2025 (months 1-12) + 2026 (months 1-2)",
+    "months_2025": {
+      "1": { "cost": 35805, "sign_up": 2451, "virt_acc": 1154, "new_active": 239, "cost_per_sign": 15, "cost_per_virt": 31, "cost_per_active": 150 },
+      "2": { "cost": 52458, "sign_up": 2745, "virt_acc": 1183, "new_active": 375, "cost_per_sign": 19, "cost_per_virt": 44, "cost_per_active": 140 },
+      "3": { "cost": 36997, "sign_up": 2568, "virt_acc": 1247, "new_active": 402, "cost_per_sign": 14, "cost_per_virt": 30, "cost_per_active": 92 },
+      "4": { "cost": 9266, "sign_up": 1687, "virt_acc": 854, "new_active": 369, "cost_per_sign": 5, "cost_per_virt": 11, "cost_per_active": 25 },
+      "5": { "cost": 33630, "sign_up": 3589, "virt_acc": 1178, "new_active": 368, "cost_per_sign": 9, "cost_per_virt": 29, "cost_per_active": 91 },
+      "6": { "cost": 38405, "sign_up": 2689, "virt_acc": 744, "new_active": 329, "cost_per_sign": 14, "cost_per_virt": 52, "cost_per_active": 117 },
+      "7": { "cost": 33322, "sign_up": 1805, "virt_acc": 646, "new_active": 283, "cost_per_sign": 18, "cost_per_virt": 52, "cost_per_active": 118 },
+      "8": { "cost": 37391, "sign_up": 3092, "virt_acc": 749, "new_active": 227, "cost_per_sign": 12, "cost_per_virt": 50, "cost_per_active": 165 },
+      "9": { "cost": 35839, "sign_up": 2357, "virt_acc": 687, "new_active": 283, "cost_per_sign": 15, "cost_per_virt": 52, "cost_per_active": 127 },
+      "10": { "cost": 29556, "sign_up": 1566, "virt_acc": 550, "new_active": 242, "cost_per_sign": 19, "cost_per_virt": 54, "cost_per_active": 122 },
+      "11": { "cost": 26850, "sign_up": 1500, "virt_acc": 628, "new_active": 221, "cost_per_sign": 18, "cost_per_virt": 43, "cost_per_active": 121 },
+      "12": { "cost": 23312, "sign_up": 1719, "virt_acc": 754, "new_active": 271, "cost_per_sign": 14, "cost_per_virt": 31, "cost_per_active": 86 }
+    },
+    "total_2025": { "cost": 392831, "sign_up": 27768, "virt_acc": 10374, "new_active": 3609, "cost_per_sign": 14.1, "cost_per_virt": 37.9, "cost_per_active": 108.8 },
+    "months_2026": {
+      "1": { "cost": 27088, "sign_up": 2751, "virt_acc": 900, "new_active": 226, "cost_per_sign": 10, "cost_per_virt": 30, "cost_per_active": 120 },
+      "2": { "cost": 25811, "sign_up": 1721, "virt_acc": 580, "new_active": 124, "cost_per_sign": 15, "cost_per_virt": 45, "cost_per_active": 208 }
+    }
+  },
+  "channel_2026_all": {
+    "description": "2026 weekly channel-level breakdown across Turkey, Pakistan, Egypt, Nigeria",
+    "periods": {
+      "9_15_march_26": {
+        "turkey": {
+          "total": { "cost": 4320, "installs": 1654, "sign_up": 652, "virt_acc": 413, "new_active": 122, "paid_active": 5, "cost_per_virt": 35, "cost_per_active": 864 },
+          "channels": {
+            "apple_ads": { "cost": 500, "installs": 72, "sign_up": 42, "virt_acc": 37, "new_active": 19, "paid_active": 1 },
+            "appnext": { "cost": 645, "installs": 853, "sign_up": 195, "virt_acc": 24, "new_active": 0 },
+            "spaze": { "cost": 900, "installs": 210, "sign_up": 92, "virt_acc": 80, "new_active": 33, "paid_active": 2 },
+            "meta_web2app": { "cost": 485, "installs": 122, "sign_up": 38, "virt_acc": 31, "new_active": 6 },
+            "tiktok_web2app": { "cost": 253, "installs": 45, "sign_up": 33, "virt_acc": 28, "new_active": 4 },
+            "google_web2app": { "cost": 453, "installs": 92, "sign_up": 51, "virt_acc": 42, "new_active": 15, "paid_active": 1 },
+            "google_search": { "cost": 782, "installs": 177, "sign_up": 103, "virt_acc": 82, "new_active": 25, "paid_active": 1 },
+            "tiktok_android_app": { "cost": 111, "installs": 59, "sign_up": 48, "virt_acc": 46, "new_active": 6 },
+            "onboarding_meta_test": { "cost": 101, "installs": 3, "sign_up": 3, "virt_acc": 4, "new_active": 0 },
+            "twitter_ads": { "cost": 90, "installs": 1, "sign_up": 0, "virt_acc": 0, "new_active": 0 }
+          }
+        },
+        "nigeria": {
+          "total": { "cost": 229, "installs": 660, "sign_up": 289, "virt_acc": 128, "new_active": 18, "paid_active": 14, "cost_per_virt": 2, "cost_per_active": 16 },
+          "channels": {
+            "google_search": { "cost": 229, "installs": 557, "sign_up": 244, "virt_acc": 107, "new_active": 14, "paid_active": 11 }
+          }
+        },
+        "egypt": {
+          "total": { "cost": 1598, "installs": 444, "sign_up": 232, "virt_acc": 73, "new_active": 31, "paid_active": 25, "cost_per_virt": 8, "cost_per_active": 64 },
+          "channels": {
+            "apple_ads": { "cost": 33, "installs": 16, "sign_up": 11, "virt_acc": 5, "new_active": 5, "paid_active": 4 },
+            "google_search": { "cost": 116, "installs": 67, "sign_up": 48, "virt_acc": 17, "new_active": 8, "paid_active": 7 },
+            "meta_get_paid_test": { "cost": 637, "installs": 107, "sign_up": 58, "virt_acc": 12, "new_active": 2, "paid_active": 1 },
+            "meta_ltv_test": { "cost": 812, "installs": 244, "sign_up": 111, "virt_acc": 37, "new_active": 15, "paid_active": 12 }
+          }
+        }
+      },
+      "1_8_march_26": {
+        "turkey": {
+          "total": { "cost": 3504, "installs": 1635, "sign_up": 524, "virt_acc": 363, "new_active": 170, "paid_active": 17, "cost_per_virt": 21, "cost_per_active": 210 },
+          "channels": {
+            "apple_ads": { "cost": 659, "installs": 114, "sign_up": 67, "virt_acc": 54, "new_active": 27, "paid_active": 6 },
+            "appnext": { "cost": 248, "installs": 926, "sign_up": 154, "virt_acc": 23, "new_active": 1, "paid_active": 1 },
+            "spaze": { "cost": 870, "installs": 153, "sign_up": 64, "virt_acc": 63, "new_active": 31, "paid_active": 3 },
+            "meta_web2app": { "cost": 741, "installs": 82, "sign_up": 62, "virt_acc": 54, "new_active": 16 },
+            "tiktok_web2app": { "cost": 186, "installs": 10, "sign_up": 9, "virt_acc": 9, "new_active": 1 },
+            "pmax_search": { "cost": 401, "installs": 245, "sign_up": 120, "virt_acc": 114, "new_active": 65, "paid_active": 5 },
+            "tiktok_app": { "cost": 132, "installs": 61, "sign_up": 26, "virt_acc": 26, "new_active": 13, "paid_active": 1 },
+            "twitter_ads": { "cost": 93 }
+          }
+        },
+        "nigeria": {
+          "total": { "cost": 1, "installs": 785, "sign_up": 325, "virt_acc": 132, "new_active": 13, "paid_active": 9 }
+        },
+        "egypt": {
+          "total": { "cost": 3951, "installs": 808, "sign_up": 471, "virt_acc": 144, "new_active": 50, "paid_active": 37, "cost_per_virt": 10, "cost_per_active": 107 },
+          "channels": {
+            "apple_ads": { "cost": 9, "installs": 16, "sign_up": 12, "virt_acc": 4, "new_active": 2, "paid_active": 1 },
+            "pmax_search": { "cost": 137, "installs": 30, "sign_up": 15, "virt_acc": 6, "new_active": 2, "paid_active": 1 },
+            "pmax_get_paid_test": { "cost": 650, "installs": 192, "sign_up": 96, "virt_acc": 34, "new_active": 11, "paid_active": 8 },
+            "pmax_ltv_test": { "cost": 423, "installs": 132, "sign_up": 62, "virt_acc": 20, "new_active": 6, "paid_active": 4 },
+            "meta_get_paid_test": { "cost": 1340, "installs": 266, "sign_up": 194, "virt_acc": 58, "new_active": 20, "paid_active": 14 },
+            "meta_ltv_test": { "cost": 1392, "installs": 158, "sign_up": 86, "virt_acc": 20, "new_active": 8, "paid_active": 8 }
+          }
+        }
+      }
+    },
+    "spend_summary_15_march": {
+      "total": 13373,
+      "turkey": 7824,
+      "pakistan": 0,
+      "egypt": 5549,
+      "note": "1-15 March spend"
+    }
+  },
+  "channels_2025_turkey": {
+    "description": "Turkey channel-level monthly breakdowns for 2025 + early 2026",
+    "feb_2026_1_7": {
+      "total": { "cost": 8445, "installs": 1371, "cpi": 6, "sign_up": 532, "virt_acc": 100, "cost_per_virt": 84, "paid_active": 7, "cost_per_active": 1056 },
+      "channels": {
+        "apple_ads": { "cost": 517, "installs": 98, "sign_up": 67, "virt_acc": 17, "paid_active": 1 },
+        "referral_affi": { "cost": 50, "installs": 41, "sign_up": 21, "virt_acc": 11, "paid_active": 2 },
+        "spaze": { "cost": 100, "installs": 46, "sign_up": 12, "virt_acc": 4, "paid_active": 1 },
+        "google_app": { "cost": 707, "installs": 112, "sign_up": 30, "virt_acc": 5 },
+        "meta_app": { "cost": 667, "installs": 166, "sign_up": 77, "virt_acc": 18, "paid_active": 1 },
+        "meta_w2a": { "cost": 1452, "installs": 213, "sign_up": 136, "virt_acc": 9 },
+        "tiktok_app": { "cost": 446, "installs": 56, "sign_up": 15, "virt_acc": 3 },
+        "tiktok_w2a": { "cost": 165, "installs": 23, "sign_up": 11, "virt_acc": 2 },
+        "website": { "cost": 4341, "installs": 549, "sign_up": 145, "virt_acc": 27, "paid_active": 3 }
+      }
+    },
+    "jan_2026": {
+      "total": { "cost": 26435, "installs": 4683, "cpi": 6, "sign_up": 2402, "virt_acc": 531, "cost_per_virt": 50, "paid_active": 78, "cost_per_active": 339 },
+      "channels": {
+        "apple_ads": { "cost": 2817, "installs": 462, "sign_up": 261, "virt_acc": 80, "paid_active": 18, "cost_per_active": 157 },
+        "referral_affi": { "cost": 300, "installs": 186, "sign_up": 91, "virt_acc": 39, "paid_active": 10, "cost_per_active": 30 },
+        "spaze": { "cost": 540, "installs": 55, "sign_up": 27, "virt_acc": 12, "paid_active": 3, "cost_per_active": 180 },
+        "google_app": { "cost": 811, "installs": 195, "sign_up": 85, "virt_acc": 23, "paid_active": 4, "cost_per_active": 203 },
+        "meta_app": { "cost": 852, "installs": 313, "sign_up": 184, "virt_acc": 39, "paid_active": 4, "cost_per_active": 213 },
+        "meta_w2a": { "cost": 10607, "installs": 1405, "sign_up": 987, "virt_acc": 100, "paid_active": 3, "cost_per_active": 3536 },
+        "tiktok_app": { "cost": 284, "installs": 60, "sign_up": 27, "virt_acc": 7, "paid_active": 1, "cost_per_active": 284 },
+        "website": { "cost": 10224, "installs": 1821, "sign_up": 672, "virt_acc": 210, "paid_active": 32, "cost_per_active": 320 }
+      }
+    },
+    "dec_2025": {
+      "total_cost_per_active": 169,
+      "channels": {
+        "apple_ads": { "cost": 2607, "sign_up": 285, "virt_acc": 98, "paid_active": 20, "cost_per_active": 130 },
+        "meta_w2a": { "cost": 4497, "sign_up": 400, "virt_acc": 71, "paid_active": 4, "cost_per_active": 1124 },
+        "referral_affi": { "cost": 2250, "sign_up": 186, "virt_acc": 121, "paid_active": 19, "cost_per_active": 118 },
+        "pmax_search": { "cost": 8812, "sign_up": 563, "virt_acc": 237, "paid_active": 57, "cost_per_active": 153 }
+      }
+    },
+    "nov_2025": {
+      "total_cost_per_active": 178,
+      "channels": {
+        "apple_ads": { "cost": 2801, "sign_up": 249, "virt_acc": 96, "paid_active": 27, "cost_per_active": 104 },
+        "meta_w2a": { "cost": 4378, "sign_up": 144, "virt_acc": 16, "cost_per_virt": 274 },
+        "pmax_search": { "cost": 12640, "sign_up": 646, "virt_acc": 207, "paid_active": 75, "cost_per_active": 169 }
+      }
+    },
+    "oct_2025": {
+      "total_cost_per_active": 231,
+      "channels": {
+        "apple_ads": { "cost": 2079, "sign_up": 237, "virt_acc": 92, "paid_active": 35, "cost_per_active": 59 },
+        "pmax_search": { "cost": 15319, "sign_up": 655, "virt_acc": 181, "paid_active": 63, "cost_per_active": 243 },
+        "meta_web": { "cost": 4495, "sign_up": 202, "virt_acc": 58, "paid_active": 19, "cost_per_active": 237 }
+      }
+    },
+    "sept_2025": { "total_cost_per_active": 188 },
+    "aug_2025": { "total_cost_per_active": 171 },
+    "july_2025": { "total_cost_per_active": 166 },
+    "june_2025": { "total_cost_per_active": 231 },
+    "may_2025": { "total_cost_per_active": null, "note": "data partially available" }
+  },
+  "channel_mapping": {
+    "description": "Media source to Cenoa channel name mapping",
+    "mappings": {
+      "googleadwords_int": "google",
+      "organic": "Organic",
+      "Apple Search Ads": "apple ads",
+      "cenoacomtr": "website",
+      "zzgtechltmqk_int": "meta w2a",
+      "cenoa.com": "website",
+      "af_app_invites": "Referral&Affi",
+      "Social_instagram": "meta",
+      "Facebook Ads": "meta",
+      "metaweb_int": "meta",
+      "youtube-getpaid": "google",
+      "QR_code": "Referral&Affi",
+      "architect": "google",
+      "Blog": "website",
+      "Affiliate": "Partner",
+      "Email": "other",
+      "monay_app": "Partner",
+      "None": "other",
+      "easyinventory": "Partner",
+      "Braze_refer-a-friend": "Referral&Affi",
+      "User_invite": "Referral&Affi",
+      "architect_demandgen_exporter": "google",
+      "Social_youtube": "google",
+      "nomad": "Partner",
+      "navlungo": "Partner",
+      "WhatsApp": "Other",
+      "bringgo": "Partner",
+      "erdens": "Partner",
+      "oniki": "Partner",
+      "egypt_en_architect_googleads": "google",
+      "Social_twitter": "Other",
+      "appnext_int": "AppNext"
+    }
+  },
+  "tr_mart_projections": {
+    "description": "Turkey March 2026 projections and budget allocation",
+    "march_2026_budget": {
+      "total": 26050,
+      "allocation": {
+        "meta_app_ios": 3000,
+        "google_app_ios": 0,
+        "pmax_search": 10000,
+        "meta_web2app": 6000,
+        "spaze_dsp": 1000,
+        "apnext_dsp": 0,
+        "referral_affi": 2000,
+        "tiktok_web2app": 1000,
+        "tiktok_app": 250,
+        "apple_ads": 2800
+      },
+      "projected_new_accounts": 700,
+      "projected_cost_per_account": 37.21
+    },
+    "historical_cost_per_account": {
+      "dec_2025": { "cost": 19786, "new_accounts": 426, "cost_per_account": 46.45 },
+      "jan_2026": { "cost": 27088, "new_accounts": 525, "cost_per_account": 51.60 },
+      "feb_2026": { "cost": 33000, "new_accounts": 583, "cost_per_account": 56.60 }
+    },
+    "growth_projections": {
+      "target_monthly_growth": "22% new account growth",
+      "months_4_to_8_forecast": {
+        "4": { "cost": 28655, "new_accounts": 856, "cost_per_account": 33.49 },
+        "5": { "cost": 31521, "new_accounts": 1046, "cost_per_account": 30.14 },
+        "6": { "cost": 34673, "new_accounts": 1278, "cost_per_account": 27.13 },
+        "7": { "cost": 38140, "new_accounts": 1562, "cost_per_account": 24.42 },
+        "8": { "cost": 41954, "new_accounts": 1909, "cost_per_account": 21.97 }
+      }
+    },
+    "feb_2026_1_15_actual": {
+      "total": { "cost": 25811, "installs": 3666, "sign_up": 1362, "virt_acc": 550, "new_active": 310, "paid_active": 17, "cost_per_virt": 83, "cost_per_active": 1484 },
+      "channels": {
+        "meta_app_ios": { "cost": 936, "installs": 164, "sign_up": 107, "virt_acc": 49, "new_active": 32, "paid_active": 1 },
+        "google_app_ios": { "cost": 1510, "installs": 62, "sign_up": 27, "virt_acc": 14, "new_active": 7, "paid_active": 1 },
+        "pmax_search": { "cost": 16306, "installs": 1775, "sign_up": 464, "virt_acc": 223, "new_active": 115, "paid_active": 6 },
+        "meta_web2app": { "cost": 3188, "installs": 607, "sign_up": 409, "virt_acc": 124, "new_active": 48 },
+        "spaze_dsp": { "cost": 1460, "installs": 243, "sign_up": 84, "virt_acc": 38, "new_active": 23, "paid_active": 3 },
+        "appnext_dsp": { "cost": 115, "installs": 113, "sign_up": 2, "virt_acc": 1, "new_active": 0 },
+        "tiktok_web2app": { "cost": 840, "installs": 69, "sign_up": 51, "virt_acc": 20, "new_active": 11 },
+        "tiktok_app": { "cost": 440, "installs": 320, "sign_up": 33, "virt_acc": 11, "new_active": 4 },
+        "apple_ads": { "cost": 1016, "installs": 189, "sign_up": 126, "virt_acc": 55, "new_active": 40, "paid_active": 2 }
+      }
+    }
+  }
+}

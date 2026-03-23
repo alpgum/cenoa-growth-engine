@@ -1,0 +1,800 @@
+{
+  "generated_at": "2026-03-22T18:57:30.408312",
+  "avg_cpi": 4.59,
+  "thresholds": {
+    "DEAD": ">$100 spend + 0 installs (or 0 signups & 0 activations)",
+    "BLEEDING": "CPI > 2× average",
+    "FRAUD": "High installs + <5% signup conversion",
+    "HEALTHY": "Within normal CPI + reasonable downstream"
+  },
+  "channels": {
+    "apple_ads": {
+      "status": "HEALTHY",
+      "reason": "CPI $5.45, 63% signup rate, 93 activations",
+      "cost": 2217,
+      "installs": 407,
+      "sign_up": 258,
+      "virt_acc": 155,
+      "new_active": 93,
+      "cpi": 5.45
+    },
+    "appnext": {
+      "status": "FRAUD",
+      "reason": "1779 installs, 349 signups but only 47 virt_acc (2.6%) — suspicious downstream",
+      "cost": 893,
+      "installs": 1779,
+      "sign_up": 349,
+      "virt_acc": 47,
+      "new_active": 1,
+      "cpi": 0.5
+    },
+    "appnext_dsp": {
+      "status": "FRAUD",
+      "reason": "113 installs but only 2 signups (1.8% conversion) — fraud pattern",
+      "cost": 115,
+      "installs": 113,
+      "sign_up": 2,
+      "virt_acc": 1,
+      "new_active": 0,
+      "cpi": 1.02
+    },
+    "google_app_ios": {
+      "status": "BLEEDING",
+      "reason": "CPI $24.35 is 5.3× the average ($4.59)",
+      "cost": 1510,
+      "installs": 62,
+      "sign_up": 27,
+      "virt_acc": 14,
+      "new_active": 7,
+      "cpi": 24.35
+    },
+    "google_search": {
+      "status": "HEALTHY",
+      "reason": "CPI $1.41, 49% signup rate, 47 activations",
+      "cost": 1127,
+      "installs": 801,
+      "sign_up": 395,
+      "virt_acc": 206,
+      "new_active": 47,
+      "cpi": 1.41
+    },
+    "google_web2app": {
+      "status": "HEALTHY",
+      "reason": "CPI $4.92, 55% signup rate, 15 activations",
+      "cost": 453,
+      "installs": 92,
+      "sign_up": 51,
+      "virt_acc": 42,
+      "new_active": 15,
+      "cpi": 4.92
+    },
+    "meta_app_ios": {
+      "status": "HEALTHY",
+      "reason": "CPI $5.71, 65% signup rate, 32 activations",
+      "cost": 936,
+      "installs": 164,
+      "sign_up": 107,
+      "virt_acc": 49,
+      "new_active": 32,
+      "cpi": 5.71
+    },
+    "meta_get_paid_test": {
+      "status": "HEALTHY",
+      "reason": "CPI $5.30, 68% signup rate, 22 activations",
+      "cost": 1977,
+      "installs": 373,
+      "sign_up": 252,
+      "virt_acc": 70,
+      "new_active": 22,
+      "cpi": 5.3
+    },
+    "meta_ltv_test": {
+      "status": "HEALTHY",
+      "reason": "CPI $5.48, 49% signup rate, 23 activations",
+      "cost": 2204,
+      "installs": 402,
+      "sign_up": 197,
+      "virt_acc": 57,
+      "new_active": 23,
+      "cpi": 5.48
+    },
+    "meta_web2app": {
+      "status": "HEALTHY",
+      "reason": "CPI $5.44, 63% signup rate, 70 activations",
+      "cost": 4414,
+      "installs": 811,
+      "sign_up": 509,
+      "virt_acc": 209,
+      "new_active": 70,
+      "cpi": 5.44
+    },
+    "onboarding_meta_test": {
+      "status": "BLEEDING",
+      "reason": "CPI $33.67 is 7.3× the average ($4.59)",
+      "cost": 101,
+      "installs": 3,
+      "sign_up": 3,
+      "virt_acc": 4,
+      "new_active": 0,
+      "cpi": 33.67
+    },
+    "pmax_get_paid_test": {
+      "status": "HEALTHY",
+      "reason": "CPI $3.39, 50% signup rate, 11 activations",
+      "cost": 650,
+      "installs": 192,
+      "sign_up": 96,
+      "virt_acc": 34,
+      "new_active": 11,
+      "cpi": 3.39
+    },
+    "pmax_ltv_test": {
+      "status": "HEALTHY",
+      "reason": "CPI $3.20, 47% signup rate, 6 activations",
+      "cost": 423,
+      "installs": 132,
+      "sign_up": 62,
+      "virt_acc": 20,
+      "new_active": 6,
+      "cpi": 3.2
+    },
+    "pmax_search": {
+      "status": "HEALTHY",
+      "reason": "CPI $8.22, 29% signup rate, 182 activations",
+      "cost": 16844,
+      "installs": 2050,
+      "sign_up": 599,
+      "virt_acc": 343,
+      "new_active": 182,
+      "cpi": 8.22
+    },
+    "spaze": {
+      "status": "HEALTHY",
+      "reason": "CPI $4.88, 43% signup rate, 64 activations",
+      "cost": 1770,
+      "installs": 363,
+      "sign_up": 156,
+      "virt_acc": 143,
+      "new_active": 64,
+      "cpi": 4.88
+    },
+    "spaze_dsp": {
+      "status": "HEALTHY",
+      "reason": "CPI $6.01, 35% signup rate, 23 activations",
+      "cost": 1460,
+      "installs": 243,
+      "sign_up": 84,
+      "virt_acc": 38,
+      "new_active": 23,
+      "cpi": 6.01
+    },
+    "tiktok_android_app": {
+      "status": "HEALTHY",
+      "reason": "CPI $1.88, 81% signup rate, 6 activations",
+      "cost": 111,
+      "installs": 59,
+      "sign_up": 48,
+      "virt_acc": 46,
+      "new_active": 6,
+      "cpi": 1.88
+    },
+    "tiktok_app": {
+      "status": "HEALTHY",
+      "reason": "CPI $1.50, 15% signup rate, 17 activations",
+      "cost": 572,
+      "installs": 381,
+      "sign_up": 59,
+      "virt_acc": 37,
+      "new_active": 17,
+      "cpi": 1.5
+    },
+    "tiktok_web2app": {
+      "status": "BLEEDING",
+      "reason": "CPI $10.31 is 2.2× the average ($4.59)",
+      "cost": 1279,
+      "installs": 124,
+      "sign_up": 93,
+      "virt_acc": 57,
+      "new_active": 16,
+      "cpi": 10.31
+    },
+    "twitter_ads": {
+      "status": "DEAD",
+      "reason": "$183 spent, 1 installs but 0 signups & 0 activations",
+      "cost": 183,
+      "installs": 1,
+      "sign_up": 0,
+      "virt_acc": 0,
+      "new_active": 0,
+      "cpi": 183.0
+    }
+  },
+  "attribution_sources": {
+    "Organic": {
+      "status": "ORGANIC",
+      "reason": "Not a paid channel",
+      "installs": 632,
+      "signups": 77,
+      "withdrawals": 487,
+      "spend_proxy": 0
+    },
+    "appnext_int": {
+      "status": "HEALTHY",
+      "reason": "CPI $1.64, 9% signup rate",
+      "installs": 273,
+      "signups": 24,
+      "withdrawals": 1,
+      "spend_proxy": 446.5
+    },
+    "zzgtechltmqk_int": {
+      "status": "BLEEDING",
+      "reason": "CPI $22.95 > 2× avg $4.59",
+      "installs": 120,
+      "signups": 20,
+      "withdrawals": 22,
+      "spend_proxy": 2754.0
+    },
+    "Apple Search Ads": {
+      "status": "HEALTHY",
+      "reason": "CPI $8.01, 29% signup rate",
+      "installs": 75,
+      "signups": 22,
+      "withdrawals": 254,
+      "spend_proxy": 600.5
+    },
+    "Architect": {
+      "status": "BLEEDING",
+      "reason": "CPI $10.82 > 2× avg $4.59",
+      "installs": 73,
+      "signups": 19,
+      "withdrawals": 0,
+      "spend_proxy": 790.0
+    },
+    "byteboost2_int": {
+      "status": "BLEEDING",
+      "reason": "CPI $12.68 > 2× avg $4.59",
+      "installs": 71,
+      "signups": 9,
+      "withdrawals": 34,
+      "spend_proxy": 900.0
+    },
+    "cenoa.com": {
+      "status": "BLEEDING",
+      "reason": "CPI $14.15 > 2× avg $4.59",
+      "installs": 69,
+      "signups": 18,
+      "withdrawals": 8,
+      "spend_proxy": 976.5
+    },
+    "googleadwords_int": {
+      "status": "BLEEDING",
+      "reason": "CPI $14.63 > 2× avg $4.59",
+      "installs": 54,
+      "signups": 14,
+      "withdrawals": 29,
+      "spend_proxy": 790.0
+    },
+    "tiktokglobal_int": {
+      "status": "HEALTHY",
+      "reason": "CPI $6.96, 16% signup rate",
+      "installs": 49,
+      "signups": 8,
+      "withdrawals": 0,
+      "spend_proxy": 341.0
+    },
+    "af_app_invites": {
+      "status": "HEALTHY",
+      "reason": "7 installs, 3 signups",
+      "installs": 7,
+      "signups": 3,
+      "withdrawals": 13,
+      "spend_proxy": 0
+    },
+    "Web Onboarding": {
+      "status": "HEALTHY",
+      "reason": "6 installs, 1 signups",
+      "installs": 6,
+      "signups": 1,
+      "withdrawals": 0,
+      "spend_proxy": 0
+    },
+    "cenoacomtr": {
+      "status": "BLEEDING",
+      "reason": "CPI $195.30 > 2× avg $4.59",
+      "installs": 5,
+      "signups": 1,
+      "withdrawals": 23,
+      "spend_proxy": 976.5
+    },
+    "Auto Pilot Tool": {
+      "status": "HEALTHY",
+      "reason": "4 installs, 1 signups",
+      "installs": 4,
+      "signups": 1,
+      "withdrawals": 0,
+      "spend_proxy": 0
+    },
+    "Eihracat Yıldızları": {
+      "status": "HEALTHY",
+      "reason": "3 installs, 1 signups",
+      "installs": 3,
+      "signups": 1,
+      "withdrawals": 0,
+      "spend_proxy": 0
+    },
+    "Social_instagram": {
+      "status": "BLEEDING",
+      "reason": "CPI $1377.00 > 2× avg $4.59",
+      "installs": 2,
+      "signups": 2,
+      "withdrawals": 0,
+      "spend_proxy": 2754.0
+    },
+    "Egypt LTV Test": {
+      "status": "HEALTHY",
+      "reason": "1 installs, 0 signups",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0,
+      "spend_proxy": 0
+    },
+    "(none)": {
+      "status": "ORGANIC",
+      "reason": "Not a paid channel",
+      "installs": 0,
+      "signups": 986,
+      "withdrawals": 1355,
+      "spend_proxy": 0
+    }
+  },
+  "campaigns": {
+    "N/A": {
+      "status": "UNATTRIBUTED",
+      "reason": "No campaign attribution",
+      "installs": 632,
+      "signups": 77,
+      "withdrawals": 488
+    },
+    "Cenoa_CPI_UA_TR": {
+      "status": "HEALTHY",
+      "reason": "273 installs, 24 signups, 1 withdrawals",
+      "installs": 273,
+      "signups": 24,
+      "withdrawals": 1
+    },
+    "cenoa.com homepage": {
+      "status": "HEALTHY",
+      "reason": "69 installs, 18 signups, 8 withdrawals",
+      "installs": 69,
+      "signups": 18,
+      "withdrawals": 8
+    },
+    "EG_Meta_web2app_MIX_CVR_Android_AddToCart_031826": {
+      "status": "BLEEDING",
+      "reason": "44 installs, 3 signups but 0 withdrawals — no downstream value",
+      "installs": 44,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "890670": {
+      "status": "HEALTHY",
+      "reason": "37 installs, 4 signups, 5 withdrawals",
+      "installs": 37,
+      "signups": 4,
+      "withdrawals": 5
+    },
+    "890668": {
+      "status": "HEALTHY",
+      "reason": "34 installs, 5 signups, 13 withdrawals",
+      "installs": 34,
+      "signups": 5,
+      "withdrawals": 13
+    },
+    "Cenoa // Search // NG // Architect // Generic // Competitors // Native_Survey_Submitted": {
+      "status": "BLEEDING",
+      "reason": "33 installs, 4 signups but 0 withdrawals — no downstream value",
+      "installs": 33,
+      "signups": 4,
+      "withdrawals": 0
+    },
+    "tr_asa_appinstall_brand_exact_all_02.06.2025": {
+      "status": "HEALTHY",
+      "reason": "26 installs, 12 signups, 114 withdrawals",
+      "installs": 26,
+      "signups": 12,
+      "withdrawals": 114
+    },
+    "TR_TikTok_App_MIX_CVR_Android_AddToCart_030926": {
+      "status": "BLEEDING",
+      "reason": "23 installs, 3 signups but 0 withdrawals — no downstream value",
+      "installs": 23,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "TR_TikTok_App_MIX_CVR_Android_AddToCart_031726": {
+      "status": "FRAUD",
+      "reason": "21 installs, 1 signups (4.8%) — fraud pattern",
+      "installs": 21,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "architect_nigeria_en_freelancer": {
+      "status": "BLEEDING",
+      "reason": "21 installs, 4 signups but 0 withdrawals — no downstream value",
+      "installs": 21,
+      "signups": 4,
+      "withdrawals": 0
+    },
+    "EG_Meta_web2app_MIX_CVR_ALL_AddToWishlist_031826": {
+      "status": "HEALTHY",
+      "reason": "20 installs, 4 signups, 1 withdrawals",
+      "installs": 20,
+      "signups": 4,
+      "withdrawals": 1
+    },
+    "EG_ASA_Brand_Exact_26.02.2026": {
+      "status": "HEALTHY",
+      "reason": "18 installs, 6 signups, 1 withdrawals",
+      "installs": 18,
+      "signups": 6,
+      "withdrawals": 1
+    },
+    "architect_freelancer_fiverr": {
+      "status": "HEALTHY",
+      "reason": "18 installs, 8 signups, 0 withdrawals",
+      "installs": 18,
+      "signups": 8,
+      "withdrawals": 0
+    },
+    "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images": {
+      "status": "HEALTHY",
+      "reason": "17 installs, 6 signups, 0 withdrawals",
+      "installs": 17,
+      "signups": 6,
+      "withdrawals": 0
+    },
+    "architect_wise-paypal-wu-revolut": {
+      "status": "HEALTHY",
+      "reason": "16 installs, 4 signups, 0 withdrawals",
+      "installs": 16,
+      "signups": 4,
+      "withdrawals": 0
+    },
+    "architect_freelancer_upwork": {
+      "status": "HEALTHY",
+      "reason": "13 installs, 3 signups, 0 withdrawals",
+      "installs": 13,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "none": {
+      "status": "UNATTRIBUTED",
+      "reason": "No campaign attribution",
+      "installs": 12,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "tr_asa_appinstall_competitor_all_02.06.2025": {
+      "status": "HEALTHY",
+      "reason": "12 installs, 1 signups, 9 withdrawals",
+      "installs": 12,
+      "signups": 1,
+      "withdrawals": 9
+    },
+    "Cenoa // Search // TR // Freelancer // Platform // Signed_Up": {
+      "status": "HEALTHY",
+      "reason": "9 installs, 3 signups, 0 withdrawals",
+      "installs": 9,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "Cenoa // Search // TR // Para Transferi // Rakipler // Payoneer // Competitors // Signed_up": {
+      "status": "HEALTHY",
+      "reason": "8 installs, 4 signups, 0 withdrawals",
+      "installs": 8,
+      "signups": 4,
+      "withdrawals": 0
+    },
+    "EG_Meta_web2app_MIX_CVR_iOS_AddToCart_031826": {
+      "status": "HEALTHY",
+      "reason": "8 installs, 2 signups, 0 withdrawals",
+      "installs": 8,
+      "signups": 2,
+      "withdrawals": 0
+    },
+    "tr_asa_appinstall_brand_broad_all_02.06.2025": {
+      "status": "HEALTHY",
+      "reason": "8 installs, 2 signups, 17 withdrawals",
+      "installs": 8,
+      "signups": 2,
+      "withdrawals": 17
+    },
+    "Invite a Friend": {
+      "status": "HEALTHY",
+      "reason": "7 installs, 3 signups, 13 withdrawals",
+      "installs": 7,
+      "signups": 3,
+      "withdrawals": 13
+    },
+    "TR_TikTok_web2app_MIX_CVR_ALL_AddPaymentInfo_031526": {
+      "status": "HEALTHY",
+      "reason": "7 installs, 3 signups, 0 withdrawals",
+      "installs": 7,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_Test_031826": {
+      "status": "HEALTHY",
+      "reason": "6 installs, 1 signups, 0 withdrawals",
+      "installs": 6,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "cenoacombasla": {
+      "status": "HEALTHY",
+      "reason": "6 installs, 1 signups, 0 withdrawals",
+      "installs": 6,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "tr_asa_appinstall_generic_all_02.06.2025": {
+      "status": "HEALTHY",
+      "reason": "6 installs, 0 signups, 8 withdrawals",
+      "installs": 6,
+      "signups": 0,
+      "withdrawals": 8
+    },
+    "cenoa.comtr homepage": {
+      "status": "HEALTHY",
+      "reason": "5 installs, 1 signups, 23 withdrawals",
+      "installs": 5,
+      "signups": 1,
+      "withdrawals": 23
+    },
+    "Freelancer Auto Pilot Tool": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 4 installs — insufficient data",
+      "installs": 4,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "TR-Discovery-24.10.2025": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 4 installs — insufficient data",
+      "installs": 4,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "TR_TikTok_App_MIX_CVR_iOS_Add To Cart_031726": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 4 installs — insufficient data",
+      "installs": 4,
+      "signups": 3,
+      "withdrawals": 0
+    },
+    "architect_pmax_generic": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 4 installs — insufficient data",
+      "installs": 4,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "E-ihracat Yıldızları Home Page": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 3 installs — insufficient data",
+      "installs": 3,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "Google // Cenoa // Search // TR // Pure Brand": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 3 installs — insufficient data",
+      "installs": 3,
+      "signups": 2,
+      "withdrawals": 4
+    },
+    "Instagram": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 2 installs — insufficient data",
+      "installs": 2,
+      "signups": 2,
+      "withdrawals": 0
+    },
+    "TR_Meta_web2app_MIX_RTGT_AddPaymentInfo_022726_Images": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 2 installs — insufficient data",
+      "installs": 2,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "TR_TikTok_web2app_MIX_CVR_Android_AddToCart_Carousel_031226": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 2 installs — insufficient data",
+      "installs": 2,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "120241738375340050": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "Cenoa // Search // TR // Exporter // Platforms // Signed_Up": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "EG_ASA_Competitor_26.02.2026": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_030426": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "TR_TikTok_App_MIX_CVR_iOS_AddToCart_031726": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 1,
+      "withdrawals": 0
+    },
+    "architect_payoneer": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "option1-nopayment": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 1 installs — insufficient data",
+      "installs": 1,
+      "signups": 0,
+      "withdrawals": 0
+    },
+    "(none)": {
+      "status": "UNATTRIBUTED",
+      "reason": "No campaign attribution",
+      "installs": 0,
+      "signups": 988,
+      "withdrawals": 1355
+    },
+    "EG_Google_Android_MIX_CVR_SignUp_012226": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 1,
+      "withdrawals": 1
+    },
+    "TR_Meta_web2app_CVR_Android_AddToCart_012426": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 1,
+      "withdrawals": 3
+    },
+    "1764668627": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 76
+    },
+    "1831739530": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 17
+    },
+    "NG_Google_iOS_MIX_CVR_NativeSurveySubmitted_020926": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 14
+    },
+    "890662": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 12
+    },
+    "1788862343": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 9
+    },
+    "TR_Meta_web2app_MIX_CVR_Android_AddToCart_012126": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 9
+    },
+    "NG_Google_Android_MIX_CVR_NativeSurveySubmitted_020526": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 6
+    },
+    "EG_Meta_web2app_MIX_CVR_iOS_AddToWishlist_030426": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 4
+    },
+    "NG_Google_Android_MIX_CVR_SignUp_012226": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 4
+    },
+    "890661": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 3
+    },
+    "1841887441": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 2
+    },
+    "1764658987": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "890671": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_030326": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "NG_Meta_web2app_MIX_CVR_Android_InitiateCheckout_021026": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 1
+    },
+    "{{campaign.name}}": {
+      "status": "LOW_VOLUME",
+      "reason": "Only 0 installs — insufficient data",
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 1
+    }
+  }
+}

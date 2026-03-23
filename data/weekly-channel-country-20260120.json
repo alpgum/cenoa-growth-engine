@@ -1,0 +1,77 @@
+{
+  "period": "20260120-20260126",
+  "install": {
+    "event_type": "[AppsFlyer] Install",
+    "aggregator": "ms_country",
+    "totals": {
+      "Other | NG": 1053,
+      "Google Search | EG": 825,
+      "Organic | NG": 771,
+      "Google Search | NG": 399,
+      "Other | TR": 478,
+      "Other | EG": 295,
+      "Organic | TR": 230,
+      "ASA | TR": 106,
+      "Organic | EG": 75,
+      "Organic | Other": 99,
+      "Referral | TR": 11,
+      "Google Search | TR": 6,
+      "Other | Other": 28,
+      "Google Search | Other": 12,
+      "Referral | NG": 3,
+      "ASA | Other": 7,
+      "Organic | PK": 2,
+      "Referral | EG": 1,
+      "Referral | Other": 1
+    }
+  },
+  "signup": {
+    "event_type": "Cenoa sign-up completed",
+    "aggregator": "ms_country",
+    "totals": {
+      "Organic | Other": 1976,
+      "Organic | TR": 190,
+      "Other | TR": 131,
+      "Organic | NG": 168,
+      "Other | NG": 63,
+      "ASA | TR": 36,
+      "Organic | EG": 44,
+      "Google Search | NG": 26,
+      "Other | EG": 22,
+      "Google Search | EG": 16,
+      "Referral | TR": 2,
+      "ASA | Other": 3,
+      "Organic | PK": 1,
+      "Google Search | Other": 1,
+      "Other | Other": 3
+    }
+  },
+  "kyc_submit": {
+    "event_type": "Bridgexyz KYC Component: Submit clicked",
+    "aggregator": "country",
+    "totals": {
+      "TR": 79,
+      "Other": 2
+    }
+  },
+  "virtual_account": {
+    "event_type": "Virtual account opened",
+    "aggregator": "country",
+    "totals": {
+      "TR": 288,
+      "NG": 63,
+      "Other": 31,
+      "EG": 3
+    }
+  },
+  "new_active": {
+    "event_type": "Withdraw Completed",
+    "aggregator": "country",
+    "totals": {
+      "TR": 533,
+      "NG": 308,
+      "Other": 82,
+      "EG": 1
+    }
+  }
+}

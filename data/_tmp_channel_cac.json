@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "outcomes_period": "2026-03-14..2026-03-20",
+    "spend_proxy_weeks": [
+      "2026-03-01..2026-03-08",
+      "2026-03-09..2026-03-15"
+    ]
+  },
+  "buckets": {
+    "Google Search": {
+      "spend_est_usd": 790.0,
+      "installs": 54,
+      "signups": 14,
+      "withdrawals": 29,
+      "cpi": 14.62962962962963,
+      "cpsu": 56.42857142857143,
+      "cpw": 27.24137931034483,
+      "notes": "",
+      "sources": [
+        "googleadwords_int"
+      ]
+    },
+    "Pmax": {
+      "spend_est_usd": 805.5,
+      "installs": 0,
+      "signups": 0,
+      "withdrawals": 0,
+      "cpi": null,
+      "cpsu": null,
+      "cpw": null,
+      "notes": "",
+      "sources": []
+    },
+    "Apple Search Ads": {
+      "spend_est_usd": 600.5,
+      "installs": 75,
+      "signups": 22,
+      "withdrawals": 254,
+      "cpi": 8.006666666666666,
+      "cpsu": 27.295454545454547,
+      "cpw": 2.3641732283464565,
+      "notes": "",
+      "sources": [
+        "Apple Search Ads"
+      ]
+    },
+    "Appnext": {
+      "spend_est_usd": 446.5,
+      "installs": 273,
+      "signups": 24,
+      "withdrawals": 1,
+      "cpi": 1.6355311355311355,
+      "cpsu": 18.604166666666668,
+      "cpw": 446.5,
+      "notes": "",
+      "sources": [
+        "appnext_int"
+      ]
+    },
+    "TikTok": {
+      "spend_est_usd": 341.0,
+      "installs": 49,
+      "signups": 8,
+      "withdrawals": 0,
+      "cpi": 6.959183673469388,
+      "cpsu": 42.625,
+      "cpw": null,
+      "notes": "",
+      "sources": [
+        "tiktokglobal_int"
+      ]
+    },
+    "Meta": {
+      "spend_est_usd": 2754.0,
+      "installs": 122,
+      "signups": 22,
+      "withdrawals": 22,
+      "cpi": 22.57377049180328,
+      "cpsu": 125.18181818181819,
+      "cpw": 125.18181818181819,
+      "notes": "",
+      "sources": [
+        "Social_instagram",
+        "zzgtechltmqk_int"
+      ]
+    },
+    "Referral": {
+      "spend_est_usd": 0.0,
+      "installs": 7,
+      "signups": 3,
+      "withdrawals": 13,
+      "cpi": 0.0,
+      "cpsu": 0.0,
+      "cpw": 0.0,
+      "notes": "",
+      "sources": [
+        "af_app_invites"
+      ]
+    },
+    "Organic": {
+      "spend_est_usd": 0.0,
+      "installs": 632,
+      "signups": 77,
+      "withdrawals": 487,
+      "cpi": 0.0,
+      "cpsu": 0.0,
+      "cpw": 0.0,
+      "notes": "",
+      "sources": [
+        "Organic"
+      ]
+    },
+    "Architect": {
+      "spend_est_usd": 0.0,
+      "installs": 73,
+      "signups": 19,
+      "withdrawals": 0,
+      "cpi": 0.0,
+      "cpsu": 0.0,
+      "cpw": null,
+      "notes": "",
+      "sources": [
+        "Architect"
+      ]
+    },
+    "Other": {
+      "spend_est_usd": 976.5,
+      "installs": 159,
+      "signups": 31,
+      "withdrawals": 65,
+      "cpi": 6.1415094339622645,
+      "cpsu": 31.5,
+      "cpw": 15.023076923076923,
+      "notes": "",
+      "sources": [
+        "Auto Pilot Tool",
+        "Egypt LTV Test",
+        "Eihracat Y\u0131ld\u0131zlar\u0131",
+        "Web Onboarding",
+        "byteboost2_int",
+        "cenoa.com",
+        "cenoacomtr"
+      ]
+    },
+    "Unattributed": {
+      "spend_est_usd": 0.0,
+      "installs": 0,
+      "signups": 986,
+      "withdrawals": 1355,
+      "cpi": null,
+      "cpsu": 0.0,
+      "cpw": 0.0,
+      "notes": "",
+      "sources": [
+        "(none)"
+      ]
+    }
+  }
+}

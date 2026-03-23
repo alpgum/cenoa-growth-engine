@@ -1,0 +1,42 @@
+{
+  "detected_at": "2026-03-21T00:09:21Z",
+  "week": "Mar 14-20, 2026",
+  "threshold": 20,
+  "anomalies": [
+    {
+      "kpi": "dauAvg",
+      "value": 3065.0,
+      "prev": 5677.7,
+      "deltaPct": -46.0,
+      "severity": "critical"
+    },
+    {
+      "kpi": "kycSubmits",
+      "value": 179,
+      "prev": 307,
+      "deltaPct": -41.7,
+      "severity": "critical"
+    },
+    {
+      "kpi": "installs",
+      "value": 1448,
+      "prev": 2274,
+      "deltaPct": -36.3,
+      "severity": "warning"
+    },
+    {
+      "kpi": "virtualAccountOpened",
+      "value": 434,
+      "prev": 632,
+      "deltaPct": -31.3,
+      "severity": "warning"
+    },
+    {
+      "kpi": "signups",
+      "value": 1211,
+      "prev": 1671,
+      "deltaPct": -27.5,
+      "severity": "warning"
+    }
+  ]
+}

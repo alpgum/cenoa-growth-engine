@@ -1,0 +1,3200 @@
+{
+  "meta": {
+    "date_range": {
+      "start": "20260314",
+      "end": "20260320"
+    },
+    "generated_at": "2026-03-21T01:33:16.421524",
+    "api": {
+      "endpoint": "https://amplitude.com/api/2/events/segmentation",
+      "m": "totals"
+    }
+  },
+  "pulls": {
+    "KYC Started": {
+      "totals": {
+        "data": {
+          "series": [
+            [
+              353,
+              359,
+              389,
+              516,
+              530,
+              486,
+              465
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 3098
+              }
+            ]
+          ],
+          "seriesLabels": [
+            0
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045352011,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 9,
+        "novaRequestDuration": 38,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 351167,
+          "max": 358658,
+          "p50": 352769.5335613752,
+          "p75": 353153.14672899543,
+          "p95": 353870.68697746797,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 645741,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "Gt3sEsE2xS"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774045997713,
+            1774045997751
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "Gt3sEsE2xS",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 38,
+            "novaRuntime": 9,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 26800237
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 4
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 26800237,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "country": {
+        "data": {
+          "series": [
+            [
+              307,
+              298,
+              292,
+              434,
+              456,
+              414,
+              393
+            ],
+            [
+              17,
+              24,
+              56,
+              29,
+              46,
+              30,
+              28
+            ],
+            [
+              11,
+              14,
+              6,
+              5,
+              4,
+              12,
+              10
+            ],
+            [
+              6,
+              8,
+              3,
+              17,
+              9,
+              3,
+              2
+            ],
+            [
+              5,
+              9,
+              8,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              17,
+              2
+            ],
+            [
+              4,
+              0,
+              0,
+              0,
+              2,
+              2,
+              9
+            ],
+            [
+              0,
+              0,
+              16,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              8,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              4,
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              7
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              3,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 2594
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 230
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 62
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 48
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 22
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 19
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 17
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 17
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 10
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 10
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 9
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 7
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 7
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 6
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 4
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Turkey"
+            ],
+            [
+              0,
+              "Nigeria"
+            ],
+            [
+              0,
+              "Egypt"
+            ],
+            [
+              0,
+              "(none)"
+            ],
+            [
+              0,
+              "Ghana"
+            ],
+            [
+              0,
+              "Indonesia"
+            ],
+            [
+              0,
+              "Pakistan"
+            ],
+            [
+              0,
+              "Poland"
+            ],
+            [
+              0,
+              "Thailand"
+            ],
+            [
+              0,
+              "United States"
+            ],
+            [
+              0,
+              "Cyprus"
+            ],
+            [
+              0,
+              "Canada"
+            ],
+            [
+              0,
+              "United Kingdom"
+            ],
+            [
+              0,
+              "Germany"
+            ],
+            [
+              0,
+              "Saudi Arabia"
+            ],
+            [
+              0,
+              "Spain"
+            ],
+            [
+              0,
+              "Bulgaria"
+            ],
+            [
+              0,
+              "Austria"
+            ],
+            [
+              0,
+              "Kosovo"
+            ],
+            [
+              0,
+              "Kuwait"
+            ],
+            [
+              0,
+              "Portugal"
+            ],
+            [
+              0,
+              "Azerbaijan"
+            ],
+            [
+              0,
+              "Maldives"
+            ],
+            [
+              0,
+              "Montenegro"
+            ],
+            [
+              0,
+              "Serbia"
+            ],
+            [
+              0,
+              "Switzerland"
+            ],
+            [
+              0,
+              "Belarus"
+            ],
+            [
+              0,
+              "Georgia"
+            ],
+            [
+              0,
+              "Israel"
+            ],
+            [
+              0,
+              "Sweden"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045409237,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 4,
+        "novaRequestDuration": 35,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 361384,
+          "max": 368376,
+          "p50": 362962.9986511694,
+          "p75": 363338.3383124517,
+          "p95": 364046.00076026947,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 590048,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "K8vVFwxD9x"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774045999247,
+            1774045999282
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "K8vVFwxD9x",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 35,
+            "novaRuntime": 4,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 30861425
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 0
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 30861425,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "platform": {
+        "data": {
+          "series": [
+            [
+              201,
+              267,
+              156,
+              245,
+              213,
+              294,
+              341
+            ],
+            [
+              146,
+              84,
+              230,
+              254,
+              308,
+              189,
+              122
+            ],
+            [
+              6,
+              8,
+              3,
+              17,
+              9,
+              3,
+              2
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 1717
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1333
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 48
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Android"
+            ],
+            [
+              0,
+              "iOS"
+            ],
+            [
+              0,
+              "(none)"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045455465,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 24,
+        "novaRequestDuration": 126,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 347466,
+          "max": 354604,
+          "p50": 349170.9155412405,
+          "p75": 349550.3902597982,
+          "p95": 350263.30450666073,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 545778,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "nEaaj2kjaL"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046000993,
+            1774046001119
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "nEaaj2kjaL",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 126,
+            "novaRuntime": 24,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 29607774
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 2
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 29607774,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 2
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      }
+    },
+    "Bridgexyz KYC Component Shown": {
+      "totals": {
+        "data": {
+          "series": [
+            [
+              380,
+              485,
+              486,
+              534,
+              532,
+              400,
+              322
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 3139
+              }
+            ]
+          ],
+          "seriesLabels": [
+            0
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046003550,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 777,
+        "novaRequestDuration": 843,
+        "novaCost": 2,
+        "throttleTime": 13,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 362551,
+          "max": 368832,
+          "p50": 364099.43283312826,
+          "p75": 364425.29807801807,
+          "p95": 365012.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 22,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "Cz6FPRQ66y"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046002714,
+            1774046003557
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "Cz6FPRQ66y",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 13,
+            "novaCost": 2,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 843,
+            "novaRuntime": 777,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 45828452
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 4
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 45828452,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "country": {
+        "data": {
+          "series": [
+            [
+              369,
+              477,
+              461,
+              515,
+              503,
+              397,
+              303
+            ],
+            [
+              4,
+              0,
+              0,
+              9,
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              4,
+              4,
+              2,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              4,
+              0,
+              3
+            ],
+            [
+              0,
+              1,
+              4,
+              0,
+              3,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              6,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              1,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              2,
+              0,
+              1,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 3025
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 15
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 13
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 10
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 9
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 8
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 7
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 7
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 6
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 4
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Turkey"
+            ],
+            [
+              0,
+              "Thailand"
+            ],
+            [
+              0,
+              "Germany"
+            ],
+            [
+              0,
+              "Cyprus"
+            ],
+            [
+              0,
+              "United Kingdom"
+            ],
+            [
+              0,
+              "Austria"
+            ],
+            [
+              0,
+              "Georgia"
+            ],
+            [
+              0,
+              "Serbia"
+            ],
+            [
+              0,
+              "Hungary"
+            ],
+            [
+              0,
+              "Azerbaijan"
+            ],
+            [
+              0,
+              "Montenegro"
+            ],
+            [
+              0,
+              "Spain"
+            ],
+            [
+              0,
+              "France"
+            ],
+            [
+              0,
+              "Indonesia"
+            ],
+            [
+              0,
+              "Kosovo"
+            ],
+            [
+              0,
+              "Poland"
+            ],
+            [
+              0,
+              "Portugal"
+            ],
+            [
+              0,
+              "Switzerland"
+            ],
+            [
+              0,
+              "United States"
+            ],
+            [
+              0,
+              "Albania"
+            ],
+            [
+              0,
+              "Cambodia"
+            ],
+            [
+              0,
+              "Netherlands"
+            ],
+            [
+              0,
+              "Saudi Arabia"
+            ],
+            [
+              0,
+              "Sweden"
+            ],
+            [
+              0,
+              "United Arab Emirates"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046006085,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 363,
+        "novaRequestDuration": 397,
+        "novaCost": 11,
+        "throttleTime": 8,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 358086,
+          "max": 364367,
+          "p50": 359634.43283312826,
+          "p75": 359960.29807801807,
+          "p95": 360547.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 128,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "OjG4VNVCPv"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046005697,
+            1774046006094
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "OjG4VNVCPv",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 8,
+            "novaCost": 11,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 397,
+            "novaRuntime": 363,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 30525373
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 0
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 30525373,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "platform": {
+        "data": {
+          "series": [
+            [
+              193,
+              208,
+              269,
+              254,
+              293,
+              223,
+              178
+            ],
+            [
+              187,
+              277,
+              217,
+              280,
+              239,
+              177,
+              144
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 1618
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1521
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "iOS"
+            ],
+            [
+              0,
+              "Android"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046008835,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 515,
+        "novaRequestDuration": 580,
+        "novaCost": 11,
+        "throttleTime": 7,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 358836,
+          "max": 365117,
+          "p50": 360384.43283312826,
+          "p75": 360710.29807801807,
+          "p95": 361297.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 3,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "fCxiURbZoS"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046008257,
+            1774046008837
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "fCxiURbZoS",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 7,
+            "novaCost": 11,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 580,
+            "novaRuntime": 515,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 33204927
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 4
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 33204927,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      }
+    },
+    "Bridgexyz KYC Component: Submit clicked": {
+      "totals": {
+        "data": {
+          "series": [
+            [
+              27,
+              41,
+              29,
+              30,
+              17,
+              17,
+              18
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 179
+              }
+            ]
+          ],
+          "seriesLabels": [
+            0
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045342868,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 13,
+        "novaRequestDuration": 59,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 342024,
+          "max": 349515,
+          "p50": 343626.5335613752,
+          "p75": 344010.14672899543,
+          "p95": 344727.68697746797,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 668272,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "axPDXGBiNX"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046010866,
+            1774046010925
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "axPDXGBiNX",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 59,
+            "novaRuntime": 13,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 22505975
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 4
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 22505975,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "country": {
+        "data": {
+          "series": [
+            [
+              25,
+              40,
+              27,
+              29,
+              17,
+              17,
+              15
+            ],
+            [
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 170
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Turkey"
+            ],
+            [
+              0,
+              "Germany"
+            ],
+            [
+              0,
+              "Spain"
+            ],
+            [
+              0,
+              "Georgia"
+            ],
+            [
+              0,
+              "Montenegro"
+            ],
+            [
+              0,
+              "Poland"
+            ],
+            [
+              0,
+              "Thailand"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045371311,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 11,
+        "novaRequestDuration": 37,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 340458,
+          "max": 347450,
+          "p50": 342037.52035298065,
+          "p75": 342413.11652445764,
+          "p95": 343121.1919472285,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 641732,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "CiE7LakEZR"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046013005,
+            1774046013042
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "CiE7LakEZR",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 37,
+            "novaRuntime": 11,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 23489728
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 0
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 23489728,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "platform": {
+        "data": {
+          "series": [
+            [
+              24,
+              38,
+              23,
+              20,
+              13,
+              10,
+              12
+            ],
+            [
+              3,
+              3,
+              6,
+              10,
+              4,
+              7,
+              6
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 140
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 39
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Android"
+            ],
+            [
+              0,
+              "iOS"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774045371245,
+        "wasCached": true,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": true,
+        "novaRuntime": 15,
+        "novaRequestDuration": 43,
+        "novaCost": 0,
+        "throttleTime": 0,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 363392,
+          "max": 370384,
+          "p50": 364971.52035298065,
+          "p75": 365347.11652445764,
+          "p95": 366055.1919472285,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 643319,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "AcgqQhRXp4"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046014520,
+            1774046014563
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "AcgqQhRXp4",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": true,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 0,
+            "novaCost": 0,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 43,
+            "novaRuntime": 15,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 23255214
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 2
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 23255214,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 2
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      }
+    },
+    "KYC Updated": {
+      "totals": {
+        "data": {
+          "series": [
+            [
+              139,
+              162,
+              170,
+              259,
+              402,
+              175,
+              173
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 1480
+              }
+            ]
+          ],
+          "seriesLabels": [
+            0
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046017266,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 400,
+        "novaRequestDuration": 449,
+        "novaCost": 2,
+        "throttleTime": 9,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 336267,
+          "max": 342548,
+          "p50": 337815.43283312826,
+          "p75": 338141.29807801807,
+          "p95": 338728.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 3,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "EumLHuw7xw"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046016819,
+            1774046017268
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "EumLHuw7xw",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 9,
+            "novaCost": 2,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 449,
+            "novaRuntime": 400,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 24201187
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 4
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 24201187,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "country": {
+        "data": {
+          "series": [
+            [
+              112,
+              117,
+              121,
+              202,
+              332,
+              140,
+              131
+            ],
+            [
+              13,
+              13,
+              28,
+              16,
+              46,
+              14,
+              15
+            ],
+            [
+              4,
+              16,
+              9,
+              12,
+              10,
+              4,
+              3
+            ],
+            [
+              8,
+              6,
+              4,
+              4,
+              4,
+              10,
+              8
+            ],
+            [
+              1,
+              8,
+              8,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              9,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 1155
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 145
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 58
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 44
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 19
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 9
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 6
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 5
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 4
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 4
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 4
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 3
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 1
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Turkey"
+            ],
+            [
+              0,
+              "Nigeria"
+            ],
+            [
+              0,
+              "(none)"
+            ],
+            [
+              0,
+              "Egypt"
+            ],
+            [
+              0,
+              "Ghana"
+            ],
+            [
+              0,
+              "Portugal"
+            ],
+            [
+              0,
+              "Cyprus"
+            ],
+            [
+              0,
+              "Indonesia"
+            ],
+            [
+              0,
+              "Pakistan"
+            ],
+            [
+              0,
+              "Saudi Arabia"
+            ],
+            [
+              0,
+              "Spain"
+            ],
+            [
+              0,
+              "United Kingdom"
+            ],
+            [
+              0,
+              "Canada"
+            ],
+            [
+              0,
+              "Australia"
+            ],
+            [
+              0,
+              "Germany"
+            ],
+            [
+              0,
+              "Kuwait"
+            ],
+            [
+              0,
+              "Maldives"
+            ],
+            [
+              0,
+              "Montenegro"
+            ],
+            [
+              0,
+              "Poland"
+            ],
+            [
+              0,
+              "Serbia"
+            ],
+            [
+              0,
+              "Thailand"
+            ],
+            [
+              0,
+              "United States"
+            ],
+            [
+              0,
+              "Bulgaria"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046019190,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 398,
+        "novaRequestDuration": 447,
+        "novaCost": 11,
+        "throttleTime": 9,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 358191,
+          "max": 364472,
+          "p50": 359739.43283312826,
+          "p75": 360065.29807801807,
+          "p95": 360652.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 9,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "IbDpJAnjv8"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046018748,
+            1774046019195
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "IbDpJAnjv8",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 9,
+            "novaCost": 11,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 447,
+            "novaRuntime": 398,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 26381632
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 0
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 26381632,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      },
+      "platform": {
+        "data": {
+          "series": [
+            [
+              76,
+              94,
+              66,
+              111,
+              182,
+              93,
+              104
+            ],
+            [
+              59,
+              52,
+              95,
+              136,
+              210,
+              78,
+              66
+            ],
+            [
+              4,
+              16,
+              9,
+              12,
+              10,
+              4,
+              3
+            ]
+          ],
+          "seriesCollapsed": [
+            [
+              {
+                "setId": "",
+                "value": 726
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 696
+              }
+            ],
+            [
+              {
+                "setId": "",
+                "value": 58
+              }
+            ]
+          ],
+          "seriesLabels": [
+            [
+              0,
+              "Android"
+            ],
+            [
+              0,
+              "iOS"
+            ],
+            [
+              0,
+              "(none)"
+            ]
+          ],
+          "xValues": [
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20"
+          ]
+        },
+        "timeComputed": 1774046021159,
+        "wasCached": false,
+        "cacheFreshness": "FRESH",
+        "allQueriesCached": false,
+        "novaRuntime": 368,
+        "novaRequestDuration": 395,
+        "novaCost": 11,
+        "throttleTime": 9,
+        "minSampleRate": 1.0,
+        "transformationIds": [],
+        "backend": "novaV2",
+        "realtimeDataMissing": false,
+        "timedOutRealtimeData": false,
+        "missedCacheAndNotComputed": false,
+        "realtimeProcessLag": {
+          "min": 340160,
+          "max": 346441,
+          "p50": 341708.43283312826,
+          "p75": 342034.29807801807,
+          "p95": 342621.805710445,
+          "count": 600
+        },
+        "partialMergedAndNewUserInformation": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "subcluster": 9,
+        "millisSinceComputed": 4,
+        "earliestServerReceivedTime": 9223372036854775807,
+        "queryIds": [
+          "uOpeOgwqo1"
+        ],
+        "numQueries": 1,
+        "numDistinctQueries": 1,
+        "novaRequestStartAndEndTimes": [
+          [
+            1774046020767,
+            1774046021162
+          ]
+        ],
+        "perQueryMetadata": [
+          {
+            "queryId": "uOpeOgwqo1",
+            "queryType": "MULTI_SEGMENTATION",
+            "cached": false,
+            "cacheFreshness": "FRESH",
+            "throttleTime": 9,
+            "novaCost": 11,
+            "minSampleRate": 1,
+            "realtimeDataMissing": false,
+            "externalDataMissing": false,
+            "timedOutRealtime": false,
+            "missedCacheAndNotComputed": false,
+            "prunedResult": false,
+            "hitChunkGroupByLimit": false,
+            "novaRequestDuration": 395,
+            "novaRuntime": 368,
+            "costMetadata": {
+              "eventsInTimeRange": 1141818,
+              "cpuTime": 27693541
+            },
+            "requestFreshness": "FRESH",
+            "qtsMetadata": {
+              "qtsRate": 1,
+              "numUsers": 1
+            }
+          }
+        ],
+        "prunedAmpIds": [],
+        "prunedApps": [],
+        "costMetadata": {
+          "cpuTime": 27693541,
+          "eventsInTimeRange": 1141818
+        },
+        "potentialCacheMissAnomaly": false,
+        "dacResolutionStartAndEndTimes": [],
+        "dacResolutionDuration": 0,
+        "crossCacheMetadata": {
+          "crossCache": false,
+          "offset": 0,
+          "cdcRunTime": 0
+        },
+        "potentialCDCHit": false,
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 1
+        },
+        "longTimeRangeQuery": false,
+        "timeRangeSplitCount": 0,
+        "isPeriodOverPeriod": false,
+        "wasStreamed": false
+      }
+    }
+  }
+}

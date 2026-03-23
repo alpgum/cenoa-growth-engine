@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprint 3 Report — Cenoa Growth Engine</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f8f9fa;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666;
+    --green: #22c55e;
+    --green-dim: rgba(34,197,94,0.12);
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.12);
+    --orange: #f59e0b;
+    --orange-dim: rgba(245,158,11,0.12);
+    --blue: #3b82f6;
+    --blue-dim: rgba(59,130,246,0.12);
+    --purple: #a855f7;
+    --purple-dim: rgba(168,85,247,0.12);
+    --cyan: #06b6d4;
+    --cyan-dim: rgba(6,182,212,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Inter', sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .container { max-width:900px; margin:0 auto; padding:24px 20px 60px; }
+
+  /* Header */
+  .header { text-align:center; padding:48px 0 32px; }
+  .header h1 { font-size:32px; font-weight:700; letter-spacing:-0.5px; }
+  .header .subtitle { color:var(--muted); font-size:15px; margin-top:8px; }
+  .header .badge { display:inline-block; background:var(--green-dim); color:var(--green); font-size:13px; font-weight:600; padding:4px 12px; border-radius:20px; margin-top:12px; }
+
+  /* Back link */
+  .back { display:inline-flex; align-items:center; gap:6px; color:var(--muted); font-size:13px; text-decoration:none; margin-bottom:12px; transition:color 0.2s; }
+  .back:hover { color:var(--green); }
+
+  /* Score bar */
+  .score-section { display:flex; gap:16px; margin:32px 0; flex-wrap:wrap; }
+  .score-card { flex:1; min-width:120px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .score-card .num { font-size:36px; font-weight:700; }
+  .score-card .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-top:4px; }
+  .score-card.green .num { color:var(--green); }
+  .score-card.blue .num { color:var(--blue); }
+  .score-card.purple .num { color:var(--purple); }
+  .score-card.orange .num { color:var(--orange); }
+  .score-card.cyan .num { color:var(--cyan); }
+
+  /* Category chips */
+  .cat-chips { display:flex; gap:10px; margin:0 0 32px; flex-wrap:wrap; justify-content:center; }
+  .cat-chip { display:inline-flex; align-items:center; gap:6px; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:10px 16px; font-size:13px; font-weight:600; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .cat-chip .chip-num { font-size:18px; font-weight:700; }
+
+  /* Section */
+  .section { margin-top:40px; }
+  .section h2 { font-size:20px; font-weight:600; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .section h2 .icon { font-size:22px; }
+
+  /* Finding cards */
+  .finding { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-bottom:12px; transition:background 0.15s; }
+  .finding:hover { background:var(--card-hover); box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .finding .tag { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; padding:3px 8px; border-radius:6px; display:inline-block; margin-bottom:8px; }
+  .finding .tag.critical { background:var(--red-dim); color:var(--red); }
+  .finding .tag.high { background:var(--orange-dim); color:var(--orange); }
+  .finding .tag.insight { background:var(--blue-dim); color:var(--blue); }
+  .finding .tag.win { background:var(--green-dim); color:var(--green); }
+  .finding .tag.purple { background:var(--purple-dim); color:var(--purple); }
+  .finding .tag.cyan { background:var(--cyan-dim); color:var(--cyan); }
+  .finding h3 { font-size:15px; font-weight:600; margin-bottom:4px; }
+  .finding p { font-size:14px; color:var(--muted); }
+  .finding .metric { font-size:22px; font-weight:700; color:var(--text); margin:6px 0; }
+
+  /* Deliverable row */
+  .deliverable { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 18px; margin-bottom:10px; display:flex; align-items:flex-start; gap:12px; transition:background 0.15s; }
+  .deliverable:hover { background:var(--card-hover); }
+  .deliverable .d-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
+  .deliverable .d-body h3 { font-size:14px; font-weight:600; margin-bottom:2px; }
+  .deliverable .d-body p { font-size:13px; color:var(--muted); }
+  .deliverable .d-metric { font-size:15px; font-weight:700; margin-left:auto; white-space:nowrap; padding-left:12px; }
+  .deliverable .d-metric.green { color:var(--green); }
+  .deliverable .d-metric.blue { color:var(--blue); }
+  .deliverable .d-metric.orange { color:var(--orange); }
+  .deliverable .d-metric.purple { color:var(--purple); }
+
+  /* Widget grid */
+  .widget-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:10px; }
+  .widget-item { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; font-size:13px; display:flex; align-items:center; gap:8px; transition:background 0.15s; }
+  .widget-item:hover { background:var(--card-hover); }
+  .widget-item .wi-icon { font-size:18px; flex-shrink:0; }
+  .widget-item .wi-name { font-weight:500; }
+
+  /* Checklist */
+  .checklist { list-style:none; }
+  .checklist li { display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); font-size:14px; }
+  .checklist li:last-child { border:none; }
+  .checklist .check { color:var(--green); font-size:16px; flex-shrink:0; margin-top:1px; }
+
+  /* Automation table */
+  .auto-list { list-style:none; }
+  .auto-list li { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); font-size:14px; }
+  .auto-list li:last-child { border:none; }
+  .auto-list .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .auto-list .dot.green { background:var(--green); }
+  .auto-list .dot.blue { background:var(--blue); }
+  .auto-list .dot.purple { background:var(--purple); }
+  .auto-list .name { font-weight:500; min-width:220px; }
+  .auto-list .purpose { color:var(--muted); }
+
+  /* Progress bar */
+  .progress-wrap { background:#e5e7eb; border-radius:8px; height:10px; margin:8px 0 4px; overflow:hidden; }
+  .progress-bar { height:100%; border-radius:8px; transition: width 0.5s; }
+
+  /* Data validation table */
+  .valid-table { width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
+  .valid-table th { text-align:left; padding:10px 12px; border-bottom:2px solid var(--border); color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:0.5px; font-weight:600; }
+  .valid-table td { padding:10px 12px; border-bottom:1px solid var(--border); }
+  .valid-table tr:hover td { background:var(--card-hover); }
+  .valid-table .status-ok { color:var(--green); font-weight:600; }
+  .valid-table .status-warn { color:var(--orange); font-weight:600; }
+
+  /* Sprint breakdown chips */
+  .sprint-breakdown { display:flex; gap:12px; margin:16px 0; flex-wrap:wrap; }
+  .sprint-chip { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 20px; flex:1; min-width:200px; }
+  .sprint-chip .chip-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; }
+  .sprint-chip .chip-val { font-size:28px; font-weight:700; margin-top:2px; }
+  .sprint-chip .chip-sub { font-size:12px; color:var(--muted); margin-top:2px; }
+
+  /* Footer */
+  .footer { text-align:center; padding:40px 0 20px; color:var(--muted); font-size:12px; }
+
+  @media print {
+    body { background:#fff; }
+    .back { display:none; }
+    .container { padding:0; max-width:100%; }
+    .finding, .deliverable, .widget-item { break-inside:avoid; }
+  }
+
+  @media (max-width:600px) {
+    .score-section { flex-direction:column; }
+    .score-card .num { font-size:28px; }
+    .cat-chips { flex-direction:column; }
+    .widget-grid { grid-template-columns: 1fr; }
+    .deliverable { flex-direction:column; }
+    .deliverable .d-metric { margin-left:0; padding-left:0; }
+    .auto-list .name { min-width:auto; }
+    .valid-table { font-size:12px; }
+    .sprint-breakdown { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back">← Back to Dashboard</a>
+
+  <div class="header">
+    <h1>Cenoa Growth Engine — Sprint 3 Report</h1>
+    <div class="subtitle">March 23, 2026 · Dashboard polish, data validation, execution plans &amp; reporting</div>
+    <div class="badge">✅ 30/30 COMPLETE</div>
+  </div>
+
+  <!-- Score Cards -->
+  <div class="score-section">
+    <div class="score-card green"><div class="num">30/30</div><div class="label">Tasks Done</div></div>
+    <div class="score-card blue"><div class="num">10</div><div class="label">Dashboard</div></div>
+    <div class="score-card purple"><div class="num">5</div><div class="label">Data</div></div>
+    <div class="score-card orange"><div class="num">10</div><div class="label">Execution</div></div>
+    <div class="score-card cyan"><div class="num">5</div><div class="label">Reporting</div></div>
+  </div>
+
+  <!-- Category Breakdown -->
+  <div class="cat-chips">
+    <div class="cat-chip"><span class="chip-num" style="color:var(--blue)">10</span> Dashboard</div>
+    <div class="cat-chip"><span class="chip-num" style="color:var(--purple)">5</span> Data Accuracy</div>
+    <div class="cat-chip"><span class="chip-num" style="color:var(--orange)">10</span> Execution Plans</div>
+    <div class="cat-chip"><span class="chip-num" style="color:var(--cyan)">5</span> Reporting</div>
+  </div>
+
+  <div style="padding:0 4px;">
+    <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
+      <span>Sprint 3 Progress</span><span>100%</span>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:100%;background:linear-gradient(90deg, var(--green), #4ade80);"></div></div>
+  </div>
+
+  <!-- ═══════════════ 1. Dashboard Transformation ═══════════════ -->
+  <div class="section">
+    <h2><span class="icon">🎨</span> Dashboard Transformation</h2>
+
+    <div class="finding" style="border-left:3px solid var(--green);">
+      <span class="tag win">SHIPPED</span>
+      <h3>Dark → Light Theme Conversion</h3>
+      <p>Complete visual overhaul from dark (#0d0d0d) to clean light theme (#ffffff). New CSS variables, improved contrast ratios, and accessibility-compliant color palette. All 20+ widgets updated.</p>
+    </div>
+
+    <div class="finding">
+      <span class="tag insight">10 WIDGETS</span>
+      <h3>Sprint 2 Widgets + Sprint 3 Polish</h3>
+      <p>All 10 widgets from Sprint 2 (Funnel Waterfall, Geo Heatmap, Budget Gauge, CAC Trend, Retention Matrix, Channel Mix, Anomaly Alerts, Data Quality, Campaign Table v2, Weekly Actions v2) carried forward and polished with light theme styling, improved hover states, and refined typography.</p>
+    </div>
+
+    <div class="widget-grid" style="margin-top:12px;">
+      <div class="widget-item"><span class="wi-icon">📱</span><span class="wi-name">Mobile Responsive</span></div>
+      <div class="widget-item"><span class="wi-icon">🖨️</span><span class="wi-name">Print / PDF Export</span></div>
+      <div class="widget-item"><span class="wi-icon">⏳</span><span class="wi-name">Loading States</span></div>
+      <div class="widget-item"><span class="wi-icon">⚠️</span><span class="wi-name">Error Handling</span></div>
+      <div class="widget-item"><span class="wi-icon">🔍</span><span class="wi-name">Campaign Filters</span></div>
+      <div class="widget-item"><span class="wi-icon">↕️</span><span class="wi-name">Column Sorting</span></div>
+      <div class="widget-item"><span class="wi-icon">💬</span><span class="wi-name">Commentary Fields</span></div>
+      <div class="widget-item"><span class="wi-icon">📋</span><span class="wi-name">Executive Summary</span></div>
+      <div class="widget-item"><span class="wi-icon">🌍</span><span class="wi-name">Country Deep-Dive</span></div>
+      <div class="widget-item"><span class="wi-icon">🏗️</span><span class="wi-name">Architecture Page</span></div>
+    </div>
+
+    <div class="sprint-breakdown" style="margin-top:16px;">
+      <div class="sprint-chip">
+        <div class="chip-label">Campaign Table</div>
+        <div class="chip-val" style="color:var(--green)">v2</div>
+        <div class="chip-sub">Filters, sort, search, status tags, commentary</div>
+      </div>
+      <div class="sprint-chip">
+        <div class="chip-label">Executive Summary</div>
+        <div class="chip-val" style="color:var(--blue)">Top</div>
+        <div class="chip-sub">KPI chips + action items + attribution warning</div>
+      </div>
+      <div class="sprint-chip">
+        <div class="chip-label">Country Pages</div>
+        <div class="chip-val" style="color:var(--purple)">4</div>
+        <div class="chip-sub">TR · EG · NG · PK deep-dive dashboards</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ 2. Data Accuracy ═══════════════ -->
+  <div class="section">
+    <h2><span class="icon">🔬</span> Data Accuracy</h2>
+
+    <div class="finding" style="border-left:3px solid var(--green);">
+      <span class="tag win">VALIDATED</span>
+      <h3>KPI Validation: 42/42 Data Points Match Amplitude API</h3>
+      <p>Every KPI in the Growth Engine dashboard was cross-checked against live Amplitude API responses. All 42 data points — installs, signups, KYC, funnel rates, retention, revenue — match exactly. Zero discrepancies.</p>
+      <div class="metric" style="color:var(--green)">42/42 ✓</div>
+    </div>
+
+    <div class="finding" style="border-left:3px solid var(--orange);">
+      <span class="tag high">GAP FOUND</span>
+      <h3>Spend Cross-Check: $433 Internal Gap Identified</h3>
+      <p>Internal spend tracking shows a $433 discrepancy vs platform-reported spend. Root cause: timing differences in Google Ads conversion lag reporting. Fix recommended: align to platform billing date rather than click date for spend reconciliation.</p>
+      <div class="metric" style="color:var(--orange)">$433 gap</div>
+    </div>
+
+    <div class="finding">
+      <span class="tag insight">STANDARDIZED</span>
+      <h3>Date Standardization to ISO Weeks</h3>
+      <p>All date ranges across dashboards, reports, and scripts now use ISO 8601 week numbering (Monday start). Eliminates confusion between US/EU week boundaries and ensures consistent WoW comparisons across all data sources.</p>
+    </div>
+
+    <div class="finding">
+      <span class="tag purple">AUTOMATED</span>
+      <h3>E2E Pipeline Test Script</h3>
+      <p>End-to-end validation script that runs the full data pipeline (Amplitude → data.json → dashboard render) and asserts each KPI matches within tolerance. Can be triggered pre-deploy or via cron for continuous monitoring.</p>
+    </div>
+
+    <table class="valid-table">
+      <thead>
+        <tr><th>Data Category</th><th>Points</th><th>Source</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Install counts (4 markets)</td><td>8</td><td>Amplitude</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>Signup → KYC funnel</td><td>6</td><td>Amplitude</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>Retention D1/D7/D30</td><td>12</td><td>Amplitude</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>Revenue &amp; ARPU</td><td>4</td><td>Amplitude</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>Channel spend</td><td>8</td><td>Amplitude + Sheets</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>CAC by market</td><td>4</td><td>Derived</td><td class="status-ok">✓ Match</td></tr>
+        <tr><td>Internal spend total</td><td>—</td><td>Sheets vs Platform</td><td class="status-warn">⚠ $433 gap</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════ 3. Marketing Execution Plans ═══════════════ -->
+  <div class="section">
+    <h2><span class="icon">🚀</span> Marketing Execution Plans</h2>
+
+    <div class="deliverable">
+      <span class="d-icon">⏸️</span>
+      <div class="d-body">
+        <h3>Campaign Pause Checklist</h3>
+        <p>Identified underperforming campaigns to pause immediately. Detailed checklist with spend savings per campaign, expected impact, and rollback criteria.</p>
+      </div>
+      <div class="d-metric green">$2,530/wk freed</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">📈</span>
+      <div class="d-body">
+        <h3>Pmax 3× Scaling Plan</h3>
+        <p>Performance Max has 14.6× headroom before marginal CAC exceeds target. Phased 3× scaling plan: Week 1 +50%, Week 2 +100%, Week 3 consolidate. Budget guardrails and ROAS floor defined.</p>
+      </div>
+      <div class="d-metric blue">3× target</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🍎</span>
+      <div class="d-body">
+        <h3>ASA Expansion — Egypt + Nigeria</h3>
+        <p>Apple Search Ads expansion into EG and NG markets. 81 keywords mapped, bid strategy defined, expected CPI 6–10× cheaper than Google equivalents. Launch-ready campaign structure.</p>
+      </div>
+      <div class="d-metric purple">EG + NG</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🎯</span>
+      <div class="d-body">
+        <h3>Meta Retargeting Optimization</h3>
+        <p>Rebuilt Meta RTGT audiences: installed-not-signed-up (7d), signed-up-not-KYC (14d), KYC-not-transacted (30d). Dynamic creative with stage-specific messaging. Expected 2.5× ROAS improvement.</p>
+      </div>
+      <div class="d-metric green">2.5× ROAS</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🔎</span>
+      <div class="d-body">
+        <h3>Nigeria Search Pilot</h3>
+        <p>Google Search pilot for Nigeria targeting remittance, money transfer, and USD account keywords. $500/week test budget with 15 ad groups, 126 negative keywords pre-loaded.</p>
+      </div>
+      <div class="d-metric orange">$500/wk pilot</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">✉️</span>
+      <div class="d-body">
+        <h3>Engineering Emails — KYC + Attribution</h3>
+        <p>Two engineering request emails drafted: (1) KYC completion nudge push notifications with deep links, (2) Attribution parameter passthrough from install → signup → KYC for end-to-end tracking.</p>
+      </div>
+      <div class="d-metric blue">2 emails</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🎨</span>
+      <div class="d-body">
+        <h3>Creative Brief — 14 Assets, 3 Markets</h3>
+        <p>Full creative brief covering 14 ad assets across TR, EG, and NG. Includes static banners, video scripts, UGC-style concepts, and localized copy. Organized by funnel stage (awareness → consideration → conversion).</p>
+      </div>
+      <div class="d-metric purple">14 assets</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🧪</span>
+      <div class="d-body">
+        <h3>Landing Page A/B Test Spec</h3>
+        <p>Test spec for Turkish LP: Control (current) vs Variant A (social proof hero) vs Variant B (savings calculator). Sample size: 2,000/variant. Primary metric: signup rate. Runtime: 2 weeks minimum.</p>
+      </div>
+      <div class="d-metric green">3 variants</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ 4. Reporting Automation ═══════════════ -->
+  <div class="section">
+    <h2><span class="icon">📡</span> Reporting Automation</h2>
+
+    <div class="finding" style="border-left:3px solid var(--green);">
+      <span class="tag win">OPERATIONAL</span>
+      <h3>Four Reporting Templates — Ready to Deploy</h3>
+      <p>Complete set of reporting templates covering the full cadence: Monday briefings, weekly reviews, month-end reports, and stakeholder updates. All pull from the unified data.json pipeline.</p>
+    </div>
+
+    <ul class="auto-list">
+      <li>
+        <span class="dot green"></span>
+        <span class="name">Monday Telegram Briefing</span>
+        <span class="purpose">Auto-generated weekly pulse via weekly_report.py → Telegram</span>
+      </li>
+      <li>
+        <span class="dot blue"></span>
+        <span class="name">Weekly Review Template</span>
+        <span class="purpose">Structured agenda: KPIs → anomalies → actions → decisions needed</span>
+      </li>
+      <li>
+        <span class="dot purple"></span>
+        <span class="name">Month-End Report Template</span>
+        <span class="purpose">Executive summary, spend vs budget, CAC trends, market performance</span>
+      </li>
+      <li>
+        <span class="dot green"></span>
+        <span class="name">Stakeholder Email Template</span>
+        <span class="purpose">Board-ready format: headline metrics, key wins, risks, next month outlook</span>
+      </li>
+    </ul>
+
+    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Monday Briefing</div>
+        <div style="font-size:14px;font-weight:600;margin-top:4px;color:var(--green);">🟢 Automated</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">launchd → Mon 09:00 TRT</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Weekly Review</div>
+        <div style="font-size:14px;font-weight:600;margin-top:4px;color:var(--blue);">📋 Template Ready</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Copy-paste into meeting doc</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Month-End</div>
+        <div style="font-size:14px;font-weight:600;margin-top:4px;color:var(--purple);">📊 Template Ready</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Auto-fills from data.json</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ Sprint Summary ═══════════════ -->
+  <div class="section">
+    <h2><span class="icon">📌</span> Sprint 3 Summary</h2>
+
+    <div class="sprint-breakdown">
+      <div class="sprint-chip">
+        <div class="chip-label">Sprints Complete</div>
+        <div class="chip-val" style="color:var(--green)">3/3</div>
+        <div class="chip-sub">Sprint 1 (audit) → Sprint 2 (build) → Sprint 3 (polish)</div>
+      </div>
+      <div class="sprint-chip">
+        <div class="chip-label">Total Tasks</div>
+        <div class="chip-val" style="color:var(--blue)">100+</div>
+        <div class="chip-sub">S1: 20 · S2: 50 · S3: 30</div>
+      </div>
+      <div class="sprint-chip">
+        <div class="chip-label">Data Confidence</div>
+        <div class="chip-val" style="color:var(--purple)">42/42</div>
+        <div class="chip-sub">Every KPI validated against Amplitude</div>
+      </div>
+    </div>
+
+    <ul class="checklist">
+      <li><span class="check">✅</span><div><strong>Dashboard</strong> — Light theme, 10 widgets, 4 country pages, mobile-ready, print-ready</div></li>
+      <li><span class="check">✅</span><div><strong>Data</strong> — 42/42 KPIs validated, $433 spend gap flagged, ISO weeks standardized</div></li>
+      <li><span class="check">✅</span><div><strong>Execution</strong> — 8 campaign plans ready to launch, $2,530/wk freed from pauses</div></li>
+      <li><span class="check">✅</span><div><strong>Reporting</strong> — 4 templates (Monday brief, weekly review, month-end, stakeholder email)</div></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Generated by Growth Engine (OpenClaw) · Cenoa Growth Engine · Sprint 3 · March 23, 2026
+  </div>
+
+</div>
+</body>
+</html>

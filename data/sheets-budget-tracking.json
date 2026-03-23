@@ -1,0 +1,305 @@
+{
+  "source": "Google Sheets - Budget Tracking Sheet",
+  "sheetId": "1VTZQbRD0gZAABLvgjwlymAx0sQ7vcvMUySsWzLhnFKk",
+  "fetchedAt": "2026-03-21T01:13:00+03:00",
+  "tabs": [
+    "Budget Distribution - 2026",
+    "Realized Cost - Jan 2026",
+    "Realized Cost - Feb 2026",
+    "march 26 budget",
+    "Jan Cac",
+    "Performance Budget",
+    "Subscriptions",
+    "Growth team update"
+  ],
+
+  "budgetDistribution2026": {
+    "estimatedBudget": 50000,
+    "currency": "USD",
+    "byCountry": {
+      "TR": { "amount": 35000, "share": "70%" },
+      "NG": { "amount": 7500, "share": "15%" },
+      "EG": { "amount": 7500, "share": "15%" }
+    },
+    "objectiveByCountry": {
+      "TR": { "awareness": 24500, "conversion": 7000, "retargeting": 3500 },
+      "NG": { "awareness": 4500, "conversion": 2250, "retargeting": 750 },
+      "EG": { "awareness": 3000, "conversion": 4500, "retargeting": 0 }
+    },
+    "channelByCountry": {
+      "TR": {
+        "Google": { "awareness": 10290, "conversion": 2800, "retargeting": 1750 },
+        "Meta": { "awareness": 4900, "conversion": 2800, "retargeting": 1750 },
+        "AppleSearchAds": { "awareness": 2940, "conversion": 0, "retargeting": 0 },
+        "AdNetworks": { "awareness": 1500, "conversion": 0, "retargeting": 0 },
+        "Test": { "awareness": 3920, "conversion": 1400, "retargeting": 0 }
+      },
+      "NG": {
+        "Google": { "awareness": 1800, "conversion": 1400, "retargeting": 0 },
+        "Meta": { "awareness": 1800, "conversion": 1575, "retargeting": 0 },
+        "AppleSearchAds": { "awareness": 0, "conversion": 0, "retargeting": 0 },
+        "AdNetworks": { "awareness": 820, "conversion": 0, "retargeting": 0 },
+        "Test": { "awareness": 300, "conversion": 225, "retargeting": 0 }
+      },
+      "EG": {
+        "Google": { "awareness": 750, "conversion": 900, "retargeting": 0 },
+        "Meta": { "awareness": 1050, "conversion": 3150, "retargeting": 0 },
+        "AppleSearchAds": { "awareness": 0, "conversion": 0, "retargeting": 0 },
+        "AdNetworks": { "awareness": 900, "conversion": 0, "retargeting": 0 },
+        "Test": { "awareness": 300, "conversion": 450, "retargeting": 0 }
+      }
+    }
+  },
+
+  "realizedCostJan2026": {
+    "period": "1-31 Jan 2026",
+    "summary": {
+      "TR": { "awareness": 1095, "conversion": 24011, "retargeting": 1129, "total": 26235 },
+      "NG": { "awareness": 0, "conversion": 4647, "retargeting": 0, "total": 4647 },
+      "EG": { "awareness": 0, "conversion": 4670, "retargeting": 0, "total": 4670 },
+      "grandTotal": { "awareness": 1095, "conversion": 33329, "retargeting": 1129, "total": 35552 }
+    },
+    "channelBreakdown": {
+      "TR": {
+        "Google": { "awareness": 811, "conversion": 10224, "retargeting": 0, "installs": 2154, "kycStart": 908, "virtAcc": 831, "costPerVirtAcc": 39 },
+        "Meta": { "awareness": 0, "conversion": 10330, "retargeting": 1129, "installs": 1564, "kycStart": 1111, "virtAcc": 825, "costPerVirtAcc": 97 },
+        "AppleSearchAds": { "awareness": 0, "conversion": 2817, "retargeting": 0, "installs": 457, "kycStart": 205, "virtAcc": 205, "costPerVirtAcc": 36 },
+        "TikTok": { "awareness": 284, "conversion": 100, "retargeting": 0, "installs": 9, "costPerVirtAcc": 384 },
+        "AdNetwork": { "awareness": 0, "conversion": 540, "retargeting": 0, "installs": 54, "costPerVirtAcc": 45 },
+        "total": { "awareness": 1095, "conversion": 24011, "retargeting": 1129, "installs": 4238, "kycStart": 2258, "virtAcc": 1895, "costPerVirtAcc": 54 }
+      },
+      "NG": {
+        "Google": { "awareness": 0, "conversion": 1180, "retargeting": 0, "installs": 3686, "costPerVirtAcc": 27, "costPerSignup": 0.6 },
+        "Meta": { "awareness": 0, "conversion": 3117, "retargeting": 0, "installs": 2689, "costPerVirtAcc": 445, "costPerSignup": 2.3 },
+        "AdNetwork": { "awareness": 0, "conversion": 350, "retargeting": 0, "installs": 527, "costPerVirtAcc": 58, "costPerSignup": 1.4 },
+        "total": { "awareness": 0, "conversion": 4647, "retargeting": 0, "installs": 6902, "kycStart": 3416, "virtAcc": 88, "costPerVirtAcc": 83, "costPerSignup": 1.4 }
+      },
+      "EG": {
+        "Google": { "awareness": 0, "conversion": 2461, "retargeting": 0, "installs": 2614, "costPerVirtAcc": 492, "costPerSignup": 3.8 },
+        "Meta": { "awareness": 0, "conversion": 2159, "retargeting": 0, "installs": 926, "costPerVirtAcc": 270, "costPerSignup": 7.7 },
+        "TikTok": { "awareness": 0, "conversion": 50, "retargeting": 0 },
+        "total": { "awareness": 0, "conversion": 4670, "retargeting": 0, "installs": 3540, "kycStart": 931, "virtAcc": 20, "costPerVirtAcc": 359, "costPerSignup": 5.0 }
+      }
+    }
+  },
+
+  "realizedCostFeb2026": {
+    "period": "1-28 Feb 2026",
+    "summary": {
+      "TR": { "awareness": 727, "conversion": 34709, "retargeting": 0, "total": 35435 },
+      "NG": { "awareness": 0, "conversion": 12210, "retargeting": 0, "total": 12210 },
+      "EG": { "awareness": 0, "conversion": 9925, "retargeting": 0, "total": 9925 },
+      "grandTotal": { "awareness": 727, "conversion": 56844, "retargeting": 0, "total": 57570 }
+    },
+    "channelBreakdown": {
+      "TR": {
+        "Google": { "awareness": 242, "conversion": 20426, "retargeting": 0 },
+        "Meta": { "awareness": 0, "conversion": 6186, "retargeting": 0 },
+        "AppleSearchAds": { "awareness": 0, "conversion": 1695, "retargeting": 0 },
+        "TikTok": { "awareness": 485, "conversion": 2532, "retargeting": 0 },
+        "Spaze": { "awareness": 0, "conversion": 2750, "retargeting": 0 },
+        "Appnext": { "awareness": 0, "conversion": 1120, "retargeting": 0 },
+        "total": { "awareness": 727, "conversion": 34709, "retargeting": 0 }
+      },
+      "NG": {
+        "Google": { "awareness": 0, "conversion": 8242, "retargeting": 0 },
+        "Meta": { "awareness": 0, "conversion": 1460, "retargeting": 0 },
+        "Spaze": { "awareness": 0, "conversion": 2430, "retargeting": 0 },
+        "Appnext": { "awareness": 0, "conversion": 78, "retargeting": 0 },
+        "total": { "awareness": 0, "conversion": 12210, "retargeting": 0 }
+      },
+      "EG": {
+        "Google": { "awareness": 0, "conversion": 6541, "retargeting": 0 },
+        "Meta": { "awareness": 0, "conversion": 1288, "retargeting": 0 },
+        "TikTok": { "awareness": 0, "conversion": 1299, "retargeting": 0 },
+        "Spaze": { "awareness": 0, "conversion": 513, "retargeting": 0 },
+        "Appnext": { "awareness": 0, "conversion": 284, "retargeting": 0 },
+        "total": { "awareness": 0, "conversion": 9925, "retargeting": 0 }
+      }
+    },
+    "notes": "Feb data shows #DIV/0! for cost-per-metrics — funnel conversion data not yet populated"
+  },
+
+  "marchBudget2026": {
+    "totalBudget": 50000,
+    "effectiveBudget": 42500,
+    "byCountry": {
+      "TR": { "amount": 10000, "share": "23.53%", "note": "version 1 also shows TR at $30k/60% in alternate plan" },
+      "NG": { "amount": 2200, "share": "5.18%" },
+      "EG": { "amount": 8500, "share": "20.00%" },
+      "PK": { "amount": 6000, "share": "14.12%" },
+      "toSpend": { "amount": 15800, "share": "37.18%" }
+    },
+    "objectiveByCountry": {
+      "TR": { "awareness": 14000, "conversion": 7500, "retargeting": 1500, "total": 23000 },
+      "NG": { "awareness": 300, "conversion": 1600, "retargeting": 300, "total": 2200 },
+      "EG": { "awareness": 2300, "conversion": 6200, "retargeting": 0, "total": 8500 },
+      "PK": { "awareness": 1000, "conversion": 5000, "retargeting": 0, "total": 6000 },
+      "total": { "awareness": 17600, "conversion": 20300, "retargeting": 1800, "total": 39700 }
+    },
+    "channelByCountryTR": {
+      "Google": 3750,
+      "Meta": 750,
+      "AppleSearchAds": 2800,
+      "TikTok": 1200,
+      "AffiliateRAFCRM": 3000,
+      "SpazeAppnext": 4500,
+      "InfluencerOther": 4500,
+      "Reddit": 1000,
+      "LinkedIn": 500,
+      "Twitter": 1000,
+      "total": 23000
+    },
+    "channelByCountryNG": {
+      "Google": 310,
+      "Meta": 150,
+      "AffiliateRAFCRM": 300,
+      "InfluencerOther": 1440,
+      "total": 2200
+    },
+    "channelByCountryEG": {
+      "Google": 1500,
+      "Meta": 1500,
+      "TikTok": 2400,
+      "AffiliateRAFCRM": 1000,
+      "AppleSearchAds": 500,
+      "AdNetworks": 600,
+      "InfluencerOther": 1000,
+      "total": 8500
+    },
+    "channelByCountryPK": {
+      "Google": 1000,
+      "Meta": 1000,
+      "TikTok": 1000,
+      "AffiliateRAFCRM": 1000,
+      "InfluencerOther": 2000,
+      "total": 6000
+    },
+    "weeklyPerformanceTR": {
+      "GoogleSearchPmax": { "cost": 401, "cpa": 10, "activations": 40, "targetCPA": 25 },
+      "MetaW2A": { "cost": 560, "cpa": 15, "activations": 37, "targetCPA": 40 },
+      "AppleSearchAds": { "cost": 812, "cpa": 39, "activations": 21, "targetCPA": 25 },
+      "TikTok": { "cost": 350, "cpa": 175, "activations": 2, "targetCPA": 50 },
+      "Spaze": { "cost": 945, "cpa": 30, "activations": 31.5, "targetCPA": 30 },
+      "Appnext": { "cost": 210, "cpa": 70, "activations": 3, "targetCPA": 500 },
+      "GoogleAppAndroid": { "cost": 1400, "cpa": 31, "activations": 45, "targetCPA": 40 },
+      "Twitter": { "cost": 200, "cpa": 29, "activations": 7, "targetCPA": 50 },
+      "total": { "cost": 4878, "avgCPA": 25, "activations": 196 }
+    },
+    "alternateVersion1TRFocus": {
+      "TR": 30000,
+      "NG": 1500,
+      "EG": 16000,
+      "PK": 2500
+    }
+  },
+
+  "janCAC": {
+    "period": "1-26 Jan 2026",
+    "byChannel": {
+      "Apple": { "installs": 423, "kycStart": 172, "virtAcc": 66, "cost": 2370, "cpi": 5.6, "costPerKYC": 13.8, "costPerVirtAcc": 35.9 },
+      "Google": { "installs": 29, "kycStart": 8, "virtAcc": 1, "cost": 0, "cpi": 0, "costPerKYC": 0, "costPerVirtAcc": 0 },
+      "Meta": { "installs": 1251, "kycStart": 638, "virtAcc": 93, "cost": 9215, "cpi": 7.4, "costPerKYC": 14.4, "costPerVirtAcc": 99.1 },
+      "Organic": { "installs": 1177, "kycStart": 585, "virtAcc": 184, "cost": 0 },
+      "Referral": { "installs": 57, "kycStart": 41, "virtAcc": 24, "cost": 860, "cpi": 15.1, "costPerKYC": 21.0, "costPerVirtAcc": 35.8 },
+      "Website": { "installs": 762, "kycStart": 138, "virtAcc": 57, "cost": 9302, "cpi": 12.2, "costPerKYC": 67.4, "costPerVirtAcc": 163.2 }
+    },
+    "grandTotal": {
+      "installs": 3701,
+      "kycStart": 1584,
+      "virtAcc": 426,
+      "cost": 21747,
+      "cpi": 5.9,
+      "costPerKYC": 13.7,
+      "costPerVirtAcc": 51.0
+    },
+    "adjustedFinal": {
+      "Apple": { "installs": 423, "kycStart": 172, "virtAcc": 66, "cost": 2370, "costPerVirtAcc": 35.9 },
+      "RealGoogle": { "installs": 1712, "kycStart": 608, "virtAcc": 179, "cost": 9302, "costPerVirtAcc": 52.1, "note": "includes website paid traffic attributed to Google" },
+      "Meta": { "installs": 1251, "kycStart": 638, "virtAcc": 93, "cost": 9215, "costPerVirtAcc": 99.1 },
+      "Referral": { "installs": 177, "kycStart": 115, "virtAcc": 73, "cost": 860, "costPerVirtAcc": 11.8 },
+      "RealOrganic": { "installs": 136, "kycStart": 49, "virtAcc": 14, "cost": 0 },
+      "grandTotal": { "installs": 3701, "kycStart": 1584, "virtAcc": 426, "cost": 21747, "costPerVirtAcc": 51.0 }
+    },
+    "websiteTrafficSplit": {
+      "paid": "88%",
+      "organic": "12%",
+      "note": "GA-based paid/org ratio applied to website+organic installs"
+    }
+  },
+
+  "performanceBudget": {
+    "december2025": {
+      "TR": { "awareness": 1187.07, "conversion": 12227.48, "retargeting": 796, "total": 14210.55 },
+      "NG": { "awareness": 0, "conversion": 0, "retargeting": 0, "total": 0 },
+      "EG": { "awareness": 0, "conversion": 1882.93, "retargeting": 0, "total": 1882.93 },
+      "total": { "awareness": 1187.07, "conversion": 14110.40, "retargeting": 796, "total": 16093.48 }
+    },
+    "jan1to12_actual": {
+      "TR": { "awareness": 408.64, "conversion": 6287.05, "retargeting": 451, "total": 7146.69 },
+      "NG": { "total": 0 },
+      "EG": { "awareness": 0, "conversion": 575.98, "retargeting": 0, "total": 575.98 },
+      "total": { "awareness": 408.64, "conversion": 6863.02, "retargeting": 451, "total": 7722.67 }
+    },
+    "jan1to12_planned": {
+      "TR": { "awareness": 5000, "conversion": 20000, "retargeting": 1000, "total": 26000 },
+      "NG": { "awareness": 1000, "conversion": 3000, "retargeting": 500, "total": 4500 },
+      "EG": { "awareness": 1000, "conversion": 5000, "retargeting": 0, "total": 6000 },
+      "total": { "awareness": 7000, "conversion": 28000, "retargeting": 1500, "total": 36500 }
+    },
+    "jan1to19_actual": {
+      "TR": { "awareness": 569.88, "conversion": 12400.33, "retargeting": 451, "total": 13421.21 },
+      "NG": { "awareness": 0, "conversion": 1745.21, "retargeting": 0, "total": 1745.21 },
+      "EG": { "awareness": 0, "conversion": 1500.86, "retargeting": 0, "total": 1500.86 },
+      "total": { "awareness": 569.88, "conversion": 15646.40, "retargeting": 451, "total": 16667.29 }
+    },
+    "jan1to19_planned": {
+      "TR": { "awareness": 2000, "conversion": 20000, "retargeting": 1000, "total": 23000 },
+      "NG": { "awareness": 500, "conversion": 3000, "retargeting": 500, "total": 4000 },
+      "EG": { "awareness": 1000, "conversion": 5000, "retargeting": 0, "total": 6000 },
+      "total": { "awareness": 3500, "conversion": 28000, "retargeting": 1500, "total": 33000 }
+    }
+  },
+
+  "subscriptions": {
+    "monthly": {
+      "december2025": 1643,
+      "january2026": 2728,
+      "february2026": 1711,
+      "march2026": 2689
+    },
+    "tools": [
+      { "tool": "CapCut Teams", "team": "All", "owner": "Simge", "paymentType": "Yearly", "jan": 162, "feb": 0, "mar": 0, "yearlyTotal": null },
+      { "tool": "Canva", "team": "All", "owner": "Sena", "paymentType": "Monthly", "jan": 3, "feb": 3, "mar": 0 },
+      { "tool": "Freepik", "team": "All", "owner": "Sena", "paymentType": "Yearly", "yearlyTotal": 316 },
+      { "tool": "Discourse (Forum)", "team": "Brand", "owner": "Simge", "paymentType": "Monthly", "jan": 100, "feb": 100, "mar": 100 },
+      { "tool": "AppsFlyer", "team": "Growth", "owner": "Furkan", "paymentType": "Yearly", "jan": 625, "feb": 625, "mar": 625, "yearlyTotal": 7500 },
+      { "tool": "Wix TR", "team": "Brand", "owner": "Simge", "paymentType": "Monthly", "jan": 9, "feb": 9, "mar": 9 },
+      { "tool": "Wix EN", "team": "Brand", "owner": "Simge", "paymentType": "Monthly", "jan": 3, "feb": 3, "mar": 3 },
+      { "tool": "Supermetrics", "team": "Growth", "owner": "Furkan", "paymentType": "Yearly", "jan": 187, "feb": 187, "mar": 187, "yearlyTotal": 2239 },
+      { "tool": "Vapi", "team": "Growth", "owner": "Buse", "paymentType": "Pay as you go", "jan": 90, "feb": 140, "mar": 120 },
+      { "tool": "Clay", "team": "Growth", "owner": "Buse", "paymentType": "Monthly", "jan": 229, "feb": 349, "mar": 349 },
+      { "tool": "Didlogic (klimonas)", "team": "Growth", "owner": "Buse", "paymentType": "Pay as you go", "jan": 250, "feb": 174, "mar": 231 },
+      { "tool": "Architect", "team": "Growth", "owner": "Sena", "paymentType": "Monthly", "jan": 1000, "feb": 0, "mar": 1000 },
+      { "tool": "Lusha", "team": "Growth", "owner": "Buse", "paymentType": "Monthly", "jan": 65, "feb": 65, "mar": 65, "status": "Passive" },
+      { "tool": "n8n", "team": "All", "owner": "Buse", "paymentType": "Monthly", "jan": 26, "feb": 26, "mar": 26 },
+      { "tool": "zzgtech (SignalSight)", "team": "Growth", "owner": "Buse", "paymentType": "Monthly", "jan": 249, "feb": 249, "mar": 249 },
+      { "tool": "Runway", "team": null, "owner": null, "paymentType": "Monthly", "jan": 0, "feb": 0, "mar": 95 },
+      { "tool": "Lemon Slice", "team": "All", "owner": "Sena", "paymentType": "Monthly", "jan": 8, "feb": 40, "mar": 0 },
+      { "tool": "ElevenLabs", "team": "All", "owner": "Sena", "paymentType": "Monthly", "jan": 6, "feb": 6, "mar": 0 },
+      { "tool": "Higgsfield", "team": "All", "owner": "Sena", "paymentType": null, "jan": 0, "feb": 50, "mar": 0 }
+    ],
+    "majorCosts": {
+      "AppsFlyer": { "monthlyAvg": 625, "yearlyTotal": 7500, "note": "Largest subscription" },
+      "Supermetrics": { "monthlyAvg": 187, "yearlyTotal": 2239 },
+      "Architect": { "monthlyAvg": 500, "note": "Alternating $0/$1000 months" },
+      "Clay": { "monthlyAvg": 309 },
+      "SignalSight": { "monthlyAvg": 249 },
+      "Didlogic": { "monthlyAvg": 218 }
+    }
+  },
+
+  "growthTeamUpdate": {
+    "note": "Tab contains GTM area labels (Cenoa Total, Paid total, Unpaid total) but no numeric data in the CSV export — likely a dashboard/summary view"
+  }
+}

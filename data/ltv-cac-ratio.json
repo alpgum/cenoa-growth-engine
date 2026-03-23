@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-03-21T00:00:00.000Z",
+  "model": {
+    "id": "[028]",
+    "name": "LTV/CAC ratio by country (TR/NG/EG)",
+    "ltvModelSource": "projects/cenoa-performance-marketing/data/ltv-model.json",
+    "cacSource": "projects/cenoa-performance-marketing/data/country-cac.json",
+    "cacPeriodUsed": "2026-03-09_15",
+    "cacMetricUsed": "cp_paid_active_usd_sheet",
+    "notes": [
+      "LTV is per monetization-active user (withdrawal-active), so CAC is matched to sheet-paid_active as closest available proxy.",
+      "NG/EG currently show 0 KYC submit clicks (Amplitude Mar 14–20). Treat NG/EG CAC and ratios as IF-KYC-UNLOCKED; scaling is blocked until KYC works."
+    ]
+  },
+  "assumptions": {
+    "expected_lifetime_months": { "low": 3, "base": 6, "high": 12 },
+    "monthly_gross_profit": {
+      "derivation": "monthly_gross_profit = LTV / expected_lifetime_months (scenario-specific)",
+      "units": "USD per active user per month"
+    },
+    "payback_months": {
+      "formula": "payback_months = CAC_paid_active / monthly_gross_profit"
+    }
+  },
+  "inputs": {
+    "cac_paid_active_usd": {
+      "TR": 864,
+      "NG": 16,
+      "EG": 64
+    },
+    "ltv_usd_per_active_user": {
+      "TR": { "low": 9.0, "base": 72.0, "high": 600.0 },
+      "NG": { "low": 3.6, "base": 28.8, "high": 240.0 },
+      "EG": { "low": 2.7, "base": 21.6, "high": 180.0 }
+    }
+  },
+  "results": {
+    "TR": {
+      "monthly_gross_profit_usd": { "low": 3.0, "base": 12.0, "high": 50.0 },
+      "ltv_cac_ratio": { "low": 0.0104166667, "base": 0.0833333333, "high": 0.6944444444 },
+      "payback_months": { "low": 288.0, "base": 72.0, "high": 17.28 }
+    },
+    "NG": {
+      "monthly_gross_profit_usd": { "low": 1.2, "base": 4.8, "high": 20.0 },
+      "ltv_cac_ratio": { "low": 0.225, "base": 1.8, "high": 15.0 },
+      "payback_months": { "low": 13.3333333333, "base": 3.3333333333, "high": 0.8 },
+      "gating": {
+        "kyc_submit_clicked": 0,
+        "status": "blocked",
+        "note": "0 KYC submit clicks observed (Amplitude Mar 14–20). Treat ratios as hypothetical until KYC is fixed/unblocked."
+      }
+    },
+    "EG": {
+      "monthly_gross_profit_usd": { "low": 0.9, "base": 3.6, "high": 15.0 },
+      "ltv_cac_ratio": { "low": 0.0421875, "base": 0.3375, "high": 2.8125 },
+      "payback_months": { "low": 71.1111111111, "base": 17.7777777778, "high": 4.2666666667 },
+      "gating": {
+        "kyc_submit_clicked": 0,
+        "status": "blocked",
+        "note": "0 KYC submit clicks observed (Amplitude Mar 14–20). Treat ratios as hypothetical until KYC is fixed/unblocked."
+      }
+    }
+  },
+  "warnings": [
+    "Paid CAC uses small weekly denominators (paid_active) and is volatile.",
+    "LTV is parameterized (scenario-based) due to missing withdrawal volumes, net margin, and cohort retention.",
+    "Do not interpret NG/EG payback as achievable until KYC completion is non-zero for new users."
+  ]
+}

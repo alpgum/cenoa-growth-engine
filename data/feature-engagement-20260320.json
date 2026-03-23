@@ -1,0 +1,435 @@
+{
+  "period": "2026-03-14 to 2026-03-20",
+  "metric": "totals",
+  "events": {
+    "Get Paid Opened": {
+      "total": 6872,
+      "top_countries": [
+        {
+          "country": "Turkey",
+          "count": 3223,
+          "pct": 46.9
+        },
+        {
+          "country": "Nigeria",
+          "count": 2415,
+          "pct": 35.1
+        },
+        {
+          "country": "Egypt",
+          "count": 607,
+          "pct": 8.8
+        },
+        {
+          "country": "Ghana",
+          "count": 103,
+          "pct": 1.5
+        },
+        {
+          "country": "Pakistan",
+          "count": 75,
+          "pct": 1.1
+        },
+        {
+          "country": "United States",
+          "count": 65,
+          "pct": 0.9
+        },
+        {
+          "country": "United Kingdom",
+          "count": 54,
+          "pct": 0.8
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 51,
+          "pct": 0.7
+        },
+        {
+          "country": "Cyprus",
+          "count": 41,
+          "pct": 0.6
+        },
+        {
+          "country": "Germany",
+          "count": 33,
+          "pct": 0.5
+        }
+      ],
+      "all_countries": {
+        "Turkey": 3223,
+        "Nigeria": 2415,
+        "Egypt": 607,
+        "Ghana": 103,
+        "Pakistan": 75,
+        "United States": 65,
+        "United Kingdom": 54,
+        "Azerbaijan": 51,
+        "Cyprus": 41,
+        "Germany": 33,
+        "Kenya": 25,
+        "Poland": 20,
+        "United Arab Emirates": 16,
+        "Canada": 15,
+        "Saudi Arabia": 13,
+        "Kosovo": 10,
+        "France": 8,
+        "Ireland": 7,
+        "Netherlands": 6,
+        "Thailand": 6,
+        "Belgium": 5,
+        "Maldives": 5,
+        "Montenegro": 5,
+        "Spain": 5,
+        "Sweden": 5,
+        "Benin": 4,
+        "Greece": 4,
+        "Indonesia": 4,
+        "Serbia": 4,
+        "Georgia": 3,
+        "Hungary": 3,
+        "Portugal": 3,
+        "Romania": 3,
+        "Switzerland": 3,
+        "Kuwait": 2,
+        "Latvia": 2,
+        "Malta": 2,
+        "Russia": 2,
+        "Slovakia": 2,
+        "South Africa": 2,
+        "Albania": 1,
+        "Austria": 1,
+        "Belarus": 1,
+        "Cambodia": 1,
+        "Ethiopia": 1,
+        "Israel": 1,
+        "Italy": 1,
+        "Lithuania": 1,
+        "Philippines": 1,
+        "Singapore": 1,
+        "Togo": 1
+      }
+    },
+    "Money Transfer Clicked on Homepage": {
+      "total": 5853,
+      "top_countries": [
+        {
+          "country": "Turkey",
+          "count": 3227,
+          "pct": 55.1
+        },
+        {
+          "country": "Nigeria",
+          "count": 1855,
+          "pct": 31.7
+        },
+        {
+          "country": "Egypt",
+          "count": 240,
+          "pct": 4.1
+        },
+        {
+          "country": "United States",
+          "count": 88,
+          "pct": 1.5
+        },
+        {
+          "country": "Hungary",
+          "count": 66,
+          "pct": 1.1
+        },
+        {
+          "country": "Germany",
+          "count": 54,
+          "pct": 0.9
+        },
+        {
+          "country": "United Kingdom",
+          "count": 45,
+          "pct": 0.8
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 31,
+          "pct": 0.5
+        },
+        {
+          "country": "South Africa",
+          "count": 25,
+          "pct": 0.4
+        },
+        {
+          "country": "Netherlands",
+          "count": 23,
+          "pct": 0.4
+        }
+      ],
+      "all_countries": {
+        "Turkey": 3227,
+        "Nigeria": 1855,
+        "Egypt": 240,
+        "United States": 88,
+        "Hungary": 66,
+        "Germany": 54,
+        "United Kingdom": 45,
+        "Azerbaijan": 31,
+        "South Africa": 25,
+        "Netherlands": 23,
+        "Cyprus": 19,
+        "Sweden": 18,
+        "Mexico": 16,
+        "United Arab Emirates": 12,
+        "Ghana": 10,
+        "Kenya": 10,
+        "Pakistan": 10,
+        "France": 8,
+        "Belgium": 7,
+        "Italy": 7,
+        "Bulgaria": 6,
+        "Canada": 6,
+        "Indonesia": 6,
+        "Saudi Arabia": 6,
+        "Austria": 5,
+        "Malta": 5,
+        "Thailand": 5,
+        "Vietnam": 5,
+        "Georgia": 4,
+        "Spain": 4,
+        "Poland": 3,
+        "Portugal": 3,
+        "Switzerland": 3,
+        "Ukraine": 3,
+        "Finland": 2,
+        "Norway": 2,
+        "Albania": 1,
+        "Armenia": 1,
+        "Benin": 1,
+        "China": 1,
+        "Kosovo": 1,
+        "Montenegro": 1,
+        "Oman": 1,
+        "Romania": 1,
+        "Russia": 1,
+        "Rwanda": 1,
+        "Serbia": 1,
+        "Singapore": 1,
+        "Taiwan": 1,
+        "Togo": 1
+      }
+    },
+    "Deposit Tapped on Homepage": {
+      "total": 2619,
+      "top_countries": [
+        {
+          "country": "Nigeria",
+          "count": 1185,
+          "pct": 45.2
+        },
+        {
+          "country": "Turkey",
+          "count": 987,
+          "pct": 37.7
+        },
+        {
+          "country": "Egypt",
+          "count": 224,
+          "pct": 8.6
+        },
+        {
+          "country": "Germany",
+          "count": 39,
+          "pct": 1.5
+        },
+        {
+          "country": "United States",
+          "count": 20,
+          "pct": 0.8
+        },
+        {
+          "country": "United Kingdom",
+          "count": 19,
+          "pct": 0.7
+        },
+        {
+          "country": "Cyprus",
+          "count": 16,
+          "pct": 0.6
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 15,
+          "pct": 0.6
+        },
+        {
+          "country": "Pakistan",
+          "count": 13,
+          "pct": 0.5
+        },
+        {
+          "country": "Ghana",
+          "count": 12,
+          "pct": 0.5
+        }
+      ],
+      "all_countries": {
+        "Nigeria": 1185,
+        "Turkey": 987,
+        "Egypt": 224,
+        "Germany": 39,
+        "United States": 20,
+        "United Kingdom": 19,
+        "Cyprus": 16,
+        "Azerbaijan": 15,
+        "Pakistan": 13,
+        "Ghana": 12,
+        "Netherlands": 11,
+        "United Arab Emirates": 10,
+        "South Africa": 8,
+        "Saudi Arabia": 6,
+        "Canada": 4,
+        "Hungary": 4,
+        "Malta": 4,
+        "Poland": 3,
+        "Romania": 3,
+        "Serbia": 3,
+        "Spain": 3,
+        "Bulgaria": 2,
+        "China": 2,
+        "Czech Republic": 2,
+        "Kosovo": 2,
+        "Maldives": 2,
+        "Montenegro": 2,
+        "Albania": 1,
+        "Austria": 1,
+        "Benin": 1,
+        "France": 1,
+        "Georgia": 1,
+        "Ireland": 1,
+        "Israel": 1,
+        "Kenya": 1,
+        "Kuwait": 1,
+        "Latvia": 1,
+        "Malaysia": 1,
+        "Mauritius": 1,
+        "Portugal": 1,
+        "Rwanda": 1,
+        "Sweden": 1,
+        "Thailand": 1,
+        "Togo": 1,
+        "Ukraine": 1
+      }
+    },
+    "Debit Card Tab Visited": {
+      "total": 5599,
+      "top_countries": [
+        {
+          "country": "Turkey",
+          "count": 3394,
+          "pct": 60.6
+        },
+        {
+          "country": "Nigeria",
+          "count": 1095,
+          "pct": 19.6
+        },
+        {
+          "country": "Egypt",
+          "count": 657,
+          "pct": 11.7
+        },
+        {
+          "country": "Pakistan",
+          "count": 51,
+          "pct": 0.9
+        },
+        {
+          "country": "Germany",
+          "count": 45,
+          "pct": 0.8
+        },
+        {
+          "country": "Cyprus",
+          "count": 43,
+          "pct": 0.8
+        },
+        {
+          "country": "United States",
+          "count": 41,
+          "pct": 0.7
+        },
+        {
+          "country": "United Kingdom",
+          "count": 31,
+          "pct": 0.6
+        },
+        {
+          "country": "United Arab Emirates",
+          "count": 29,
+          "pct": 0.5
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 23,
+          "pct": 0.4
+        }
+      ],
+      "all_countries": {
+        "Turkey": 3394,
+        "Nigeria": 1095,
+        "Egypt": 657,
+        "Pakistan": 51,
+        "Germany": 45,
+        "Cyprus": 43,
+        "United States": 41,
+        "United Kingdom": 31,
+        "United Arab Emirates": 29,
+        "Azerbaijan": 23,
+        "Singapore": 17,
+        "Poland": 13,
+        "Thailand": 13,
+        "Taiwan": 12,
+        "Belgium": 9,
+        "Ghana": 9,
+        "Saudi Arabia": 8,
+        "Portugal": 7,
+        "Austria": 6,
+        "Italy": 6,
+        "Kosovo": 6,
+        "Spain": 6,
+        "Benin": 5,
+        "France": 5,
+        "Kenya": 5,
+        "Kuwait": 5,
+        "Georgia": 4,
+        "Hungary": 4,
+        "Ireland": 4,
+        "South Africa": 4,
+        "Sweden": 4,
+        "Switzerland": 4,
+        "Vietnam": 4,
+        "Belarus": 3,
+        "Canada": 3,
+        "Greece": 3,
+        "Montenegro": 3,
+        "Albania": 2,
+        "China": 2,
+        "Finland": 2,
+        "Netherlands": 2,
+        "Romania": 2,
+        "Australia": 1,
+        "Ethiopia": 1,
+        "Indonesia": 1,
+        "Israel": 1,
+        "Latvia": 1,
+        "Maldives": 1,
+        "Serbia": 1,
+        "Ukraine": 1
+      }
+    },
+    "Financial Assistant Opened": {
+      "total": 0,
+      "top_countries": [],
+      "all_countries": {}
+    }
+  }
+}

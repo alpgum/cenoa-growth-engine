@@ -1,0 +1,1661 @@
+{
+  "simple_retention": null,
+  "multi_config": {},
+  "nday": null,
+  "country_retention": null,
+  "segmentation": {
+    "data": {
+      "series": [
+        [
+          806,
+          528,
+          692,
+          997,
+          1921,
+          2122,
+          2446,
+          3724,
+          2039,
+          780,
+          951,
+          960,
+          723
+        ],
+        [
+          180,
+          115,
+          226,
+          288,
+          351,
+          317,
+          287,
+          394,
+          456,
+          265,
+          234,
+          303,
+          212
+        ],
+        [
+          64,
+          77,
+          59,
+          116,
+          254,
+          260,
+          253,
+          588,
+          238,
+          102,
+          110,
+          122,
+          104
+        ],
+        [
+          55,
+          22,
+          50,
+          45,
+          75,
+          133,
+          152,
+          230,
+          169,
+          51,
+          215,
+          103,
+          90
+        ],
+        [
+          4,
+          2,
+          7,
+          3,
+          14,
+          11,
+          6,
+          12,
+          11,
+          3,
+          1,
+          8,
+          2
+        ],
+        [
+          2,
+          1,
+          3,
+          5,
+          2,
+          2,
+          3,
+          6,
+          12,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          7,
+          1,
+          6,
+          1,
+          4,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          8,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          20
+        ],
+        [
+          3,
+          1,
+          4,
+          4,
+          1,
+          0,
+          2,
+          2,
+          2,
+          0,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          1,
+          2,
+          4,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          1,
+          2,
+          1,
+          1,
+          0,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          1,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 18689
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3628
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2347
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1390
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 84
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 41
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 25
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 23
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 23
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 23
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 22
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 15
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 14
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 10
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 9
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 9
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 8
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        "(none)",
+        "Turkey",
+        "Nigeria",
+        "Egypt",
+        "United States",
+        "Germany",
+        "Azerbaijan",
+        "Ghana",
+        "Pakistan",
+        "United Kingdom",
+        "Cyprus",
+        "France",
+        "Netherlands",
+        "United Arab Emirates",
+        "Italy",
+        "Kenya",
+        "Poland",
+        "Spain",
+        "Switzerland",
+        "Canada",
+        "Greece",
+        "Macedonia",
+        "Austria",
+        "Hungary",
+        "Albania",
+        "Ireland",
+        "Norway",
+        "Portugal",
+        "Saudi Arabia",
+        "Thailand",
+        "Vietnam",
+        "Belgium",
+        "Brazil",
+        "Georgia",
+        "Iraq",
+        "Latvia",
+        "Mexico",
+        "Romania",
+        "Serbia",
+        "South Africa",
+        "Sweden",
+        "Afghanistan",
+        "Algeria",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Benin",
+        "Bulgaria",
+        "Croatia",
+        "Denmark",
+        "Finland",
+        "Hong Kong",
+        "Israel",
+        "Kazakhstan",
+        "Kosovo",
+        "Lebanon",
+        "Libya",
+        "Lithuania",
+        "Maldives",
+        "Moldova",
+        "Montenegro",
+        "Oman",
+        "Philippines",
+        "Saint Kitts and Nevis",
+        "Singapore",
+        "Slovakia",
+        "Togo",
+        "Tunisia",
+        "Ukraine",
+        "Zimbabwe"
+      ],
+      "xValues": [
+        "2025-12-22",
+        "2025-12-29",
+        "2026-01-05",
+        "2026-01-12",
+        "2026-01-19",
+        "2026-01-26",
+        "2026-02-02",
+        "2026-02-09",
+        "2026-02-16",
+        "2026-02-23",
+        "2026-03-02",
+        "2026-03-09",
+        "2026-03-16"
+      ]
+    },
+    "timeComputed": 1774207618008,
+    "wasCached": false,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": false,
+    "novaRuntime": 238,
+    "novaRequestDuration": 269,
+    "novaCost": 127,
+    "throttleTime": 7,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 345049,
+      "max": 351067,
+      "p50": 346428.3085589925,
+      "p75": 346727.02652370674,
+      "p95": 347190.2940036816,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 12,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "KwH5wahS0u"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774207617747,
+        1774207618016
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "KwH5wahS0u",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": false,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 7,
+        "novaCost": 127,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 269,
+        "novaRuntime": 238,
+        "costMetadata": {
+          "eventsInTimeRange": 11865960,
+          "cpuTime": 224009587
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 224009587,
+      "eventsInTimeRange": 11865960
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  }
+}

@@ -1,0 +1,618 @@
+{
+  "date_range": {
+    "start": "20250314",
+    "end": "20250320"
+  },
+  "generated_at": "2026-03-21T01:18:01.858235",
+  "events": {
+    "[AppsFlyer] Install": {
+      "total": 335,
+      "countries": [
+        {
+          "country": "Turkey",
+          "count": 198,
+          "percentage": 59.1
+        },
+        {
+          "country": "Nigeria",
+          "count": 88,
+          "percentage": 26.27
+        },
+        {
+          "country": "United States",
+          "count": 7,
+          "percentage": 2.09
+        },
+        {
+          "country": "Germany",
+          "count": 6,
+          "percentage": 1.79
+        },
+        {
+          "country": "Netherlands",
+          "count": 4,
+          "percentage": 1.19
+        },
+        {
+          "country": "Cyprus",
+          "count": 3,
+          "percentage": 0.9
+        },
+        {
+          "country": "Czech Republic",
+          "count": 3,
+          "percentage": 0.9
+        },
+        {
+          "country": "Canada",
+          "count": 2,
+          "percentage": 0.6
+        },
+        {
+          "country": "Georgia",
+          "count": 2,
+          "percentage": 0.6
+        },
+        {
+          "country": "Italy",
+          "count": 2,
+          "percentage": 0.6
+        },
+        {
+          "country": "United Kingdom",
+          "count": 2,
+          "percentage": 0.6
+        },
+        {
+          "country": "(none)",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Bahrain",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Egypt",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "France",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Ghana",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Indonesia",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Laos",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Montenegro",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Morocco",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Qatar",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Russia",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Saudi Arabia",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Serbia",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Spain",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Switzerland",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "Ukraine",
+          "count": 1,
+          "percentage": 0.3
+        },
+        {
+          "country": "United Arab Emirates",
+          "count": 1,
+          "percentage": 0.3
+        }
+      ]
+    },
+    "Cenoa sign-up completed": {
+      "total": 991,
+      "countries": [
+        {
+          "country": "(none)",
+          "count": 689,
+          "percentage": 69.53
+        },
+        {
+          "country": "Turkey",
+          "count": 204,
+          "percentage": 20.59
+        },
+        {
+          "country": "Nigeria",
+          "count": 59,
+          "percentage": 5.95
+        },
+        {
+          "country": "Germany",
+          "count": 7,
+          "percentage": 0.71
+        },
+        {
+          "country": "Morocco",
+          "count": 4,
+          "percentage": 0.4
+        },
+        {
+          "country": "Poland",
+          "count": 3,
+          "percentage": 0.3
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Bulgaria",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Ghana",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Ireland",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Netherlands",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Romania",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "United Arab Emirates",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "United States",
+          "count": 2,
+          "percentage": 0.2
+        },
+        {
+          "country": "Canada",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Czech Republic",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "France",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Georgia",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Italy",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Kazakhstan",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Pakistan",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "Qatar",
+          "count": 1,
+          "percentage": 0.1
+        },
+        {
+          "country": "United Kingdom",
+          "count": 1,
+          "percentage": 0.1
+        }
+      ]
+    },
+    "Bridgexyz KYC Component: Submit clicked": {
+      "total": 0,
+      "countries": []
+    },
+    "Withdraw Completed": {
+      "total": 2057,
+      "countries": [
+        {
+          "country": "Nigeria",
+          "count": 989,
+          "percentage": 48.08
+        },
+        {
+          "country": "Turkey",
+          "count": 890,
+          "percentage": 43.27
+        },
+        {
+          "country": "United States",
+          "count": 40,
+          "percentage": 1.94
+        },
+        {
+          "country": "(none)",
+          "count": 24,
+          "percentage": 1.17
+        },
+        {
+          "country": "United Kingdom",
+          "count": 24,
+          "percentage": 1.17
+        },
+        {
+          "country": "Germany",
+          "count": 20,
+          "percentage": 0.97
+        },
+        {
+          "country": "Morocco",
+          "count": 8,
+          "percentage": 0.39
+        },
+        {
+          "country": "Netherlands",
+          "count": 8,
+          "percentage": 0.39
+        },
+        {
+          "country": "Israel",
+          "count": 6,
+          "percentage": 0.29
+        },
+        {
+          "country": "Kyrgyzstan",
+          "count": 5,
+          "percentage": 0.24
+        },
+        {
+          "country": "Spain",
+          "count": 5,
+          "percentage": 0.24
+        },
+        {
+          "country": "France",
+          "count": 4,
+          "percentage": 0.19
+        },
+        {
+          "country": "Poland",
+          "count": 4,
+          "percentage": 0.19
+        },
+        {
+          "country": "United Arab Emirates",
+          "count": 4,
+          "percentage": 0.19
+        },
+        {
+          "country": "Ghana",
+          "count": 3,
+          "percentage": 0.15
+        },
+        {
+          "country": "Hong Kong",
+          "count": 3,
+          "percentage": 0.15
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 2,
+          "percentage": 0.1
+        },
+        {
+          "country": "Cyprus",
+          "count": 2,
+          "percentage": 0.1
+        },
+        {
+          "country": "Czech Republic",
+          "count": 2,
+          "percentage": 0.1
+        },
+        {
+          "country": "Montenegro",
+          "count": 2,
+          "percentage": 0.1
+        },
+        {
+          "country": "Rwanda",
+          "count": 2,
+          "percentage": 0.1
+        },
+        {
+          "country": "Egypt",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Equatorial Guinea",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Estonia",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Gambia",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Indonesia",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Italy",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Mauritius",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Sweden",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Switzerland",
+          "count": 1,
+          "percentage": 0.05
+        },
+        {
+          "country": "Vietnam",
+          "count": 1,
+          "percentage": 0.05
+        }
+      ]
+    },
+    "Deposit Completed": {
+      "total": 1352,
+      "countries": [
+        {
+          "country": "Turkey",
+          "count": 662,
+          "percentage": 48.96
+        },
+        {
+          "country": "Nigeria",
+          "count": 545,
+          "percentage": 40.31
+        },
+        {
+          "country": "United Kingdom",
+          "count": 25,
+          "percentage": 1.85
+        },
+        {
+          "country": "United States",
+          "count": 22,
+          "percentage": 1.63
+        },
+        {
+          "country": "Germany",
+          "count": 19,
+          "percentage": 1.41
+        },
+        {
+          "country": "(none)",
+          "count": 16,
+          "percentage": 1.18
+        },
+        {
+          "country": "Morocco",
+          "count": 9,
+          "percentage": 0.67
+        },
+        {
+          "country": "Netherlands",
+          "count": 6,
+          "percentage": 0.44
+        },
+        {
+          "country": "Gambia",
+          "count": 5,
+          "percentage": 0.37
+        },
+        {
+          "country": "United Arab Emirates",
+          "count": 4,
+          "percentage": 0.3
+        },
+        {
+          "country": "Cyprus",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Hong Kong",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Israel",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Kyrgyzstan",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Rwanda",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Vietnam",
+          "count": 3,
+          "percentage": 0.22
+        },
+        {
+          "country": "Barbados",
+          "count": 2,
+          "percentage": 0.15
+        },
+        {
+          "country": "Ghana",
+          "count": 2,
+          "percentage": 0.15
+        },
+        {
+          "country": "Switzerland",
+          "count": 2,
+          "percentage": 0.15
+        },
+        {
+          "country": "Azerbaijan",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Chile",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Czech Republic",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Denmark",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Egypt",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Equatorial Guinea",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "France",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Italy",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Macedonia",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Poland",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Singapore",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Spain",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Sri Lanka",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Sweden",
+          "count": 1,
+          "percentage": 0.07
+        },
+        {
+          "country": "Zambia",
+          "count": 1,
+          "percentage": 0.07
+        }
+      ]
+    }
+  }
+}

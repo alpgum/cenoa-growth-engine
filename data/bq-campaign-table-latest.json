@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "source": "BigQuery AppsFlyer daily_installs_campaign_tr",
+    "table": "cenoa-marketingdatawarehouse.marketing_appsflyer.daily_installs_campaign_tr",
+    "country": "TR",
+    "dateStart": "2026-02-25",
+    "dateEnd": "2026-03-02",
+    "days": 6,
+    "generatedAt": "2026-03-23T00:47:05.983777+03:00",
+    "bqCoverage": {
+      "minDate": "2026-02-25",
+      "maxDate": "2026-03-02",
+      "distinctDayCount": 6
+    },
+    "costJoin": {
+      "attempted": true,
+      "costRowsFound": 0,
+      "note": "No campaign-level cost source detected in synced sheets; cost_usd/cpi_usd are null."
+    }
+  },
+  "campaigns": [
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "appnext_int",
+      "campaign": "Cenoa_CPI_UA_TR",
+      "installs": 10616,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "byteboost2_int",
+      "campaign": "890668",
+      "installs": 1120,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "byteboost2_int",
+      "campaign": "890670",
+      "installs": 720,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "TR_Meta_web2app_MIX_CVR_Android_AddToCart_012126",
+      "installs": 344,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "cenoa.com",
+      "campaign": "cenoa.com homepage",
+      "installs": 152,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Apple Search Ads",
+      "campaign": "tr_asa_appinstall_brand_exact_all_02.06.2025",
+      "installs": 152,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Eihracat Yıldızları",
+      "campaign": "E-ihracat Yıldızları Home Page",
+      "installs": 120,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "TR_Meta_web2app_MIX_RTGT_AddPaymentInfo_022726_Images",
+      "installs": 112,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "cenoacomtr",
+      "campaign": "cenoa.comtr homepage",
+      "installs": 112,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Apple Search Ads",
+      "campaign": "TR-Discovery-24.10.2025",
+      "installs": 72,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images",
+      "installs": 56,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "googleadwords_int",
+      "campaign": "Google // Cenoa // Search // TR // Pure Brand",
+      "installs": 48,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Apple Search Ads",
+      "campaign": "tr_asa_appinstall_brand_broad_all_02.06.2025",
+      "installs": 48,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Social_instagram",
+      "campaign": "Instagram",
+      "installs": 40,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "af_app_invites",
+      "campaign": "Invite a Friend",
+      "installs": 32,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "TR_Meta_web2app_MIX_CVR_ALL_AddToCart_022326_ExcVisitors",
+      "installs": 32,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Apple Search Ads",
+      "campaign": "tr_asa_appinstall_competitor_all_02.06.2025",
+      "installs": 24,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Apple Search Ads",
+      "campaign": "tr_asa_appinstall_generic_all_02.06.2025",
+      "installs": 24,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "TR_Meta_web2app_MIX_Leads_ALL_012926",
+      "installs": 16,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "zzgtechltmqk_int",
+      "campaign": "none",
+      "installs": 16,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "googleadwords_int",
+      "campaign": "Cenoa // Search // TR // Freelancer // Platform",
+      "installs": 8,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "googleadwords_int",
+      "campaign": "Google // Cenoa // Pmax // TR // E-ihracat // Architect // KYC_Start",
+      "installs": 8,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "Facebook Ads",
+      "campaign": "TR_Meta_App_MIX_CVR_iOS_AddToCart_022526_ExcAppUsers",
+      "installs": 8,
+      "cost_usd": null,
+      "cpi_usd": null
+    },
+    {
+      "country": "TR",
+      "dateStart": "2026-02-25",
+      "dateEnd": "2026-03-02",
+      "dateRange": "2026-02-25..2026-03-02",
+      "media_source": "easyinventory",
+      "campaign": "easyinventory-payin",
+      "installs": 8,
+      "cost_usd": null,
+      "cpi_usd": null
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "Google Search": {
+    "installs": 54,
+    "signups": 13,
+    "withdrawals": 4,
+    "campaigns": [
+      "Cenoa // Search // NG // Architect // Generic // Competitors // Native_Survey_Submitted",
+      "Cenoa // Search // TR // Freelancer // Platform // Signed_Up",
+      "Cenoa // Search // TR // Exporter // Platforms // Signed_Up",
+      "Cenoa // Search // TR // Para Transferi // Rakipler // Payoneer // Competitors // Signed_up",
+      "Google // Cenoa // Search // TR // Pure Brand"
+    ]
+  },
+  "Pmax": {
+    "installs": 4,
+    "signups": 0,
+    "withdrawals": 0,
+    "campaigns": [
+      "architect_pmax_generic"
+    ]
+  },
+  "Apple Search Ads": {
+    "installs": 71,
+    "signups": 21,
+    "withdrawals": 149,
+    "campaigns": [
+      "EG_ASA_Brand_Exact_26.02.2026",
+      "EG_ASA_Competitor_26.02.2026",
+      "tr_asa_appinstall_brand_exact_all_02.06.2025",
+      "tr_asa_appinstall_competitor_all_02.06.2025",
+      "tr_asa_appinstall_brand_broad_all_02.06.2025",
+      "tr_asa_appinstall_generic_all_02.06.2025"
+    ]
+  },
+  "Appnext": {
+    "installs": 273,
+    "signups": 24,
+    "withdrawals": 1,
+    "campaigns": [
+      "Cenoa_CPI_UA_TR"
+    ]
+  },
+  "TikTok": {
+    "installs": 58,
+    "signups": 11,
+    "withdrawals": 0,
+    "campaigns": [
+      "TR_TikTok_web2app_MIX_CVR_ALL_AddPaymentInfo_031526",
+      "TR_TikTok_web2app_MIX_CVR_Android_AddToCart_Carousel_031226",
+      "TR_TikTok_App_MIX_CVR_Android_AddToCart_031726",
+      "TR_TikTok_App_MIX_CVR_iOS_Add To Cart_031726",
+      "TR_TikTok_App_MIX_CVR_iOS_AddToCart_031726",
+      "TR_TikTok_App_MIX_CVR_Android_AddToCart_030926"
+    ]
+  },
+  "Meta": {
+    "installs": 100,
+    "signups": 19,
+    "withdrawals": 20,
+    "campaigns": [
+      "EG_Meta_web2app_MIX_CVR_iOS_AddToCart_031826",
+      "EG_Meta_web2app_MIX_CVR_Android_AddToCart_031826",
+      "Instagram",
+      "TR_Meta_web2app_MIX_RTGT_AddPaymentInfo_022726_Images",
+      "EG_Meta_web2app_MIX_CVR_ALL_AddToWishlist_031826",
+      "NG_Meta_web2app_MIX_CVR_Android_InitiateCheckout_021026",
+      "EG_Meta_web2app_MIX_CVR_iOS_AddToWishlist_030426",
+      "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images",
+      "TR_Meta_web2app_CVR_Android_AddToCart_012426",
+      "TR_Meta_web2app_MIX_CVR_Android_AddToCart_012126",
+      "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_Test_031826",
+      "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_030426",
+      "EG_Meta_web2app_MIX_CVR_Android_AddToWishlist_030326"
+    ]
+  },
+  "Referral": {
+    "installs": 7,
+    "signups": 3,
+    "withdrawals": 13,
+    "campaigns": [
+      "Invite a Friend"
+    ]
+  },
+  "Organic": {
+    "installs": 632,
+    "signups": 77,
+    "withdrawals": 488,
+    "campaigns": [
+      "N/A"
+    ]
+  },
+  "Architect": {
+    "installs": 69,
+    "signups": 19,
+    "withdrawals": 0,
+    "campaigns": [
+      "architect_nigeria_en_freelancer",
+      "architect_payoneer",
+      "architect_freelancer_upwork",
+      "architect_freelancer_fiverr",
+      "architect_wise-paypal-wu-revolut"
+    ]
+  },
+  "Other": {
+    "installs": 164,
+    "signups": 33,
+    "withdrawals": 196,
+    "campaigns": [
+      "890670",
+      "890661",
+      "1764658987",
+      "890668",
+      "EG_Google_Android_MIX_CVR_SignUp_012226",
+      "E-ihracat Y\u0131ld\u0131zlar\u0131 Home Page",
+      "890662",
+      "1764668627",
+      "TR-Discovery-24.10.2025",
+      "option1-nopayment",
+      "{{campaign.name}}",
+      "NG_Google_iOS_MIX_CVR_NativeSurveySubmitted_020926",
+      "NG_Google_Android_MIX_CVR_SignUp_012226",
+      "1841887441",
+      "cenoa.com homepage",
+      "1831739530",
+      "890671",
+      "1788862343",
+      "Freelancer Auto Pilot Tool",
+      "NG_Google_Android_MIX_CVR_NativeSurveySubmitted_020526",
+      "cenoa.comtr homepage",
+      "cenoacombasla",
+      "120241738375340050"
+    ]
+  },
+  "Unattributed": {
+    "installs": 12,
+    "signups": 988,
+    "withdrawals": 1356,
+    "campaigns": [
+      "none",
+      "(none)"
+    ]
+  }
+}

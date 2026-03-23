@@ -1,0 +1,294 @@
+{
+  "generated_at": "2026-03-22T15:58:02Z",
+  "week": "Mar 14-20, 2026",
+  "inputs": {
+    "cortex": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-cortex/data.json",
+    "anomalies": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-performance-marketing/data/anomalies.json",
+    "campaign_health": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-performance-marketing/data/campaign-health.json",
+    "budget_pacing": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-performance-marketing/data/budget-pacing.json",
+    "country_breakdown": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-performance-marketing/data/country-breakdown-20260320.json"
+  },
+  "actions": [
+    {
+      "rank": 1,
+      "severity": "P0",
+      "owner": "Acquisition",
+      "title": "Cap budgets — overspending monthly pace",
+      "why": "Spend pace at ~159.7% of expected (expected $35,484 vs est. actual $56,658).",
+      "expectedImpact": "Avoid exceeding monthly budget; force reallocation to highest-quality channels.",
+      "evidence": {
+        "source": "budget-pacing.json",
+        "status": "OVERSPENDING",
+        "pace_pct": 159.7,
+        "expected_spend": 35483.87,
+        "actual_spend_estimate": 56657.52,
+        "budget": 50000,
+        "effective_budget": 42500
+      },
+      "score": 169.7
+    },
+    {
+      "rank": 2,
+      "severity": "P0",
+      "owner": "Data",
+      "title": "Diagnose DAU WoW anomaly (↓45.6%)",
+      "why": "DAU changed ↓45.6% vs last week (5683.7 → 3093.6).",
+      "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages).",
+      "evidence": {
+        "source": "anomalies.json",
+        "kpi": "dauAvg",
+        "value": 3093.6,
+        "prev": 5683.7,
+        "deltaPct": -45.6,
+        "severity": "critical"
+      },
+      "score": 145.6
+    },
+    {
+      "rank": 3,
+      "severity": "P0",
+      "owner": "Acquisition",
+      "title": "Pause & audit appnext (fraud pattern)",
+      "why": "1779 installs, 349 signups but only 47 virt_acc (2.6%) — suspicious downstream",
+      "expectedImpact": "Reduce low-quality traffic and protect downstream conversion.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "appnext",
+        "status": "FRAUD",
+        "reason": "1779 installs, 349 signups but only 47 virt_acc (2.6%) — suspicious downstream",
+        "cost": 893,
+        "installs": 1779,
+        "signups": 349,
+        "virt_acc": 47,
+        "new_active": 1,
+        "cpi": 0.5
+      },
+      "score": 129.51
+    },
+    {
+      "rank": 4,
+      "severity": "P0",
+      "owner": "Acquisition",
+      "title": "Pause twitter_ads (DEAD spend)",
+      "why": "$183 spent, 1 installs but 0 signups & 0 activations",
+      "expectedImpact": "Stop wasted spend and reallocate budget to healthy channels.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "twitter_ads",
+        "status": "DEAD",
+        "reason": "$183 spent, 1 installs but 0 signups & 0 activations",
+        "cost": 183,
+        "installs": 1,
+        "signups": 0,
+        "virt_acc": 0,
+        "new_active": 0,
+        "cpi": 183.0
+      },
+      "score": 122.65
+    },
+    {
+      "rank": 5,
+      "severity": "P0",
+      "owner": "Acquisition",
+      "title": "Pause & audit appnext_dsp (fraud pattern)",
+      "why": "113 installs but only 2 signups (1.8% conversion) — fraud pattern",
+      "expectedImpact": "Reduce low-quality traffic and protect downstream conversion.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "appnext_dsp",
+        "status": "FRAUD",
+        "reason": "113 installs but only 2 signups (1.8% conversion) — fraud pattern",
+        "cost": 115,
+        "installs": 113,
+        "signups": 2,
+        "virt_acc": 1,
+        "new_active": 0,
+        "cpi": 1.02
+      },
+      "score": 120.64
+    },
+    {
+      "rank": 6,
+      "severity": "P1",
+      "owner": "Product",
+      "title": "Diagnose KYC Submit WoW anomaly (↓39.7%)",
+      "why": "KYC Submit changed ↓39.7% vs last week (307 → 185).",
+      "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages).",
+      "evidence": {
+        "source": "anomalies.json",
+        "kpi": "kycSubmits",
+        "value": 185,
+        "prev": 307,
+        "deltaPct": -39.7,
+        "severity": "warning"
+      },
+      "score": 109.7
+    },
+    {
+      "rank": 7,
+      "severity": "P1",
+      "owner": "Acquisition",
+      "title": "Diagnose Installs WoW anomaly (↓36.0%)",
+      "why": "Installs changed ↓36.0% vs last week (2274 → 1455).",
+      "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages).",
+      "evidence": {
+        "source": "anomalies.json",
+        "kpi": "installs",
+        "value": 1455,
+        "prev": 2274,
+        "deltaPct": -36.0,
+        "severity": "warning"
+      },
+      "score": 106.0
+    },
+    {
+      "rank": 8,
+      "severity": "P1",
+      "owner": "Product",
+      "title": "Diagnose Virtual Account Opened WoW anomaly (↓31.0%)",
+      "why": "Virtual Account Opened changed ↓31.0% vs last week (632 → 436).",
+      "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages).",
+      "evidence": {
+        "source": "anomalies.json",
+        "kpi": "virtualAccountOpened",
+        "value": 436,
+        "prev": 632,
+        "deltaPct": -31.0,
+        "severity": "warning"
+      },
+      "score": 101.0
+    },
+    {
+      "rank": 9,
+      "severity": "P0",
+      "owner": "Product",
+      "title": "Escalate EG KYC blocked (0 submits)",
+      "why": "EG shows 206 installs / 64 signups but 0 KYC submits in country breakdown.",
+      "expectedImpact": "Unblock onboarding; recover KYC conversion in a priority geo.",
+      "evidence": {
+        "source": "country-breakdown",
+        "iso": "EG",
+        "country_name": "Egypt",
+        "installs": 206,
+        "signups": 64,
+        "kyc_submits": 0,
+        "checklist": [
+          "Verify Bridge widget renders + loads in-app",
+          "Check eligibility/geo restrictions for residents + documents",
+          "Check backend KYC session creation errors",
+          "Confirm tracking events firing (Submit clicked)"
+        ]
+      },
+      "score": 100.0
+    },
+    {
+      "rank": 10,
+      "severity": "P0",
+      "owner": "Product",
+      "title": "Escalate NG KYC blocked (0 submits)",
+      "why": "NG shows 458 installs / 117 signups but 0 KYC submits in country breakdown.",
+      "expectedImpact": "Unblock onboarding; recover KYC conversion in a priority geo.",
+      "evidence": {
+        "source": "country-breakdown",
+        "iso": "NG",
+        "country_name": "Nigeria",
+        "installs": 458,
+        "signups": 117,
+        "kyc_submits": 0,
+        "checklist": [
+          "Verify Bridge widget renders + loads in-app",
+          "Check eligibility/geo restrictions for residents + documents",
+          "Check backend KYC session creation errors",
+          "Confirm tracking events firing (Submit clicked)"
+        ]
+      },
+      "score": 100.0
+    },
+    {
+      "rank": 11,
+      "severity": "P1",
+      "owner": "Acquisition",
+      "title": "Cap/optimize google_app_ios (BLEEDING CPI)",
+      "why": "CPI $24.35 is 5.3× the average ($4.59)",
+      "expectedImpact": "Lower CPI and improve paid efficiency within 48h.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "google_app_ios",
+        "status": "BLEEDING",
+        "reason": "CPI $24.35 is 5.3× the average ($4.59)",
+        "cost": 1510,
+        "installs": 62,
+        "signups": 27,
+        "virt_acc": 14,
+        "new_active": 7,
+        "cpi": 24.35
+      },
+      "score": 100.0
+    },
+    {
+      "rank": 12,
+      "severity": "P1",
+      "owner": "Acquisition",
+      "title": "Cap/optimize tiktok_web2app (BLEEDING CPI)",
+      "why": "CPI $10.31 is 2.2× the average ($4.59)",
+      "expectedImpact": "Lower CPI and improve paid efficiency within 48h.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "tiktok_web2app",
+        "status": "BLEEDING",
+        "reason": "CPI $10.31 is 2.2× the average ($4.59)",
+        "cost": 1279,
+        "installs": 124,
+        "signups": 93,
+        "virt_acc": 57,
+        "new_active": 16,
+        "cpi": 10.31
+      },
+      "score": 100.0
+    },
+    {
+      "rank": 13,
+      "severity": "P1",
+      "owner": "Acquisition",
+      "title": "Cap/optimize onboarding_meta_test (BLEEDING CPI)",
+      "why": "CPI $33.67 is 7.3× the average ($4.59)",
+      "expectedImpact": "Lower CPI and improve paid efficiency within 48h.",
+      "evidence": {
+        "source": "campaign-health.json",
+        "level": "channel",
+        "channel": "onboarding_meta_test",
+        "status": "BLEEDING",
+        "reason": "CPI $33.67 is 7.3× the average ($4.59)",
+        "cost": 101,
+        "installs": 3,
+        "signups": 3,
+        "virt_acc": 4,
+        "new_active": 0,
+        "cpi": 33.67
+      },
+      "score": 90.09
+    },
+    {
+      "rank": 14,
+      "severity": "P2",
+      "owner": "Product",
+      "title": "Diagnose Signups WoW anomaly (↓27.0%)",
+      "why": "Signups changed ↓27.0% vs last week (1671 → 1219).",
+      "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages).",
+      "evidence": {
+        "source": "anomalies.json",
+        "kpi": "signups",
+        "value": 1219,
+        "prev": 1671,
+        "deltaPct": -27.0,
+        "severity": "warning"
+      },
+      "score": 67.0
+    }
+  ]
+}

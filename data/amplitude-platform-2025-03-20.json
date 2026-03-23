@@ -1,0 +1,88 @@
+{
+  "date_range": {
+    "start": "20250314",
+    "end": "20250320"
+  },
+  "generated_at": "2026-03-21T01:19:28.373698",
+  "events": {
+    "[AppsFlyer] Install": {
+      "total": 335,
+      "platforms": [
+        {
+          "platform": "iOS",
+          "count": 335,
+          "percentage": 100.0
+        }
+      ]
+    },
+    "Cenoa sign-up completed": {
+      "total": 991,
+      "platforms": [
+        {
+          "platform": "(none)",
+          "count": 689,
+          "percentage": 69.53
+        },
+        {
+          "platform": "iOS",
+          "count": 170,
+          "percentage": 17.15
+        },
+        {
+          "platform": "Android",
+          "count": 130,
+          "percentage": 13.12
+        },
+        {
+          "platform": "Web",
+          "count": 2,
+          "percentage": 0.2
+        }
+      ]
+    },
+    "Bridgexyz KYC Component: Submit clicked": {
+      "total": 0,
+      "platforms": []
+    },
+    "Withdraw Completed": {
+      "total": 2057,
+      "platforms": [
+        {
+          "platform": "iOS",
+          "count": 1120,
+          "percentage": 54.45
+        },
+        {
+          "platform": "Android",
+          "count": 913,
+          "percentage": 44.39
+        },
+        {
+          "platform": "(none)",
+          "count": 24,
+          "percentage": 1.17
+        }
+      ]
+    },
+    "Deposit Completed": {
+      "total": 1352,
+      "platforms": [
+        {
+          "platform": "iOS",
+          "count": 703,
+          "percentage": 52.0
+        },
+        {
+          "platform": "Android",
+          "count": 633,
+          "percentage": 46.82
+        },
+        {
+          "platform": "(none)",
+          "count": 16,
+          "percentage": 1.18
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENOA GROWTH ENGINE — Architecture</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--surface:#f8f9fa;--surface2:#f0f1f3;--border:#e0e0e0;--accent:#00b85c;--accent-dim:rgba(0,184,92,.08);--accent-glow:rgba(0,184,92,.2);--text:#1a1a1a;--text-dim:#666;--text-bright:#000;--blue:#60a5fa;--blue-dim:rgba(59,130,246,.15);--green:#34d399;--green-dim:rgba(52,211,153,.12);--purple:#c084fc;--purple-dim:rgba(168,85,247,.15);--orange:#fbbf24;--orange-dim:rgba(251,191,36,.12);--gray:#64748b;--gray-dim:rgba(100,116,139,.12)}
+body{background:var(--bg);color:var(--text);font-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#f5f5f5}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+
+header{border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);height:54px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.header-brand{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;letter-spacing:.12em;color:var(--text-dim)}
+.header-brand span{color:var(--accent)}
+.header-pulse{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;margin-right:.4rem;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 6px transparent}}
+.header-nav{display:flex;gap:1.2rem;align-items:center}
+.header-nav a{font-size:.7rem;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:color .2s}
+.header-nav a:hover,.header-nav a.active{color:var(--accent)}
+
+.container{max-width:1400px;margin:0 auto;padding:2rem}
+
+.page-title{text-align:center;padding:3rem 0 1rem}
+.page-title h1{font-size:2rem;font-weight:800;letter-spacing:.1em}
+.page-title h1 .accent{background:linear-gradient(135deg,var(--accent),#00cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-title p{color:var(--text-dim);font-size:.9rem;margin-top:.4rem;letter-spacing:.06em}
+
+/* Legend */
+.legend{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0 2.5rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--text-dim);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.legend-dot{width:10px;height:10px;border-radius:3px}
+.legend-dot.src{background:var(--blue)}
+.legend-dot.proc{background:var(--green)}
+.legend-dot.orch{background:var(--orange)}
+.legend-dot.out{background:var(--purple)}
+
+/* Architecture SVG */
+.arch-wrap{overflow-x:auto;padding:1rem 0}
+.arch-svg{display:block;margin:0 auto}
+
+/* SVG styles */
+.layer-label{font-family:'SF Pro Display',-apple-system,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.box-rect{rx:8;ry:8;stroke-width:1.5}
+.box-label{font-family:'SF Pro Display',-apple-system,sans-serif;font-size:11.5px;font-weight:600;fill:#fff}
+.box-sub{font-family:'SF Pro Display',-apple-system,sans-serif;font-size:9.5px;fill:#999}
+.box-icon{font-size:14px}
+.flow-arrow{stroke-width:1.5;fill:none;marker-end:url(#arrowhead)}
+.flow-arrow-dim{stroke-width:1;fill:none;stroke-dasharray:4,3;opacity:.4}
+.orch-glow{filter:url(#glow)}
+
+/* Footer */
+.footer{text-align:center;padding:3rem 0 2rem;color:#999;font-size:.7rem;letter-spacing:.1em}
+
+@media(max-width:900px){
+  .container{padding:1rem}
+  .header-nav{gap:.6rem}
+  .header-nav a{font-size:.6rem}
+  .page-title h1{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand"><div class="header-pulse"></div>CENOA <span>GROWTH ENGINE</span></div>
+  <nav class="header-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="sprint-1-report.html">Sprint 1</a>
+    <a href="sprint-2-report.html">Sprint 2</a>
+    <a href="architecture.html" class="active">Architecture</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="page-title">
+    <h1>GROWTH ENGINE <span class="accent">ARCHITECTURE</span></h1>
+    <p>Data flow · Processing pipeline · Output layer</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot src"></div>Data Sources</div>
+    <div class="legend-item"><div class="legend-dot proc"></div>Processing</div>
+    <div class="legend-item"><div class="legend-dot orch"></div>Orchestration</div>
+    <div class="legend-item"><div class="legend-dot out"></div>Outputs</div>
+  </div>
+
+  <div class="arch-wrap">
+    <svg class="arch-svg" viewBox="0 0 1200 820" xmlns="http://www.w3.org/2000/svg" width="1200" height="820">
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+        </marker>
+        <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="rgba(52,211,153,.5)"/>
+        </marker>
+        <marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="rgba(168,85,247,.4)"/>
+        </marker>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <linearGradient id="orchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(251,191,36,.15)"/>
+          <stop offset="100%" stop-color="rgba(251,191,36,.05)"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Background grid -->
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      </pattern>
+      <rect width="1200" height="820" fill="url(#grid)"/>
+
+      <!-- ==================== LAYER LABELS ==================== -->
+      <text x="80" y="36" class="layer-label" fill="var(--blue)" text-anchor="middle">Sources</text>
+      <text x="480" y="36" class="layer-label" fill="var(--green)" text-anchor="middle">Processing</text>
+      <text x="480" y="610" class="layer-label" fill="var(--orange)" text-anchor="middle">Orchestration</text>
+      <text x="1020" y="36" class="layer-label" fill="var(--purple)" text-anchor="middle">Outputs</text>
+
+      <!-- ==================== DATA SOURCES (left) ==================== -->
+      <!-- Amplitude -->
+      <rect x="10" y="60" width="180" height="70" class="box-rect" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.4)"/>
+      <text x="28" y="88" class="box-icon">📊</text>
+      <text x="46" y="90" class="box-label" fill="var(--blue)">Amplitude</text>
+      <text x="28" y="108" class="box-sub">Events · Funnels · Retention</text>
+
+      <!-- Google Sheets -->
+      <rect x="10" y="155" width="180" height="70" class="box-rect" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.4)"/>
+      <text x="28" y="183" class="box-icon">📋</text>
+      <text x="46" y="185" class="box-label" fill="var(--blue)">Google Sheets</text>
+      <text x="28" y="203" class="box-sub">Spend · Budget · Campaigns</text>
+
+      <!-- BigQuery -->
+      <rect x="10" y="250" width="180" height="70" class="box-rect" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.4)"/>
+      <text x="28" y="278" class="box-icon">🗄️</text>
+      <text x="46" y="280" class="box-label" fill="var(--blue)">BigQuery</text>
+      <text x="28" y="298" class="box-sub">AppsFlyer Attribution</text>
+
+      <!-- GA4 (blocked) -->
+      <rect x="10" y="345" width="180" height="70" class="box-rect" fill="rgba(100,116,139,.06)" stroke="rgba(100,116,139,.3)" stroke-dasharray="6,4"/>
+      <text x="28" y="373" class="box-icon" opacity=".4">🌐</text>
+      <text x="46" y="375" class="box-label" fill="var(--gray)" opacity=".5">GA4</text>
+      <text x="28" y="393" class="box-sub" opacity=".4">Web traffic · BLOCKED</text>
+      <line x1="15" y1="350" x2="185" y2="410" stroke="rgba(244,63,94,.3)" stroke-width="1.5"/>
+      <line x1="185" y1="350" x2="15" y2="410" stroke="rgba(244,63,94,.3)" stroke-width="1.5"/>
+
+      <!-- ==================== PROCESSING LAYER (middle) ==================== -->
+      <!-- sheets_sync.py -->
+      <rect x="290" y="60" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="82" class="box-icon">⚡</text>
+      <text x="326" y="84" class="box-label" fill="var(--green)">sheets_sync.py</text>
+      <text x="308" y="98" class="box-sub">→ Fresh spend data</text>
+
+      <!-- kpi_auto_update.py -->
+      <rect x="290" y="124" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="146" class="box-icon">📈</text>
+      <text x="326" y="148" class="box-label" fill="var(--green)">kpi_auto_update.py</text>
+      <text x="308" y="162" class="box-sub">→ data.json</text>
+
+      <!-- anomaly_detection.py -->
+      <rect x="290" y="188" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="210" class="box-icon">🚨</text>
+      <text x="326" y="212" class="box-label" fill="var(--green)">anomaly_detection.py</text>
+      <text x="308" y="226" class="box-sub">→ anomalies.json</text>
+
+      <!-- campaign_health_check.py -->
+      <rect x="290" y="252" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="274" class="box-icon">🏥</text>
+      <text x="326" y="276" class="box-label" fill="var(--green)">campaign_health_check.py</text>
+      <text x="308" y="290" class="box-sub">→ campaign-health.json</text>
+
+      <!-- budget_pacing.py -->
+      <rect x="290" y="316" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="338" class="box-icon">💰</text>
+      <text x="326" y="340" class="box-label" fill="var(--green)">budget_pacing.py</text>
+      <text x="308" y="354" class="box-sub">→ budget-pacing.json</text>
+
+      <!-- data_quality_monitor.py -->
+      <rect x="290" y="380" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="402" class="box-icon">✅</text>
+      <text x="326" y="404" class="box-label" fill="var(--green)">data_quality_monitor.py</text>
+      <text x="308" y="418" class="box-sub">→ data-quality.json</text>
+
+      <!-- weekly_actions.py -->
+      <rect x="290" y="444" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="466" class="box-icon">📋</text>
+      <text x="326" y="468" class="box-label" fill="var(--green)">weekly_actions.py</text>
+      <text x="308" y="482" class="box-sub">→ weekly-actions.json</text>
+
+      <!-- weekly_report.py -->
+      <rect x="290" y="508" width="260" height="48" class="box-rect" fill="rgba(52,211,153,.06)" stroke="rgba(52,211,153,.35)"/>
+      <text x="308" y="530" class="box-icon">📬</text>
+      <text x="326" y="532" class="box-label" fill="var(--green)">weekly_report.py</text>
+      <text x="308" y="546" class="box-sub">→ Telegram report</text>
+
+      <!-- ==================== SOURCE → PROCESSING ARROWS ==================== -->
+      <!-- Amplitude → kpi_auto_update, anomaly_detection -->
+      <path d="M190,90 C240,90 240,148 290,148" class="flow-arrow" stroke="rgba(59,130,246,.3)" marker-end="url(#arrowhead)"/>
+      <path d="M190,95 C240,95 240,212 290,212" class="flow-arrow" stroke="rgba(59,130,246,.2)" marker-end="url(#arrowhead)"/>
+
+      <!-- Sheets → sheets_sync, budget_pacing, campaign_health -->
+      <path d="M190,185 C240,185 240,84 290,84" class="flow-arrow" stroke="rgba(59,130,246,.3)" marker-end="url(#arrowhead)"/>
+      <path d="M190,190 C240,190 240,276 290,276" class="flow-arrow" stroke="rgba(59,130,246,.2)" marker-end="url(#arrowhead)"/>
+      <path d="M190,195 C240,195 240,340 290,340" class="flow-arrow" stroke="rgba(59,130,246,.2)" marker-end="url(#arrowhead)"/>
+
+      <!-- BigQuery → kpi_auto_update, campaign_health -->
+      <path d="M190,280 C240,280 240,148 290,148" class="flow-arrow" stroke="rgba(59,130,246,.2)" marker-end="url(#arrowhead)"/>
+      <path d="M190,285 C240,285 240,276 290,276" class="flow-arrow" stroke="rgba(59,130,246,.3)" marker-end="url(#arrowhead)"/>
+
+      <!-- ==================== ORCHESTRATION (center-bottom) ==================== -->
+      <rect x="290" y="630" width="380" height="100" rx="12" ry="12" fill="url(#orchGrad)" stroke="rgba(251,191,36,.4)" stroke-width="2" class="orch-glow"/>
+      <text x="480" y="660" class="box-label" fill="var(--orange)" text-anchor="middle" font-size="13">⚙️  auto_deploy_cortex.sh</text>
+      <text x="480" y="682" class="box-sub" text-anchor="middle" font-size="11" fill="rgba(251,191,36,.7)">Single command — runs entire pipeline</text>
+      <text x="480" y="710" class="box-sub" text-anchor="middle" font-size="10">⏰ launchd: Mon 09:00 TRT (automatic)</text>
+
+      <!-- Orchestration arrows up to processing -->
+      <path d="M420,630 L420,564" class="flow-arrow" stroke="rgba(251,191,36,.3)" marker-end="url(#arrowhead)"/>
+      <path d="M440,630 L440,500" class="flow-arrow" stroke="rgba(251,191,36,.2)" marker-end="url(#arrowhead)"/>
+      <path d="M460,630 L460,436" class="flow-arrow" stroke="rgba(251,191,36,.15)" marker-end="url(#arrowhead)"/>
+      <path d="M480,630 L480,372" class="flow-arrow" stroke="rgba(251,191,36,.15)" marker-end="url(#arrowhead)"/>
+      <path d="M500,630 L500,308" class="flow-arrow" stroke="rgba(251,191,36,.12)" marker-end="url(#arrowhead)"/>
+      <path d="M520,630 L520,244" class="flow-arrow" stroke="rgba(251,191,36,.12)" marker-end="url(#arrowhead)"/>
+      <path d="M540,630 L540,180" class="flow-arrow" stroke="rgba(251,191,36,.1)" marker-end="url(#arrowhead)"/>
+      <text x="575" y="600" class="box-sub" fill="rgba(251,191,36,.5)" font-size="9">TRIGGERS ALL</text>
+      <path d="M560,605 L560,630" stroke="rgba(251,191,36,.2)" stroke-width="1" stroke-dasharray="3,2"/>
+
+      <!-- ==================== OUTPUTS (right) ==================== -->
+      <!-- Growth Engine Dashboard -->
+      <rect x="660" y="60" width="260" height="80" class="box-rect" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.4)"/>
+      <text x="678" y="88" class="box-icon">🖥️</text>
+      <text x="698" y="90" class="box-label" fill="var(--purple)">Growth Engine Dashboard</text>
+      <text x="678" y="108" class="box-sub">cenoa-cortex.vercel.app</text>
+      <text x="678" y="124" class="box-sub">← reads data.json + all JSONs</text>
+
+      <!-- Telegram Weekly Report -->
+      <rect x="660" y="165" width="260" height="70" class="box-rect" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.4)"/>
+      <text x="678" y="193" class="box-icon">📱</text>
+      <text x="698" y="195" class="box-label" fill="var(--purple)">Telegram Weekly Report</text>
+      <text x="678" y="213" class="box-sub">Auto-sent every Monday</text>
+
+      <!-- Sprint Reports -->
+      <rect x="660" y="260" width="260" height="70" class="box-rect" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.4)"/>
+      <text x="678" y="288" class="box-icon">📊</text>
+      <text x="698" y="290" class="box-label" fill="var(--purple)">Sprint Reports</text>
+      <text x="678" y="308" class="box-sub">sprint-1-report · sprint-2-report</text>
+
+      <!-- Analysis Documents -->
+      <rect x="660" y="355" width="260" height="70" class="box-rect" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.4)"/>
+      <text x="678" y="383" class="box-icon">📚</text>
+      <text x="698" y="385" class="box-label" fill="var(--purple)">Analysis Library</text>
+      <text x="678" y="403" class="box-sub">90+ documents · 6 categories</text>
+
+      <!-- ==================== PROCESSING → OUTPUT ARROWS ==================== -->
+      <!-- kpi_auto_update → Dashboard -->
+      <path d="M550,148 C610,148 610,95 660,95" class="flow-arrow" stroke="rgba(52,211,153,.3)" marker-end="url(#arrowG)"/>
+
+      <!-- anomaly → Dashboard -->
+      <path d="M550,212 C610,212 610,105 660,105" class="flow-arrow" stroke="rgba(52,211,153,.2)" marker-end="url(#arrowG)"/>
+
+      <!-- campaign_health → Dashboard -->
+      <path d="M550,276 C610,276 610,115 660,115" class="flow-arrow" stroke="rgba(52,211,153,.15)" marker-end="url(#arrowG)"/>
+
+      <!-- budget_pacing → Dashboard -->
+      <path d="M550,340 C605,340 605,125 660,125" class="flow-arrow" stroke="rgba(52,211,153,.15)" marker-end="url(#arrowG)"/>
+
+      <!-- data_quality → Dashboard -->
+      <path d="M550,404 C615,404 615,130 660,130" class="flow-arrow" stroke="rgba(52,211,153,.1)" marker-end="url(#arrowG)"/>
+
+      <!-- weekly_actions → Dashboard -->
+      <path d="M550,468 C620,468 620,135 660,135" class="flow-arrow" stroke="rgba(52,211,153,.1)" marker-end="url(#arrowG)"/>
+
+      <!-- weekly_report → Telegram -->
+      <path d="M550,532 C610,532 610,195 660,195" class="flow-arrow" stroke="rgba(168,85,247,.3)" marker-end="url(#arrowP)"/>
+
+      <!-- Dashboard connections to sprint reports & docs -->
+      <path d="M790,140 L790,260" class="flow-arrow" stroke="rgba(168,85,247,.15)" marker-end="url(#arrowP)"/>
+      <path d="M800,140 L800,355" class="flow-arrow" stroke="rgba(168,85,247,.1)" marker-end="url(#arrowP)"/>
+
+      <!-- ==================== STATS AT BOTTOM ==================== -->
+      <rect x="660" y="470" width="260" height="90" rx="10" ry="10" fill="rgba(0,255,136,.04)" stroke="rgba(0,255,136,.15)"/>
+      <text x="790" y="498" text-anchor="middle" fill="var(--accent)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="11" font-weight="700" letter-spacing="2">PIPELINE STATS</text>
+      <text x="790" y="520" text-anchor="middle" fill="var(--text-dim)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="10">8 Python scripts · 7 JSON outputs</text>
+      <text x="790" y="536" text-anchor="middle" fill="var(--text-dim)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="10">4 data sources · 4 output channels</text>
+      <text x="790" y="552" text-anchor="middle" fill="var(--text-dim)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="10">1 command to run everything</text>
+
+      <!-- ==================== VERCEL DEPLOY ==================== -->
+      <rect x="960" y="60" width="220" height="60" rx="8" ry="8" fill="rgba(0,255,136,.04)" stroke="rgba(0,255,136,.2)" stroke-dasharray="4,3"/>
+      <text x="1070" y="85" text-anchor="middle" fill="var(--accent)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="10" font-weight="600" letter-spacing="1">▲ VERCEL</text>
+      <text x="1070" y="102" text-anchor="middle" fill="var(--text-dim)" font-family="SF Pro Display,-apple-system,sans-serif" font-size="9">Auto-deploy on git push</text>
+
+      <!-- Dashboard → Vercel -->
+      <path d="M920,95 L955,90" class="flow-arrow" stroke="rgba(0,255,136,.2)" marker-end="url(#arrowG)"/>
+
+      <!-- Git push label -->
+      <text x="1070" y="145" text-anchor="middle" fill="#333" font-family="SF Pro Display,-apple-system,sans-serif" font-size="9" letter-spacing="1">git push → live</text>
+
+    </svg>
+  </div>
+
+</div>
+
+<div class="footer">CENOA GROWTH ENGINE · 2025</div>
+
+</body>
+</html>

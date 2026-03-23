@@ -1,0 +1,242 @@
+{
+  "generatedAt": "2026-03-21T01:40:44.926280",
+  "sources": {
+    "budget_tracking_sheet_id": "1VTZQbRD0gZAABLvgjwlymAx0sQ7vcvMUySsWzLhnFKk",
+    "cac_analysis_sheet_id": "1d743wipSvWEfwwXCmy2J73yCAMNYa-hCb-nTvNf3yHc"
+  },
+  "periods": {
+    "2026-01": {
+      "label": "Jan 2026 (monthly actual spend, Sheets: Budget Tracking)",
+      "countries": {
+        "TR": {
+          "spend_usd": 26235,
+          "installs": 4238,
+          "kyc_start": 2258,
+          "virt_acc": 1895,
+          "cpi_usd": 6.19,
+          "cp_kyc_start_usd": 11.62,
+          "cp_virt_acc_usd": 54
+        },
+        "NG": {
+          "spend_usd": 4647,
+          "installs": 6902,
+          "kyc_start": 3416,
+          "virt_acc": 88,
+          "cpi_usd": 0.67,
+          "cp_kyc_start_usd": 1.36,
+          "cp_virt_acc_usd": 83
+        },
+        "EG": {
+          "spend_usd": 4670,
+          "installs": 3540,
+          "kyc_start": 931,
+          "virt_acc": 20,
+          "cpi_usd": 1.32,
+          "cp_kyc_start_usd": 5.02,
+          "cp_virt_acc_usd": 359
+        }
+      },
+      "confidence": {
+        "spend": 0.9,
+        "installs": 0.8,
+        "kyc_start": 0.7,
+        "virt_acc": 0.6,
+        "signups": 0.2
+      },
+      "notes": [
+        "Budget Tracking export includes installs/kycStart/virtAcc fields at country totals for Jan (definitions may be AppsFlyer/Amplitude blended).",
+        "No reliable sign-up count in this export at country total level for Jan."
+      ]
+    },
+    "2026-02": {
+      "label": "Feb 2026 (monthly actual spend, Sheets: Budget Tracking)",
+      "countries": {
+        "TR": {
+          "spend_usd": 35435
+        },
+        "NG": {
+          "spend_usd": 12210
+        },
+        "EG": {
+          "spend_usd": 9925
+        }
+      },
+      "confidence": {
+        "spend": 0.9,
+        "outcomes": 0.1
+      },
+      "notes": [
+        "Feb sheet export missing populated funnel outcomes (#DIV/0!), so CAC by outcome not computable from this file."
+      ]
+    },
+    "2026-03-01_08": {
+      "label": "1 8 march 26 (weekly actuals, Sheets: CAC Analysis)",
+      "countries": {
+        "TR": {
+          "spend_usd": 3504,
+          "installs": 1635,
+          "signups": 524,
+          "virt_acc_total": 363,
+          "new_active_total": 170,
+          "paid_active": 17,
+          "cpi_usd": 2.14,
+          "cp_signup_usd": 6.69,
+          "cp_virt_acc_usd_sheet": 21,
+          "implied_paid_virt_acc": 166.86,
+          "cp_paid_active_usd_sheet": 210
+        },
+        "NG": {
+          "spend_usd": 1,
+          "installs": 785,
+          "signups": 325,
+          "virt_acc_total": 132,
+          "new_active_total": 13,
+          "paid_active": 9,
+          "cpi_usd": 0.0,
+          "cp_signup_usd": 0.0,
+          "cp_virt_acc_usd_sheet": null,
+          "implied_paid_virt_acc": null,
+          "cp_paid_active_usd_sheet": null
+        },
+        "EG": {
+          "spend_usd": 3951,
+          "installs": 808,
+          "signups": 471,
+          "virt_acc_total": 144,
+          "new_active_total": 50,
+          "paid_active": 37,
+          "cpi_usd": 4.89,
+          "cp_signup_usd": 8.39,
+          "cp_virt_acc_usd_sheet": 10,
+          "implied_paid_virt_acc": 395.1,
+          "cp_paid_active_usd_sheet": 107
+        }
+      },
+      "confidence": {
+        "spend": 0.8,
+        "installs": 0.7,
+        "signups": 0.6,
+        "virt_acc": 0.5,
+        "paid_active": 0.6
+      },
+      "notes": [
+        "CP Active in this sheet is cost / paid_active (not new_active).",
+        "Cost/VirtAcc appears to be computed on a paid-only virtual-account subset; virt_acc_total includes other sources (likely organic/partner)."
+      ]
+    },
+    "2026-03-09_15": {
+      "label": "9 15 march 26 (weekly actuals, Sheets: CAC Analysis)",
+      "countries": {
+        "TR": {
+          "spend_usd": 4320,
+          "installs": 1654,
+          "signups": 652,
+          "virt_acc_total": 413,
+          "new_active_total": 122,
+          "paid_active": 5,
+          "cpi_usd": 2.61,
+          "cp_signup_usd": 6.63,
+          "cp_virt_acc_usd_sheet": 35,
+          "implied_paid_virt_acc": 123.43,
+          "cp_paid_active_usd_sheet": 864
+        },
+        "NG": {
+          "spend_usd": 229,
+          "installs": 660,
+          "signups": 289,
+          "virt_acc_total": 128,
+          "new_active_total": 18,
+          "paid_active": 14,
+          "cpi_usd": 0.35,
+          "cp_signup_usd": 0.79,
+          "cp_virt_acc_usd_sheet": 2,
+          "implied_paid_virt_acc": 114.5,
+          "cp_paid_active_usd_sheet": 16
+        },
+        "EG": {
+          "spend_usd": 1598,
+          "installs": 444,
+          "signups": 232,
+          "virt_acc_total": 73,
+          "new_active_total": 31,
+          "paid_active": 25,
+          "cpi_usd": 3.6,
+          "cp_signup_usd": 6.89,
+          "cp_virt_acc_usd_sheet": 8,
+          "implied_paid_virt_acc": 199.75,
+          "cp_paid_active_usd_sheet": 64
+        }
+      },
+      "confidence": {
+        "spend": 0.8,
+        "installs": 0.7,
+        "signups": 0.6,
+        "virt_acc": 0.5,
+        "paid_active": 0.6
+      },
+      "notes": [
+        "CP Active in this sheet is cost / paid_active (not new_active).",
+        "Cost/VirtAcc appears to be computed on a paid-only virtual-account subset; virt_acc_total includes other sources (likely organic/partner)."
+      ]
+    },
+    "2026-03-01_15": {
+      "label": "Mar 1\u201315 2026 spend summary (Sheets: CAC Analysis)",
+      "countries": {
+        "TR": {
+          "spend_usd": 7824
+        },
+        "EG": {
+          "spend_usd": 5549
+        },
+        "NG": {
+          "spend_usd": null
+        }
+      },
+      "confidence": {
+        "spend": 0.7
+      },
+      "notes": [
+        "Use weekly periods for NG spend; sheet summary only calls out \u201cminimal ~$229\u201d."
+      ]
+    },
+    "2026-03-14_20_amplitude": {
+      "label": "Mar 14\u201320 2026 country outcomes (Amplitude segmentation; event totals)",
+      "countries": {
+        "TR": {
+          "installs": 670,
+          "signups": 226,
+          "kyc_started": 2594,
+          "kyc_submit_clicked": 170,
+          "deposit_completed": 961,
+          "withdraw_completed": 1177
+        },
+        "NG": {
+          "installs": 458,
+          "signups": 117,
+          "kyc_started": 230,
+          "kyc_submit_clicked": 0,
+          "deposit_completed": 448,
+          "withdraw_completed": 778
+        },
+        "EG": {
+          "installs": 206,
+          "signups": 64,
+          "kyc_started": 62,
+          "kyc_submit_clicked": 0,
+          "deposit_completed": 22,
+          "withdraw_completed": 23
+        }
+      },
+      "confidence": {
+        "installs": 0.8,
+        "signups": 0.7,
+        "kyc_submit_clicked": 0.9,
+        "deposit_withdraw": 0.4
+      },
+      "notes": [
+        "Deposit/withdrawal events include returning users; do not treat as cohort conversion for the week.",
+        "KYC started includes existing users."
+      ]
+    }
+  }
+}

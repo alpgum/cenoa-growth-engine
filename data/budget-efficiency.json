@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "generated_at": "2026-03-21T01:46:09",
+    "attribution_window": "2026-03-14..2026-03-20",
+    "spend_proxy_method": "Average weekly spend from Sheets CAC Analysis weeks 1-8 Mar and 9-15 Mar (all countries) used as proxy for 14-20 Mar.",
+    "notes": [
+      "Channel CPI/CPA uses spend proxy + different-week outcomes; downstream uses Sheets virt_acc/new_active.",
+      "Trafik Canavari export exposed only TR Only tab; no Pmax vs Search CTA breakdown available."
+    ]
+  },
+  "channel_rankings": {
+    "cost_per_install": [
+      {
+        "bucket": "Appnext",
+        "value": 1.6355311355311355,
+        "spend_proxy_weekly_usd": 446.5,
+        "volume": 273,
+        "value_label": "cost_per_install",
+        "rank": 1
+      },
+      {
+        "bucket": "Other",
+        "value": 6.1415094339622645,
+        "spend_proxy_weekly_usd": 976.5,
+        "volume": 159,
+        "value_label": "cost_per_install",
+        "rank": 2
+      },
+      {
+        "bucket": "TikTok",
+        "value": 6.959183673469388,
+        "spend_proxy_weekly_usd": 341.0,
+        "volume": 49,
+        "value_label": "cost_per_install",
+        "rank": 3
+      },
+      {
+        "bucket": "Apple Search Ads",
+        "value": 8.006666666666666,
+        "spend_proxy_weekly_usd": 600.5,
+        "volume": 75,
+        "value_label": "cost_per_install",
+        "rank": 4
+      },
+      {
+        "bucket": "Meta",
+        "value": 22.57377049180328,
+        "spend_proxy_weekly_usd": 2754.0,
+        "volume": 122,
+        "value_label": "cost_per_install",
+        "rank": 5
+      },
+      {
+        "bucket": "Google Search",
+        "value": 29.25925925925926,
+        "spend_proxy_weekly_usd": 790.0,
+        "volume": 27,
+        "value_label": "cost_per_install",
+        "rank": 6
+      },
+      {
+        "bucket": "Pmax",
+        "value": 29.833333333333332,
+        "spend_proxy_weekly_usd": 805.5,
+        "volume": 27,
+        "value_label": "cost_per_install",
+        "rank": 7
+      }
+    ],
+    "cost_per_signup": [
+      {
+        "bucket": "Appnext",
+        "value": 18.604166666666668,
+        "spend_proxy_weekly_usd": 446.5,
+        "volume": 24,
+        "value_label": "cost_per_signup",
+        "rank": 1
+      },
+      {
+        "bucket": "Apple Search Ads",
+        "value": 27.295454545454547,
+        "spend_proxy_weekly_usd": 600.5,
+        "volume": 22,
+        "value_label": "cost_per_signup",
+        "rank": 2
+      },
+      {
+        "bucket": "Other",
+        "value": 31.5,
+        "spend_proxy_weekly_usd": 976.5,
+        "volume": 31,
+        "value_label": "cost_per_signup",
+        "rank": 3
+      },
+      {
+        "bucket": "TikTok",
+        "value": 42.625,
+        "spend_proxy_weekly_usd": 341.0,
+        "volume": 8,
+        "value_label": "cost_per_signup",
+        "rank": 4
+      },
+      {
+        "bucket": "Google Search",
+        "value": 112.85714285714286,
+        "spend_proxy_weekly_usd": 790.0,
+        "volume": 7,
+        "value_label": "cost_per_signup",
+        "rank": 5
+      },
+      {
+        "bucket": "Pmax",
+        "value": 115.07142857142857,
+        "spend_proxy_weekly_usd": 805.5,
+        "volume": 7,
+        "value_label": "cost_per_signup",
+        "rank": 6
+      },
+      {
+        "bucket": "Meta",
+        "value": 125.18181818181819,
+        "spend_proxy_weekly_usd": 2754.0,
+        "volume": 22,
+        "value_label": "cost_per_signup",
+        "rank": 7
+      }
+    ],
+    "cost_per_virt_acc": [
+      {
+        "bucket": "TikTok",
+        "value": 6.256880733944954,
+        "spend_proxy_weekly_usd": 341.0,
+        "volume": 54,
+        "value_label": "cost_per_virt_acc",
+        "rank": 1
+      },
+      {
+        "bucket": "Google Search",
+        "value": 6.370967741935484,
+        "spend_proxy_weekly_usd": 790.0,
+        "volume": 124,
+        "value_label": "cost_per_virt_acc",
+        "rank": 2
+      },
+      {
+        "bucket": "Pmax",
+        "value": 9.258620689655173,
+        "spend_proxy_weekly_usd": 805.5,
+        "volume": 87,
+        "value_label": "cost_per_virt_acc",
+        "rank": 3
+      },
+      {
+        "bucket": "Apple Search Ads",
+        "value": 12.01,
+        "spend_proxy_weekly_usd": 600.5,
+        "volume": 50,
+        "value_label": "cost_per_virt_acc",
+        "rank": 4
+      },
+      {
+        "bucket": "Other",
+        "value": 13.657342657342657,
+        "spend_proxy_weekly_usd": 976.5,
+        "volume": 72,
+        "value_label": "cost_per_virt_acc",
+        "rank": 5
+      },
+      {
+        "bucket": "Appnext",
+        "value": 19.0,
+        "spend_proxy_weekly_usd": 446.5,
+        "volume": 24,
+        "value_label": "cost_per_virt_acc",
+        "rank": 6
+      },
+      {
+        "bucket": "Meta",
+        "value": 25.5,
+        "spend_proxy_weekly_usd": 2754.0,
+        "volume": 108,
+        "value_label": "cost_per_virt_acc",
+        "rank": 7
+      }
+    ],
+    "cost_per_active": [
+      {
+        "bucket": "Pmax",
+        "value": 19.178571428571427,
+        "spend_proxy_weekly_usd": 805.5,
+        "volume": 42,
+        "value_label": "cost_per_active",
+        "rank": 1
+      },
+      {
+        "bucket": "Apple Search Ads",
+        "value": 22.660377358490567,
+        "spend_proxy_weekly_usd": 600.5,
+        "volume": 26,
+        "value_label": "cost_per_active",
+        "rank": 2
+      },
+      {
+        "bucket": "Google Search",
+        "value": 25.483870967741936,
+        "spend_proxy_weekly_usd": 790.0,
+        "volume": 31,
+        "value_label": "cost_per_active",
+        "rank": 3
+      },
+      {
+        "bucket": "TikTok",
+        "value": 28.416666666666668,
+        "spend_proxy_weekly_usd": 341.0,
+        "volume": 12,
+        "value_label": "cost_per_active",
+        "rank": 4
+      },
+      {
+        "bucket": "Other",
+        "value": 30.515625,
+        "spend_proxy_weekly_usd": 976.5,
+        "volume": 32,
+        "value_label": "cost_per_active",
+        "rank": 5
+      },
+      {
+        "bucket": "Meta",
+        "value": 82.2089552238806,
+        "spend_proxy_weekly_usd": 2754.0,
+        "volume": 34,
+        "value_label": "cost_per_active",
+        "rank": 6
+      },
+      {
+        "bucket": "Appnext",
+        "value": 893.0,
+        "spend_proxy_weekly_usd": 446.5,
+        "volume": 0,
+        "value_label": "cost_per_active",
+        "rank": 7
+      }
+    ]
+  },
+  "channel_flags": {
+    "low_quality": [
+      {
+        "bucket": "TikTok",
+        "reason": "installs>=20 and withdrawals==0",
+        "installs": 49,
+        "withdrawals": 0
+      },
+      {
+        "bucket": "Appnext",
+        "reason": "cheap CPI + near-zero downstream (new_active=0; withdrawals<=1)",
+        "installs": 273,
+        "withdrawals": 1,
+        "sheet_new_active": 0
+      }
+    ]
+  },
+  "country_rankings": {
+    "period": "2026-03-09_15",
+    "metrics": {
+      "cpi_usd": [
+        {
+          "country": "NG",
+          "value": 0.35,
+          "spend_usd": 229,
+          "rank": 1
+        },
+        {
+          "country": "TR",
+          "value": 2.61,
+          "spend_usd": 4320,
+          "rank": 2
+        },
+        {
+          "country": "EG",
+          "value": 3.6,
+          "spend_usd": 1598,
+          "rank": 3
+        }
+      ],
+      "cp_signup_usd": [
+        {
+          "country": "NG",
+          "value": 0.79,
+          "spend_usd": 229,
+          "rank": 1
+        },
+        {
+          "country": "TR",
+          "value": 6.63,
+          "spend_usd": 4320,
+          "rank": 2
+        },
+        {
+          "country": "EG",
+          "value": 6.89,
+          "spend_usd": 1598,
+          "rank": 3
+        }
+      ],
+      "cp_virt_acc_usd_sheet": [
+        {
+          "country": "NG",
+          "value": 2,
+          "spend_usd": 229,
+          "rank": 1
+        },
+        {
+          "country": "EG",
+          "value": 8,
+          "spend_usd": 1598,
+          "rank": 2
+        },
+        {
+          "country": "TR",
+          "value": 35,
+          "spend_usd": 4320,
+          "rank": 3
+        }
+      ],
+      "cp_paid_active_usd_sheet": [
+        {
+          "country": "NG",
+          "value": 16,
+          "spend_usd": 229,
+          "rank": 1
+        },
+        {
+          "country": "EG",
+          "value": 64,
+          "spend_usd": 1598,
+          "rank": 2
+        },
+        {
+          "country": "TR",
+          "value": 864,
+          "spend_usd": 4320,
+          "rank": 3
+        }
+      ]
+    },
+    "kyc_submit_clicked_amplitude_2026-03-14_20": {
+      "TR": 170,
+      "NG": 0,
+      "EG": 0
+    }
+  },
+  "reallocation_plan": {
+    "channel": {
+      "pause": [
+        "Appnext",
+        "TikTok"
+      ],
+      "freed_weekly_usd": 787.5,
+      "reallocate_weekly_usd": {
+        "Pmax": 500.0,
+        "Google Search": 200.0,
+        "Apple Search Ads": 87.5
+      },
+      "base_paid_total_weekly_usd": 6714.0,
+      "new_paid_total_weekly_usd": 6714.0,
+      "new_weekly_spend_by_channel_usd": {
+        "Google Search": 990.0,
+        "Pmax": 1305.5,
+        "Apple Search Ads": 688.0,
+        "Meta": 2754.0,
+        "Other": 976.5
+      }
+    },
+    "geo": {
+      "move_from_TR_to_NG_EG_percent_of_TR_budget": 10,
+      "split": {
+        "NG": 60,
+        "EG": 40
+      },
+      "guardrails": [
+        "Do not scale NG/EG until KYC submit clicked > 0 in Amplitude.",
+        "Revert test-pool budget if KYC submit stays 0 after 72h post-fix."
+      ],
+      "post_kyc_fix_additional_shift_percent_TR_to_NG_EG": "20-30"
+    }
+  }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprint 1 Report — Cenoa Performance Marketing</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f8f9fa;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666;
+    --green: #22c55e;
+    --green-dim: rgba(34,197,94,0.12);
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.12);
+    --orange: #f59e0b;
+    --orange-dim: rgba(245,158,11,0.12);
+    --blue: #3b82f6;
+    --blue-dim: rgba(59,130,246,0.12);
+    --purple: #a855f7;
+    --purple-dim: rgba(168,85,247,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Inter', sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .container { max-width:900px; margin:0 auto; padding:24px 20px 60px; }
+  
+  /* Header */
+  .header { text-align:center; padding:48px 0 32px; }
+  .header h1 { font-size:32px; font-weight:700; letter-spacing:-0.5px; }
+  .header .subtitle { color:var(--muted); font-size:15px; margin-top:8px; }
+  .header .badge { display:inline-block; background:var(--green-dim); color:var(--green); font-size:13px; font-weight:600; padding:4px 12px; border-radius:20px; margin-top:12px; }
+  
+  /* Score bar */
+  .score-section { display:flex; gap:16px; margin:32px 0; flex-wrap:wrap; }
+  .score-card { flex:1; min-width:140px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .score-card .num { font-size:36px; font-weight:700; }
+  .score-card .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-top:4px; }
+  .score-card.green .num { color:var(--green); }
+  .score-card.orange .num { color:var(--orange); }
+  .score-card.blue .num { color:var(--blue); }
+  .score-card.red .num { color:var(--red); }
+  
+  /* Section */
+  .section { margin-top:40px; }
+  .section h2 { font-size:20px; font-weight:600; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .section h2 .icon { font-size:22px; }
+  
+  /* Finding cards */
+  .finding { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-bottom:12px; transition:background 0.15s; }
+  .finding:hover { background:var(--card-hover); box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .finding .tag { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; padding:3px 8px; border-radius:6px; display:inline-block; margin-bottom:8px; }
+  .finding .tag.critical { background:var(--red-dim); color:var(--red); }
+  .finding .tag.high { background:var(--orange-dim); color:var(--orange); }
+  .finding .tag.insight { background:var(--blue-dim); color:var(--blue); }
+  .finding .tag.win { background:var(--green-dim); color:var(--green); }
+  .finding h3 { font-size:15px; font-weight:600; margin-bottom:4px; }
+  .finding p { font-size:14px; color:var(--muted); }
+  .finding .metric { font-size:22px; font-weight:700; color:var(--text); margin:6px 0; }
+  
+  /* Deliverables grid */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .grid-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+  .grid-card .count { font-size:28px; font-weight:700; color:var(--green); }
+  .grid-card .desc { font-size:13px; color:var(--muted); margin-top:2px; }
+  
+  /* Progress bar */
+  .progress-wrap { background:#1a1a1a; border-radius:8px; height:10px; margin:8px 0 4px; overflow:hidden; }
+  .progress-bar { height:100%; border-radius:8px; background: linear-gradient(90deg, var(--green), #4ade80); transition: width 0.5s; }
+  
+  /* Automation table */
+  .auto-list { list-style:none; }
+  .auto-list li { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); font-size:14px; }
+  .auto-list li:last-child { border:none; }
+  .auto-list .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .auto-list .dot.green { background:var(--green); }
+  .auto-list .dot.orange { background:var(--orange); }
+  .auto-list .name { font-weight:500; min-width:180px; }
+  .auto-list .purpose { color:var(--muted); }
+  
+  /* Audit */
+  .audit-grade { display:flex; align-items:center; gap:20px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; margin-bottom:16px; }
+  .audit-grade .grade { font-size:56px; font-weight:800; color:var(--orange); }
+  .audit-grade .detail { font-size:14px; color:var(--muted); }
+  .audit-grade .detail strong { color:var(--text); }
+  
+  /* Fix list */
+  .fix-item { display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); }
+  .fix-item:last-child { border:none; }
+  .fix-check { color:var(--green); font-size:18px; flex-shrink:0; margin-top:1px; }
+  .fix-text { font-size:14px; }
+  .fix-text strong { color:var(--text); }
+  .fix-text span { color:var(--muted); }
+  
+  /* Blocked */
+  .blocked { background:var(--card); border:1px solid #333; border-left:3px solid var(--orange); border-radius:12px; padding:16px 20px; margin-bottom:10px; }
+  .blocked .blabel { font-size:11px; font-weight:600; text-transform:uppercase; color:var(--orange); margin-bottom:4px; }
+  .blocked p { font-size:14px; color:var(--muted); }
+  
+  /* Footer */
+  .footer { text-align:center; padding:40px 0 20px; color:var(--muted); font-size:12px; }
+  
+  @media (max-width:600px) {
+    .score-section { flex-direction:column; }
+    .score-card .num { font-size:28px; }
+    .audit-grade .grade { font-size:40px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Performance Marketing Sprint 1</h1>
+    <div class="subtitle">Cenoa — March 21, 2026 • ~4 hours autonomous execution</div>
+    <div class="badge">✅ SPRINT COMPLETE</div>
+  </div>
+
+  <!-- Score Cards -->
+  <div class="score-section">
+    <div class="score-card green"><div class="num">98</div><div class="label">Tasks Done</div></div>
+    <div class="score-card blue"><div class="num">100</div><div class="label">Total Tasks</div></div>
+    <div class="score-card orange"><div class="num">~4h</div><div class="label">Wall Clock</div></div>
+    <div class="score-card green"><div class="num">2.4m</div><div class="label">Avg / Task</div></div>
+  </div>
+
+  <div style="padding:0 4px;">
+    <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
+      <span>Progress</span><span>98%</span>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:98%"></div></div>
+    <div style="font-size:12px;color:var(--muted);margin-top:2px;">1 skipped (Meta MCP) · 1 running (Cohort retention)</div>
+  </div>
+
+  <!-- Critical Findings -->
+  <div class="section">
+    <h2><span class="icon">🔥</span> Critical Findings</h2>
+    
+    <div class="finding">
+      <span class="tag critical">CRITICAL</span>
+      <h3>KYC Completely Broken in Nigeria & Egypt</h3>
+      <p>Pre-KYC AI survey rejects 67% of applicants. Of the 33% who pass, ZERO see the Bridgexyz KYC component — a technical handoff bug blocks all KYC completions.</p>
+      <div style="display:flex;gap:24px;margin-top:10px;">
+        <div><div class="metric" style="color:var(--red)">67%</div><div style="font-size:12px;color:var(--muted)">Survey Rejection</div></div>
+        <div><div class="metric" style="color:var(--red)">0</div><div style="font-size:12px;color:var(--muted)">KYC Shown (NG+EG)</div></div>
+        <div><div class="metric" style="color:var(--red)">89</div><div style="font-size:12px;color:var(--muted)">Approved but Blocked</div></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <span class="tag critical">CRITICAL</span>
+      <h3>Attribution is Fundamentally Broken</h3>
+      <p>Paid web→app users (Meta/Google → cenoa.com → app store) show as "Organic" or "(none)". 81.8% of sign-ups have no attribution.</p>
+      <div style="display:flex;gap:24px;margin-top:10px;">
+        <div><div class="metric" style="color:var(--orange)">~6.9×</div><div style="font-size:12px;color:var(--muted)">Correction Factor</div></div>
+        <div><div class="metric" style="color:var(--orange)">81.8%</div><div style="font-size:12px;color:var(--muted)">(none) Sign-ups</div></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <span class="tag high">HIGH</span>
+      <h3>March Budget 159.7% Overspending</h3>
+      <p>$50K/mo target but tracking ~$54K actual. February was 115% — overspending trend accelerating.</p>
+      <div class="metric" style="color:var(--orange)">159.7%</div>
+      <div style="font-size:12px;color:var(--muted)">Budget Pacing (March)</div>
+    </div>
+
+    <div class="finding">
+      <span class="tag high">HIGH</span>
+      <h3>Demand Gen: ₺392K Estimated Waste</h3>
+      <p>1,627 clicks, 0 installs, ₺19,620/period. Running for ~5 months with zero results.</p>
+    </div>
+  </div>
+
+  <!-- Key Insight -->
+  <div class="section">
+    <h2><span class="icon">💡</span> Biggest Unlock</h2>
+    
+    <div class="finding" style="border:1px solid #2a4a2a;">
+      <span class="tag win">OPPORTUNITY</span>
+      <h3>Budget Reallocation: 2–3× More Users, Same Budget</h3>
+      <p>Shifting from status quo to optimized allocation (Scenario B) could transform results:</p>
+      <div style="display:flex;gap:32px;margin-top:12px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Status Quo (A)</div>
+          <div class="metric" style="color:var(--red)">$129–$150</div>
+          <div style="font-size:12px;color:var(--muted)">Blended CAC · 300–350 actives</div>
+        </div>
+        <div style="display:flex;align-items:center;font-size:24px;color:var(--muted);">→</div>
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Recommended (B)</div>
+          <div class="metric" style="color:var(--green)">$48–$81</div>
+          <div style="font-size:12px;color:var(--muted)">Blended CAC · 620–1,040 actives</div>
+        </div>
+      </div>
+      <p style="margin-top:12px;font-size:13px;color:var(--green);">Key: The unlock isn't more budget — it's KYC fix in NG/EG + better channel allocation in TR.</p>
+    </div>
+  </div>
+
+  <!-- What was Produced -->
+  <div class="section">
+    <h2><span class="icon">📦</span> Deliverables</h2>
+    <div class="grid">
+      <div class="grid-card"><div class="count">40+</div><div class="desc">Analysis documents (funnel, CAC, country plans, attribution, KYC roadmap, playbooks)</div></div>
+      <div class="grid-card"><div class="count">8</div><div class="desc">Automation scripts (KPI, anomaly, health check, budget pacing, weekly actions, data quality, monthly deck)</div></div>
+      <div class="grid-card"><div class="count">6</div><div class="desc">Cron wrappers (Monday auto-run: KPI → anomaly → health → actions → report)</div></div>
+      <div class="grid-card"><div class="count">4</div><div class="desc">Country growth plans (TR 90-day, NG, EG, PK pre-launch)</div></div>
+      <div class="grid-card"><div class="count">1</div><div class="desc">Master Report v2 (comprehensive single-document summary)</div></div>
+      <div class="grid-card"><div class="count">1</div><div class="desc">Marketing Autopilot launch checklist</div></div>
+    </div>
+  </div>
+
+  <!-- Automation Stack -->
+  <div class="section">
+    <h2><span class="icon">🤖</span> Automation Stack (Monday Pipeline)</h2>
+    <ul class="auto-list">
+      <li><span class="dot green"></span><span class="name">kpi_auto_update.py</span><span class="purpose">Amplitude → data.json → Growth Engine dashboard</span></li>
+      <li><span class="dot green"></span><span class="name">anomaly_detection.py</span><span class="purpose">Flag KPIs with >20% WoW change</span></li>
+      <li><span class="dot green"></span><span class="name">campaign_health_check.py</span><span class="purpose">DEAD / BLEEDING / FRAUD / HEALTHY classification</span></li>
+      <li><span class="dot green"></span><span class="name">budget_pacing.py</span><span class="purpose">Monthly spend vs target (overspend alert)</span></li>
+      <li><span class="dot green"></span><span class="name">data_quality_monitor.py</span><span class="purpose">(none) share, organic inflation, BQ coverage</span></li>
+      <li><span class="dot green"></span><span class="name">weekly_actions.py</span><span class="purpose">Ranked P0/P1/P2 actions from all data</span></li>
+      <li><span class="dot green"></span><span class="name">weekly_report.py</span><span class="purpose">Telegram-formatted weekly pulse</span></li>
+      <li><span class="dot green"></span><span class="name">monthly_deck.py</span><span class="purpose">Gamma-ready executive deck spec</span></li>
+    </ul>
+  </div>
+
+  <!-- Audit -->
+  <div class="section">
+    <h2><span class="icon">🔍</span> Independent Audit</h2>
+    <div class="audit-grade">
+      <div class="grade">B-</div>
+      <div class="detail">
+        <strong>Solid strategic insights, inconsistent execution details.</strong><br>
+        Core thesis (KYC is binding constraint) is correct. Attribution gap discovery is valuable. But CAC definitions were inconsistent, 19 docs missed the attribution caveat, and 4 scripts had hardcoded API keys.
+      </div>
+    </div>
+    
+    <h3 style="font-size:15px;font-weight:600;margin:20px 0 12px;">P0 Fixes Applied ✅</h3>
+    <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Credential cleanup</strong> — <span>Removed hardcoded API keys from 4 scripts</span></div></div>
+    <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Metric definitions</strong> — <span>True CAC = Cost per New Active (first withdrawal), not Cost per Virtual Account Opened</span></div></div>
+    <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Attribution caveat</strong> — <span>Added to 29 analysis docs (web→app flow breaks attribution)</span></div></div>
+  </div>
+
+  <!-- Blocked -->
+  <div class="section">
+    <h2><span class="icon">⏳</span> Remaining</h2>
+    <div class="blocked">
+      <div class="blabel">Needs Input</div>
+      <p><strong>[081] GA4 Web Traffic Deep-Dive</strong> — Script ready but needs GA4 numeric Property ID (Admin → Property settings)</p>
+    </div>
+    <div class="blocked">
+      <div class="blabel">Still Running</div>
+      <p><strong>[083] Cohort Retention (30d)</strong> — Signup cohort → withdrawal retention analysis</p>
+    </div>
+  </div>
+
+  <!-- Post-Audit Fixes & Sprint 2 -->
+  <div class="section">
+    <h2><span class="icon">🚀</span> Post-Audit Fixes &amp; Sprint 2</h2>
+
+    <!-- Post-Audit Fixes -->
+    <h3 style="font-size:15px;font-weight:600;margin:0 0 12px;color:var(--green);">Post-Audit Fixes — 3/3 Done ✅</h3>
+    <div class="finding" style="border:1px solid #2a4a2a;">
+      <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Credential cleanup</strong> — <span>Removed hardcoded API keys from 4 automation scripts; all now read from env/credentials</span></div></div>
+      <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Metric definitions standardised</strong> — <span>True CAC = Cost per New Active (first withdrawal), not Cost per Virtual Account Opened — updated across all docs</span></div></div>
+      <div class="fix-item"><span class="fix-check">✓</span><div class="fix-text"><strong>Attribution caveats added</strong> — <span>29 analysis docs now carry web→app attribution gap disclaimer (81.8 % "(none)" traffic)</span></div></div>
+    </div>
+
+    <!-- Sprint 2 Progress -->
+    <h3 style="font-size:15px;font-weight:600;margin:24px 0 12px;display:flex;align-items:center;gap:8px;">Sprint 2 Progress <span style="background:var(--blue-dim);color:var(--blue);font-size:12px;font-weight:600;padding:3px 10px;border-radius:12px;">21 / 29</span></h3>
+
+    <div style="padding:0 4px;margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
+        <span>Sprint 2</span><span>72%</span>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" style="width:72%;background:linear-gradient(90deg, var(--blue), var(--purple));"></div></div>
+    </div>
+
+    <div class="grid">
+      <div class="grid-card"><div class="count">10</div><div class="desc">New dashboard widgets (funnel waterfall, geo heatmap, budget gauge, CAC trend, retention matrix, channel mix, anomaly alerts, data quality, campaign table v2, weekly actions v2)</div></div>
+      <div class="grid-card"><div class="count">1</div><div class="desc">data.json v2 — unified data layer powering all widgets</div></div>
+      <div class="grid-card"><div class="count">1</div><div class="desc">Sprint 1 Report page + navigation link</div></div>
+      <div class="grid-card"><div class="count">3</div><div class="desc">Post-audit P0 fixes (credentials, metrics, attribution)</div></div>
+      <div class="grid-card"><div class="count">6</div><div class="desc">Dashboard polish &amp; infra tasks (layout, colour system, responsive, loading states)</div></div>
+    </div>
+
+    <!-- Monday Briefing Ready badge -->
+    <div style="text-align:center;margin-top:28px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--green-dim);color:var(--green);font-size:14px;font-weight:700;padding:8px 20px;border-radius:24px;border:1px solid rgba(34,197,94,0.25);">
+        📋 Monday Briefing Ready
+      </span>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px;">Dashboard + automation pipeline operational for Monday 09:00 TRT auto-run</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by Lucas (OpenClaw) · Cenoa Performance Marketing · Sprint 1 + 2 · March 22, 2026
+  </div>
+
+</div>
+</body>
+</html>

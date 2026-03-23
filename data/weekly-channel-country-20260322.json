@@ -1,0 +1,480 @@
+{
+  "install": {
+    "event_type": "[AppsFlyer] Install",
+    "aggregator": "ms_country",
+    "current_period": "20260315-20260321",
+    "previous_period": "20260308-20260314",
+    "wow": {
+      "Other | EG": {
+        "current": 124,
+        "previous": 204,
+        "delta": -80,
+        "delta_pct": -39.2
+      },
+      "TikTok | TR": {
+        "current": 42,
+        "previous": 34,
+        "delta": 8,
+        "delta_pct": 23.5
+      },
+      "ASA | Other": {
+        "current": 11,
+        "previous": 6,
+        "delta": 5,
+        "delta_pct": 83.3
+      },
+      "Referral | NG": {
+        "current": 1,
+        "previous": 4,
+        "delta": -3,
+        "delta_pct": -75.0
+      },
+      "Other | NG": {
+        "current": 24,
+        "previous": 16,
+        "delta": 8,
+        "delta_pct": 50.0
+      },
+      "Google Search | EG": {
+        "current": 0,
+        "previous": 5,
+        "delta": -5,
+        "delta_pct": -100.0
+      },
+      "Referral | TR": {
+        "current": 5,
+        "previous": 4,
+        "delta": 1,
+        "delta_pct": 25.0
+      },
+      "Other | TR": {
+        "current": 157,
+        "previous": 222,
+        "delta": -65,
+        "delta_pct": -29.3
+      },
+      "Organic | EG": {
+        "current": 113,
+        "previous": 134,
+        "delta": -21,
+        "delta_pct": -15.7
+      },
+      "Appnext | Other": {
+        "current": 1,
+        "previous": 4,
+        "delta": -3,
+        "delta_pct": -75.0
+      },
+      "Google Search | NG": {
+        "current": 31,
+        "previous": 16,
+        "delta": 15,
+        "delta_pct": 93.8
+      },
+      "Organic | NG": {
+        "current": 386,
+        "previous": 550,
+        "delta": -164,
+        "delta_pct": -29.8
+      },
+      "Google Search | TR": {
+        "current": 22,
+        "previous": 15,
+        "delta": 7,
+        "delta_pct": 46.7
+      },
+      "Organic | TR": {
+        "current": 117,
+        "previous": 119,
+        "delta": -2,
+        "delta_pct": -1.7
+      },
+      "ASA | EG": {
+        "current": 17,
+        "previous": 16,
+        "delta": 1,
+        "delta_pct": 6.2
+      },
+      "Other | PK": {
+        "current": 2,
+        "previous": 0,
+        "delta": 2,
+        "delta_pct": 100.0
+      },
+      "TikTok | Other": {
+        "current": 1,
+        "previous": 0,
+        "delta": 1,
+        "delta_pct": 100.0
+      },
+      "Referral | Other": {
+        "current": 0,
+        "previous": 1,
+        "delta": -1,
+        "delta_pct": -100.0
+      },
+      "Other | Other": {
+        "current": 12,
+        "previous": 12,
+        "delta": 0,
+        "delta_pct": 0.0
+      },
+      "ASA | TR": {
+        "current": 51,
+        "previous": 77,
+        "delta": -26,
+        "delta_pct": -33.8
+      },
+      "Organic | PK": {
+        "current": 23,
+        "previous": 2,
+        "delta": 21,
+        "delta_pct": 1050.0
+      },
+      "Google Search | Other": {
+        "current": 2,
+        "previous": 1,
+        "delta": 1,
+        "delta_pct": 100.0
+      },
+      "Appnext | TR": {
+        "current": 163,
+        "previous": 708,
+        "delta": -545,
+        "delta_pct": -77.0
+      },
+      "Organic | Other": {
+        "current": 61,
+        "previous": 84,
+        "delta": -23,
+        "delta_pct": -27.4
+      }
+    },
+    "current_totals": {
+      "Organic | NG": 386,
+      "Appnext | TR": 163,
+      "Other | EG": 124,
+      "Organic | TR": 117,
+      "Organic | EG": 113,
+      "Other | TR": 157,
+      "ASA | TR": 51,
+      "TikTok | TR": 42,
+      "Google Search | NG": 31,
+      "Other | NG": 24,
+      "Google Search | TR": 22,
+      "ASA | EG": 17,
+      "Organic | Other": 61,
+      "Organic | PK": 23,
+      "Referral | TR": 5,
+      "ASA | Other": 11,
+      "Other | PK": 2,
+      "Other | Other": 12,
+      "Referral | NG": 1,
+      "Appnext | Other": 1,
+      "Google Search | Other": 2,
+      "TikTok | Other": 1
+    },
+    "previous_totals": {
+      "Appnext | TR": 708,
+      "Organic | NG": 550,
+      "Organic | EG": 134,
+      "Other | EG": 204,
+      "Organic | TR": 119,
+      "Other | TR": 222,
+      "ASA | TR": 77,
+      "TikTok | TR": 34,
+      "ASA | EG": 16,
+      "Google Search | NG": 16,
+      "Other | NG": 16,
+      "Google Search | TR": 15,
+      "Organic | Other": 84,
+      "Google Search | EG": 5,
+      "Referral | NG": 4,
+      "Referral | TR": 4,
+      "Other | Other": 12,
+      "Appnext | Other": 4,
+      "ASA | Other": 6,
+      "Organic | PK": 2,
+      "Referral | Other": 1,
+      "Google Search | Other": 1
+    }
+  },
+  "signup": {
+    "event_type": "Cenoa sign-up completed",
+    "aggregator": "ms_country",
+    "current_period": "20260315-20260321",
+    "previous_period": "20260308-20260314",
+    "wow": {
+      "Other | EG": {
+        "current": 17,
+        "previous": 22,
+        "delta": -5,
+        "delta_pct": -22.7
+      },
+      "TikTok | TR": {
+        "current": 7,
+        "previous": 12,
+        "delta": -5,
+        "delta_pct": -41.7
+      },
+      "ASA | Other": {
+        "current": 3,
+        "previous": 0,
+        "delta": 3,
+        "delta_pct": 100.0
+      },
+      "Referral | NG": {
+        "current": 1,
+        "previous": 1,
+        "delta": 0,
+        "delta_pct": 0.0
+      },
+      "Other | NG": {
+        "current": 3,
+        "previous": 4,
+        "delta": -1,
+        "delta_pct": -25.0
+      },
+      "Google Search | EG": {
+        "current": 1,
+        "previous": 0,
+        "delta": 1,
+        "delta_pct": 100.0
+      },
+      "Referral | TR": {
+        "current": 2,
+        "previous": 1,
+        "delta": 1,
+        "delta_pct": 100.0
+      },
+      "Other | TR": {
+        "current": 32,
+        "previous": 40,
+        "delta": -8,
+        "delta_pct": -20.0
+      },
+      "Organic | EG": {
+        "current": 48,
+        "previous": 94,
+        "delta": -46,
+        "delta_pct": -48.9
+      },
+      "Google Search | NG": {
+        "current": 3,
+        "previous": 3,
+        "delta": 0,
+        "delta_pct": 0.0
+      },
+      "Organic | NG": {
+        "current": 105,
+        "previous": 136,
+        "delta": -31,
+        "delta_pct": -22.8
+      },
+      "Google Search | TR": {
+        "current": 6,
+        "previous": 9,
+        "delta": -3,
+        "delta_pct": -33.3
+      },
+      "Organic | TR": {
+        "current": 143,
+        "previous": 138,
+        "delta": 5,
+        "delta_pct": 3.6
+      },
+      "ASA | EG": {
+        "current": 7,
+        "previous": 10,
+        "delta": -3,
+        "delta_pct": -30.0
+      },
+      "Other | Other": {
+        "current": 2,
+        "previous": 2,
+        "delta": 0,
+        "delta_pct": 0.0
+      },
+      "ASA | TR": {
+        "current": 17,
+        "previous": 30,
+        "delta": -13,
+        "delta_pct": -43.3
+      },
+      "Organic | PK": {
+        "current": 18,
+        "previous": 1,
+        "delta": 17,
+        "delta_pct": 1700.0
+      },
+      "Appnext | TR": {
+        "current": 16,
+        "previous": 67,
+        "delta": -51,
+        "delta_pct": -76.1
+      },
+      "Organic | Other": {
+        "current": 792,
+        "previous": 1039,
+        "delta": -247,
+        "delta_pct": -23.8
+      }
+    },
+    "current_totals": {
+      "Organic | Other": 792,
+      "Organic | TR": 143,
+      "Organic | NG": 105,
+      "Organic | EG": 48,
+      "ASA | TR": 17,
+      "Other | EG": 17,
+      "Appnext | TR": 16,
+      "Other | TR": 32,
+      "Organic | PK": 18,
+      "ASA | EG": 7,
+      "TikTok | TR": 7,
+      "Google Search | TR": 6,
+      "Google Search | NG": 3,
+      "ASA | Other": 3,
+      "Other | NG": 3,
+      "Referral | TR": 2,
+      "Other | Other": 2,
+      "Referral | NG": 1,
+      "Google Search | EG": 1
+    },
+    "previous_totals": {
+      "Organic | Other": 1039,
+      "Organic | TR": 138,
+      "Organic | NG": 136,
+      "Appnext | TR": 67,
+      "Organic | EG": 94,
+      "ASA | TR": 30,
+      "Other | EG": 22,
+      "Other | TR": 40,
+      "TikTok | TR": 12,
+      "ASA | EG": 10,
+      "Google Search | TR": 9,
+      "Other | NG": 4,
+      "Google Search | NG": 3,
+      "Referral | NG": 1,
+      "Referral | TR": 1,
+      "Other | Other": 2,
+      "Organic | PK": 1
+    }
+  },
+  "kyc_submit": {
+    "event_type": "Bridgexyz KYC Component: Submit clicked",
+    "aggregator": "country",
+    "current_period": "20260315-20260321",
+    "previous_period": "20260308-20260314",
+    "wow": {
+      "TR": {
+        "current": 90,
+        "previous": 124,
+        "delta": -34,
+        "delta_pct": -27.4
+      },
+      "Other": {
+        "current": 6,
+        "previous": 3,
+        "delta": 3,
+        "delta_pct": 100.0
+      }
+    },
+    "current_totals": {
+      "TR": 90,
+      "Other": 6
+    },
+    "previous_totals": {
+      "TR": 124,
+      "Other": 3
+    }
+  },
+  "virtual_account": {
+    "event_type": "Virtual account opened",
+    "aggregator": "country",
+    "current_period": "20260315-20260321",
+    "previous_period": "20260308-20260314",
+    "wow": {
+      "TR": {
+        "current": 208,
+        "previous": 372,
+        "delta": -164,
+        "delta_pct": -44.1
+      },
+      "NG": {
+        "current": 76,
+        "previous": 84,
+        "delta": -8,
+        "delta_pct": -9.5
+      },
+      "Other": {
+        "current": 49,
+        "previous": 48,
+        "delta": 1,
+        "delta_pct": 2.1
+      },
+      "EG": {
+        "current": 22,
+        "previous": 45,
+        "delta": -23,
+        "delta_pct": -51.1
+      }
+    },
+    "current_totals": {
+      "TR": 208,
+      "NG": 76,
+      "EG": 22,
+      "Other": 49
+    },
+    "previous_totals": {
+      "TR": 372,
+      "NG": 84,
+      "EG": 45,
+      "Other": 48
+    }
+  },
+  "new_active": {
+    "event_type": "Withdraw Completed",
+    "aggregator": "country",
+    "current_period": "20260315-20260321",
+    "previous_period": "20260308-20260314",
+    "wow": {
+      "TR": {
+        "current": 568,
+        "previous": 638,
+        "delta": -70,
+        "delta_pct": -11.0
+      },
+      "NG": {
+        "current": 343,
+        "previous": 318,
+        "delta": 25,
+        "delta_pct": 7.9
+      },
+      "Other": {
+        "current": 98,
+        "previous": 111,
+        "delta": -13,
+        "delta_pct": -11.7
+      },
+      "EG": {
+        "current": 19,
+        "previous": 17,
+        "delta": 2,
+        "delta_pct": 11.8
+      }
+    },
+    "current_totals": {
+      "TR": 568,
+      "NG": 343,
+      "EG": 19,
+      "Other": 98
+    },
+    "previous_totals": {
+      "TR": 638,
+      "NG": 318,
+      "Other": 111,
+      "EG": 17
+    }
+  }
+}

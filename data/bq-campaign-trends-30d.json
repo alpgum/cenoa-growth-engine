@@ -1,0 +1,501 @@
+{
+  "generated_at": "2026-03-21T01:23:05.541613+00:00",
+  "sources": {
+    "daily_table": "cenoa-marketingdatawarehouse.marketing_appsflyer.daily_installs_campaign_tr",
+    "weekly_table": "cenoa-marketingdatawarehouse.marketing_appsflyer.weekly_combined_totals",
+    "budget_sheet_export": "/Users/alperengumusdograyan/.openclaw/workspace/projects/cenoa-performance-marketing/data/sheets-budget-tracking.json"
+  },
+  "daily_coverage": {
+    "min_date": "2026-02-25",
+    "max_date": "2026-03-02",
+    "distinct_days": 6,
+    "requested_30d_start": "2026-02-01",
+    "effective_start": "2026-02-25",
+    "effective_end": "2026-03-02",
+    "iso_weeks_present": [
+      "2026-W10",
+      "2026-W09"
+    ],
+    "curr_iso_week": "2026-W10",
+    "prev_iso_week": "2026-W09"
+  },
+  "top_campaigns": [
+    {
+      "campaign": "Cenoa_CPI_UA_TR",
+      "media_source": "appnext_int",
+      "installs_total": 10616,
+      "installs_curr_week": 856,
+      "installs_prev_week": 9760,
+      "wow_pct": -0.9122950819672131,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 10616
+      }
+    },
+    {
+      "campaign": "890668",
+      "media_source": "byteboost2_int",
+      "installs_total": 1120,
+      "installs_curr_week": 48,
+      "installs_prev_week": 1072,
+      "wow_pct": -0.9552238805970149,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 920,
+        "ios": 200
+      }
+    },
+    {
+      "campaign": "890670",
+      "media_source": "byteboost2_int",
+      "installs_total": 720,
+      "installs_curr_week": 48,
+      "installs_prev_week": 672,
+      "wow_pct": -0.9285714285714286,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 600,
+        "ios": 120
+      }
+    },
+    {
+      "campaign": "TR_Meta_web2app_MIX_CVR_Android_AddToCart_012126",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 344,
+      "installs_curr_week": 24,
+      "installs_prev_week": 320,
+      "wow_pct": -0.925,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 344
+      }
+    },
+    {
+      "campaign": "cenoa.com homepage",
+      "media_source": "cenoa.com",
+      "installs_total": 152,
+      "installs_curr_week": 24,
+      "installs_prev_week": 128,
+      "wow_pct": -0.8125,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 120,
+        "ios": 32
+      }
+    },
+    {
+      "campaign": "tr_asa_appinstall_brand_exact_all_02.06.2025",
+      "media_source": "Apple Search Ads",
+      "installs_total": 152,
+      "installs_curr_week": 0,
+      "installs_prev_week": 152,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "ios": 152
+      }
+    },
+    {
+      "campaign": "E-ihracat Yıldızları Home Page",
+      "media_source": "Eihracat Yıldızları",
+      "installs_total": 120,
+      "installs_curr_week": 24,
+      "installs_prev_week": 96,
+      "wow_pct": -0.75,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 96,
+        "ios": 24
+      }
+    },
+    {
+      "campaign": "TR_Meta_web2app_MIX_RTGT_AddPaymentInfo_022726_Images",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 112,
+      "installs_curr_week": 8,
+      "installs_prev_week": 104,
+      "wow_pct": -0.9230769230769231,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 112
+      }
+    },
+    {
+      "campaign": "cenoa.comtr homepage",
+      "media_source": "cenoacomtr",
+      "installs_total": 112,
+      "installs_curr_week": 0,
+      "installs_prev_week": 112,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 80,
+        "ios": 32
+      }
+    },
+    {
+      "campaign": "TR-Discovery-24.10.2025",
+      "media_source": "Apple Search Ads",
+      "installs_total": 72,
+      "installs_curr_week": 0,
+      "installs_prev_week": 72,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "ios": 72
+      }
+    },
+    {
+      "campaign": "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 56,
+      "installs_curr_week": 40,
+      "installs_prev_week": 16,
+      "wow_pct": 1.5,
+      "trend": "UP",
+      "platform_installs": {
+        "android": 56
+      }
+    },
+    {
+      "campaign": "Google // Cenoa // Search // TR // Pure Brand",
+      "media_source": "googleadwords_int",
+      "installs_total": 48,
+      "installs_curr_week": 0,
+      "installs_prev_week": 48,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 40,
+        "ios": 8
+      }
+    },
+    {
+      "campaign": "tr_asa_appinstall_brand_broad_all_02.06.2025",
+      "media_source": "Apple Search Ads",
+      "installs_total": 48,
+      "installs_curr_week": 0,
+      "installs_prev_week": 48,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "ios": 48
+      }
+    },
+    {
+      "campaign": "Instagram",
+      "media_source": "Social_instagram",
+      "installs_total": 40,
+      "installs_curr_week": 0,
+      "installs_prev_week": 40,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 32,
+        "ios": 8
+      }
+    },
+    {
+      "campaign": "Invite a Friend",
+      "media_source": "af_app_invites",
+      "installs_total": 32,
+      "installs_curr_week": 0,
+      "installs_prev_week": 32,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 16,
+        "ios": 16
+      }
+    },
+    {
+      "campaign": "TR_Meta_web2app_MIX_CVR_ALL_AddToCart_022326_ExcVisitors",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 32,
+      "installs_curr_week": 0,
+      "installs_prev_week": 32,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 32
+      }
+    },
+    {
+      "campaign": "tr_asa_appinstall_competitor_all_02.06.2025",
+      "media_source": "Apple Search Ads",
+      "installs_total": 24,
+      "installs_curr_week": 0,
+      "installs_prev_week": 24,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "ios": 24
+      }
+    },
+    {
+      "campaign": "tr_asa_appinstall_generic_all_02.06.2025",
+      "media_source": "Apple Search Ads",
+      "installs_total": 24,
+      "installs_curr_week": 0,
+      "installs_prev_week": 24,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "ios": 24
+      }
+    },
+    {
+      "campaign": "TR_Meta_web2app_MIX_Leads_ALL_012926",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 16,
+      "installs_curr_week": 0,
+      "installs_prev_week": 16,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 16
+      }
+    },
+    {
+      "campaign": "none",
+      "media_source": "zzgtechltmqk_int",
+      "installs_total": 16,
+      "installs_curr_week": 0,
+      "installs_prev_week": 16,
+      "wow_pct": -1.0,
+      "trend": "DOWN",
+      "platform_installs": {
+        "android": 16
+      }
+    }
+  ],
+  "rising_campaigns": [
+    "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images"
+  ],
+  "falling_campaigns": [
+    "tr_asa_appinstall_brand_exact_all_02.06.2025",
+    "cenoa.comtr homepage",
+    "TR-Discovery-24.10.2025",
+    "Google // Cenoa // Search // TR // Pure Brand",
+    "tr_asa_appinstall_brand_broad_all_02.06.2025"
+  ],
+  "splits": {
+    "daily_by_media_source": {
+      "appnext_int": 10616,
+      "byteboost2_int": 1840,
+      "zzgtechltmqk_int": 576,
+      "Apple Search Ads": 320,
+      "cenoa.com": 152,
+      "Eihracat Yıldızları": 120,
+      "cenoacomtr": 112,
+      "googleadwords_int": 64,
+      "Social_instagram": 40,
+      "af_app_invites": 32,
+      "Facebook Ads": 8,
+      "easyinventory": 8
+    },
+    "daily_by_platform": {
+      "android": 13120,
+      "ios": 768
+    },
+    "weekly_weeks_present": [
+      "2026-W12",
+      "2026-W11"
+    ],
+    "weekly_country_totals": {
+      "2026-W12": {
+        "EG": 20,
+        "NG": 41,
+        "TR": 336
+      },
+      "2026-W11": {
+        "EG": 342,
+        "NG": 46,
+        "PK": 2,
+        "TR": 1384
+      }
+    },
+    "weekly_tr_channel_wow": [
+      {
+        "channel_weekly": "AppNext",
+        "channel_plan_key": "SpazeAppnext",
+        "installs_curr_week": 95,
+        "installs_prev_week": 799,
+        "wow_pct": -0.8811013767209012,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "apple_ads",
+        "channel_plan_key": "AppleSearchAds",
+        "installs_curr_week": 20,
+        "installs_prev_week": 70,
+        "wow_pct": -0.7142857142857143,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "google",
+        "channel_plan_key": "Google",
+        "installs_curr_week": 10,
+        "installs_prev_week": 15,
+        "wow_pct": -0.3333333333333333,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "meta",
+        "channel_plan_key": "Meta",
+        "installs_curr_week": 30,
+        "installs_prev_week": 128,
+        "wow_pct": -0.765625,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "other",
+        "channel_plan_key": "InfluencerOther",
+        "installs_curr_week": 90,
+        "installs_prev_week": 164,
+        "wow_pct": -0.45121951219512196,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "partner",
+        "channel_plan_key": "InfluencerOther",
+        "installs_curr_week": 85,
+        "installs_prev_week": 197,
+        "wow_pct": -0.5685279187817259,
+        "trend": "DOWN"
+      },
+      {
+        "channel_weekly": "referral_affi",
+        "channel_plan_key": "AffiliateRAFCRM",
+        "installs_curr_week": 6,
+        "installs_prev_week": 11,
+        "wow_pct": -0.45454545454545453,
+        "trend": "DOWN"
+      }
+    ],
+    "weekly_tr_platform_wow": [
+      {
+        "platform": "android",
+        "installs_curr_week": 240,
+        "installs_prev_week": 1188,
+        "wow_pct": -0.797979797979798,
+        "trend": "DOWN"
+      },
+      {
+        "platform": "ios",
+        "installs_curr_week": 96,
+        "installs_prev_week": 196,
+        "wow_pct": -0.5102040816326531,
+        "trend": "DOWN"
+      }
+    ]
+  },
+  "spend": {
+    "march_tr_plan": {
+      "Google": 3750,
+      "Meta": 750,
+      "AppleSearchAds": 2800,
+      "TikTok": 1200,
+      "AffiliateRAFCRM": 3000,
+      "SpazeAppnext": 4500,
+      "InfluencerOther": 4500,
+      "Reddit": 1000,
+      "LinkedIn": 500,
+      "Twitter": 1000,
+      "total": 23000
+    },
+    "feb_tr_realized": {
+      "Google": {
+        "awareness": 242,
+        "conversion": 20426,
+        "retargeting": 0
+      },
+      "Meta": {
+        "awareness": 0,
+        "conversion": 6186,
+        "retargeting": 0
+      },
+      "AppleSearchAds": {
+        "awareness": 0,
+        "conversion": 1695,
+        "retargeting": 0
+      },
+      "TikTok": {
+        "awareness": 485,
+        "conversion": 2532,
+        "retargeting": 0
+      },
+      "Spaze": {
+        "awareness": 0,
+        "conversion": 2750,
+        "retargeting": 0
+      },
+      "Appnext": {
+        "awareness": 0,
+        "conversion": 1120,
+        "retargeting": 0
+      },
+      "total": {
+        "awareness": 727,
+        "conversion": 34709,
+        "retargeting": 0
+      }
+    }
+  },
+  "misalignment_flags": [
+    {
+      "plan_channel": "SpazeAppnext",
+      "weekly_channel": "AppNext",
+      "planned_budget": 4500,
+      "installs_curr_week": 95,
+      "installs_prev_week": 799,
+      "wow_pct": -0.8811013767209012,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    },
+    {
+      "plan_channel": "AppleSearchAds",
+      "weekly_channel": "apple_ads",
+      "planned_budget": 2800,
+      "installs_curr_week": 20,
+      "installs_prev_week": 70,
+      "wow_pct": -0.7142857142857143,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    },
+    {
+      "plan_channel": "Google",
+      "weekly_channel": "google",
+      "planned_budget": 3750,
+      "installs_curr_week": 10,
+      "installs_prev_week": 15,
+      "wow_pct": -0.3333333333333333,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    },
+    {
+      "plan_channel": "InfluencerOther",
+      "weekly_channel": "other",
+      "planned_budget": 4500,
+      "installs_curr_week": 90,
+      "installs_prev_week": 164,
+      "wow_pct": -0.45121951219512196,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    },
+    {
+      "plan_channel": "InfluencerOther",
+      "weekly_channel": "partner",
+      "planned_budget": 4500,
+      "installs_curr_week": 85,
+      "installs_prev_week": 197,
+      "wow_pct": -0.5685279187817259,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    },
+    {
+      "plan_channel": "AffiliateRAFCRM",
+      "weekly_channel": "referral_affi",
+      "planned_budget": 3000,
+      "installs_curr_week": 6,
+      "installs_prev_week": 11,
+      "wow_pct": -0.45454545454545453,
+      "note": "High planned spend channel shows installs down WoW (weekly table)."
+    }
+  ]
+}

@@ -1,0 +1,1107 @@
+{
+  "[AppsFlyer] Install": {
+    "data": {
+      "series": [
+        [
+          264,
+          216,
+          198,
+          125,
+          129,
+          176,
+          167
+        ],
+        [
+          23,
+          20,
+          19,
+          28,
+          32,
+          33,
+          15
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 1275
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 170
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "iOS"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045368471,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 17,
+    "novaRequestDuration": 55,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 340618,
+      "max": 347610,
+      "p50": 342198.25036333536,
+      "p75": 342574.2369620473,
+      "p95": 343283.1952790994,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 82442,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "yvEvk1jHPb"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045450857,
+        1774045450912
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "yvEvk1jHPb",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 55,
+        "novaRuntime": 17,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 31274337
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 31274337,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 4
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Application first opened": {
+    "data": {
+      "series": [
+        [
+          314,
+          256,
+          232,
+          150,
+          145,
+          197,
+          179
+        ],
+        [
+          64,
+          69,
+          57,
+          84,
+          74,
+          94,
+          43
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 1473
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 485
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "iOS"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045452563,
+    "wasCached": false,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": false,
+    "novaRuntime": 446,
+    "novaRequestDuration": 501,
+    "novaCost": 11,
+    "throttleTime": 9,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 342564,
+      "max": 349702,
+      "p50": 344268.9155412405,
+      "p75": 344648.3902597982,
+      "p95": 345361.30450666073,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 21,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "KeT94KWxNR"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045452073,
+        1774045452574
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "KeT94KWxNR",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": false,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 9,
+        "novaCost": 11,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 501,
+        "novaRuntime": 446,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 30161872
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 30161872,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 4
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Cenoa sign-up completed": {
+    "data": {
+      "series": [
+        [
+          117,
+          140,
+          94,
+          94,
+          87,
+          121,
+          101
+        ],
+        [
+          24,
+          30,
+          38,
+          41,
+          38,
+          42,
+          19
+        ],
+        [
+          40,
+          34,
+          32,
+          29,
+          24,
+          28,
+          34
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 754
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 232
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 221
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "iOS"
+        ],
+        [
+          0,
+          "Android"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045369822,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 4,
+    "novaRequestDuration": 33,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 339969,
+      "max": 346961,
+      "p50": 341548.52035298065,
+      "p75": 341924.11652445764,
+      "p95": 342632.1919472285,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 83935,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "DYuebFqXNG"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045453723,
+        1774045453756
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "DYuebFqXNG",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 33,
+        "novaRuntime": 4,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 27200151
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 4
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 27200151,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 4
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "KYC Started": {
+    "data": {
+      "series": [
+        [
+          201,
+          267,
+          156,
+          245,
+          213,
+          294,
+          341
+        ],
+        [
+          146,
+          84,
+          230,
+          254,
+          308,
+          189,
+          122
+        ],
+        [
+          6,
+          8,
+          3,
+          17,
+          9,
+          3,
+          2
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 1717
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1333
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 48
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "iOS"
+        ],
+        [
+          0,
+          "(none)"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045455465,
+    "wasCached": false,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": false,
+    "novaRuntime": 416,
+    "novaRequestDuration": 464,
+    "novaCost": 11,
+    "throttleTime": 11,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 347466,
+      "max": 354604,
+      "p50": 349170.9155412405,
+      "p75": 349550.3902597982,
+      "p95": 350263.30450666073,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 4,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "nEaaj2kjaL"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045455004,
+        1774045455468
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "nEaaj2kjaL",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": false,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 11,
+        "novaCost": 11,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 464,
+        "novaRuntime": 416,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 29607774
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 2
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 29607774,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 2
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Bridgexyz KYC Component: Submit clicked": {
+    "data": {
+      "series": [
+        [
+          24,
+          38,
+          23,
+          20,
+          13,
+          10,
+          12
+        ],
+        [
+          3,
+          3,
+          6,
+          10,
+          4,
+          7,
+          6
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 140
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 39
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "iOS"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045371245,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 11,
+    "novaRequestDuration": 48,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 363392,
+      "max": 370384,
+      "p50": 364971.52035298065,
+      "p75": 365347.11652445764,
+      "p95": 366055.1919472285,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 85510,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "AcgqQhRXp4"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045456706,
+        1774045456754
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "AcgqQhRXp4",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 48,
+        "novaRuntime": 11,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 23255214
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 2
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 23255214,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 2
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Deposit Completed": {
+    "data": {
+      "series": [
+        [
+          54,
+          27,
+          148,
+          215,
+          123,
+          129,
+          117
+        ],
+        [
+          45,
+          40,
+          124,
+          166,
+          113,
+          114,
+          116
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          2,
+          2,
+          2
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 813
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 718
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 15
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "iOS"
+        ],
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "(none)"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045374113,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 23,
+    "novaRequestDuration": 50,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 353260,
+      "max": 360252,
+      "p50": 354838.9986511694,
+      "p75": 355214.3383124517,
+      "p95": 355922.00076026947,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 83913,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "pMEeLoC0kR"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045457975,
+        1774045458025
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "pMEeLoC0kR",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 50,
+        "novaRuntime": 23,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 28395429
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 28395429,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Withdraw Completed": {
+    "data": {
+      "series": [
+        [
+          155,
+          109,
+          200,
+          246,
+          169,
+          177,
+          131
+        ],
+        [
+          125,
+          80,
+          161,
+          174,
+          184,
+          158,
+          151
+        ],
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 1187
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1033
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "iOS"
+        ],
+        [
+          0,
+          "Android"
+        ],
+        [
+          0,
+          "(none)"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045372883,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 5,
+    "novaRequestDuration": 31,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 332030,
+      "max": 339022,
+      "p50": 333609.21192791045,
+      "p75": 333984.6243769003,
+      "p95": 334692.4001121237,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 86352,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "pcmdvisswt"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045459203,
+        1774045459234
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "pcmdvisswt",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 31,
+        "novaRuntime": 5,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 27908292
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 27908292,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  }
+}

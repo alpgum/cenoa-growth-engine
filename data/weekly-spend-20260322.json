@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "report_period": "2026-03-15 to 2026-03-21",
+    "generated_at": "2026-03-22T18:51:00+03:00",
+    "spend_source": "Sheets CAC Analysis — Mar 9-15 actuals used as best-effort proxy (Mar 15-21 not yet in Sheets)",
+    "amplitude_source": "weekly-channel-country-20260322.json (Mar 15-21 actual)",
+    "caveat": "Spend is ESTIMATED from prior week actuals + weekly budget targets. Amplitude funnel data is actual Mar 15-21. Channel-level virt_acc and new_active are estimated from country totals using prior-week conversion ratios."
+  },
+  "spend_estimate_mar15_21": {
+    "method": "Mar 9-15 Sheets actuals as proxy (best available)",
+    "turkey": {
+      "total": 4320,
+      "channels": {
+        "apple_ads": 500,
+        "appnext": 645,
+        "spaze": 900,
+        "meta_web2app": 485,
+        "tiktok_web2app": 253,
+        "google_web2app": 453,
+        "google_search": 782,
+        "tiktok_android_app": 111,
+        "onboarding_meta_test": 101,
+        "twitter_ads": 90
+      }
+    },
+    "nigeria": {
+      "total": 229,
+      "channels": {
+        "google_search": 229
+      }
+    },
+    "egypt": {
+      "total": 1598,
+      "channels": {
+        "apple_ads": 33,
+        "google_search": 116,
+        "meta_get_paid_test": 637,
+        "meta_ltv_test": 812
+      }
+    },
+    "grand_total": 6147
+  },
+  "alternate_spend_estimate": {
+    "method": "March budget tab weekly performance targets (TR only)",
+    "turkey": {
+      "total": 4878,
+      "channels": {
+        "google_search_pmax": 401,
+        "meta_w2a": 560,
+        "apple_search_ads": 812,
+        "tiktok": 350,
+        "spaze": 945,
+        "appnext": 210,
+        "google_app_android": 1400,
+        "twitter": 200
+      }
+    }
+  },
+  "amplitude_actuals_mar15_21": {
+    "installs_by_channel_country": {
+      "paid": {
+        "Appnext | TR": 163,
+        "ASA | TR": 51,
+        "ASA | EG": 17,
+        "ASA | Other": 11,
+        "Google Search | TR": 22,
+        "Google Search | NG": 31,
+        "Google Search | EG": 0,
+        "Google Search | Other": 2,
+        "TikTok | TR": 42,
+        "TikTok | Other": 1,
+        "Appnext | Other": 1,
+        "Other | TR": 157,
+        "Other | EG": 124,
+        "Other | NG": 24,
+        "Other | PK": 2,
+        "Other | Other": 12
+      },
+      "unpaid": {
+        "Organic | TR": 117,
+        "Organic | EG": 113,
+        "Organic | NG": 386,
+        "Organic | PK": 23,
+        "Organic | Other": 61,
+        "Referral | TR": 5,
+        "Referral | NG": 1
+      }
+    },
+    "signups_by_channel_country": {
+      "paid": {
+        "Appnext | TR": 16,
+        "ASA | TR": 17,
+        "ASA | EG": 7,
+        "ASA | Other": 3,
+        "Google Search | TR": 6,
+        "Google Search | NG": 3,
+        "Google Search | EG": 1,
+        "TikTok | TR": 7,
+        "Other | TR": 32,
+        "Other | EG": 17,
+        "Other | NG": 3,
+        "Other | Other": 2
+      },
+      "unpaid": {
+        "Organic | TR": 143,
+        "Organic | EG": 48,
+        "Organic | NG": 105,
+        "Organic | PK": 18,
+        "Organic | Other": 792,
+        "Referral | TR": 2,
+        "Referral | NG": 1
+      }
+    },
+    "virtual_account_by_country": {
+      "TR": 208,
+      "NG": 76,
+      "EG": 22,
+      "Other": 49
+    },
+    "new_active_by_country": {
+      "note": "Uses 'Withdraw Completed' — includes returning users. NOT same as Sheets 'new_active' (first-time activation). See caveat.",
+      "TR": 568,
+      "NG": 343,
+      "EG": 19,
+      "Other": 98
+    }
+  },
+  "channel_efficiency_estimates": {
+    "note": "CPI and cost/signup use estimated spend + actual Amplitude installs/signups. Virt_acc and new_active channel splits estimated from Sheets Mar 9-15 conversion ratios. 'Other|TR' Amplitude bucket split using Mar 9-15 install proportions.",
+    "turkey": {
+      "apple_ads": {
+        "spend": 500,
+        "installs": 51,
+        "signups": 17,
+        "est_virt_acc": 45,
+        "est_new_active": 19,
+        "cpi": 9.80,
+        "cost_per_signup": 29.41,
+        "cost_per_virt_acc": 11.11,
+        "true_cac": 26.32
+      },
+      "appnext": {
+        "spend": 645,
+        "installs": 163,
+        "signups": 16,
+        "est_virt_acc": 5,
+        "est_new_active": 0,
+        "cpi": 3.96,
+        "cost_per_signup": 40.31,
+        "cost_per_virt_acc": 129.00,
+        "true_cac": null,
+        "flag": "⚠️ SPEND > $100, 0 new_actives (Mar 9-15 also showed 0)"
+      },
+      "spaze": {
+        "spend": 900,
+        "installs": 77,
+        "signups": 12,
+        "est_virt_acc": 30,
+        "est_new_active": 13,
+        "cpi": 11.69,
+        "cost_per_signup": 75.00,
+        "cost_per_virt_acc": 30.00,
+        "true_cac": 69.23
+      },
+      "meta_web2app": {
+        "spend": 485,
+        "installs": 45,
+        "signups": 7,
+        "est_virt_acc": 11,
+        "est_new_active": 2,
+        "cpi": 10.78,
+        "cost_per_signup": 69.29,
+        "cost_per_virt_acc": 44.09,
+        "true_cac": 242.50
+      },
+      "tiktok_total": {
+        "spend": 364,
+        "installs": 42,
+        "signups": 7,
+        "est_virt_acc": 14,
+        "est_new_active": 2,
+        "cpi": 8.67,
+        "cost_per_signup": 52.00,
+        "cost_per_virt_acc": 26.00,
+        "true_cac": 182.00
+      },
+      "google_total": {
+        "spend": 1235,
+        "installs": 56,
+        "signups": 8,
+        "est_virt_acc": 24,
+        "est_new_active": 8,
+        "cpi": 22.05,
+        "cost_per_signup": 154.38,
+        "cost_per_virt_acc": 51.46,
+        "true_cac": 154.38
+      },
+      "twitter_ads": {
+        "spend": 90,
+        "installs": 0,
+        "signups": 0,
+        "est_virt_acc": 0,
+        "est_new_active": 0,
+        "cpi": null,
+        "cost_per_signup": null,
+        "true_cac": null,
+        "note": "Low spend, no attributable installs"
+      },
+      "onboarding_meta_test": {
+        "spend": 101,
+        "installs": 1,
+        "signups": 0,
+        "est_virt_acc": 0,
+        "est_new_active": 0,
+        "cpi": 101.00,
+        "true_cac": null,
+        "flag": "⚠️ SPEND ~$100, effectively 0 new_actives"
+      }
+    },
+    "nigeria": {
+      "google_search": {
+        "spend": 229,
+        "installs": 31,
+        "signups": 3,
+        "est_virt_acc": 10,
+        "est_new_active": 3,
+        "cpi": 7.39,
+        "cost_per_signup": 76.33,
+        "cost_per_virt_acc": 22.90,
+        "true_cac": 76.33
+      }
+    },
+    "egypt": {
+      "apple_ads": {
+        "spend": 33,
+        "installs": 17,
+        "signups": 7,
+        "est_virt_acc": 2,
+        "est_new_active": 2,
+        "cpi": 1.94,
+        "cost_per_signup": 4.71,
+        "cost_per_virt_acc": 16.50,
+        "true_cac": 16.50
+      },
+      "google_search": {
+        "spend": 116,
+        "installs": 0,
+        "signups": 1,
+        "est_virt_acc": 1,
+        "est_new_active": 1,
+        "cpi": null,
+        "cost_per_signup": 116.00,
+        "cost_per_virt_acc": 116.00,
+        "true_cac": 116.00
+      },
+      "meta_combined": {
+        "spend": 1449,
+        "installs": 124,
+        "signups": 17,
+        "est_virt_acc": 8,
+        "est_new_active": 3,
+        "cpi": 11.69,
+        "cost_per_signup": 85.24,
+        "cost_per_virt_acc": 181.13,
+        "true_cac": 483.00
+      }
+    }
+  },
+  "true_cac_ranking": {
+    "note": "Ranked best (lowest) to worst TRUE CAC. Channels with 0 new_actives excluded from ranking.",
+    "ranking": [
+      { "rank": 1, "channel": "Apple Ads (EG)", "true_cac": 16.50, "spend": 33 },
+      { "rank": 2, "channel": "Apple Ads (TR)", "true_cac": 26.32, "spend": 500 },
+      { "rank": 3, "channel": "Spaze (TR)", "true_cac": 69.23, "spend": 900 },
+      { "rank": 4, "channel": "Google Search (NG)", "true_cac": 76.33, "spend": 229 },
+      { "rank": 5, "channel": "Google Search (EG)", "true_cac": 116.00, "spend": 116 },
+      { "rank": 6, "channel": "Google Combined (TR)", "true_cac": 154.38, "spend": 1235 },
+      { "rank": 7, "channel": "TikTok (TR)", "true_cac": 182.00, "spend": 364 },
+      { "rank": 8, "channel": "Meta Web2App (TR)", "true_cac": 242.50, "spend": 485 },
+      { "rank": 9, "channel": "Meta Combined (EG)", "true_cac": 483.00, "spend": 1449 }
+    ],
+    "flagged_no_actives": [
+      { "channel": "Appnext (TR)", "spend": 645, "flag": "⚠️ $645 spend, 0 new_actives — consistent with prior week" },
+      { "channel": "Onboarding Meta Test (TR)", "spend": 101, "flag": "⚠️ ~$101 spend, 0 new_actives" }
+    ]
+  }
+}

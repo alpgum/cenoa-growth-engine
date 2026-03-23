@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-03-22T22:31:48.619391",
+  "period": "2025-10 to 2026-01 (D30 cohorts) + 2025-12-22 to 2026-03-22 (DAU)",
+  "methodology": {
+    "d30_transact": "User-level cohort analysis from Amplitude Export API. First event: 'Cenoa sign-up completed'. Return event: 'Withdraw Completed'. Window: D23-D37 (\u00b17 days around D30).",
+    "d1_d7_d14": "Power-law decay model R(d) = R(1) * d^(-alpha), calibrated from D30 ground truth + industry multipliers.",
+    "any_active_multiplier": "Country-specific (TR: 8x, NG: 7x, EG: 10x) applied to D30 transact to estimate any-active retention.",
+    "platform": "Estimated from DAU split (iOS/Android) with 15% iOS retention premium based on fintech benchmarks.",
+    "limitations": [
+      "D1/D7/D14 are modeled estimates, not direct measurements",
+      "Any-active retention inferred from transact retention * multiplier",
+      "Platform retention estimated from DAU share, not user-level cohort",
+      "EG sample size is small (416 signups in recent 4 months)"
+    ]
+  },
+  "retention_by_country": {
+    "TR": {
+      "label": "Turkey",
+      "d1": 0.5,
+      "d7": 0.2682,
+      "d14": 0.2149,
+      "d30_any_active": 0.1684,
+      "d30_transact": 0.0314,
+      "signups_recent_4mo": 2962,
+      "model_params": {
+        "alpha": 0.32,
+        "multiplier": 8
+      }
+    },
+    "NG": {
+      "label": "Nigeria",
+      "d1": 0.4398,
+      "d7": 0.2453,
+      "d14": 0.1993,
+      "d30_any_active": 0.1585,
+      "d30_transact": 0.0226,
+      "signups_recent_4mo": 1413,
+      "model_params": {
+        "alpha": 0.3,
+        "multiplier": 7
+      }
+    },
+    "EG": {
+      "label": "Egypt",
+      "d1": 0.079,
+      "d7": 0.04,
+      "d14": 0.0314,
+      "d30_any_active": 0.024,
+      "d30_transact": 0.0024,
+      "signups_recent_4mo": 416,
+      "model_params": {
+        "alpha": 0.35,
+        "multiplier": 10
+      }
+    }
+  },
+  "platform_retention": {
+    "install_share": {
+      "Android": 0.88,
+      "iOS": 0.12,
+      "source": "AppsFlyer Install events, Mar 14-20 2026"
+    },
+    "transact_share": {
+      "iOS": 0.53,
+      "Android": 0.46,
+      "source": "Withdraw Completed events, Mar 14-20 2026"
+    },
+    "implied_retention_ratio": {
+      "iOS_vs_Android": 8.2,
+      "calculation": "iOS gets 12% of installs but 53% of withdrawals \u2192 4.4x higher transact rate per install. Implies ~8x higher D30 transact retention.",
+      "iOS_d30_transact_est": 0.08,
+      "Android_d30_transact_est": 0.01,
+      "note": "iOS users self-select (likely more crypto-savvy, higher income). Not purely a platform effect."
+    },
+    "estimated_any_active": {
+      "iOS": {
+        "d1": 0.52,
+        "d7": 0.3,
+        "d14": 0.24,
+        "d30": 0.2
+      },
+      "Android": {
+        "d1": 0.35,
+        "d7": 0.18,
+        "d14": 0.14,
+        "d30": 0.1
+      },
+      "note": "Estimates based on install/transact ratio differential + power-law model"
+    }
+  },
+  "d30_monthly_trend": [
+    {
+      "cohort": "2025-04",
+      "signups": 3658,
+      "retention_30d": 4.07
+    },
+    {
+      "cohort": "2025-05",
+      "signups": 5571,
+      "retention_30d": 2.08
+    },
+    {
+      "cohort": "2025-06",
+      "signups": 4659,
+      "retention_30d": 1.57
+    },
+    {
+      "cohort": "2025-07",
+      "signups": 3519,
+      "retention_30d": 1.93
+    },
+    {
+      "cohort": "2025-08",
+      "signups": 4925,
+      "retention_30d": 1.6
+    },
+    {
+      "cohort": "2025-09",
+      "signups": 4046,
+      "retention_30d": 1.21
+    },
+    {
+      "cohort": "2025-10",
+      "signups": 3052,
+      "retention_30d": 2.16
+    },
+    {
+      "cohort": "2025-11",
+      "signups": 2920,
+      "retention_30d": 2.5
+    },
+    {
+      "cohort": "2025-12",
+      "signups": 3802,
+      "retention_30d": 1.79
+    },
+    {
+      "cohort": "2026-01",
+      "signups": 7967,
+      "retention_30d": 1.22
+    }
+  ],
+  "d30_by_country_detail": {
+    "TR": {
+      "signups": 2962,
+      "retained_30d": 93,
+      "retention_30d_pct": 3.14
+    },
+    "NG": {
+      "signups": 1413,
+      "retained_30d": 32,
+      "retention_30d_pct": 2.26
+    },
+    "EG": {
+      "signups": 416,
+      "retained_30d": 1,
+      "retention_30d_pct": 0.24
+    },
+    "Unknown": {
+      "signups": 12626,
+      "retained_30d": 170,
+      "retention_30d_pct": 1.35
+    }
+  },
+  "benchmarks": {
+    "fintech_global": {
+      "d1": {
+        "p25": 0.2,
+        "p50": 0.3,
+        "p75": 0.42
+      },
+      "d7": {
+        "p25": 0.1,
+        "p50": 0.18,
+        "p75": 0.27
+      },
+      "d14": {
+        "p25": 0.07,
+        "p50": 0.13,
+        "p75": 0.2
+      },
+      "d30": {
+        "p25": 0.05,
+        "p50": 0.1,
+        "p75": 0.18
+      }
+    },
+    "crypto_wallet": {
+      "d1": {
+        "p25": 0.15,
+        "p50": 0.25,
+        "p75": 0.35
+      },
+      "d7": {
+        "p25": 0.08,
+        "p50": 0.14,
+        "p75": 0.22
+      },
+      "d14": {
+        "p25": 0.05,
+        "p50": 0.1,
+        "p75": 0.17
+      },
+      "d30": {
+        "p25": 0.03,
+        "p50": 0.07,
+        "p75": 0.13
+      }
+    },
+    "source": "Adjust 2024 App Trends, AppsFlyer 2024 Benchmarks, Liftoff Mobile Gaming/Finance 2024"
+  },
+  "dau_summary": {
+    "TR_avg_dau": 5701,
+    "NG_avg_dau": 1717,
+    "EG_avg_dau": 2927,
+    "total_avg_dau": 11151,
+    "ios_avg_dau": 12,
+    "android_avg_dau": 10
+  },
+  "signup_summary": {
+    "TR_90d": 3628,
+    "NG_90d": 2347,
+    "EG_90d": 1390,
+    "total_90d": 26467
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "budget_plan_monthly_usd": 50000,
+  "definitions": {
+    "new_active": "New active users as defined in CAC Analysis sheet (a paid activation proxy).",
+    "signups": "Sign-up events as defined in CAC Analysis sheet (AppsFlyer attribution model).",
+    "virtual_accounts": "Virtual account created as defined in CAC Analysis sheet (downstream of signup)."
+  },
+  "generated_at": "2026-03-21",
+  "jan_2026_global_blended_mixed": {
+    "components": {
+      "EG": {
+        "signups_inferred": 934,
+        "spend_usd": 4670,
+        "virtual_accounts": 20
+      },
+      "NG": {
+        "signups_inferred": 3319,
+        "spend_usd": 4647,
+        "virtual_accounts": 88
+      },
+      "TR": {
+        "signups": 2402,
+        "spend_usd": 26235,
+        "virtual_accounts": 531
+      }
+    },
+    "confidence": "LOW",
+    "metrics": {
+      "cac_new_active": null,
+      "cac_signup": 5.34,
+      "cac_virtual_account": 55.64,
+      "new_active": null,
+      "signups": 6655,
+      "spend_usd": 35552,
+      "virtual_accounts": 639
+    },
+    "notes": "TR denominators from CAC analysis; NG/EG signups inferred from spend/costPerSignup in budget tracking; virtual accounts from budget tracking totals."
+  },
+  "monthly_turkey_jan_feb_finance_spend_mixed_denominators": {
+    "confidence": "LOW",
+    "months": {
+      "2026-01": {
+        "cac_new_active": 116.08,
+        "cac_signup": 9.54,
+        "cac_virtual_account": 29.15,
+        "new_active": 226,
+        "signups": 2751,
+        "spend_usd": 26235,
+        "virtual_accounts": 900
+      },
+      "2026-02": {
+        "cac_new_active": 285.77,
+        "cac_signup": 20.59,
+        "cac_virtual_account": 61.09,
+        "new_active": 124,
+        "signups": 1721,
+        "spend_usd": 35435,
+        "virtual_accounts": 580
+      }
+    },
+    "source_denominators": "sheets-cac-analysis.json months_2026",
+    "source_spend": "sheets-budget-tracking.json realizedCostJan/Feb (TR)"
+  },
+  "monthly_turkey_last6_attr_consistent": {
+    "confidence": "MED",
+    "months": {
+      "2025-09": {
+        "cac_new_active": 126.64,
+        "cac_signup": 15.21,
+        "cac_virtual_account": 52.17,
+        "new_active": 283,
+        "signups": 2357,
+        "spend_usd": 35839,
+        "virtual_accounts": 687
+      },
+      "2025-10": {
+        "cac_new_active": 122.13,
+        "cac_signup": 18.87,
+        "cac_virtual_account": 53.74,
+        "new_active": 242,
+        "signups": 1566,
+        "spend_usd": 29556,
+        "virtual_accounts": 550
+      },
+      "2025-11": {
+        "cac_new_active": 121.49,
+        "cac_signup": 17.9,
+        "cac_virtual_account": 42.75,
+        "new_active": 221,
+        "signups": 1500,
+        "spend_usd": 26850,
+        "virtual_accounts": 628
+      },
+      "2025-12": {
+        "cac_new_active": 86.02,
+        "cac_signup": 13.56,
+        "cac_virtual_account": 30.92,
+        "new_active": 271,
+        "signups": 1719,
+        "spend_usd": 23312,
+        "virtual_accounts": 754
+      },
+      "2026-01": {
+        "cac_new_active": 119.86,
+        "cac_signup": 9.85,
+        "cac_virtual_account": 30.1,
+        "new_active": 226,
+        "signups": 2751,
+        "spend_usd": 27088,
+        "virtual_accounts": 900
+      },
+      "2026-02": {
+        "cac_new_active": 208.15,
+        "cac_signup": 15.0,
+        "cac_virtual_account": 44.5,
+        "new_active": 124,
+        "signups": 1721,
+        "spend_usd": 25811,
+        "virtual_accounts": 580
+      }
+    },
+    "source": "sheets-cac-analysis.json sum_turkey.months_2025/2026"
+  },
+  "realized_spend_global_budget_tracking": {
+    "2026-01": 35552,
+    "2026-02": 57570
+  },
+  "spend_sources": {
+    "budget_tracking": "Finance/ops spend by month/country/channel.",
+    "cac_analysis": "Attributed/marketing spend aligned with funnel counts."
+  }
+}

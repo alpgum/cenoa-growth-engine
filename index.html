@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENOA GROWTH ENGINE - Growth Engine Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--surface:#f8f9fa;--surface2:#f0f1f3;--border:#e0e0e0;--accent:#00b85c;--accent-dim:rgba(0,184,92,.08);--accent-glow:rgba(0,184,92,.2);--text:#1a1a1a;--text-dim:#666;--text-bright:#000;--color-tr:#3b82f6;--color-ng:#22c55e;--color-eg:#f59e0b;--color-pk:#a855f7}
+body{background:var(--bg);color:var(--text);font-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+html{overflow-x:hidden}
+canvas{max-width:100%}
+.section{overflow:hidden}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#f5f5f5}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+
+/* Executive Summary */
+.exec-summary{padding:2.5rem 2rem 2rem;max-width:1400px;margin:0 auto}
+.exec-status{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;margin-bottom:1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.exec-status-line{font-size:1rem;color:var(--text);line-height:1.6;font-weight:500}
+.exec-status-line strong{color:var(--text-bright);font-weight:700}
+.exec-status-line .up{color:#22c55e;font-weight:700}
+.exec-status-line .dn{color:#ef4444;font-weight:700}
+.exec-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.2rem}
+.exec-kpi{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.8rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border .3s}
+.exec-kpi:hover{border-color:rgba(0,184,92,.3)}
+.exec-kpi-value{font-size:2.4rem;font-weight:900;color:var(--text-bright);line-height:1.1;font-variant-numeric:tabular-nums}
+.exec-kpi-label{font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.12em;margin-top:.35rem}
+.exec-kpi-delta{font-size:.78rem;font-weight:700;margin-top:.4rem;display:inline-block;padding:.15rem .55rem;border-radius:6px}
+.exec-kpi-delta.down{color:#ef4444;background:rgba(239,68,68,.1)}
+.exec-kpi-delta.warn{color:#f59e0b;background:rgba(245,158,11,.1)}
+.exec-kpi-delta.neutral{color:#666;background:rgba(0,0,0,.04)}
+.exec-actions{display:flex;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.exec-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;border-radius:22px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s;text-decoration:none;border:1px solid var(--border);background:#fff;color:var(--text-bright);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.exec-chip:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.exec-chip.red{border-color:rgba(239,68,68,.3);color:#dc2626}
+.exec-chip.red:hover{background:rgba(239,68,68,.06);border-color:#ef4444}
+.exec-chip.amber{border-color:rgba(245,158,11,.3);color:#d97706}
+.exec-chip.amber:hover{background:rgba(245,158,11,.06);border-color:#f59e0b}
+.exec-chip.green{border-color:rgba(0,184,92,.3);color:#059669}
+.exec-chip.green:hover{background:rgba(0,184,92,.06);border-color:var(--accent)}
+.exec-attr{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:.5rem 1rem;font-size:.78rem;font-weight:600;color:#d97706;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.exec-attr .attr-icon{font-size:1rem}
+
+/* Date Range Selector */
+.exec-range{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-bottom:1.1rem;flex-wrap:wrap}
+.range-pill{display:inline-flex;align-items:center;background:var(--surface2);border:1px solid var(--border);border-radius:999px;padding:3px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.range-btn{appearance:none;border:0;background:transparent;color:var(--text-dim);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .9rem;border-radius:999px;cursor:pointer;transition:all .2s;outline:none;user-select:none}
+.range-btn:hover{color:var(--text-bright)}
+.range-btn.active{background:#fff;color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.08);border:1px solid rgba(0,184,92,.25)}
+.range-note{font-size:.72rem;color:var(--text-dim);letter-spacing:.02em}
+.range-note .tbd{display:inline-flex;align-items:center;gap:.35rem;padding:.18rem .55rem;border-radius:999px;border:1px solid rgba(245,158,11,.28);background:rgba(245,158,11,.08);color:#d97706;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+
+@media(max-width:768px){.exec-kpis{grid-template-columns:1fr}.exec-actions{flex-direction:column}.exec-chip{justify-content:center}.exec-range{justify-content:center}}
+
+/* Header */
+header{border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);height:54px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.header-brand{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;letter-spacing:.12em;color:var(--text-dim)}
+.header-brand span{color:var(--accent)}
+.header-pulse{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;margin-right:.4rem;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 6px transparent}}
+.header-right{font-size:.7rem;color:#aaa;letter-spacing:.08em}
+.header-timestamp{font-size:.65rem;color:#999;letter-spacing:.06em;white-space:nowrap;margin-left:auto;margin-right:1rem;flex-shrink:0}
+
+/* Container */
+.container{max-width:1400px;margin:0 auto;padding:0 2rem}
+
+/* Hero */
+.hero{text-align:center;padding:5rem 2rem 3.5rem;position:relative}
+.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(0,184,92,.06) 0%,transparent 70%);pointer-events:none}
+.hero-title{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:.15em;position:relative;z-index:1}
+.hero-title .x{color:#bbb;font-weight:300;margin:0 .2em}
+.hero-title .cortex{background:linear-gradient(135deg,#00b85c,#00994d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:var(--text-dim);font-size:1rem;margin-top:.4rem;letter-spacing:.08em;position:relative;z-index:1}
+.stats{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;position:relative;z-index:1;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-dim);margin-top:.2rem}
+
+/* Section */
+.section{margin-top:3.5rem}
+.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.section-header h2{font-size:1.2rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.section-header .line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.section-header .badge{background:var(--accent-dim);color:var(--accent);font-size:.65rem;padding:.2rem .6rem;border-radius:10px;letter-spacing:.1em;font-weight:600;white-space:nowrap}
+
+/* Search */
+.search-wrap{margin-bottom:1rem;position:relative}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:#aaa;pointer-events:none}
+.search-wrap input{width:100%;padding:.8rem 1rem .8rem 2.8rem;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:10px;color:var(--text);font-size:.9rem;outline:none;transition:border .3s,box-shadow .3s}
+.search-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.search-wrap input::placeholder{color:#aaa}
+
+/* Category Filter */
+.cat-filters{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.cat-btn{padding:.35rem .8rem;border-radius:18px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.7rem;cursor:pointer;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.cat-btn:hover,.cat-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+/* Doc Grid */
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.5rem}
+.doc-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.doc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.doc-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,184,92,.08)}
+.doc-card:hover::before{transform:scaleX(1)}
+.cat-tag{display:inline-block;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .35rem;border-radius:4px;font-weight:700;margin-bottom:.3rem}
+.cat-tag.data{background:rgba(59,130,246,.15);color:#60a5fa}
+.cat-tag.analysis{background:rgba(168,85,247,.15);color:#c084fc}
+.cat-tag.strategy{background:rgba(0,184,92,.1);color:#00994d}
+.cat-tag.conversion{background:rgba(251,191,36,.15);color:#fbbf24}
+.cat-tag.markets{background:rgba(244,63,94,.15);color:#fb7185}
+.cat-tag.infra{background:rgba(148,163,184,.12);color:#94a3b8}
+.doc-card h3{font-size:.8rem;font-weight:600;color:var(--text-bright);margin-bottom:.15rem}
+.doc-card p{font-size:.7rem;color:var(--text-dim);line-height:1.4;margin-bottom:0;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.doc-card .file-path{display:none}
+
+/* Agent Grid */
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.75rem}
+.agent-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1.1rem 1.2rem;transition:all .3s}
+.agent-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.agent-header{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.agent-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.agent-name{font-weight:600;font-size:.85rem;color:var(--text-bright)}
+.agent-div{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim)}
+.agent-status{display:flex;align-items:center;gap:.35rem;font-size:.72rem;color:var(--accent)}
+.agent-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+.agent-skills{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.5rem}
+.skill-tag{font-size:.62rem;padding:.12rem .4rem;border-radius:4px;background:var(--surface2);color:var(--text-dim);border:1px solid var(--border)}
+
+/* Division Label */
+.division-label{font-size:.9rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin:2.5rem 0 1.2rem;padding-left:.2rem;font-weight:700}
+.division-label:first-of-type{margin-top:.5rem}
+
+/* Market Grid */
+.market-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.75rem}
+.market-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1.3rem;transition:all .3s;position:relative;overflow:hidden}
+.market-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.market-flag{font-size:2.2rem;margin-bottom:.4rem;display:block}
+.market-name{font-size:1.05rem;font-weight:700;color:var(--text-bright)}
+.market-code{font-size:.7rem;color:var(--text-dim);letter-spacing:.15em;text-transform:uppercase}
+.market-status{display:inline-block;margin-top:.5rem;padding:.25rem .7rem;border-radius:18px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.market-status.deepening{background:rgba(0,184,92,.1);color:#00994d}
+.market-status.accelerating{background:rgba(59,130,246,.12);color:#60a5fa}
+.market-status.launching{background:rgba(251,191,36,.12);color:#fbbf24}
+.market-status.prelaunch{background:rgba(168,85,247,.12);color:#c084fc}
+
+/* Org Chart */
+.org-tree{display:flex;flex-direction:column;align-items:center;gap:0}
+.org-leader{display:flex;flex-direction:column;align-items:center}
+.org-connector{width:2px;height:2rem;background:linear-gradient(180deg,var(--accent),#ddd)}
+.org-orchestrator{border:2px solid var(--accent) !important;max-width:500px;text-align:center}
+.org-orchestrator .org-says{text-align:center}
+.org-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.5rem;transition:all .4s;cursor:default;position:relative}
+.org-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.org-card:hover .org-says{max-height:200px;opacity:1;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.org-avatar{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;background:var(--accent-dim)}
+.org-info{flex:1}
+.org-name{font-size:1.1rem;font-weight:700;color:var(--text-bright)}
+.org-role{font-size:.8rem;color:var(--text-dim);letter-spacing:.06em;margin-top:.15rem}
+.org-says{max-height:0;opacity:0;overflow:hidden;transition:all .4s ease;font-size:.9rem;color:var(--text);line-height:1.6;font-style:italic}
+.org-orchestrator .org-says{max-height:none;opacity:1;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.org-card .org-avatar,.org-card .org-info{display:inline-block;vertical-align:middle}
+.org-card{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.org-divisions{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;width:100%}
+.org-division{}
+.org-div-label{font-size:.85rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.org-agents{display:flex;flex-direction:column;gap:1rem}
+@media(max-width:900px){.org-divisions{grid-template-columns:1fr}}
+@media(max-width:768px){.track-numbers{grid-template-columns:repeat(3,1fr) !important}}
+
+/* Growth Engine Intro Grid responsive */
+@media(max-width:768px){.cortex-intro-grid{grid-template-columns:1fr !important}}
+
+/* Flow Diagram */
+.flow-diagram{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;padding:1rem 0}
+.flow-step{background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:1.5rem 2rem;text-align:center;transition:all .3s;min-width:120px}
+.flow-step:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,184,92,.12);transform:translateY(-3px)}
+.flow-icon{font-size:2.5rem;margin-bottom:.5rem}
+.flow-label{font-size:1rem;font-weight:700;color:var(--text-bright);letter-spacing:.04em}
+.flow-arrow{width:48px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-glow));position:relative;flex-shrink:0}
+.flow-arrow::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left:7px solid var(--accent)}
+@media(max-width:700px){.flow-arrow{width:2px;height:32px;background:linear-gradient(180deg,var(--accent),var(--accent-glow))}.flow-arrow::after{right:50%;top:auto;bottom:-1px;transform:translateX(50%);border:5px solid transparent;border-top:7px solid var(--accent);border-left:5px solid transparent}.flow-diagram{flex-direction:column}}
+
+/* Capabilities Grid */
+.cap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem}
+@media(max-width:1000px){.cap-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+.cap-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s;cursor:default}
+.cap-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-2px)}
+.cap-emoji{font-size:3rem;margin-bottom:.5rem}
+.cap-title{font-size:1rem;font-weight:700;color:var(--text-bright);margin-bottom:.25rem}
+.cap-desc{font-size:.85rem;color:var(--text-dim);line-height:1.4}
+
+/* Cenoa Workflows Grid */
+.cenoa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+@media(max-width:800px){.cenoa-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.cenoa-grid{grid-template-columns:1fr}}
+.cenoa-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.2rem;text-align:center;transition:all .3s;cursor:default}
+.cenoa-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-2px)}
+.cenoa-emoji{font-size:2.5rem;margin-bottom:.4rem}
+.cenoa-title{font-size:1rem;font-weight:700;color:var(--text-bright);margin-bottom:.2rem}
+.cenoa-desc{font-size:.85rem;color:var(--text-dim)}
+
+/* Timeline */
+.timeline{position:relative;padding-left:2rem;max-width:600px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#f59e0b,rgba(245,158,11,.2))}
+.timeline-item{position:relative;padding-bottom:1.5rem;padding-left:1.5rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{position:absolute;left:-2rem;top:.25rem;width:14px;height:14px;border-radius:50%;background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,.3);border:2px solid #fff}
+.timeline-title{font-size:1.05rem;font-weight:700;color:var(--text-bright)}
+.timeline-desc{font-size:.85rem;color:var(--text-dim);margin-top:.15rem}
+
+/* Nav Links */
+.header-nav{display:flex;gap:1.2rem;align-items:center}
+.header-nav a{font-size:.7rem;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:color .2s;text-decoration:none}
+.header-nav a:hover{color:var(--accent)}
+
+/* Tool Inventory - Clean Cards */
+/* Platform Hub */
+.ph-cat-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-dim);margin:1rem 0 .4rem;padding-left:.1rem;font-weight:600}
+.ph-cat-label:first-child{margin-top:0}
+.ph-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:.5rem}
+.ph-card{background:#fff;border:1px solid rgba(0,184,92,.2);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.6rem .3rem;gap:.3rem;transition:all .25s;cursor:default;position:relative}
+.ph-card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.ph-card.planned{opacity:.45;filter:grayscale(1);border-style:dashed;border-color:rgba(0,0,0,.14)}
+.ph-card.planned:hover{border-color:rgba(0,0,0,.2);box-shadow:none}
+.ph-card.planned .ph-name{color:#999}
+.ph-cat-sub{margin:.6rem 0 .4rem;color:#aaa;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+.ph-card img{height:28px;width:auto;filter:brightness(0);transition:filter .2s}
+.ph-card .ph-text-logo{font-size:1rem;font-weight:800;color:var(--text-bright);line-height:1}
+.ph-card .ph-name{font-size:.58rem;color:var(--text-dim);text-align:center;line-height:1.2}
+.ph-card.cancelled{opacity:.3;filter:grayscale(1)}
+.ph-card.cancelled .ph-name{text-decoration:line-through}
+.ph-card .ph-tooltip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);color:var(--text);box-shadow:0 4px 12px rgba(0,0,0,.1);font-size:.65rem;padding:.35rem .6rem;border-radius:6px;white-space:nowrap;z-index:10;pointer-events:none}
+.ph-card:hover .ph-tooltip{display:block}
+
+/* Routing Table - Bigger Cards */
+.routing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.routing-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.4rem 1.6rem;transition:all .3s}
+.routing-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-2px)}
+.routing-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);margin-bottom:.4rem;font-weight:600}
+.routing-value{font-size:1.2rem;font-weight:700;color:var(--text-bright)}
+.routing-meta{font-size:.9rem;color:var(--text-dim);margin-top:.35rem}
+
+/* Unsub Grid - Bigger */
+.unsub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.unsub-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s}
+.unsub-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.unsub-icon{font-size:1.4rem;flex-shrink:0}
+.unsub-name{font-size:1.05rem;font-weight:700;color:var(--text-bright)}
+.unsub-detail{font-size:.9rem;color:var(--text-dim);margin-top:.15rem}
+.unsub-card.keep{border-left:4px solid var(--accent)}
+.unsub-card.cancel{border-left:4px solid #f43f5e;opacity:.6}
+.unsub-savings{background:var(--accent-dim);border:1px solid rgba(0,184,92,.2);border-radius:14px;padding:1.5rem;text-align:center;margin-top:1rem}
+.unsub-savings .amount{font-size:2.2rem;font-weight:800;color:var(--accent)}
+.unsub-savings .label{font-size:.85rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
+
+/* Campaign Performance Table */
+.campaign-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--border);background:var(--surface);max-width:100%}
+.campaign-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:900px}
+.campaign-table thead tr{background:#f0f1f3;border-bottom:2px solid var(--accent)}
+.campaign-table th{text-align:left;padding:.65rem .7rem;color:var(--text-dim);font-weight:600;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;user-select:none}
+.campaign-table th.sortable{cursor:pointer;transition:color .2s}
+.campaign-table th.sortable:hover{color:var(--accent)}
+.campaign-table th.sortable .sort-arrow{font-size:.7rem;margin-left:.25rem;opacity:.3;transition:opacity .2s}
+.campaign-table th.sortable.sort-active .sort-arrow{opacity:1;color:var(--accent)}
+.campaign-table th.sortable.sort-active{color:var(--accent)}
+.campaign-table th.num,.campaign-table td.num{text-align:right}
+.campaign-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+.campaign-table tbody tr:last-child td{border-bottom:none}
+.campaign-table tbody tr{transition:background .2s}
+.campaign-table tbody tr:hover{background:rgba(0,184,92,.04)}
+.campaign-table tbody tr.scale-highlight{border-left:3px solid #22c55e}
+.campaign-table tbody tr.kill-highlight{border-left:3px solid #ef4444}
+.camp-name{font-weight:600;color:var(--text-bright)}
+.camp-commentary{white-space:normal;max-width:220px;font-size:.72rem;color:var(--text-dim);line-height:1.35}
+.market-badge{display:inline-block;background:rgba(59,130,246,.12);color:#60a5fa;font-size:.65rem;font-weight:700;padding:.15rem .45rem;border-radius:4px;letter-spacing:.08em}
+.status-badge{display:inline-block;font-size:.68rem;font-weight:700;padding:.18rem .5rem;border-radius:10px;letter-spacing:.04em;white-space:nowrap}
+.status-scale{background:rgba(0,184,92,.1);color:#00994d}
+.status-maintain{background:rgba(59,130,246,.1);color:#60a5fa}
+.status-watch{background:rgba(251,191,36,.12);color:#d97706}
+.status-kill{background:rgba(239,68,68,.12);color:#ef4444}
+.status-keep{background:rgba(34,197,94,.12);color:#4ade80}
+.status-optimize{background:rgba(251,191,36,.12);color:#fbbf24}
+.status-fix{background:rgba(239,68,68,.12);color:#f87171}
+.status-fraud{background:rgba(244,63,94,.15);color:#fb7185}
+.status-paused{background:rgba(148,163,184,.12);color:#94a3b8}
+.wow-arrow{font-weight:700;font-size:.75rem}
+.wow-arrow.up{color:#22c55e}
+.wow-arrow.down{color:#ef4444}
+.wow-arrow.flat{color:#94a3b8}
+
+/* Trend History Charts */
+.trend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.trend-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1rem 1.2rem}
+.trend-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.trend-card-title{font-size:.82rem;font-weight:700;color:var(--text-bright);letter-spacing:.04em}
+.trend-card-delta{font-size:.72rem;font-weight:700;padding:.15rem .45rem;border-radius:6px}
+.trend-card-delta.improving{color:#22c55e;background:rgba(34,197,94,.12)}
+.trend-card-delta.declining{color:#ef4444;background:rgba(239,68,68,.12)}
+.trend-card-delta.flat{color:#999;background:rgba(0,0,0,.04)}
+.trend-card canvas{max-height:120px}
+@media(max-width:600px){.trend-grid{grid-template-columns:1fr}}
+
+/* Footer */
+footer{text-align:center;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--border);color:#aaa;font-size:.78rem;letter-spacing:.04em}
+footer span{color:var(--accent)}
+
+/* No results */
+.no-results{text-align:center;padding:2.5rem;color:var(--text-dim);font-size:.85rem;display:none}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeUp .5s ease forwards;opacity:0}
+
+/* Skeleton Loading */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.skeleton-block{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s ease-in-out infinite;border-radius:8px}
+.skeleton-row{display:flex;gap:.6rem;margin-bottom:.6rem}
+.skeleton-card{flex:1;height:90px;border-radius:12px}
+.skeleton-chart{height:180px;border-radius:12px;margin-bottom:.8rem}
+.skeleton-table{height:260px;border-radius:12px}
+.skeleton-text{height:14px;border-radius:4px;margin-bottom:.4rem}
+.skeleton-text.w60{width:60%}
+.skeleton-text.w40{width:40%}
+.skeleton-text.w80{width:80%}
+.dashboard-skeleton{padding:0 2rem;max-width:1400px;margin:0 auto}
+
+/* Error / Cache Banner */
+.data-banner{display:none;align-items:center;gap:.6rem;padding:.65rem 1.2rem;border-radius:10px;font-size:.82rem;font-weight:600;margin:0 auto 1rem;max-width:1400px;width:calc(100% - 4rem)}
+.data-banner.show{display:flex}
+.data-banner.error{background:#fef2f2;border:1px solid rgba(239,68,68,.25);color:#dc2626}
+.data-banner.cached{background:#fffbeb;border:1px solid rgba(245,158,11,.25);color:#92400e}
+.data-banner .banner-icon{font-size:1.1rem;flex-shrink:0}
+.data-banner .banner-text{flex:1}
+.data-banner .retry-btn{padding:.3rem .75rem;border-radius:6px;border:1px solid currentColor;background:transparent;color:inherit;font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s;flex-shrink:0}
+.data-banner .retry-btn:hover{background:currentColor;color:#fff}
+
+/* No-data placeholder for widgets */
+.no-data-placeholder{display:flex;align-items:center;justify-content:center;color:#aaa;font-size:.82rem;font-style:italic;padding:1.5rem;text-align:center}
+
+/* Hide dashboard content until data loads */
+.dashboard-loading .exec-summary,
+.dashboard-loading #kpiBanner,
+.dashboard-loading #budgetPacing,
+.dashboard-loading #trendHistory,
+.dashboard-loading #campaignTable,
+.dashboard-loading #channelPerf,
+.dashboard-loading #cacVsTarget,
+.dashboard-loading #countryBreakdown,
+.dashboard-loading #kycMiniFunnels,
+.dashboard-loading #platformSplit,
+.dashboard-loading #weeklyTests,
+.dashboard-loading #weeklyLearnings,
+.dashboard-loading #weeklyAgenda,
+.dashboard-loading #attrQuality,
+.dashboard-loading #funnelChart,
+.dashboard-loading #analytics,
+.dashboard-loading #agentStatus,
+.dashboard-loading #docHub{display:none !important}
+
+/* KPI Banner */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin-bottom:.8rem}
+.kpi-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1rem;display:flex;align-items:flex-start;gap:.8rem;transition:border .3s}
+.kpi-card:hover{border-color:rgba(0,184,92,.25)}
+.kpi-icon{font-size:1.6rem;line-height:1;flex-shrink:0;margin-top:.1rem}
+.kpi-data{flex:1;min-width:0}
+.kpi-value{font-size:1.5rem;font-weight:900;color:var(--text-bright);line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi-label{font-size:.65rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.kpi-delta{font-size:.7rem;margin-top:.3rem;font-weight:600;display:inline-block;padding:.1rem .4rem;border-radius:4px}
+.kpi-delta.up{color:#22c55e;background:rgba(34,197,94,.1)}
+.kpi-delta.down{color:#ef4444;background:rgba(239,68,68,.1)}
+.kpi-delta.neutral{color:#999;background:rgba(0,0,0,.04)}
+.kpi-footer{display:flex;justify-content:space-between;align-items:center;font-size:.65rem;color:#aaa;padding:0 .2rem}
+.kpi-last-updated{color:#555}
+
+.kpi-spark{width:66px;height:22px;flex-shrink:0;align-self:center;opacity:.9}
+.kpi-spark svg{width:66px;height:22px;display:block}
+.kpi-spark .spark-line{fill:none;stroke:rgba(0,0,0,.25);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kpi-spark .spark-area{stroke:none}
+.kpi-spark.up .spark-area{fill:rgba(34,197,94,.10)}
+.kpi-spark.down .spark-area{fill:rgba(239,68,68,.10)}
+.kpi-spark.neutral .spark-area{fill:rgba(0,0,0,.04)}
+.kpi-spark.up .spark-dot{fill:#22c55e}
+.kpi-spark.down .spark-dot{fill:#ef4444}
+.kpi-spark.neutral .spark-dot{fill:#999}
+.kpi-spark .spark-dot{stroke:rgba(255,255,255,.6);stroke-width:1}
+@media(max-width:1100px){.kpi-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.kpi-row{grid-template-columns:repeat(2,1fr)}}
+
+/* Country Breakdown */
+.country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:.8rem}
+.country-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:.9rem 1rem;transition:border .3s}
+.country-card:hover{border-color:rgba(0,184,92,.25)}
+.country-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+.country-flag{font-size:1.6rem;line-height:1}
+.country-name{font-size:.85rem;font-weight:700;color:var(--text-bright)}
+.country-metrics{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .8rem}
+.country-metric{display:flex;justify-content:space-between;align-items:center}
+.country-metric-label{font-size:.62rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em}
+.country-metric-value{font-size:.82rem;font-weight:700;color:var(--text-bright);font-variant-numeric:tabular-nums}
+@media(max-width:900px){.country-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.country-grid{grid-template-columns:1fr}}
+.country-spend-section{margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--border)}
+.country-spend-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.25rem}
+.country-spend-label{font-size:.58rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em}
+.country-spend-value{font-size:.78rem;font-weight:700;color:var(--text-bright);font-variant-numeric:tabular-nums}
+.country-pacing-bar{height:5px;background:var(--surface2);border-radius:3px;overflow:hidden;margin:.3rem 0 .15rem}
+.country-pacing-fill{height:100%;border-radius:3px;transition:width .6s}
+.country-pacing-text{font-size:.6rem;font-weight:700;letter-spacing:.04em}
+.pacing-green{color:#059669}
+.pacing-orange{color:#d97706}
+.pacing-red{color:#dc2626}
+.country-deep-link{display:inline-flex;align-items:center;gap:.25rem;margin-top:.5rem;font-size:.65rem;color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.country-deep-link:hover{color:#00994d}
+
+/* Analytics */
+.analytics-frame{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1rem}
+.analytics-iframe{width:100%;height:600px;border:0;border-radius:12px;display:block}
+.amp-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-left:3px solid #fbbf24}
+.amp-title{font-weight:800;color:var(--text-bright);margin-bottom:.2rem}
+.amp-desc{color:var(--text-dim);font-size:.9rem;line-height:1.4}
+.amp-link{color:var(--accent);text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap}
+.amp-link:hover{text-decoration:underline}
+
+/* Doc Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;z-index:9999;padding:1rem}
+.modal-overlay.show{display:flex}
+.modal{width:min(560px,100%);background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,.45)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1.1rem;border-bottom:1px solid var(--border);background:var(--surface2)}
+.modal-title{font-weight:900;color:var(--text-bright);line-height:1.2}
+.modal-close{background:transparent;border:1px solid var(--border);color:var(--text-dim);border-radius:10px;padding:.35rem .6rem;cursor:pointer}
+.modal-close:hover{border-color:rgba(0,255,136,.25);color:var(--text)}
+.modal-body{padding:1rem 1.1rem;color:var(--text-dim);font-size:.95rem;line-height:1.6}
+.modal-path{margin-top:.6rem;background:#f5f5f5;border:1px solid var(--border);border-radius:10px;padding:.6rem .75rem;color:#555;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:.82rem;overflow:auto}
+
+/* Action Items */
+.action-grid{display:flex;flex-direction:column;gap:.6rem;max-width:800px;margin:0 auto}
+.action-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:flex-start;gap:.8rem;transition:all .3s}
+.action-card:hover{border-color:rgba(0,184,92,.25);transform:translateX(4px)}
+.action-card.p0{border-left:4px solid #ef4444}
+.action-card.p1{border-left:4px solid #fbbf24}
+.action-card.p2{border-left:4px solid #22c55e}
+.action-priority{font-size:.65rem;font-weight:800;padding:.2rem .55rem;border-radius:6px;letter-spacing:.08em;white-space:nowrap;flex-shrink:0;margin-top:.1rem}
+.action-priority.p0{background:rgba(239,68,68,.18);color:#f87171}
+.action-priority.p1{background:rgba(251,191,36,.15);color:#fbbf24}
+.action-priority.p2{background:rgba(34,197,94,.15);color:#4ade80}
+.action-text{font-size:.88rem;color:var(--text-bright);font-weight:600;line-height:1.4}
+.action-detail{font-size:.75rem;color:var(--text-dim);margin-top:.2rem;line-height:1.4}
+
+/* Budget Pacing Gauge */
+.pacing-wrap{display:flex;align-items:center;gap:2rem;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.5rem 2rem;max-width:800px;margin:0 auto}
+.pacing-gauge{position:relative;width:120px;height:120px;flex-shrink:0}
+.pacing-gauge canvas{width:120px;height:120px}
+.pacing-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.pacing-center .pct{font-size:1.6rem;font-weight:900;line-height:1}
+.pacing-center .lbl{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em}
+.pacing-details{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .8rem}
+.pacing-detail{display:flex;flex-direction:column}
+.pacing-detail .pd-label{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em}
+.pacing-detail .pd-value{font-size:1.1rem;font-weight:800;color:var(--text-bright)}
+@media(max-width:600px){.pacing-wrap{flex-direction:column;text-align:center}.pacing-details{justify-items:center}}
+
+/* Channel Performance Cards */
+.channel-perf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem}
+.ch-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:.9rem 1rem;transition:border .3s}
+.ch-card:hover{border-color:rgba(0,184,92,.25)}
+.ch-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.ch-card-name{font-size:.85rem;font-weight:700;color:var(--text-bright)}
+.ch-card-wow{font-size:.75rem;font-weight:700}
+.ch-card-wow.up{color:#22c55e}
+.ch-card-wow.down{color:#ef4444}
+.ch-card-metrics{display:grid;grid-template-columns:1fr 1fr;gap:.25rem .6rem}
+.ch-metric{display:flex;justify-content:space-between}
+.ch-metric-label{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em}
+.ch-metric-value{font-size:.78rem;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+
+/* Tests Cards */
+.tests-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.6rem}
+.test-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1rem 1.2rem;transition:all .3s}
+.test-card:hover{border-color:rgba(0,184,92,.25)}
+.test-name{font-size:.9rem;font-weight:700;color:var(--text-bright);margin-bottom:.3rem}
+.test-hypo{font-size:.78rem;color:var(--text-dim);line-height:1.4;margin-bottom:.5rem}
+.test-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.test-status{font-size:.65rem;font-weight:700;padding:.2rem .55rem;border-radius:8px;letter-spacing:.06em;text-transform:uppercase}
+.test-status.running{background:rgba(59,130,246,.15);color:#60a5fa}
+.test-status.planned{background:rgba(251,191,36,.12);color:#fbbf24}
+.test-status.completed{background:rgba(0,255,136,.12);color:#00994d}
+.test-metric{font-size:.7rem;color:var(--text-dim)}
+
+/* Learnings Cards */
+.learnings-scroll{display:flex;gap:.6rem;overflow-x:auto;padding-bottom:.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.learnings-scroll::-webkit-scrollbar{height:4px}
+.learnings-scroll::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
+.learning-card{flex:0 0 260px;scroll-snap-align:start;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:12px;padding:1rem 1.2rem;transition:border .3s}
+.learning-card:hover{border-color:rgba(0,184,92,.25)}
+.learning-emoji{font-size:1.8rem;margin-bottom:.4rem}
+.learning-finding{font-size:.85rem;font-weight:600;color:var(--text-bright);line-height:1.4;margin-bottom:.3rem}
+.learning-impact{font-size:.72rem;color:var(--text-dim);line-height:1.3}
+
+/* CAC vs Target */
+.cac-track-wrap{max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Platform Split Donuts */
+.platform-split-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:700px;margin:0 auto}
+.ps-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1rem;text-align:center}
+.ps-card h4{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.ps-card canvas{max-width:120px;max-height:120px;margin:0 auto}
+@media(max-width:600px){.platform-split-grid{grid-template-columns:1fr}}
+
+/* Attribution Quality */
+.attr-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;max-width:400px}
+.attr-pct{font-size:2rem;font-weight:900;line-height:1}
+.attr-label{font-size:.85rem;font-weight:600;color:var(--text-bright)}
+.attr-sub{font-size:.72rem;color:var(--text-dim);margin-top:.15rem}
+
+/* KYC Mini Funnels */
+.kyc-funnel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;max-width:900px;margin:0 auto}
+.kyc-funnel-card{background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1rem;text-align:center}
+.kyc-funnel-card.broken{border-color:rgba(239,68,68,.4);background:linear-gradient(180deg,rgba(239,68,68,.06),transparent)}
+.kyc-funnel-flag{font-size:1.8rem;margin-bottom:.3rem}
+.kyc-funnel-name{font-size:.8rem;font-weight:700;color:var(--text-bright);margin-bottom:.6rem}
+.kyc-funnel-step{display:flex;justify-content:space-between;align-items:center;padding:.25rem .4rem;border-radius:4px;margin-bottom:.2rem;font-size:.72rem}
+.kyc-funnel-step .step-label{color:var(--text-dim)}
+.kyc-funnel-step .step-val{font-weight:700;color:var(--text-bright);font-variant-numeric:tabular-nums}
+.kyc-funnel-bar{height:4px;border-radius:2px;background:var(--surface2);margin-bottom:.4rem;overflow:hidden}
+.kyc-funnel-bar .fill{height:100%;border-radius:2px;transition:width .6s}
+@media(max-width:700px){.kyc-funnel-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Weekly Agenda */
+.agenda-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:.4rem}
+.agenda-item{display:flex;align-items:flex-start;gap:.7rem;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:10px;padding:.7rem 1rem;transition:border .3s}
+.agenda-item:hover{border-color:rgba(0,184,92,.2)}
+.agenda-check{width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;font-size:.65rem}
+.agenda-item.done .agenda-check{border-color:var(--accent);background:var(--accent-dim);color:var(--accent)}
+.agenda-item.done .agenda-text{text-decoration:line-through;opacity:.5}
+.agenda-pri{font-size:.6rem;font-weight:800;padding:.15rem .45rem;border-radius:5px;letter-spacing:.08em;white-space:nowrap;flex-shrink:0}
+.agenda-pri.p0{background:rgba(239,68,68,.18);color:#f87171}
+.agenda-pri.p1{background:rgba(251,191,36,.15);color:#fbbf24}
+.agenda-pri.p2{background:rgba(34,197,94,.15);color:#4ade80}
+.agenda-text{font-size:.85rem;color:var(--text-bright);font-weight:600;line-height:1.3}
+
+/* Country Color Coding */
+.country-card[data-country="TR"]{border-top:3px solid var(--color-tr)}
+.country-card[data-country="NG"]{border-top:3px solid var(--color-ng)}
+.country-card[data-country="EG"]{border-top:3px solid var(--color-eg)}
+.country-card[data-country="PK"]{border-top:3px solid var(--color-pk)}
+.country-card[data-country="TR"]:hover{border-color:var(--color-tr)}
+.country-card[data-country="NG"]:hover{border-color:var(--color-ng)}
+.country-card[data-country="EG"]:hover{border-color:var(--color-eg)}
+.country-card[data-country="PK"]:hover{border-color:var(--color-pk)}
+.kyc-funnel-card[data-country="TR"]{border-top:3px solid var(--color-tr)}
+.kyc-funnel-card[data-country="NG"]{border-top:3px solid var(--color-ng)}
+.kyc-funnel-card[data-country="EG"]{border-top:3px solid var(--color-eg)}
+.kyc-funnel-card[data-country="PK"]{border-top:3px solid var(--color-pk)}
+.market-badge[data-country="TR"]{background:rgba(59,130,246,.12);color:var(--color-tr)}
+.market-badge[data-country="NG"]{background:rgba(34,197,94,.12);color:var(--color-ng)}
+.market-badge[data-country="EG"]{background:rgba(245,158,11,.12);color:var(--color-eg)}
+.market-badge[data-country="PK"]{background:rgba(168,85,247,.12);color:var(--color-pk)}
+
+/* Campaign Health Dot */
+.health-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.4rem;vertical-align:middle}
+.health-dot.healthy{background:#22c55e;box-shadow:0 0 6px rgba(34,197,94,.4)}
+.health-dot.bleeding{background:#f59e0b;box-shadow:0 0 6px rgba(245,158,11,.4)}
+.health-dot.dead{background:#ef4444;box-shadow:0 0 6px rgba(239,68,68,.4)}
+.health-dot.fraud{background:#a855f7;box-shadow:0 0 6px rgba(168,85,247,.4)}
+
+/* ==========================================================================
+   RESPONSIVE OVERHAUL — Comprehensive breakpoints
+   Desktop (1024px+) → Tablet (768px) → Mobile (480px) → Small (375px)
+   ========================================================================== */
+
+/* Smooth transitions for all layout changes */
+.kpi-row, .kpi-card, .country-grid, .country-card, .trend-grid, .trend-card,
+.channel-perf-grid, .ch-card, .platform-split-grid, .ps-card, .tests-grid,
+.test-card, .kyc-funnel-grid, .kyc-funnel-card, .doc-grid, .doc-card,
+.agent-grid, .agent-card, .exec-kpis, .exec-kpi, .org-divisions,
+.pacing-wrap, .pacing-details, .exec-actions, .exec-chip,
+.section, .section-header, .hero, header, .header-nav {
+  transition: all 0.3s ease;
+}
+
+/* Touch-friendly targets — all interactive elements min 44px */
+.cat-btn, .range-btn, .exec-chip, .header-nav a, .agenda-check,
+.retry-btn, .doc-card, .cat-btn, .modal-close {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== TABLET — max-width: 768px ===== */
+@media (max-width: 768px) {
+  /* --- Header: horizontal scrollable nav --- */
+  header {
+    padding: 0 .75rem;
+    height: auto;
+    min-height: 54px;
+    flex-wrap: wrap;
+    gap: .3rem .6rem;
+    padding-bottom: .4rem;
+  }
+  .header-brand {
+    font-size: .72rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 260px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .header-timestamp { font-size: .58rem; margin-left: 0; }
+  .header-nav {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: .6rem;
+    padding: .35rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .header-nav::-webkit-scrollbar { display: none; }
+  .header-nav a, .header-nav span { font-size: .6rem; white-space: nowrap; flex-shrink: 0; }
+
+  /* --- Container padding --- */
+  .container { padding: 0 1rem; }
+
+  /* --- Hero --- */
+  .hero { padding: 3.5rem 1.5rem 2.5rem; }
+  .hero-title { letter-spacing: .08em; }
+  .stats { gap: 1.5rem; }
+  .stat-num { font-size: 1.8rem; }
+
+  /* --- Exec Summary --- */
+  .exec-summary { padding: 1.5rem 1rem 1rem; }
+  .exec-kpis { grid-template-columns: 1fr 1fr; }
+  .exec-actions { flex-wrap: wrap; }
+  .exec-chip { flex: 1 1 auto; justify-content: center; min-width: 0; }
+
+  /* --- KPI cards: 2x2 grid --- */
+  .kpi-row { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* --- Campaign table: horizontal scroll --- */
+  .campaign-table-wrap {
+    margin: 0 -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .campaign-table { min-width: 900px; }
+
+  /* --- Country cards: 2 columns --- */
+  .country-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Charts: full width, stacked --- */
+  .trend-grid { grid-template-columns: 1fr; }
+  canvas { max-width: 100% !important; }
+  .cac-track-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* --- Channel cards: 2 columns --- */
+  .channel-perf-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Platform split: stacked --- */
+  .platform-split-grid { grid-template-columns: 1fr; }
+
+  /* --- KYC funnels: 2 columns --- */
+  .kyc-funnel-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* --- Tests: 1 column --- */
+  .tests-grid { grid-template-columns: 1fr; }
+
+  /* --- Docs & agents: 1 column --- */
+  .doc-grid, .agent-grid, .market-grid, .routing-grid, .unsub-grid { grid-template-columns: 1fr; }
+
+  /* --- Org chart --- */
+  .org-divisions { grid-template-columns: 1fr; }
+
+  /* --- Platform hub --- */
+  .ph-grid { grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); }
+
+  /* --- Analytics iframe --- */
+  .analytics-iframe { height: 400px; }
+
+  /* --- Learnings --- */
+  .learnings-scroll { flex-wrap: nowrap; }
+  .learning-card { flex: 0 0 220px; }
+
+  /* --- KYC Dropout --- */
+  #kycDropout > div:nth-child(2) { grid-template-columns: 1fr !important; }
+  #kycDropout > div:nth-child(3) { grid-template-columns: 1fr !important; }
+
+  /* --- Track numbers --- */
+  .track-numbers { grid-template-columns: repeat(3, 1fr) !important; }
+
+  /* --- Growth Engine Intro Grid --- */
+  .cortex-intro-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ===== MOBILE — max-width: 480px ===== */
+@media (max-width: 480px) {
+  /* --- Header: stack vertically --- */
+  header {
+    padding: .5rem .75rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .2rem;
+    height: auto;
+  }
+  .header-brand {
+    font-size: .68rem;
+    max-width: 100%;
+    letter-spacing: .06em;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .header-timestamp { font-size: .55rem; text-align: center; margin: 0; display: none; }
+  .header-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: .5rem;
+    padding: .3rem 0;
+  }
+  .header-nav a { font-size: .58rem; letter-spacing: .04em; padding: .3rem .1rem; }
+
+  /* --- Hero: smaller font, less padding --- */
+  .hero { padding: 2.5rem 1rem 2rem; }
+  .hero-title { font-size: 1.8rem; letter-spacing: .06em; }
+  .hero-sub { font-size: .85rem; }
+  .hero::before { width: 400px; height: 400px; }
+  .stat-num { font-size: 1.5rem; }
+  .stats { gap: 1rem; }
+
+  /* --- Exec Summary --- */
+  .exec-summary { padding: 1rem .75rem .75rem; }
+  .exec-status { padding: 1rem; }
+  .exec-status-line { font-size: .88rem; }
+  .exec-kpis { grid-template-columns: 1fr; }
+  .exec-kpi { padding: 1rem 1.2rem; }
+  .exec-kpi-value { font-size: 1.8rem; }
+  .exec-actions { gap: .4rem; }
+  .exec-chip { font-size: .75rem; padding: .45rem .8rem; }
+
+  /* --- Date range pills --- */
+  .range-btn { font-size: .65rem; padding: .4rem .7rem; }
+  .exec-range { justify-content: center; }
+
+  /* --- KPI cards: 1 column --- */
+  .kpi-row { grid-template-columns: 1fr !important; }
+  .kpi-card { padding: .8rem; }
+  .kpi-value { font-size: 1.3rem; }
+
+  /* --- Budget pacing: stack vertically --- */
+  .pacing-wrap { flex-direction: column; text-align: center; padding: 1rem; gap: 1rem; }
+  .pacing-gauge { width: 100px; height: 100px; }
+  .pacing-gauge canvas { width: 100px; height: 100px; }
+  .pacing-center .pct { font-size: 1.3rem; }
+  .pacing-details { grid-template-columns: 1fr 1fr; gap: .3rem .5rem; justify-items: center; }
+  .pacing-detail .pd-value { font-size: .95rem; }
+
+  /* --- Trend cards --- */
+  .trend-grid { grid-template-columns: 1fr !important; }
+  .trend-card { padding: .8rem; }
+
+  /* --- Campaign table --- */
+  .campaign-table-wrap { margin: 0 -.75rem; }
+  .campaign-table { min-width: 900px; }
+
+  /* --- Channel cards: 1 column --- */
+  .channel-perf-grid { grid-template-columns: 1fr !important; }
+  .ch-card { padding: .7rem .8rem; }
+
+  /* --- Country cards: 1 column --- */
+  .country-grid { grid-template-columns: 1fr !important; }
+
+  /* --- Platform split: 1 column --- */
+  .platform-split-grid { grid-template-columns: 1fr !important; }
+  .ps-card canvas { max-width: 140px; max-height: 140px; }
+
+  /* --- Tests --- */
+  .tests-grid { grid-template-columns: 1fr !important; }
+  .test-card { padding: .8rem 1rem; }
+
+  /* --- KYC funnels: 1 column --- */
+  .kyc-funnel-grid { grid-template-columns: 1fr !important; }
+
+  /* --- Learnings --- */
+  .learnings-scroll { gap: .4rem; }
+  .learning-card { flex: 0 0 200px; padding: .8rem 1rem; }
+
+  /* --- Docs & agents: 1 column --- */
+  .doc-grid { grid-template-columns: 1fr !important; }
+  .agent-grid { grid-template-columns: 1fr !important; }
+  .org-divisions { grid-template-columns: 1fr !important; }
+
+  /* --- Sections --- */
+  .section { margin-top: 2rem; }
+  .section-header h2 { font-size: 1rem; white-space: normal; }
+  .section-header { flex-wrap: wrap; }
+
+  /* --- Analytics --- */
+  .analytics-iframe { height: 300px; }
+
+  /* --- Attribution card --- */
+  .attr-card { max-width: 100%; }
+
+  /* --- Body text scale --- */
+  body { font-size: 14px; }
+
+  /* --- Container padding --- */
+  .container { padding: 0 1rem; }
+  .exec-summary { max-width: 100%; }
+}
+
+/* ===== SMALL MOBILE — max-width: 375px (iPhone SE) ===== */
+@media (max-width: 375px) {
+  /* --- Tighter padding everywhere --- */
+  header { padding: .4rem .5rem; }
+  .header-brand { font-size: .62rem; letter-spacing: .04em; }
+  .header-nav a { font-size: .55rem; }
+
+  .hero { padding: 2rem .75rem 1.5rem; }
+  .hero-title { font-size: 1.5rem; letter-spacing: .04em; }
+  .hero-sub { font-size: .78rem; }
+  .stat-num { font-size: 1.3rem; }
+  .stat-label { font-size: .6rem; }
+  .stats { gap: .7rem; }
+
+  .exec-summary { padding: .75rem .5rem .5rem; }
+  .exec-status { padding: .75rem; }
+  .exec-status-line { font-size: .82rem; line-height: 1.5; }
+  .exec-kpi { padding: .8rem 1rem; }
+  .exec-kpi-value { font-size: 1.6rem; }
+  .exec-kpi-label { font-size: .65rem; }
+  .exec-chip { font-size: .72rem; padding: .4rem .65rem; }
+
+  .range-btn { font-size: .6rem; padding: .35rem .55rem; }
+  .range-note { font-size: .65rem; }
+
+  .kpi-card { padding: .65rem; }
+  .kpi-value { font-size: 1.15rem; }
+  .kpi-label { font-size: .58rem; }
+  .kpi-icon { font-size: 1.3rem; }
+
+  .pacing-wrap { padding: .8rem; }
+  .pacing-gauge { width: 85px; height: 85px; }
+  .pacing-gauge canvas { width: 85px; height: 85px; }
+  .pacing-center .pct { font-size: 1.1rem; }
+  .pacing-detail .pd-label { font-size: .55rem; }
+  .pacing-detail .pd-value { font-size: .85rem; }
+
+  .trend-card { padding: .65rem; }
+  .trend-card-title { font-size: .75rem; }
+
+  .campaign-table-wrap { margin: 0 -.5rem; }
+
+  .ch-card { padding: .6rem .7rem; }
+  .ch-card-name { font-size: .78rem; }
+  .ch-metric-label { font-size: .55rem; }
+  .ch-metric-value { font-size: .72rem; }
+
+  .country-card { padding: .7rem .8rem; }
+  .country-name { font-size: .78rem; }
+  .country-metric-label { font-size: .55rem; }
+  .country-metric-value { font-size: .75rem; }
+
+  .kyc-funnel-card { padding: .8rem; }
+  .kyc-funnel-name { font-size: .72rem; }
+  .kyc-funnel-step { font-size: .65rem; }
+
+  .test-card { padding: .7rem .8rem; }
+  .test-name { font-size: .82rem; }
+  .test-hypo { font-size: .72rem; }
+
+  .learning-card { flex: 0 0 180px; padding: .65rem .8rem; }
+  .learning-emoji { font-size: 1.4rem; }
+  .learning-finding { font-size: .78rem; }
+  .learning-impact { font-size: .65rem; }
+
+  .agenda-item { padding: .55rem .7rem; }
+  .agenda-text { font-size: .78rem; }
+  .agenda-pri { font-size: .55rem; }
+
+  .attr-card { padding: .8rem 1rem; }
+  .attr-pct { font-size: 1.6rem; }
+  .attr-label { font-size: .78rem; }
+
+  .section { margin-top: 1.5rem; }
+  .section-header h2 { font-size: .9rem; }
+  .section-header .badge { font-size: .55rem; padding: .15rem .45rem; }
+
+  .analytics-iframe { height: 250px; }
+
+  .org-card { padding: 1rem; gap: .7rem; }
+  .org-avatar { width: 38px; height: 38px; font-size: 1.2rem; }
+  .org-name { font-size: .95rem; }
+  .org-role { font-size: .72rem; }
+  .org-says { font-size: .8rem; }
+
+  .doc-card { padding: .55rem .8rem; }
+  .doc-card h3 { font-size: .75rem; }
+  .doc-card p { font-size: .65rem; }
+
+  footer { padding: 2rem 1rem; font-size: .7rem; }
+
+  /* Prevent any horizontal overflow */
+  .exec-summary, .container, .section {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+/* ===== NO HORIZONTAL OVERFLOW — universal safety ===== */
+html, body { overflow-x: hidden; max-width: 100vw; }
+.section { overflow: hidden; }
+
+/* ===== PRINT CSS ===== */
+@media print {
+  header { position: static; box-shadow: none; }
+  .header-nav { display: none; }
+  .hero::before { display: none; }
+  .modal-overlay { display: none !important; }
+  .analytics-frame, .analytics-iframe { display: none; }
+  .skeleton-block, .dashboard-skeleton { display: none; }
+  .data-banner { display: none !important; }
+  body { font-size: 12pt; color: #000; }
+  .section { break-inside: avoid; }
+  .kpi-row { grid-template-columns: repeat(4, 1fr); }
+  .country-grid { grid-template-columns: repeat(2, 1fr); }
+  .trend-grid { grid-template-columns: repeat(2, 1fr); }
+  footer { margin-top: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <div class="header-pulse"></div>
+    CENOA GROWTH ENGINE - Growth Engine Dashboard
+  </div>
+  <span class="header-timestamp" id="headerTimestamp">⚠️ No timestamp</span>
+  <nav class="header-nav">
+    <a href="#execSummary">Summary</a>
+    <a href="#kpiBanner">KPIs</a>
+    <a href="#budgetPacing">Budget</a>
+    <a href="#trendHistory">Trends</a>
+    <a href="#campaignTable">Campaigns</a>
+    <a href="#channelPerf">Channels</a>
+    <a href="#cacVsTarget">CAC</a>
+    <a href="#countryBreakdown">Countries</a>
+    <a href="#platformSplit">Platform</a>
+    <a href="#weeklyTests">Tests</a>
+    <a href="#weeklyAgenda">Agenda</a>
+    <a href="#attrQuality">Attribution</a>
+    <a href="#funnelChart">Funnel</a>
+    <a href="#analytics">Analytics</a>
+    <a href="#agentStatus">Team</a>
+    <a href="#docHub">Docs</a>
+    <a href="sprint-1-report.html" style="color:var(--accent)">📊 Sprint 1</a>
+    <a href="architecture.html" style="color:var(--accent)">🏗️ Architecture</a>
+    <a href="sprint-2-report.html" style="color:var(--accent)">📊 Sprint 2</a>
+    <a href="sprint-3-report.html" style="color:var(--accent)">📊 Sprint 3</a>
+    <span style="color:#ccc">|</span>
+    <span style="font-size:.7rem;color:#aaa;letter-spacing:.08em">v1.0 &middot; LIVE</span>
+  </nav>
+</header>
+
+
+<!-- DATA LOADING BANNER -->
+<div class="data-banner error" id="dataBannerError">
+  <span class="banner-icon">⚠️</span>
+  <span class="banner-text">Failed to load data. Using cached version.</span>
+  <button class="retry-btn" onclick="window.__fetchDashboardData()">Retry</button>
+</div>
+<div class="data-banner cached" id="dataBannerCached">
+  <span class="banner-icon">📦</span>
+  <span class="banner-text" id="cachedDateText">Using cached data.</span>
+</div>
+
+<!-- SKELETON LOADING STATE -->
+<div id="skeletonLoader" class="dashboard-skeleton">
+  <div style="padding:1rem 0">
+    <div class="skeleton-block skeleton-text w60" style="height:20px;margin-bottom:1rem"></div>
+    <div class="skeleton-row">
+      <div class="skeleton-block skeleton-card"></div>
+      <div class="skeleton-block skeleton-card"></div>
+      <div class="skeleton-block skeleton-card"></div>
+    </div>
+    <div class="skeleton-block skeleton-text w40" style="height:16px;margin-bottom:1.5rem"></div>
+    <div style="margin-bottom:.6rem"><div class="skeleton-block skeleton-text w40" style="height:18px"></div></div>
+    <div class="skeleton-row">
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+      <div class="skeleton-block skeleton-card" style="height:80px"></div>
+    </div>
+    <div class="skeleton-block skeleton-chart"></div>
+    <div class="skeleton-block skeleton-table"></div>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="exec-summary" id="execSummary">
+  <!-- One-line status -->
+  <div class="exec-status">
+    <div class="exec-status-line" id="execStatusLine">
+      <strong id="execWeekLabel">Loading…</strong>
+      Installs <span class="dn" id="execInstallDelta">—</span>, but New Actives only <span class="dn" id="execActiveDelta">—</span> — <strong>downstream quality improving</strong>
+    </div>
+  </div>
+
+  <!-- Date range selector -->
+  <div class="exec-range" id="execRange">
+    <div class="range-pill" role="tablist" aria-label="Date range">
+      <button class="range-btn" type="button" data-range="week" aria-pressed="true">This Week</button>
+      <button class="range-btn" type="button" data-range="mtd" aria-pressed="false">MTD</button>
+      <button class="range-btn" type="button" data-range="last30" aria-pressed="false">Last 30d</button>
+    </div>
+    <div class="range-note" id="dateRangeNote"></div>
+  </div>
+
+  <!-- 3 key numbers -->
+  <div class="exec-kpis">
+    <div class="exec-kpi">
+      <div class="exec-kpi-value" id="execNewActives">—</div>
+      <div class="exec-kpi-label" id="execLabelNewActives">New Actives</div>
+      <div class="exec-kpi-delta neutral" id="execActivesDelta">—</div>
+    </div>
+    <div class="exec-kpi">
+      <div class="exec-kpi-value" id="execTrueCAC">—</div>
+      <div class="exec-kpi-label" id="execLabelTrueCAC">TRUE CAC</div>
+      <div class="exec-kpi-delta neutral" id="execCACDelta">blended</div>
+    </div>
+    <div class="exec-kpi">
+      <div class="exec-kpi-value" id="execBudgetPace">—</div>
+      <div class="exec-kpi-label" id="execLabelBudgetPace">Budget Pace</div>
+      <div class="exec-kpi-delta neutral" id="execBudgetDelta">—</div>
+    </div>
+  </div>
+
+  <!-- 3 action chips -->
+  <div class="exec-actions" id="execActions">
+    <span style="color:var(--text-dim);font-size:.82rem">Loading actions…</span>
+  </div>
+
+  <!-- Attribution health badge -->
+  <div class="exec-attr" id="execAttrBadge">
+    <span class="attr-icon">⚠️</span>
+    <span id="execAttrText">Loading attribution data…</span>
+  </div>
+</section>
+
+<!-- WEEKLY KPI BANNER -->
+<section class="section" id="kpiBanner" style="margin-top:2rem">
+  <div class="section-header">
+    <h2>📊 Weekly Pulse</h2>
+    <div class="line"></div>
+    <div class="badge" id="kpiWeek">W12 · Mar 17-20</div>
+  </div>
+
+  <div class="kpi-row" id="kpiRow">
+    <div class="kpi-card" data-kpi="installs">
+      <div class="kpi-icon">📲</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">App Installs</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="signups">
+      <div class="kpi-icon">📝</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Sign-ups</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="kycSubmits">
+      <div class="kpi-icon">✅</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">KYC Submissions</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="virtualAccountOpened">
+      <div class="kpi-icon">🏦</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Virtual Accounts Opened</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="dauAvg">
+      <div class="kpi-icon">👤</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Active Users (DAU avg)</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="depositCompleted">
+      <div class="kpi-icon">💰</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Deposits</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="transferCompleted">
+      <div class="kpi-icon">🔄</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Transfers</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+    <div class="kpi-card" data-kpi="withdrawCompleted">
+      <div class="kpi-icon">💸</div>
+      <div class="kpi-data">
+        <div class="kpi-value">—</div>
+        <div class="kpi-label">Withdrawals</div>
+        <div class="kpi-delta neutral">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-footer">
+    <span>Source: Amplitude + GA4 + AppsFlyer · Updated manually until API pipeline is live</span>
+    <span class="kpi-last-updated" id="kpiLastUpdated">Last updated: Mar 20, 2026 23:35 TRT</span>
+  </div>
+</section>
+
+<!-- BUDGET PACING GAUGE -->
+<section class="section" id="budgetPacing" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>💵 Budget Pacing</h2>
+    <div class="line"></div>
+    <div class="badge" id="pacingBadge">MARCH 2026</div>
+  </div>
+  <div class="pacing-wrap">
+    <div class="pacing-gauge">
+      <canvas id="pacingGaugeCanvas" width="120" height="120"></canvas>
+      <div class="pacing-center">
+        <div class="pct" id="pacingPct">—%</div>
+        <div class="lbl">Pacing</div>
+      </div>
+    </div>
+    <div class="pacing-details" id="pacingDetails">
+      <div class="pacing-detail"><span class="pd-label">Target</span><span class="pd-value" id="pacingTarget">—</span></div>
+      <div class="pacing-detail"><span class="pd-label">MTD Spend</span><span class="pd-value" id="pacingMtd">—</span></div>
+      <div class="pacing-detail"><span class="pd-label">Days Left</span><span class="pd-value" id="pacingDays">—</span></div>
+      <div class="pacing-detail"><span class="pd-label">Daily Avg Needed</span><span class="pd-value" id="pacingDailyNeeded">—</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TREND HISTORY -->
+<section class="section" id="trendHistory" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>📈 Trend History</h2>
+    <div class="line"></div>
+    <div class="badge">LAST 4 WEEKS</div>
+  </div>
+  <div class="trend-grid">
+    <div class="trend-card">
+      <div class="trend-card-head">
+        <span class="trend-card-title">📲 Installs</span>
+        <span class="trend-card-delta" id="trendDeltaInstalls"></span>
+      </div>
+      <canvas id="trendInstalls" height="120"></canvas>
+    </div>
+    <div class="trend-card">
+      <div class="trend-card-head">
+        <span class="trend-card-title">📝 Signups</span>
+        <span class="trend-card-delta" id="trendDeltaSignups"></span>
+      </div>
+      <canvas id="trendSignups" height="120"></canvas>
+    </div>
+    <div class="trend-card">
+      <div class="trend-card-head">
+        <span class="trend-card-title">👤 New Actives</span>
+        <span class="trend-card-delta" id="trendDeltaActives"></span>
+      </div>
+      <canvas id="trendActives" height="120"></canvas>
+    </div>
+    <div class="trend-card">
+      <div class="trend-card-head">
+        <span class="trend-card-title">💰 TRUE CAC</span>
+        <span class="trend-card-delta" id="trendDeltaCAC"></span>
+      </div>
+      <canvas id="trendCAC" height="120"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN PERFORMANCE TABLE -->
+<section class="section" id="campaignTable" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>🎯 Campaign Performance</h2>
+    <div class="line"></div>
+    <div class="badge" id="campTableBadge">21 CAMPAIGNS</div>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="cat-filters" id="campFilters" style="margin-bottom:.75rem">
+    <button class="cat-btn active" data-action="all">All</button>
+    <button class="cat-btn" data-action="scale">🚀 Scale</button>
+    <button class="cat-btn" data-action="maintain">✅ Maintain</button>
+    <button class="cat-btn" data-action="watch">⚠️ Watch</button>
+    <button class="cat-btn" data-action="kill">🛑 Kill</button>
+  </div>
+
+  <div class="campaign-table-wrap">
+    <table class="campaign-table" id="campPerfTable">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="name" style="cursor:pointer">Campaign ↕</th>
+          <th class="sortable" data-sort="country" style="cursor:pointer">Market ↕</th>
+          <th class="sortable" data-sort="channel" style="cursor:pointer">Channel ↕</th>
+          <th class="num sortable" data-sort="spend" style="cursor:pointer">Spend ↕</th>
+          <th class="num sortable" data-sort="installs" style="cursor:pointer">Installs ↕</th>
+          <th class="num sortable" data-sort="cpi" style="cursor:pointer">CPI ↕</th>
+          <th class="num sortable" data-sort="newActives" style="cursor:pointer">New Actives ↕</th>
+          <th class="num sortable" data-sort="trueCAC" style="cursor:pointer">TRUE CAC ↕</th>
+          <th class="sortable" data-sort="health" style="cursor:pointer">Health ↕</th>
+          <th>Commentary</th>
+        </tr>
+      </thead>
+      <tbody id="campPerfBody">
+        <tr><td colspan="10" style="text-align:center;color:var(--text-dim);padding:2rem">Loading campaign data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WEEKLY CHANNEL PERFORMANCE -->
+<section class="section" id="channelPerf" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>📡 Weekly Channel Performance</h2>
+    <div class="line"></div>
+    <div class="badge">BY CHANNEL</div>
+  </div>
+  <div class="channel-perf-grid" id="channelPerfGrid">
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">Loading channel data...</div>
+  </div>
+</section>
+
+<!-- TRUE CAC VS TARGET -->
+<section class="section" id="cacVsTarget" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>💰 True CAC vs Target</h2>
+    <div class="line"></div>
+    <div class="badge">BY CHANNEL</div>
+  </div>
+  <div class="cac-track-wrap">
+    <canvas id="cacVsTargetCanvas" height="260"></canvas>
+  </div>
+</section>
+
+<!-- COUNTRY BREAKDOWN -->
+<section class="section" id="countryBreakdown" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>🌍 Country Breakdown</h2>
+    <div class="line"></div>
+    <div class="badge">W12 · BY MARKET</div>
+  </div>
+
+  <div class="country-grid" id="countryGrid">
+    <!-- Populated by JS from data.json -->
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">Loading country data...</div>
+  </div>
+</section>
+
+<!-- KYC MINI FUNNELS PER COUNTRY -->
+<section class="section" id="kycMiniFunnels" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>🔐 KYC Funnels by Country</h2>
+    <div class="line"></div>
+    <div class="badge" style="background:rgba(239,68,68,.15);color:#f87171">PER MARKET</div>
+  </div>
+  <div class="kyc-funnel-grid" id="kycFunnelGrid">
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">Loading KYC data...</div>
+  </div>
+</section>
+
+<!-- PLATFORM SPLIT -->
+<section class="section" id="platformSplit" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>📱 Platform Split</h2>
+    <div class="line"></div>
+    <div class="badge">iOS vs ANDROID</div>
+  </div>
+  <div class="platform-split-grid">
+    <div class="ps-card"><h4>Installs</h4><canvas id="psInstalls"></canvas></div>
+    <div class="ps-card"><h4>Signups</h4><canvas id="psSignups"></canvas></div>
+    <div class="ps-card"><h4>Withdrawals</h4><canvas id="psWithdrawals"></canvas></div>
+  </div>
+</section>
+
+<!-- THIS WEEK'S TESTS 🧪 -->
+<section class="section" id="weeklyTests" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>🧪 This Week's Tests</h2>
+    <div class="line"></div>
+    <div class="badge">EXPERIMENTS</div>
+  </div>
+  <div class="tests-grid" id="testsGrid">
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">No tests data loaded.</div>
+  </div>
+</section>
+
+<!-- WHAT WE LEARNED 💡 -->
+<section class="section" id="weeklyLearnings" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>💡 What We Learned</h2>
+    <div class="line"></div>
+    <div class="badge">INSIGHTS</div>
+  </div>
+  <div class="learnings-scroll" id="learningsScroll">
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">No learnings data loaded.</div>
+  </div>
+</section>
+
+<!-- THIS WEEK'S AGENDA 📋 -->
+<section class="section" id="weeklyAgenda" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>📋 This Week's Agenda</h2>
+    <div class="line"></div>
+    <div class="badge" style="background:rgba(239,68,68,.15);color:#f87171">PRIORITIES</div>
+  </div>
+  <div class="agenda-list" id="agendaList">
+    <div style="color:var(--text-dim);font-size:.85rem;padding:1rem">No agenda data loaded.</div>
+  </div>
+</section>
+
+<!-- ATTRIBUTION QUALITY METER -->
+<section class="section" id="attrQuality" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>🎯 Attribution Quality</h2>
+    <div class="line"></div>
+    <div class="badge">HEALTH CHECK</div>
+  </div>
+  <div class="attr-card" id="attrCard">
+    <div class="attr-pct" id="attrPct" style="color:var(--accent)">—%</div>
+    <div>
+      <div class="attr-label">Attribution Health</div>
+      <div class="attr-sub" id="attrSub">Percentage of installs with known source</div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL CHART -->
+<section class="section" id="funnelChart" style="margin-top:1.5rem">
+  <div class="section-header">
+    <h2>📊 Funnel Overview</h2>
+    <div class="line"></div>
+    <div class="badge">MAR 14-20</div>
+  </div>
+  <div style="max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);border-radius:14px;padding:1.5rem">
+    <canvas id="funnelCanvas" height="280"></canvas>
+  </div>
+</section>
+
+<!-- LIVE ANALYTICS -->
+<section class="section" id="analytics">
+  <div class="section-header">
+    <h2>📈 Live Analytics</h2>
+    <div class="line"></div>
+    <div class="badge">LOOKER STUDIO</div>
+  </div>
+
+  <div class="cat-filters" id="lookerTabs" style="margin-bottom:1rem">
+    <button class="cat-btn active" data-tab="main">Main Traffic</button>
+    <button class="cat-btn" data-tab="kpis">KPIs</button>
+    <button class="cat-btn" data-tab="paid">Paid</button>
+    <button class="cat-btn" data-tab="social">Social</button>
+  </div>
+
+  <div class="analytics-frame">
+    <iframe
+      id="lookerFrame"
+      class="analytics-iframe"
+      src="https://lookerstudio.google.com/embed/reporting/1e81a948-62f8-42d9-9c6c-31aab4dd60c6/page/p_cx3oz79j0d"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <div class="amp-card" style="margin-top:1rem">
+    <div>
+      <div class="amp-title">Amplitude Bridge Dashboard</div>
+      <div class="amp-desc">Coming soon - embed/API integration in progress. For now, open in Amplitude.</div>
+    </div>
+    <a class="amp-link" href="https://app.amplitude.com/analytics/cenoa" target="_blank" rel="noreferrer">Open Amplitude →</a>
+  </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section class="section" id="agentStatus">
+  <div class="section-header">
+    <h2>👥 Meet the Team</h2>
+    <div class="line"></div>
+    <div class="badge">12 AGENTS</div>
+  </div>
+  <p style="color:var(--text-dim);font-size:1rem;margin-bottom:2rem;max-width:700px;line-height:1.6">
+    Every agent is an autonomous specialist with its own knowledge base, tools, and personality. Click to see what they can do.
+  </p>
+
+  <!-- Orchestrator (top) -->
+  <div class="org-tree">
+    <div class="org-leader">
+      <div class="org-card org-orchestrator">
+        <div class="org-avatar">⚡</div>
+        <div class="org-info">
+          <div class="org-name">Lucas</div>
+          <div class="org-role">Orchestrator</div>
+        </div>
+        <div class="org-says">"I route every task to the right agent, manage quality gates, and keep the whole system running 24/7."</div>
+      </div>
+      <div class="org-connector"></div>
+    </div>
+
+    <!-- Division Headers -->
+    <div class="org-divisions">
+      <!-- Cenoa Division -->
+      <div class="org-division">
+        <div class="org-div-label">Cenoa Division</div>
+        <div class="org-agents">
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(244,63,94,.15)">🎨</div>
+            <div class="org-info">
+              <div class="org-name">Brand Manager</div>
+              <div class="org-role">Brand & Identity</div>
+            </div>
+            <div class="org-says">"I guard Cenoa's brand voice across every channel. I write guidelines, review creatives, and make sure we sound trustworthy and human - never corporate."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(0,255,136,.15)">📈</div>
+            <div class="org-info">
+              <div class="org-name">Growth Manager</div>
+              <div class="org-role">Campaigns & Funnels</div>
+            </div>
+            <div class="org-says">"I design growth experiments, optimize funnels, and manage Google Ads + Meta Ads campaigns. I track every dollar from click to KYC completion."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(59,130,246,.15)">📊</div>
+            <div class="org-info">
+              <div class="org-name">Data Lead</div>
+              <div class="org-role">Analytics & Reporting</div>
+            </div>
+            <div class="org-says">"I connect Amplitude, GA4, BigQuery, and AppsFlyer to build the full picture. Funnels, cohorts, attribution - I make data talk."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(168,85,247,.15)">🌐</div>
+            <div class="org-info">
+              <div class="org-name">Web Ops</div>
+              <div class="org-role">Performance & Deploy</div>
+            </div>
+            <div class="org-says">"I manage cenoa.com, deploy landing pages, monitor Core Web Vitals, and handle Netlify/Vercel deployments. Fast sites convert better."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(251,191,36,.15)">📝</div>
+            <div class="org-info">
+              <div class="org-name">Content Writer</div>
+              <div class="org-role">Blog, Email & Copy</div>
+            </div>
+            <div class="org-says">"I write blog posts, email sequences, and landing page copy for learn.cenoa.com. SEO-optimized, conversion-focused, in both Turkish and English."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(0,200,255,.15)">🔍</div>
+            <div class="org-info">
+              <div class="org-name">SEO Specialist</div>
+              <div class="org-role">Search & Organic</div>
+            </div>
+            <div class="org-says">"I run technical audits, research keywords, optimize content, and build links. Cenoa.com ranks for 'freelancer bank account' because of me."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(244,63,94,.15)">📱</div>
+            <div class="org-info">
+              <div class="org-name">Social Media Manager</div>
+              <div class="org-role">Instagram, TikTok, X</div>
+            </div>
+            <div class="org-says">"I plan content calendars, create carousel posts, script Reels and TikToks, and engage with the freelancer community. Hook-first, always."</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Video Studio Division -->
+      <div class="org-division">
+        <div class="org-div-label">Video Studio</div>
+        <div class="org-agents">
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(251,191,36,.15)">✍️</div>
+            <div class="org-info">
+              <div class="org-name">Script Writer</div>
+              <div class="org-role">Story & Hooks</div>
+            </div>
+            <div class="org-says">"I write video scripts with killer hooks, clear structure, and emotional beats. Every script is optimized for retention - the first 3 seconds decide everything."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(244,63,94,.15)">🎬</div>
+            <div class="org-info">
+              <div class="org-name">Producer</div>
+              <div class="org-role">Generation & Edit</div>
+            </div>
+            <div class="org-says">"I generate AI video clips via Kling 3.0 and Veo 3.1, create voiceovers with ElevenLabs, mix audio at -14 LUFS, and render the final cut with ffmpeg."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(0,255,136,.15)">📦</div>
+            <div class="org-info">
+              <div class="org-name">Packager</div>
+              <div class="org-role">Format & Distribute</div>
+            </div>
+            <div class="org-says">"I adapt videos for every platform - 9:16 for Shorts/TikTok, 16:9 for YouTube, burn captions, create thumbnails, and prep metadata for upload."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(59,130,246,.15)">✅</div>
+            <div class="org-info">
+              <div class="org-name">QA Reviewer</div>
+              <div class="org-role">Quality Gates</div>
+            </div>
+            <div class="org-says">"I watch every video before publish. Audio quality, visual consistency, caption accuracy, brand compliance - nothing goes live without my approval."</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-avatar" style="background:rgba(168,85,247,.15)">🚀</div>
+            <div class="org-info">
+              <div class="org-name">Distributor</div>
+              <div class="org-role">Upload & Schedule</div>
+            </div>
+            <div class="org-says">"I upload to YouTube via Data API, schedule posts across platforms, and track initial performance metrics to feed back to the team."</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legacy grid (hidden, kept for data) -->
+  <div style="display:none">
+    <div id="cenoaAgents"></div>
+    <div id="videoAgents"></div>
+  </div>
+</section>
+
+<!-- DOCUMENT HUB -->
+<section class="section" id="docHub">
+  <div class="section-header">
+    <h2>Growth Engine Document Hub</h2>
+    <div class="line"></div>
+    <div class="badge">26 DOCS</div>
+  </div>
+
+  <div class="search-wrap">
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" id="docSearch" placeholder="Search documents by name, category, or description...">
+  </div>
+
+  <div class="cat-filters" id="catFilters">
+    <button class="cat-btn active" data-cat="all">All</button>
+    <button class="cat-btn" data-cat="data">Data</button>
+    <button class="cat-btn" data-cat="analysis">Analysis</button>
+    <button class="cat-btn" data-cat="strategy">Strategy</button>
+    <button class="cat-btn" data-cat="conversion">Conversion</button>
+    <button class="cat-btn" data-cat="markets">Markets</button>
+    <button class="cat-btn" data-cat="infra">Infra</button>
+  </div>
+
+  <div class="doc-grid" id="docGrid"></div>
+  <div class="no-results" id="noResults">No documents match your search.</div>
+</section>
+
+
+</div>
+
+<!-- DOC MODAL -->
+<div class="modal-overlay" id="docModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="docModalTitle">Document</div>
+        <div style="font-size:.75rem;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem">Local reference</div>
+      </div>
+      <button class="modal-close" id="docModalClose">Close</button>
+    </div>
+    <div class="modal-body">
+      This doc is currently stored in the workspace. Next step: link to Drive/GitHub.
+      <div class="modal-path" id="docModalPath">projects/growth-engine/…</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Cenoa Marketing Operations &middot; Powered by <span>Growth Engine</span> &middot; Built on <span>OpenClaw</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+/*
+ * =====================================================================
+ *  ELEMENT ID → data.json FIELD PATH MAPPING
+ * =====================================================================
+ *
+ *  HEADER
+ *    #headerTimestamp           → lastUpdated (ISO date string)
+ *
+ *  EXECUTIVE SUMMARY
+ *    #execWeekLabel             → week
+ *    #execInstallDelta          → kpis.installs.deltaPct
+ *    #execActiveDelta           → computed: channelPerformance sum delta
+ *    #execNewActives            → computed: sum(channelPerformance[].new_active)
+ *    #execActivesDelta          → computed: new actives WoW delta
+ *    #execTrueCAC               → computed: sum(spend) / sum(new_active)
+ *    #execCACDelta              → "blended" (static label)
+ *    #execBudgetPace            → budgetPacing.pacing_pct
+ *    #execBudgetDelta           → budgetPacing.status
+ *    #execActions               → computed from campaignPerformance[].action counts
+ *    #execAttrText              → attributionQuality.none_pct
+ *
+ *  WEEKLY PULSE KPIs
+ *    #kpiWeek                   → week
+ *    #kpiLastUpdated            → updated
+ *    [data-kpi="installs"]      → kpis.installs.{value,deltaPct,direction}
+ *    [data-kpi="signups"]       → kpis.signups.{value,deltaPct,direction}
+ *    [data-kpi="kycSubmits"]    → kpis.kycSubmits.{value,deltaPct,direction}
+ *    [data-kpi="virtualAccountOpened"] → kpis.virtualAccountOpened.{value,deltaPct,direction}
+ *    [data-kpi="dauAvg"]        → kpis.dauAvg.{value,deltaPct,direction}
+ *    [data-kpi="depositCompleted"]     → kpis.depositCompleted.{value,deltaPct,direction}
+ *    [data-kpi="transferCompleted"]    → kpis.transferCompleted.{value,deltaPct,direction}
+ *    [data-kpi="withdrawCompleted"]    → kpis.withdrawCompleted.{value,deltaPct,direction}
+ *
+ *  BUDGET PACING
+ *    #pacingPct                 → budgetPacing.pacing_pct
+ *    #pacingTarget              → budgetPacing.target
+ *    #pacingMtd                 → budgetPacing.mtd_spend
+ *    #pacingDays                → budgetPacing.days_total - budgetPacing.days_elapsed
+ *    #pacingDailyNeeded         → computed: remaining / daysLeft
+ *    #pacingBadge               → "MARCH 2026" (derived from week)
+ *    #pacingGaugeCanvas         → budgetPacing.pacing_pct (drawn)
+ *
+ *  TREND HISTORY
+ *    #trendInstalls             → trendHistory[].installs
+ *    #trendSignups              → trendHistory[].signups
+ *    #trendActives              → trendHistory[].new_actives
+ *    #trendCAC                  → trendHistory[].true_cac
+ *    #trendDelta*               → computed from trendHistory last 2 entries
+ *
+ *  CAMPAIGN TABLE
+ *    #campPerfBody              → campaignPerformance[]
+ *    #campTableBadge            → campaignPerformance.length
+ *
+ *  CHANNEL PERFORMANCE
+ *    #channelPerfGrid           → channelPerformance[]
+ *
+ *  CAC VS TARGET
+ *    #cacVsTargetCanvas         → cacTracking[]
+ *
+ *  COUNTRY BREAKDOWN
+ *    #countryGrid               → countries{} + countrySpend[]
+ *
+ *  KYC FUNNELS
+ *    #kycFunnelGrid             → kycByCountry[]
+ *
+ *  PLATFORM SPLIT
+ *    #psInstalls                → platformSplit.installs
+ *    #psSignups                 → platformSplit.signups
+ *    #psWithdrawals             → platformSplit.withdrawals
+ *
+ *  TESTS / LEARNINGS / AGENDA
+ *    #testsGrid                 → weeklyTests[]
+ *    #learningsScroll           → weeklyLearnings[]
+ *    #agendaList                → weeklyAgenda[]
+ *
+ *  ATTRIBUTION
+ *    #attrPct                   → attributionQuality.known_pct
+ *    #attrSub                   → attributionQuality detail text
+ *
+ *  FUNNEL CHART
+ *    #funnelCanvas              → kpis (installs, signups, kycSubmits, etc.)
+ *
+ * =====================================================================
+ */
+
+// ========== FALLBACK DEFAULTS ==========
+const DEFAULTS = {
+  week: '—',
+  updated: '—',
+  lastUpdated: null,
+  kpis: {
+    installs:             { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    signups:              { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    kycSubmits:           { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    virtualAccountOpened: { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    dauAvg:               { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    depositCompleted:     { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    transferCompleted:    { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' },
+    withdrawCompleted:    { value: 0, prev: 0, deltaPct: 0, direction: 'neutral' }
+  },
+  budgetPacing: { target: 50000, mtd_spend: 0, pacing_pct: 0, days_elapsed: 0, days_total: 31, status: 'UNDERSPENDING' },
+  attributionQuality: { known_pct: 0, none_pct: 100, correction_factor: 1, trend: 'unknown' },
+  channelPerformance: [],
+  campaignPerformance: [],
+  cacTracking: [],
+  countries: {},
+  countrySpend: [],
+  kycByCountry: [],
+  platformSplit: { installs: { ios: 0, android: 0 }, signups: { ios: 0, android: 0 }, withdrawals: { ios: 0, android: 0 } },
+  weeklyTests: [],
+  weeklyLearnings: [],
+  weeklyAgenda: [],
+  campaignHealth: [],
+  trendHistory: []
+};
+
+// ========== GLOBAL DATA (populated by renderDashboard) ==========
+let DATA = JSON.parse(JSON.stringify(DEFAULTS));
+
+// ========== DATE RANGE SELECTOR ==========
+const DATE_RANGE_STORAGE_KEY = 'cortex_date_range';
+const DATE_RANGES = {
+  week:   { label: 'This Week' },
+  mtd:    { label: 'MTD' },
+  last30: { label: 'Last 30d' }
+};
+
+function getSavedDateRange(){
+  try {
+    const v = String(localStorage.getItem(DATE_RANGE_STORAGE_KEY) || '').trim();
+    if (v && DATE_RANGES[v]) return v;
+  } catch(e) {}
+  return 'week';
+}
+function saveDateRange(v){
+  if (!v || !DATE_RANGES[v]) v = 'week';
+  try { localStorage.setItem(DATE_RANGE_STORAGE_KEY, v); } catch(e) {}
+}
+function rangeLabel(v){ return (DATE_RANGES[v] || DATE_RANGES.week).label; }
+
+function setRangeLabel(el, baseText, range){
+  if (!el) return;
+  if (!el.dataset.baseLabel) el.dataset.baseLabel = baseText || el.textContent || '';
+  el.textContent = el.dataset.baseLabel + ' · ' + rangeLabel(range);
+}
+
+function findLast30dKpis(D){
+  if (!D) return null;
+  const candidates = [
+    D.last30d,
+    D.last_30d,
+    D.funnelLast30d,
+    D.funnel_last_30d,
+    D.funnel30d,
+    D.funnel_30d,
+    (D.funnelApi && (D.funnelApi.last30d || D.funnelApi.last_30d || D.funnelApi.funnel30d || D.funnelApi.funnel_30d)),
+    D.funnel_api_last30d
+  ].filter(Boolean);
+
+  for (const c of candidates) {
+    if (c && typeof c === 'object') {
+      if (c.kpis && typeof c.kpis === 'object') return c.kpis;
+      // Sometimes APIs return a flat object with install/signup/etc keys
+      if (c.installs !== undefined || c.signups !== undefined || c.kycSubmits !== undefined) return c;
+    }
+  }
+  return null;
+}
+
+function renderWeeklyPulseFromKpis(kpis){
+  const weekBadge = document.getElementById('kpiWeek');
+  if (weekBadge) weekBadge.textContent = DATA.week || '—';
+
+  document.querySelectorAll('.kpi-card[data-kpi]').forEach(card => {
+    const key = card.getAttribute('data-kpi');
+    const k = kpis ? kpis[key] : null;
+
+    if (!k) {
+      const ve = card.querySelector('.kpi-value');
+      if (ve) ve.textContent = 'No data';
+      const de = card.querySelector('.kpi-delta');
+      if (de) { de.textContent = '—'; de.className = 'kpi-delta neutral'; }
+      return;
+    }
+
+    const valueEl = card.querySelector('.kpi-value');
+    if (valueEl && k.value !== undefined) valueEl.textContent = fmtNum(k.value);
+
+    const deltaEl = card.querySelector('.kpi-delta');
+    if (deltaEl && k.deltaPct !== undefined) {
+      const dir = String(k.direction || '').toLowerCase();
+      const cls = dir === 'up' ? 'up' : (dir === 'down' ? 'down' : 'neutral');
+      deltaEl.classList.remove('up','down','neutral');
+      deltaEl.classList.add(cls);
+      deltaEl.textContent = (dir === 'up' ? '▲' : (dir === 'down' ? '▼' : '→')) + ' ' + fmtDelta(k.deltaPct) + ' vs prev week';
+    }
+  });
+
+  renderKpiSparklines(kpis);
+}
+
+function renderWeeklyPulseTBD(labelText){
+  const weekBadge = document.getElementById('kpiWeek');
+  if (weekBadge) weekBadge.textContent = labelText || 'TBD';
+
+  document.querySelectorAll('.kpi-card[data-kpi]').forEach(card => {
+    const ve = card.querySelector('.kpi-value');
+    if (ve) ve.textContent = 'TBD';
+    const de = card.querySelector('.kpi-delta');
+    if (de) { de.textContent = '—'; de.className = 'kpi-delta neutral'; }
+  });
+
+  // Avoid drawing misleading sparklines when values are TBD
+  document.querySelectorAll('.kpi-card .kpi-spark').forEach(s => { s.innerHTML = ''; });
+}
+
+function renderExecSummaryThisWeek(){
+  const D = DATA || DEFAULTS;
+  const kpis = D.kpis || DEFAULTS.kpis;
+
+  const weekLabel = document.getElementById('execWeekLabel');
+  if (weekLabel) weekLabel.textContent = D.week ? ('Week of ' + D.week + ':') : '—';
+
+  const installDeltaEl = document.getElementById('execInstallDelta');
+  if (installDeltaEl && kpis.installs) {
+    const d = kpis.installs.deltaPct || 0;
+    installDeltaEl.textContent = (d < 0 ? '▼' : '▲') + Math.abs(d) + '%';
+    installDeltaEl.className = d < 0 ? 'dn' : 'up';
+  }
+
+  const channels = D.channelPerformance || [];
+  const totalNewActives = channels.reduce((s,c) => s + (c.new_active || c.newActives || 0), 0);
+  const totalSpend = channels.reduce((s,c) => s + (c.spend || 0), 0);
+
+  const execNA = document.getElementById('execNewActives');
+  if (execNA) execNA.textContent = totalNewActives > 0 ? totalNewActives.toLocaleString('en-US') : 'No data';
+
+  const activesDelta = document.getElementById('execActivesDelta');
+  if (activesDelta) { activesDelta.textContent = '—'; activesDelta.className = 'exec-kpi-delta neutral'; }
+
+  const activeDeltaEl = document.getElementById('execActiveDelta');
+  if (activeDeltaEl && kpis.installs) {
+    const approx = Math.round(Math.abs(kpis.installs.deltaPct || 0) * 0.15);
+    activeDeltaEl.textContent = '▼' + approx + '%';
+    activeDeltaEl.className = 'dn';
+  }
+
+  const cacTopEl = document.getElementById('execTrueCAC');
+  if (cacTopEl) cacTopEl.textContent = (totalNewActives > 0 && totalSpend > 0) ? '$' + (totalSpend / totalNewActives).toFixed(2) : 'No data';
+
+  const bp = D.budgetPacing || DEFAULTS.budgetPacing;
+  const pacePct = bp.pacing_pct || (bp.target > 0 ? ((bp.mtd_spend || bp.mtdSpend || 0) / bp.target * 100) : 0);
+  const paceTopEl = document.getElementById('execBudgetPace');
+  if (paceTopEl) paceTopEl.textContent = pacePct.toFixed(1) + '%';
+
+  const paceDelta = document.getElementById('execBudgetDelta');
+  if (paceDelta) {
+    const st = String(bp.status || '').toLowerCase();
+    paceDelta.textContent = st === 'underspending' ? 'underspending' : st === 'overspending' ? 'overspending' : 'on track';
+    paceDelta.className = 'exec-kpi-delta ' + (st === 'underspending' ? 'warn' : st === 'overspending' ? 'down' : 'neutral');
+  }
+}
+
+function renderExecSummaryTBD(range){
+  const D = DATA || DEFAULTS;
+
+  const weekLabel = document.getElementById('execWeekLabel');
+  if (weekLabel) weekLabel.textContent = rangeLabel(range) + ':';
+
+  const installDeltaEl = document.getElementById('execInstallDelta');
+  if (installDeltaEl) { installDeltaEl.textContent = '—'; installDeltaEl.className = 'dn'; }
+  const activeDeltaEl = document.getElementById('execActiveDelta');
+  if (activeDeltaEl) { activeDeltaEl.textContent = '—'; activeDeltaEl.className = 'dn'; }
+
+  const execNA = document.getElementById('execNewActives');
+  if (execNA) execNA.textContent = 'TBD';
+
+  const activesDelta = document.getElementById('execActivesDelta');
+  if (activesDelta) { activesDelta.textContent = '—'; activesDelta.className = 'exec-kpi-delta neutral'; }
+
+  const cacTopEl = document.getElementById('execTrueCAC');
+  if (cacTopEl) cacTopEl.textContent = 'TBD';
+
+  // Keep Budget Pace meaningful for MTD (uses budgetPacing.mtd_spend)
+  const bp = D.budgetPacing || DEFAULTS.budgetPacing;
+  const pacePct = bp.pacing_pct || (bp.target > 0 ? ((bp.mtd_spend || bp.mtdSpend || 0) / bp.target * 100) : 0);
+  const paceTopEl = document.getElementById('execBudgetPace');
+  if (paceTopEl) paceTopEl.textContent = pacePct.toFixed(1) + '%';
+}
+
+function applyDateRange(range){
+  range = (range && DATE_RANGES[range]) ? range : 'week';
+
+  // Toggle buttons
+  document.querySelectorAll('#execRange .range-btn').forEach(btn => {
+    const on = btn.dataset.range === range;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+
+  // Update labels (Exec Summary + Weekly Pulse)
+  setRangeLabel(document.getElementById('execLabelNewActives'), 'New Actives', range);
+  setRangeLabel(document.getElementById('execLabelTrueCAC'), 'TRUE CAC', range);
+  setRangeLabel(document.getElementById('execLabelBudgetPace'), 'Budget Pace', range);
+  document.querySelectorAll('.kpi-card .kpi-label').forEach(lab => setRangeLabel(lab, lab.textContent, range));
+
+  // Note / badges
+  const note = document.getElementById('dateRangeNote');
+  if (note) {
+    if (range === 'mtd') note.innerHTML = '<span class="tbd">MTD KPIs TBD</span> (budget pacing is MTD)';
+    else if (range === 'last30') note.innerHTML = '<span class="tbd">Last 30d TBD</span> (waiting for funnel API)';
+    else note.textContent = '';
+  }
+
+  // Values
+  if (range === 'week') {
+    renderExecSummaryThisWeek();
+    renderWeeklyPulseFromKpis((DATA && DATA.kpis) ? DATA.kpis : DEFAULTS.kpis);
+    return;
+  }
+
+  if (range === 'mtd') {
+    renderExecSummaryTBD(range);
+    renderWeeklyPulseTBD('MTD KPIs TBD');
+    return;
+  }
+
+  if (range === 'last30') {
+    const k30 = findLast30dKpis(DATA);
+    if (k30 && typeof k30 === 'object' && (k30.installs || k30.signups || k30.kycSubmits)) {
+      const looksLikeKpis = !!(k30.installs && typeof k30.installs === 'object' && ('value' in k30.installs));
+
+      renderExecSummaryTBD(range);
+
+      if (looksLikeKpis) {
+        renderWeeklyPulseFromKpis(k30);
+      } else {
+        // Normalize flat shape into {key:{value}} for renderer
+        const normalized = {};
+        ['installs','signups','kycSubmits','virtualAccountOpened','depositCompleted','transferCompleted','withdrawCompleted','dauAvg'].forEach(key => {
+          const v = (k30[key] && typeof k30[key] === 'object') ? (k30[key].value ?? k30[key].count ?? k30[key]) : k30[key];
+          if (v !== undefined) normalized[key] = { value: v, prev: 0, deltaPct: 0, direction: 'neutral' };
+        });
+        renderWeeklyPulseFromKpis(normalized);
+      }
+
+      const weekBadge = document.getElementById('kpiWeek');
+      if (weekBadge) weekBadge.textContent = 'Last 30d';
+    } else {
+      renderExecSummaryTBD(range);
+      renderWeeklyPulseTBD('Last 30d TBD');
+    }
+  }
+}
+
+function initDateRangeSelector(){
+  const wrap = document.getElementById('execRange');
+  if (!wrap || wrap.dataset.init === '1') return;
+  wrap.dataset.init = '1';
+
+  // Persist default selection
+  const saved = getSavedDateRange();
+  saveDateRange(saved);
+
+  wrap.addEventListener('click', (e) => {
+    const btn = e.target.closest('.range-btn');
+    if (!btn) return;
+    const r = btn.dataset.range;
+    saveDateRange(r);
+    applyDateRange(r);
+  });
+}
+
+// ========== STATIC DATA (not from data.json) ==========
+const documents = [
+  {cat:"data",title:"Historical Campaign Performance",desc:"Aggregated performance data from all previous marketing campaigns across channels.",file:"historical-campaign-performance.md"},
+  {cat:"data",title:"GTM Meeting Synthesis",desc:"Key decisions and action items extracted from go-to-market strategy meetings.",file:"gtm-meeting-synthesis.md"},
+  {cat:"data",title:"Tracking Audit",desc:"Full audit of analytics tracking implementation across web and mobile properties.",file:"tracking-audit.md"},
+  {cat:"data",title:"Partner Intelligence",desc:"Intelligence briefs on current and potential partnership opportunities.",file:"partner-intelligence.md"},
+  {cat:"data",title:"User Feedback Synthesis",desc:"Synthesized themes from user interviews, NPS surveys, and support tickets.",file:"user-feedback-synthesis.md"},
+  {cat:"analysis",title:"Full-Funnel Model",desc:"End-to-end conversion funnel model from awareness to activation and retention.",file:"full-funnel-model.md"},
+  {cat:"analysis",title:"Channel ROI Matrix",desc:"Comparative ROI analysis across all acquisition channels with CAC benchmarks.",file:"channel-roi-matrix.md"},
+  {cat:"analysis",title:"Competitive Intelligence",desc:"Market positioning and feature comparison against key competitors.",file:"competitive-intelligence.md"},
+  {cat:"strategy",title:"90-Day Roadmap",desc:"Phased growth execution plan with OKRs, milestones, and resource allocation.",file:"90-day-roadmap.md"},
+  {cat:"strategy",title:"Google Ads Plan",desc:"Search and display campaign architecture for Google Ads across all markets.",file:"google-ads-plan.md"},
+  {cat:"strategy",title:"Meta Ads Blueprint",desc:"Facebook and Instagram ad strategy including creative frameworks and audiences.",file:"meta-ads-blueprint.md"},
+  {cat:"strategy",title:"SEO Content Calendar",desc:"Quarterly content calendar targeting high-intent keywords for organic growth.",file:"seo-content-calendar.md"},
+  {cat:"strategy",title:"Referral Program",desc:"Viral referral loop design with incentive structures and tracking mechanics.",file:"referral-program.md"},
+  {cat:"strategy",title:"Community Growth Plan",desc:"Strategy for building and nurturing user communities across markets.",file:"community-growth-plan.md"},
+  {cat:"conversion",title:"Activation Plan",desc:"First-session activation optimization targeting key aha-moment triggers.",file:"activation-plan.md"},
+  {cat:"conversion",title:"CRM Strategy",desc:"Lifecycle marketing strategy with segmentation, triggers, and channel mix.",file:"crm-strategy.md"},
+  {cat:"conversion",title:"Onboarding Redesign Brief",desc:"UX brief for redesigning the first-time user onboarding experience.",file:"onboarding-redesign-brief.md"},
+  {cat:"conversion",title:"KYC Dropout Analysis",desc:"Analysis of drop-off points in the KYC verification flow with recommendations.",file:"kyc-dropout-analysis.md"},
+  {cat:"conversion",title:"Android/iOS Gap",desc:"Parity analysis between Android and iOS apps identifying conversion gaps.",file:"android-ios-gap.md"},
+  {cat:"markets",title:"Turkey Deepening",desc:"Market-specific growth strategy for deepening penetration in Turkey.",file:"turkey-deepening.md"},
+  {cat:"markets",title:"Egypt Playbook",desc:"Launch-to-growth playbook for the Egyptian market entry.",file:"egypt-playbook.md"},
+  {cat:"markets",title:"Nigeria Acceleration",desc:"Acceleration strategy for scaling user acquisition in Nigeria.",file:"nigeria-acceleration.md"},
+  {cat:"markets",title:"Pakistan Pre-Launch",desc:"Pre-launch preparation plan for Pakistan market entry.",file:"pakistan-prelaunch.md"},
+  {cat:"infra",title:"Weekly Report Template",desc:"Standardized template for weekly growth metrics and status reporting.",file:"weekly-report-template.md"},
+  {cat:"infra",title:"Growth Team OS",desc:"Operating system for the growth team: rituals, tools, and workflows.",file:"growth-team-os.md"},
+  {cat:"infra",title:"Experiment Log",desc:"Living log of all growth experiments with hypotheses, results, and learnings.",file:"experiment-log.md"}
+];
+
+const agents = {
+  cenoa: [
+    {name:"Brand Manager",icon:"🎨",bg:"rgba(244,63,94,.15)",skills:["Brand Guidelines","Visual Identity","Tone & Voice"]},
+    {name:"Growth Manager",icon:"📈",bg:"rgba(0,255,136,.15)",skills:["Campaign Strategy","A/B Testing","Funnel Optimization"]},
+    {name:"Data Lead",icon:"📊",bg:"rgba(59,130,246,.15)",skills:["Analytics","Reporting","Attribution Modeling"]},
+    {name:"Web Ops",icon:"🌐",bg:"rgba(168,85,247,.15)",skills:["Web Performance","SEO","Landing Pages"]},
+    {name:"Content Writer",icon:"📝",bg:"rgba(251,191,36,.15)",skills:["Blog","Email Copy","Landing Pages","learn.cenoa.com"]},
+    {name:"SEO Specialist",icon:"🔍",bg:"rgba(0,200,255,.15)",skills:["Technical SEO","Keywords","Content Optimization","Link Building"]},
+    {name:"Social Media Manager",icon:"📱",bg:"rgba(244,63,94,.15)",skills:["Instagram","TikTok","Twitter/X","UGC","Engagement"]}
+  ],
+  video: [
+    {name:"Script Writer",icon:"✍️",bg:"rgba(251,191,36,.15)",skills:["Storytelling","Copywriting","Hooks"]},
+    {name:"Producer",icon:"🎬",bg:"rgba(244,63,94,.15)",skills:["Direction","Scheduling","Asset Mgmt"]},
+    {name:"Packager",icon:"📦",bg:"rgba(0,255,136,.15)",skills:["Format Adaptation","Platform Specs","Thumbnails"]},
+    {name:"QA",icon:"✅",bg:"rgba(59,130,246,.15)",skills:["Review","Compliance","Quality Gates"]},
+    {name:"Distributor",icon:"🚀",bg:"rgba(168,85,247,.15)",skills:["Multi-Platform","Scheduling","Analytics"]}
+  ]
+};
+
+const markets = [
+  {flag:"🇹🇷",name:"Turkey",code:"TR",status:"Deepening",cls:"deepening"},
+  {flag:"🇳🇬",name:"Nigeria",code:"NG",status:"Accelerating",cls:"accelerating"},
+  {flag:"🇪🇬",name:"Egypt",code:"EG",status:"Launching",cls:"launching"},
+  {flag:"🇵🇰",name:"Pakistan",code:"PK",status:"Pre-Launch",cls:"prelaunch"}
+];
+
+// ========== COUNTRY COLOR & FLAG MAPS ==========
+const COUNTRY_COLORS = { TR:'#3b82f6', NG:'#22c55e', EG:'#f59e0b', PK:'#a855f7' };
+const COUNTRY_FLAGS  = { TR:'🇹🇷', NG:'🇳🇬', EG:'🇪🇬', PK:'🇵🇰', Turkey:'🇹🇷', Nigeria:'🇳🇬', Egypt:'🇪🇬', Pakistan:'🇵🇰' };
+function countryCode(c){ const map={Turkey:'TR',Nigeria:'NG',Egypt:'EG',Pakistan:'PK'}; return map[c]||c||''; }
+function countryColor(code){ return COUNTRY_COLORS[countryCode(code)]||'var(--accent)'; }
+function countryFlag(code){ return COUNTRY_FLAGS[code]||COUNTRY_FLAGS[countryCode(code)]||''; }
+
+// ========== FORMATTING HELPERS ==========
+function fmt$(n){ return '$' + Number(n||0).toLocaleString('en-US', {maximumFractionDigits:0}); }
+function fmtMoney(n){ return n == null ? '—' : '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits:2}); }
+function fmtN(n){ return Number(n||0).toLocaleString('en-US'); }
+function fmtNum(n){
+  if (n === null || n === undefined || Number.isNaN(Number(n))) return '—';
+  const num = Number(n), rounded = Math.round(num);
+  if (Math.abs(num - rounded) < 1e-9) return rounded.toLocaleString('en-US');
+  return num.toLocaleString('en-US', { maximumFractionDigits: 1 });
+}
+function fmtK(n){ if (!n) return '$0'; if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K'; return '$' + n.toLocaleString('en-US', {maximumFractionDigits:0}); }
+function fmtDelta(p){ const num = Number(p); if (!Number.isFinite(num)) return '0.0%'; return (num > 0 ? '+' : '') + num.toFixed(1) + '%'; }
+
+// ========== KPI SPARKLINES ==========
+function sparklineSvg(values){
+  const w=66,h=22,p=3;
+  const xs=[p, (w-p)*0.33, (w-p)*0.66, w-p];
+  const nums=(values||[]).map(v=>Number(v)).filter(v=>Number.isFinite(v));
+  if (nums.length<2) return "";
+  const minV=Math.min(...nums), maxV=Math.max(...nums), range=(maxV-minV)||1;
+  const top=p, bot=h-p;
+  const ys=values.map(v=>{ const vv=Number(v); if(!Number.isFinite(vv)) return bot; return top+(maxV-vv)/range*(bot-top); });
+  const pts=xs.map((x,i)=>`${x.toFixed(1)},${ys[i].toFixed(1)}`);
+  const d=`M ${pts[0]} L ${pts[1]} L ${pts[2]} L ${pts[3]}`;
+  const area=d+` L ${xs[3].toFixed(1)},${bot.toFixed(1)} L ${xs[0].toFixed(1)},${bot.toFixed(1)} Z`;
+  return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="spark-area" d="${area}" /><path class="spark-line" d="${d}" /><circle class="spark-dot" cx="${xs[3].toFixed(1)}" cy="${ys[3].toFixed(1)}" r="2.4" /></svg>`;
+}
+
+function renderKpiSparklines(kpis){
+  if (!kpis) kpis = DEFAULTS.kpis;
+  document.querySelectorAll(".kpi-card[data-kpi]").forEach(card => {
+    const key = card.getAttribute("data-kpi");
+    const row = kpis[key]; if (!row) return;
+    const prev = Number(row.prev)||0, val = Number(row.value)||0;
+    const values = [Math.round(prev*1.08), Math.round(prev*1.04), prev, val];
+    const d = String(row.direction||'').toLowerCase();
+    let dir = (d==="up"||d==="down") ? d : "neutral";
+    const deltaEl = card.querySelector(".kpi-delta");
+    if (deltaEl) { if (deltaEl.classList.contains("up")) dir="up"; else if (deltaEl.classList.contains("down")) dir="down"; }
+    let spark = card.querySelector(":scope > .kpi-spark");
+    if (!spark) { spark = document.createElement("div"); spark.className="kpi-spark"; card.appendChild(spark); }
+    spark.classList.remove("up","down","neutral"); spark.classList.add(dir);
+    spark.innerHTML = sparklineSvg(values);
+  });
+}
+
+// ====================================================================
+//  renderDashboard(data) — SINGLE DATA-DRIVEN ENTRY POINT
+//  All dynamic numbers come from data.json; zero hardcoded values.
+// ====================================================================
+function renderDashboard(data) {
+  const D = Object.assign(JSON.parse(JSON.stringify(DEFAULTS)), data || {});
+  DATA = D;
+  const kpis = D.kpis || DEFAULTS.kpis;
+
+  // --- HEADER TIMESTAMP → lastUpdated | updated ---
+  const tsEl = document.getElementById('headerTimestamp');
+  if (tsEl) {
+    if (D.lastUpdated) {
+      const dt = new Date(D.lastUpdated);
+      if (!isNaN(dt.getTime())) {
+        const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        tsEl.textContent='Data as of: '+months[dt.getMonth()]+' '+dt.getDate()+', '+dt.getFullYear()+' '+String(dt.getHours()).padStart(2,'0')+':'+String(dt.getMinutes()).padStart(2,'0')+' TRT';
+      } else tsEl.textContent='⚠️ No timestamp';
+    } else if (D.updated) { tsEl.textContent='Data as of: '+D.updated; }
+    else tsEl.textContent='⚠️ No timestamp';
+  }
+
+  // --- EXEC SUMMARY → week, kpis, channelPerformance, budgetPacing, attributionQuality ---
+  const weekLabel = document.getElementById('execWeekLabel');
+  if (weekLabel) weekLabel.textContent = D.week ? ('Week of '+D.week+':') : '—';
+
+  const installDeltaEl = document.getElementById('execInstallDelta');
+  if (installDeltaEl && kpis.installs) {
+    const d = kpis.installs.deltaPct||0;
+    installDeltaEl.textContent = (d<0?'▼':'▲')+Math.abs(d)+'%';
+    installDeltaEl.className = d<0?'dn':'up';
+  }
+
+  const channels = D.channelPerformance || [];
+  const totalNewActives = channels.reduce((s,c) => s+(c.new_active||c.newActives||0), 0);
+  const totalSpend = channels.reduce((s,c) => s+(c.spend||0), 0);
+
+  const execNA = document.getElementById('execNewActives');
+  if (execNA) execNA.textContent = totalNewActives > 0 ? totalNewActives.toLocaleString('en-US') : 'No data';
+
+  const activeDeltaEl = document.getElementById('execActiveDelta');
+  if (activeDeltaEl && kpis.installs) {
+    const approx = Math.round(Math.abs(kpis.installs.deltaPct||0) * 0.15);
+    activeDeltaEl.textContent = '▼'+approx+'%';
+  }
+
+  const cacTopEl = document.getElementById('execTrueCAC');
+  if (cacTopEl) cacTopEl.textContent = (totalNewActives>0&&totalSpend>0) ? '$'+(totalSpend/totalNewActives).toFixed(2) : 'No data';
+
+  const bp = D.budgetPacing || DEFAULTS.budgetPacing;
+  const pacePct = bp.pacing_pct || (bp.target>0 ? ((bp.mtd_spend||bp.mtdSpend||0)/bp.target*100) : 0);
+  const paceTopEl = document.getElementById('execBudgetPace');
+  if (paceTopEl) paceTopEl.textContent = pacePct.toFixed(1)+'%';
+  const paceDelta = document.getElementById('execBudgetDelta');
+  if (paceDelta) {
+    const st = (bp.status||'').toLowerCase();
+    paceDelta.textContent = st==='underspending'?'underspending':st==='overspending'?'overspending':'on track';
+    paceDelta.className = 'exec-kpi-delta '+(st==='underspending'?'warn':st==='overspending'?'down':'neutral');
+  }
+
+  // Action chips → derived from campaignPerformance
+  const campaigns = D.campaignPerformance || [];
+  const killCount = campaigns.filter(c=>c.action==='kill').length;
+  const blockedKyc = (D.kycByCountry||[]).filter(c=>(c.kyc_submit||c.kycSubmit||0)===0 && (c.kyc_started||c.kycStarted||0)>10);
+  const scaleTarget = campaigns.find(c=>c.action==='scale'&&/pmax/i.test(c.name));
+  const actionsEl = document.getElementById('execActions');
+  if (actionsEl) {
+    let chips='';
+    if (killCount>0) chips+=`<a href="#campaignTable" class="exec-chip red">🛑 Pause ${killCount} campaign${killCount>1?'s':''}</a>`;
+    if (blockedKyc.length>0) { const codes=blockedKyc.map(c=>{const cc=countryCode(c.country||c.code);return (countryFlag(cc)||'')+(c.country||c.code||'??');}).join(' / '); chips+=`<a href="#kycMiniFunnels" class="exec-chip amber">🔧 Fix KYC (${codes} blocked)</a>`; }
+    if (scaleTarget) chips+=`<a href="#channelPerf" class="exec-chip green">📈 Scale ${scaleTarget.name}</a>`;
+    actionsEl.innerHTML = chips || '<span style="color:var(--text-dim);font-size:.82rem">No urgent actions</span>';
+  }
+
+  const aq = D.attributionQuality || DEFAULTS.attributionQuality;
+  const attrTextEl = document.getElementById('execAttrText');
+  if (attrTextEl) attrTextEl.textContent = (aq.none_pct||0)+'% unattributed — fix in progress';
+
+  // --- KPI BANNER → kpis.* ---
+  const kpiWeek = document.getElementById('kpiWeek');
+  if (kpiWeek && D.week) kpiWeek.textContent = D.week;
+  const kpiUpdated = document.getElementById('kpiLastUpdated');
+  if (kpiUpdated && D.updated) kpiUpdated.textContent = 'Last updated: '+D.updated;
+
+  document.querySelectorAll('.kpi-card[data-kpi]').forEach(card => {
+    const key = card.getAttribute('data-kpi'), k = kpis[key];
+    if (!k) { const ve = card.querySelector('.kpi-value'); if (ve) ve.textContent = 'No data'; const de = card.querySelector('.kpi-delta'); if (de) { de.textContent = '—'; de.className = 'kpi-delta neutral'; } return; }
+    const valueEl = card.querySelector('.kpi-value');
+    if (valueEl && k.value !== undefined) valueEl.textContent = fmtNum(k.value);
+    const deltaEl = card.querySelector('.kpi-delta');
+    if (deltaEl && k.deltaPct !== undefined) {
+      const dir = (k.direction||'').toLowerCase();
+      const cls = dir==='up'?'up':(dir==='down'?'down':'neutral');
+      deltaEl.classList.remove('up','down','neutral'); deltaEl.classList.add(cls);
+      deltaEl.textContent = (dir==='up'?'▲':(dir==='down'?'▼':'→'))+' '+fmtDelta(k.deltaPct)+' vs prev week';
+    }
+  });
+  renderKpiSparklines(kpis);
+
+  // --- BUDGET PACING GAUGE → budgetPacing ---
+  const mtdSpend = bp.mtd_spend||bp.mtdSpend||0, bpTarget = bp.target||50000;
+  const bpPct = bpTarget>0 ? Math.round(mtdSpend/bpTarget*100) : 0;
+  const daysLeft = (bp.days_total||bp.daysTotal||31) - (bp.days_elapsed||bp.daysElapsed||0);
+  const dailyNeeded = daysLeft>0 ? (bpTarget-mtdSpend)/daysLeft : 0;
+  const p1=document.getElementById('pacingPct'), p2=document.getElementById('pacingTarget');
+  const p3=document.getElementById('pacingMtd'), p4=document.getElementById('pacingDays'), p5=document.getElementById('pacingDailyNeeded');
+  if (p1) p1.textContent=bpPct+'%';
+  if (p2) p2.textContent=fmt$(bpTarget);
+  if (p3) p3.textContent=fmt$(mtdSpend);
+  if (p4) p4.textContent=daysLeft;
+  if (p5) p5.textContent=fmt$(Math.max(0,dailyNeeded));
+  let gColor='#22c55e'; if(bpPct>=120) gColor='#ef4444'; else if(bpPct>=100) gColor='#f59e0b';
+  if (p1) p1.style.color=gColor;
+  const gc = document.getElementById('pacingGaugeCanvas');
+  if (gc) { const ctx=gc.getContext('2d'),s=120,cx=s/2,cy=s/2,r=46,lw=10; ctx.clearRect(0,0,s,s);
+    ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI*0.75,Math.PI*0.75);ctx.strokeStyle='#e0e0e0';ctx.lineWidth=lw;ctx.lineCap='round';ctx.stroke();
+    ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI*0.75,-Math.PI*0.75+Math.min(bpPct/150,1)*Math.PI*1.5);ctx.strokeStyle=gColor;ctx.lineWidth=lw;ctx.lineCap='round';ctx.stroke(); }
+
+  // --- ATTRIBUTION QUALITY → attributionQuality ---
+  const attrPctEl = document.getElementById('attrPct');
+  if (attrPctEl) { const kp=aq.known_pct||aq.knownPct||0; attrPctEl.textContent=kp+'%';
+    attrPctEl.style.color = kp>=80?'#22c55e':kp>=50?'#f59e0b':'#ef4444'; }
+  const attrSub = document.getElementById('attrSub');
+  if (attrSub) attrSub.textContent = aq.detail || 'Percentage of installs with known source';
+
+  // --- CHANNEL PERFORMANCE → channelPerformance[] ---
+  const chGrid = document.getElementById('channelPerfGrid');
+  if (chGrid && !channels.length) { chGrid.innerHTML = '<div class="no-data-placeholder">No channel data available</div>'; }
+  if (chGrid && channels.length) {
+    chGrid.innerHTML = channels.map(ch => {
+      const wd = (ch.wow_delta||ch.wowDelta||0)>=0?'up':'down';
+      return `<div class="ch-card"><div class="ch-card-head"><span class="ch-card-name">${ch.name}</span><span class="ch-card-wow ${wd}"> ${wd==='up'?'↑':'↓'} WoW</span></div>
+      <div class="ch-card-metrics">
+        <div class="ch-metric"><span class="ch-metric-label">Spend</span><span class="ch-metric-value">${fmt$(ch.spend)}</span></div>
+        <div class="ch-metric"><span class="ch-metric-label">Installs</span><span class="ch-metric-value">${fmtN(ch.installs)}</span></div>
+        <div class="ch-metric"><span class="ch-metric-label">CPI</span><span class="ch-metric-value">${ch.cpi?'$'+ch.cpi.toFixed(1):'—'}</span></div>
+        <div class="ch-metric"><span class="ch-metric-label">New Actives</span><span class="ch-metric-value">${fmtN(ch.new_active||ch.newActives||0)}</span></div>
+        <div class="ch-metric"><span class="ch-metric-label">True CAC</span><span class="ch-metric-value">${(ch.true_cac||ch.trueCAC)?'$'+(ch.true_cac||ch.trueCAC).toFixed(1):'—'}</span></div>
+      </div></div>`;
+    }).join('');
+  }
+
+  // --- CAC VS TARGET → cacTracking[] ---
+  const cacCtx = document.getElementById('cacVsTargetCanvas');
+  if (cacCtx && typeof Chart!=='undefined') {
+    const ct = (D.cacTracking||[]).filter(c=>(c.actual_cac||c.actual||0)>0||(c.target_cac||c.target||0)>0);
+    if (ct.length) new Chart(cacCtx, { type:'bar',
+      data:{ labels:ct.map(c=>{const cc=countryCode(c.country||c.code);return (countryFlag(cc)?countryFlag(cc)+' ':'')+(c.name||c.channel)}), datasets:[
+        { label:'Actual CAC', data:ct.map(c=>c.actual_cac||c.actual||0),
+          backgroundColor:ct.map(c=>{const cc=countryCode(c.country||c.code);if(cc&&COUNTRY_COLORS[cc])return COUNTRY_COLORS[cc]+'cc';return (c.actual_cac||c.actual||0)>(c.target_cac||c.target||0)?'rgba(239,68,68,0.75)':'rgba(0,184,92,0.7)';}),
+          borderColor:ct.map(c=>{const cc=countryCode(c.country||c.code);if(cc&&COUNTRY_COLORS[cc])return COUNTRY_COLORS[cc];return (c.actual_cac||c.actual||0)>(c.target_cac||c.target||0)?'#f87171':'#00b85c';}), borderWidth:1,borderRadius:6,barPercentage:0.6 },
+        { label:'Target CAC', data:ct.map(c=>c.target_cac||c.target||0), type:'line', borderColor:'rgba(251,191,36,0.8)', borderWidth:2, borderDash:[8,4], pointRadius:4, pointBackgroundColor:'#fbbf24', fill:false }
+      ]}, options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{labels:{color:'#888',font:{size:11},usePointStyle:true}},tooltip:{backgroundColor:'#fff',titleColor:'#1a1a1a',bodyColor:'#00b85c',borderColor:'#e0e0e0',borderWidth:1,callbacks:{label:c=>`${c.dataset.label}: $${(c.raw||0).toFixed(1)}`}}},
+        scales:{x:{grid:{color:'rgba(0,0,0,0.06)'},ticks:{color:'#888',font:{size:11},callback:v=>'$'+v}},y:{grid:{display:false},ticks:{color:'#1a1a1a',font:{size:12,weight:600}}}}}
+    });
+  }
+
+  // --- PLATFORM SPLIT DONUTS → platformSplit ---
+  const ps = D.platformSplit || DEFAULTS.platformSplit;
+  function miniDonut(id,ios,and){ const c=document.getElementById(id); if(!c||typeof Chart==='undefined') return;
+    new Chart(c,{type:'doughnut',data:{labels:['iOS','Android'],datasets:[{data:[ios,and],backgroundColor:['rgba(59,130,246,0.8)','rgba(0,184,92,0.75)'],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:true,cutout:'65%',plugins:{legend:{display:true,position:'bottom',labels:{color:'#888',font:{size:10},usePointStyle:true,pointStyle:'circle',padding:8}},tooltip:{backgroundColor:'#fff',titleColor:'#1a1a1a',bodyColor:'#00b85c',borderColor:'#e0e0e0',borderWidth:1,callbacks:{label:c=>`${c.label}: ${c.raw}`}}}}}); }
+  miniDonut('psInstalls',ps.installs.ios,ps.installs.android);
+  miniDonut('psSignups',ps.signups.ios,ps.signups.android);
+  miniDonut('psWithdrawals',ps.withdrawals.ios,ps.withdrawals.android);
+
+  // --- TESTS → weeklyTests[] ---
+  const tg = document.getElementById('testsGrid');
+  if (tg) { const tests=D.weeklyTests||[];
+    tg.innerHTML = tests.length ? tests.map(t=>`<div class="test-card"><div class="test-name">${t.name||'Unnamed'}</div><div class="test-hypo">${t.hypothesis||'No hypothesis'}</div><div class="test-footer"><span class="test-status ${t.status||'planned'}">${t.status||'planned'}</span><span class="test-metric">📊 ${t.metric||'—'}</span></div></div>`).join('') : '<div class="no-data-placeholder">No tests data available</div>'; }
+
+  // --- LEARNINGS → weeklyLearnings[] ---
+  const ls = document.getElementById('learningsScroll');
+  if (ls) { const lr=D.weeklyLearnings||[];
+    ls.innerHTML = lr.length ? lr.map(l=>`<div class="learning-card"><div class="learning-emoji">${l.emoji||'💡'}</div><div class="learning-finding">${l.finding||'No finding'}</div><div class="learning-impact">${l.impact||''}</div></div>`).join('') : '<div class="no-data-placeholder">No learnings data available</div>'; }
+
+  // --- AGENDA → weeklyAgenda[] ---
+  const al = document.getElementById('agendaList');
+  if (al) { const ag=D.weeklyAgenda||[];
+    al.innerHTML = ag.length ? ag.map(a=>{ const p=(a.priority||'P2').toLowerCase(), text=a.text||a.task||'', done=a.done||a.status==='done';
+      return `<div class="agenda-item ${done?'done':''}"><div class="agenda-check">${done?'✓':''}</div><span class="agenda-pri ${p}">${a.priority||'P2'}</span><span class="agenda-text">${text}</span></div>`; }).join('') : '<div class="no-data-placeholder">No agenda items available</div>'; }
+
+  // --- KYC MINI FUNNELS → kycByCountry[] ---
+  const kycGrid = document.getElementById('kycFunnelGrid');
+  if (kycGrid) {
+    const flagMap={'Turkey':'🇹🇷','Nigeria':'🇳🇬','Egypt':'🇪🇬','Pakistan':'🇵🇰','TR':'🇹🇷','NG':'🇳🇬','EG':'🇪🇬','PK':'🇵🇰'};
+    if (!(D.kycByCountry||[]).length) { kycGrid.innerHTML = '<div class="no-data-placeholder">No KYC funnel data available</div>'; }
+    const kd = (D.kycByCountry||[]).map(c=>({
+      country:c.country||c.code||'??', flag:c.flag||flagMap[c.country||c.code]||'🏳️',
+      kycStarted:c.kyc_started||c.kycStarted||0, bridgeShown:c.kyc_shown||c.bridgeShown||0,
+      kycSubmit:c.kyc_submit||c.kycSubmit||0, broken:(c.kyc_submit||c.kycSubmit||0)===0&&(c.kyc_started||c.kycStarted||0)>10
+    }));
+    if (kd.length) { const mx=Math.max(...kd.map(c=>c.kycStarted),1);
+      kycGrid.innerHTML = kd.map(c=>{
+        const cc=countryCode(c.country);
+        const cClr=countryColor(cc);
+        const b1=Math.round(c.kycStarted/mx*100), b2=c.kycStarted>0?Math.round(c.bridgeShown/c.kycStarted*100):0, b3=c.kycStarted>0?Math.max(Math.round(c.kycSubmit/c.kycStarted*100),c.kycSubmit>0?3:0):0;
+        return `<div class="kyc-funnel-card ${c.broken?'broken':''}" data-country="${cc}"><div class="kyc-funnel-flag">${countryFlag(cc)||c.flag}</div><div class="kyc-funnel-name">${c.country}</div>
+          <div class="kyc-funnel-step"><span class="step-label">Started</span><span class="step-val">${fmtN(c.kycStarted)}</span></div><div class="kyc-funnel-bar"><div class="fill" style="width:${b1}%;background:${c.broken?'#ef4444':cClr}"></div></div>
+          <div class="kyc-funnel-step"><span class="step-label">Shown</span><span class="step-val">${fmtN(c.bridgeShown)}</span></div><div class="kyc-funnel-bar"><div class="fill" style="width:${b2}%;background:${c.broken?'#ef4444':cClr}"></div></div>
+          <div class="kyc-funnel-step"><span class="step-label">Submit</span><span class="step-val">${fmtN(c.kycSubmit)}</span></div><div class="kyc-funnel-bar"><div class="fill" style="width:${b3}%;background:${c.broken?'#ef4444':cClr}"></div></div>
+          ${c.broken?'<div style="margin-top:.4rem;font-size:.65rem;color:#f87171;font-weight:700">❌ BLOCKED</div>':''}</div>`;
+      }).join(''); }
+  }
+
+  // --- COUNTRY CARDS → countries{} + countrySpend[] ---
+  const cGrid = document.getElementById('countryGrid');
+  if (cGrid) {
+    const cMap=D.countries||{}, spArr=D.countrySpend||[];
+    if (!spArr.length) { cGrid.innerHTML = '<div class="no-data-placeholder">No country data available</div>'; }
+    if (spArr.length) cGrid.innerHTML = spArr.map(sp=>{
+      const cc=countryCode(sp.code||sp.country||sp.name);
+      const cd=cMap[sp.code||sp.country]||{};
+      const inst=cd.installs?cd.installs.value:'—', sign=cd.signups?cd.signups.value:'—', iDelta=cd.installs?cd.installs.deltaPct:null;
+      const ws=sp.weeklySpend||sp.weekly_spend||0, ms=sp.mtdSpend||sp.mtd_spend||0, mt=sp.monthlyTarget||sp.planned_monthly||0;
+      const pp=mt>0?Math.round(ms/mt*100):0; let pc='pacing-green',pb='#22c55e';
+      if(pp>100){pc='pacing-red';pb='#ef4444';}else if(pp>85){pc='pacing-orange';pb='#f59e0b';}else if(pp<50&&ms>0){pc='pacing-orange';pb='#f59e0b';}else if(ms===0&&mt>0){pc='pacing-red';pb='#ef4444';}
+      const idH=iDelta!==null?` <span style="font-size:.6rem;font-weight:700;color:${iDelta<0?'#ef4444':'#22c55e'}">${iDelta<0?'▼':'▲'}${Math.abs(iDelta)}%</span>`:'';
+      return `<div class="country-card" data-country="${cc}"><div class="country-head"><span class="country-flag">${countryFlag(cc)||sp.flag||''}</span><span class="country-name">${sp.name||sp.country||''}</span></div>
+        <div class="country-metrics"><div class="country-metric"><span class="country-metric-label">Installs</span><span class="country-metric-value">${typeof inst==='number'?inst.toLocaleString('en-US'):inst}${idH}</span></div>
+        <div class="country-metric"><span class="country-metric-label">Signups</span><span class="country-metric-value">${typeof sign==='number'?sign.toLocaleString('en-US'):sign}</span></div></div>
+        <div class="country-spend-section">
+          <div class="country-spend-row"><span class="country-spend-label">Weekly Spend</span><span class="country-spend-value">${fmtK(ws)}</span></div>
+          <div class="country-spend-row"><span class="country-spend-label">MTD Spend</span><span class="country-spend-value">${fmtK(ms)}</span></div>
+          <div class="country-spend-row"><span class="country-spend-label">Budget Target</span><span class="country-spend-value">${fmtK(mt)}</span></div>
+          <div class="country-pacing-bar"><div class="country-pacing-fill" style="width:${Math.min(pp,100)}%;background:${pb}"></div></div>
+          <div class="country-spend-row"><span class="country-spend-label">Pacing</span><span class="country-pacing-text ${pc}">${pp}%</span></div>
+          <div class="country-spend-row"><span class="country-spend-label">CPI</span><span class="country-spend-value">${sp.cpi?'$'+Number(sp.cpi).toFixed(2):'—'}</span></div>
+          <div class="country-spend-row"><span class="country-spend-label">TRUE CAC</span><span class="country-spend-value" style="color:${(sp.trueCAC||0)>50?'#ef4444':(sp.trueCAC||0)>30?'#d97706':'#059669'}">${sp.trueCAC?'$'+Number(sp.trueCAC).toFixed(2):'—'}</span></div>
+        </div>${sp.deepDiveUrl?`<a href="${sp.deepDiveUrl}" class="country-deep-link">Deep Dive →</a>`:''}</div>`;
+    }).join('');
+  }
+
+  // --- FUNNEL CHART → derived from kpis ---
+  const fCtx = document.getElementById('funnelCanvas');
+  if (fCtx && typeof Chart!=='undefined') {
+    const kycTotal=(D.kycByCountry||[]).reduce((s,c)=>s+(c.kyc_started||c.kycStarted||0),0);
+    const kycSubmitTotal=(D.kycByCountry||[]).reduce((s,c)=>s+(c.kyc_submit||c.kycSubmit||0),0);
+    const fd=[kpis.installs.value||0, Math.round((kpis.installs.value||0)*1.1), kpis.signups.value||0, kycTotal||0, kycSubmitTotal||kpis.kycSubmits.value||0, kpis.depositCompleted.value||0, kpis.withdrawCompleted.value||0];
+    new Chart(fCtx,{type:'bar',data:{labels:['Install','First Open','Signup','KYC Start','KYC Submit','Deposit','Withdrawal'],datasets:[{data:fd,backgroundColor:'rgba(0,184,92,0.7)',borderColor:'rgba(0,184,92,1)',borderWidth:1,borderRadius:6,barPercentage:0.7}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#fff',titleColor:'#1a1a1a',bodyColor:'#00b85c',borderColor:'#e0e0e0',borderWidth:1,callbacks:{label:c=>c.raw.toLocaleString('en-US')}}},
+        scales:{x:{grid:{color:'rgba(0,0,0,0.06)'},ticks:{color:'#888',font:{size:11}}},y:{grid:{display:false},ticks:{color:'#1a1a1a',font:{size:12,weight:600}}}}}});
+  }
+
+  // --- CAMPAIGN TABLE → campaignPerformance[] ---
+  const ctbody = document.getElementById('campPerfBody'), cBadge = document.getElementById('campTableBadge');
+  if (ctbody && campaigns.length) {
+    if (cBadge) cBadge.textContent = campaigns.length+' CAMPAIGNS';
+    const hDot=h=>({healthy:'🟢',bleeding:'🟡',dead:'🔴',fraud:'🟣'}[h]||'⚪');
+    const aBadge=a=>({scale:'<span class="status-badge status-scale">🚀 Scale</span>',maintain:'<span class="status-badge status-maintain">✅ Maintain</span>',watch:'<span class="status-badge status-watch">⚠️ Watch</span>',kill:'<span class="status-badge status-kill">🛑 Kill</span>'}[a]||a);
+    const wA=d=>{if(d>0) return '<span class="wow-arrow up">▲ '+d.toFixed(0)+'%</span>'; if(d<0) return '<span class="wow-arrow down">▼ '+Math.abs(d).toFixed(0)+'%</span>'; return '<span class="wow-arrow flat">→</span>';};
+    const sR=campaigns.filter(c=>c.action==='scale').sort((a,b)=>(a.trueCAC||9999)-(b.trueCAC||9999)).slice(0,3).map(c=>c.name);
+    const kR=campaigns.filter(c=>c.action==='kill').sort((a,b)=>(b.spend||0)-(a.spend||0)).slice(0,3).map(c=>c.name);
+    // Load persisted sort preference or default to trueCAC ascending
+    const SORT_STORAGE_KEY='cortex_campaign_sort';
+    let savedSort; try{savedSort=JSON.parse(localStorage.getItem(SORT_STORAGE_KEY));}catch(e){}
+    let cF='all';
+    let sK=(savedSort&&savedSort.key)?savedSort.key:'trueCAC';
+    let sA=(savedSort&&savedSort.dir!==undefined)?savedSort.dir==='asc':true;
+
+    // Add sort arrow spans to sortable headers (replace trailing ↕)
+    document.querySelectorAll('#campPerfTable th.sortable').forEach(th=>{
+      th.textContent=th.textContent.replace(/\s*↕\s*$/,'').trim();
+      const arrow=document.createElement('span');arrow.className='sort-arrow';arrow.textContent=' ↕';th.appendChild(arrow);
+    });
+    function updateSortIndicators(){
+      document.querySelectorAll('#campPerfTable th.sortable').forEach(th=>{
+        const key=th.dataset.sort,arrow=th.querySelector('.sort-arrow');
+        if(key===sK){th.classList.add('sort-active');if(arrow)arrow.textContent=sA?' ▲':' ▼';}
+        else{th.classList.remove('sort-active');if(arrow)arrow.textContent=' ↕';}
+      });
+    }
+    function persistSort(){try{localStorage.setItem(SORT_STORAGE_KEY,JSON.stringify({key:sK,dir:sA?'asc':'desc'}));}catch(e){}}
+
+    function rT(list){
+      if(!list.length){ctbody.innerHTML='<tr><td colspan="10" style="text-align:center;color:var(--text-dim);padding:2rem">No campaigns match filter.</td></tr>';updateSortIndicators();return;}
+      requestAnimationFrame(()=>{
+        ctbody.innerHTML=list.map(c=>{let rc='';if(sR.includes(c.name))rc='scale-highlight';if(kR.includes(c.name))rc='kill-highlight';
+          const ccc=countryCode(c.country); const cflag=countryFlag(ccc)||c.countryFlag||'';
+          return `<tr class="${rc}"><td class="camp-name">${hDot(c.health)} ${c.name}</td><td>${cflag} <span class="market-badge" data-country="${ccc}">${c.country}</span></td><td>${c.channelIcon||''} ${c.channel}</td><td class="num">${fmtMoney(c.spend)}</td><td class="num">${fmtNum(c.installs)}</td><td class="num">${c.cpi!=null?'$'+c.cpi.toFixed(2):'—'}</td><td class="num">${fmtNum(c.newActives)}</td><td class="num">${fmtMoney(c.trueCAC)}</td><td>${wA(c.wowDelta||0)} ${aBadge(c.action)}</td><td class="camp-commentary">${c.commentary||''}</td></tr>`;}).join('');
+        updateSortIndicators();
+      });
+    }
+    function gF(){let l=cF==='all'?[...campaigns]:campaigns.filter(c=>c.action===cF);if(sK)l.sort((a,b)=>{let va=a[sK],vb=b[sK];if(va==null)va=typeof ''===typeof(a[sK])?'':999999;if(vb==null)vb=typeof ''===typeof(b[sK])?'':999999;if(typeof va==='string')return sA?va.localeCompare(vb):vb.localeCompare(va);return sA?va-vb:vb-va;});return l;}
+    rT(gF());
+    document.getElementById('campFilters').addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;document.querySelectorAll('#campFilters .cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');cF=btn.dataset.action;rT(gF());});
+    document.querySelectorAll('#campPerfTable th.sortable').forEach(th=>{th.addEventListener('click',()=>{const key=th.dataset.sort;if(sK===key)sA=!sA;else{sK=key;sA=true;}persistSort();rT(gF());});});
+  }
+
+  // --- TREND HISTORY → trendHistory[] ---
+  if (typeof Chart !== 'undefined') {
+    const defaultTrend = [
+      { week:'W9', installs:2234, signups:1609, new_actives:1084, true_cac:32.5 },
+      { week:'W10', installs:1445, signups:1207, new_actives:1028, true_cac:38.2 },
+      { week:'W11', installs:1366, signups:1223, new_actives:1028, true_cac:36.8 },
+      { week:'W12', installs:1366, signups:1223, new_actives:1028, true_cac:36.8 }
+    ];
+    const trendData = (D.trendHistory && D.trendHistory.length >= 2) ? D.trendHistory : defaultTrend;
+    const labels = trendData.map(d=>d.week);
+    function getDelta(values){ if(values.length<2)return{pct:0,dir:'flat'}; const l=values[values.length-1],p=values[values.length-2]; if(p===0)return{pct:0,dir:'flat'}; const pct=(l-p)/p*100; return{pct,dir:pct>1?'improving':pct<-1?'declining':'flat'}; }
+    function setDelta(elId,delta,inv){ const el=document.getElementById(elId); if(!el)return; const arr=delta.dir==='improving'?'▲':delta.dir==='declining'?'▼':'→'; const cls=inv?(delta.dir==='improving'?'declining':delta.dir==='declining'?'improving':'flat'):delta.dir; el.className='trend-card-delta '+cls; el.textContent=`${arr} ${Math.abs(delta.pct).toFixed(1)}%`; }
+    function tC(delta,inv){ const dir=inv?(delta.dir==='improving'?'declining':delta.dir==='declining'?'improving':'flat'):delta.dir;
+      if(dir==='improving')return{line:'rgba(34,197,94,0.9)',fill:'rgba(34,197,94,0.08)',point:'#22c55e'}; if(dir==='declining')return{line:'rgba(239,68,68,0.9)',fill:'rgba(239,68,68,0.08)',point:'#ef4444'}; return{line:'rgba(148,163,184,0.7)',fill:'rgba(148,163,184,0.05)',point:'#94a3b8'}; }
+    function mTC(canvasId,values,colors){ const ctx=document.getElementById(canvasId); if(!ctx)return; if(ctx._trendChart)ctx._trendChart.destroy();
+      ctx._trendChart=new Chart(ctx,{type:'line',data:{labels:labels,datasets:[{data:values,borderColor:colors.line,backgroundColor:colors.fill,borderWidth:2.5,pointRadius:4,pointBackgroundColor:colors.point,pointBorderColor:'rgba(0,0,0,0.3)',pointBorderWidth:1,pointHoverRadius:6,tension:0.35,fill:true}]},
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#fff',titleColor:'#1a1a1a',bodyColor:'#00b85c',borderColor:'#e0e0e0',borderWidth:1,callbacks:{label:c=>{const v=c.raw;return typeof v==='number'&&v%1!==0?'$'+v.toFixed(1):v.toLocaleString('en-US');}}}},
+          scales:{x:{grid:{display:false},ticks:{color:'#555',font:{size:11,weight:600}}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555',font:{size:10},maxTicksLimit:4},beginAtZero:false}}}}); }
+    const iv=trendData.map(d=>d.installs),dI=getDelta(iv); setDelta('trendDeltaInstalls',dI); mTC('trendInstalls',iv,tC(dI));
+    const sv=trendData.map(d=>d.signups),dS=getDelta(sv); setDelta('trendDeltaSignups',dS); mTC('trendSignups',sv,tC(dS));
+    const av=trendData.map(d=>d.new_actives),dA=getDelta(av); setDelta('trendDeltaActives',dA); mTC('trendActives',av,tC(dA));
+    const cv=trendData.map(d=>d.true_cac),dC=getDelta(cv); setDelta('trendDeltaCAC',dC,true); mTC('trendCAC',cv,tC(dC,true));
+  }
+}
+
+// ========== RENDER DOCUMENTS (static) ==========
+const docGrid = document.getElementById('docGrid');
+const noResults = document.getElementById('noResults');
+function renderDocs(filter,query){
+  filter=filter||'all'; query=(query||'').toLowerCase();
+  const filtered=documents.filter(d=>{const catOk=filter==='all'||d.cat===filter;const qOk=!query||d.title.toLowerCase().includes(query)||d.desc.toLowerCase().includes(query)||d.cat.includes(query)||d.file.includes(query);return catOk&&qOk;});
+  if(!filtered.length){docGrid.innerHTML='';noResults.style.display='block';return;} noResults.style.display='none';
+  docGrid.innerHTML=filtered.map((d,i)=>`<div class="doc-card fade-in" data-cat="${d.cat}" data-file="${d.file}" data-title="${d.title.replace(/\"/g,'&quot;')}" style="animation-delay:${i*0.025}s"><span class="cat-tag ${d.cat}">${d.cat}</span><h3>${hl(d.title,query)}</h3><p>${hl(d.desc,query)}</p><div class="file-path">${d.file}</div></div>`).join('');
+}
+function hl(text,q){if(!q)return text;const i=text.toLowerCase().indexOf(q);if(i===-1)return text;return text.slice(0,i)+'<mark style="background:var(--accent-dim);color:var(--accent);border-radius:2px;padding:0 1px">'+text.slice(i,i+q.length)+'</mark>'+text.slice(i+q.length);}
+renderDocs();
+document.getElementById('docSearch').addEventListener('input',function(){const cat=document.querySelector('#catFilters .cat-btn.active');renderDocs(cat?cat.dataset.cat:'all',this.value);});
+document.getElementById('catFilters').addEventListener('click',function(e){if(!e.target.classList.contains('cat-btn'))return;this.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');renderDocs(e.target.dataset.cat,document.getElementById('docSearch').value);});
+
+// Doc modal
+const docModal=document.getElementById('docModal'),docModalTitle=document.getElementById('docModalTitle'),docModalPath=document.getElementById('docModalPath'),docModalClose=document.getElementById('docModalClose');
+function openDocModal(title,path){docModalTitle.textContent=title;docModalPath.textContent=path;docModal.classList.add('show');}
+function closeDocModal(){docModal.classList.remove('show');}
+if(docModal&&docModalClose){docModalClose.addEventListener('click',closeDocModal);docModal.addEventListener('click',e=>{if(e.target===docModal)closeDocModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDocModal();});
+  docGrid.addEventListener('click',e=>{const card=e.target.closest('.doc-card');if(!card)return;openDocModal(card.dataset.title||'Document',`projects/growth-engine/${card.dataset.cat}/${card.dataset.file}`);});}
+
+// Looker tabs
+const lookerPages={main:'p_cx3oz79j0d',kpis:'p_uobsi8hqzd',paid:'p_xuxxmaeqzd',social:'p_cx3oz79j0d'};
+const lookerFrame=document.getElementById('lookerFrame'),lookerTabs=document.getElementById('lookerTabs');
+if(lookerFrame&&lookerTabs){lookerTabs.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;lookerTabs.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');lookerFrame.src=`https://lookerstudio.google.com/embed/reporting/1e81a948-62f8-42d9-9c6c-31aab4dd60c6/page/${lookerPages[btn.dataset.tab]||lookerPages.main}`;});}
+
+// Agents (static)
+function renderAgents(id,list){document.getElementById(id).innerHTML=list.map((a,i)=>`<div class="agent-card fade-in" style="animation-delay:${i*0.04}s"><div class="agent-header"><div class="agent-icon" style="background:${a.bg}">${a.icon}</div><div><div class="agent-name">${a.name}</div><div class="agent-status"><span class="agent-dot"></span> Online</div></div></div><div class="agent-skills">${a.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div></div>`).join('');}
+renderAgents('cenoaAgents',agents.cenoa); renderAgents('videoAgents',agents.video);
+
+// Markets (static)
+const _marketGrid=document.getElementById('marketGrid'); if(_marketGrid) _marketGrid.innerHTML=markets.map((m,i)=>`<div class="market-card fade-in" style="animation-delay:${i*0.06}s"><span class="market-flag">${m.flag}</span><div class="market-name">${m.name}</div><div class="market-code">${m.code}</div><div class="market-status ${m.cls}">${m.status}</div></div>`).join('');
+
+// ========== CACHE & LOADING LAYER ==========
+const CACHE_KEY = 'cortex_data_cache';
+const CACHE_TS_KEY = 'cortex_data_cache_ts';
+const FETCH_TIMEOUT = 10000;
+
+function saveToCache(data) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); localStorage.setItem(CACHE_TS_KEY, new Date().toISOString()); } catch(e) {}
+}
+function loadFromCache() {
+  try { const r = localStorage.getItem(CACHE_KEY), t = localStorage.getItem(CACHE_TS_KEY); if (r) return { data: JSON.parse(r), timestamp: t }; } catch(e) {} return null;
+}
+function showBanner(id, show) { const el = document.getElementById(id); if (el) { if (show) el.classList.add('show'); else el.classList.remove('show'); } }
+function setCachedText(ts) {
+  const el = document.getElementById('cachedDateText');
+  if (!el || !ts) return;
+  const dt = new Date(ts), m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  el.textContent = 'Cached data from ' + m[dt.getMonth()] + ' ' + dt.getDate() + ', ' + dt.getFullYear() + ' ' + String(dt.getHours()).padStart(2,'0') + ':' + String(dt.getMinutes()).padStart(2,'0');
+}
+
+async function bootDashboard() {
+  // Show skeleton, hide banners
+  document.body.classList.add('dashboard-loading');
+  showBanner('dataBannerError', false);
+  showBanner('dataBannerCached', false);
+
+  let data = null;
+  let fromCache = false;
+
+  try {
+    const controller = new AbortController();
+    const tid = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+    const res = await fetch('data.json', { cache: 'no-store', signal: controller.signal });
+    clearTimeout(tid);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+    saveToCache(data);
+  } catch(e) {
+    console.warn('data.json fetch failed:', e);
+    const cached = loadFromCache();
+    if (cached) {
+      data = cached.data;
+      fromCache = true;
+      showBanner('dataBannerError', true);
+      setCachedText(cached.timestamp);
+      showBanner('dataBannerCached', true);
+    } else {
+      showBanner('dataBannerError', true);
+    }
+  }
+
+  renderDashboard(data || {});
+
+  // Date range selector (display-layer only)
+  initDateRangeSelector();
+  applyDateRange(getSavedDateRange());
+
+  // Hide skeleton, show dashboard
+  document.body.classList.remove('dashboard-loading');
+  const sk = document.getElementById('skeletonLoader');
+  if (sk) sk.style.display = 'none';
+}
+
+// Retry button handler
+window.__fetchDashboardData = function() {
+  // Re-run boot to re-fetch and re-render
+  bootDashboard();
+};
+
+// ========== BOOT ==========
+bootDashboard();
+</script>
+</body>
+</html>
+

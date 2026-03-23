@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-03-21",
+  "scope": {
+    "months": [
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02"
+    ],
+    "country": "TR (Turkey)",
+    "note": "Historical cross-check focuses on Turkey monthly series (Sep 2025\u2013Feb 2026) because CAC Analysis sheet provides a complete time series there."
+  },
+  "amplitude_weekly_file": {
+    "path": "data/amplitude-weekly-2026-03-20.json",
+    "period_current": {
+      "start": "2026-03-14",
+      "end": "2026-03-20"
+    },
+    "period_previous": {
+      "start": "2026-03-07",
+      "end": "2026-03-13"
+    },
+    "metrics_available": [
+      "installs",
+      "signups",
+      "kyc_submits",
+      "kyc_started",
+      "dau",
+      "deposits",
+      "withdrawals"
+    ],
+    "limitation": "Weekly, global (not country-attributed) snapshot; does not provide historical monthly denominators for Sep 2025\u2013Feb 2026."
+  },
+  "months": {
+    "2025-09": {
+      "spend_usd": {
+        "cac_analysis_sum": 35839,
+        "budget_tracking_realized_tr": null,
+        "budget_tracking_realized_global": null
+      },
+      "signups": {
+        "cac_analysis_sum": 2357,
+        "cac_analysis_channels_tr_total": null
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 687,
+        "cac_analysis_channels_tr_total": null,
+        "budget_tracking_tr_total_virtAcc": null
+      },
+      "new_active": {
+        "cac_analysis_sum": 283,
+        "cac_analysis_channels_tr_total_paid_active": null
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": null,
+        "spend_ratio_budget_tr_over_cac_sum": null,
+        "signups_delta_channels_minus_sum": null,
+        "virt_acc_delta_channels_minus_sum": null,
+        "virt_acc_delta_budget_minus_sum": null,
+        "active_delta_paid_active_minus_new_active": null
+      },
+      "notes": []
+    },
+    "2025-10": {
+      "spend_usd": {
+        "cac_analysis_sum": 29556,
+        "budget_tracking_realized_tr": null,
+        "budget_tracking_realized_global": null
+      },
+      "signups": {
+        "cac_analysis_sum": 1566,
+        "cac_analysis_channels_tr_total": null
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 550,
+        "cac_analysis_channels_tr_total": null,
+        "budget_tracking_tr_total_virtAcc": null
+      },
+      "new_active": {
+        "cac_analysis_sum": 242,
+        "cac_analysis_channels_tr_total_paid_active": null
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": null,
+        "spend_ratio_budget_tr_over_cac_sum": null,
+        "signups_delta_channels_minus_sum": null,
+        "virt_acc_delta_channels_minus_sum": null,
+        "virt_acc_delta_budget_minus_sum": null,
+        "active_delta_paid_active_minus_new_active": null
+      },
+      "notes": []
+    },
+    "2025-11": {
+      "spend_usd": {
+        "cac_analysis_sum": 26850,
+        "budget_tracking_realized_tr": null,
+        "budget_tracking_realized_global": null
+      },
+      "signups": {
+        "cac_analysis_sum": 1500,
+        "cac_analysis_channels_tr_total": null
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 628,
+        "cac_analysis_channels_tr_total": null,
+        "budget_tracking_tr_total_virtAcc": null
+      },
+      "new_active": {
+        "cac_analysis_sum": 221,
+        "cac_analysis_channels_tr_total_paid_active": null
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": null,
+        "spend_ratio_budget_tr_over_cac_sum": null,
+        "signups_delta_channels_minus_sum": null,
+        "virt_acc_delta_channels_minus_sum": null,
+        "virt_acc_delta_budget_minus_sum": null,
+        "active_delta_paid_active_minus_new_active": null
+      },
+      "notes": []
+    },
+    "2025-12": {
+      "spend_usd": {
+        "cac_analysis_sum": 23312,
+        "budget_tracking_realized_tr": null,
+        "budget_tracking_realized_global": null
+      },
+      "signups": {
+        "cac_analysis_sum": 1719,
+        "cac_analysis_channels_tr_total": null
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 754,
+        "cac_analysis_channels_tr_total": null,
+        "budget_tracking_tr_total_virtAcc": null
+      },
+      "new_active": {
+        "cac_analysis_sum": 271,
+        "cac_analysis_channels_tr_total_paid_active": null
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": null,
+        "spend_ratio_budget_tr_over_cac_sum": null,
+        "signups_delta_channels_minus_sum": null,
+        "virt_acc_delta_channels_minus_sum": null,
+        "virt_acc_delta_budget_minus_sum": null,
+        "active_delta_paid_active_minus_new_active": null
+      },
+      "notes": []
+    },
+    "2026-01": {
+      "spend_usd": {
+        "cac_analysis_sum": 27088,
+        "budget_tracking_realized_tr": 26235,
+        "budget_tracking_realized_global": 35552
+      },
+      "signups": {
+        "cac_analysis_sum": 2751,
+        "cac_analysis_channels_tr_total": 2402
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 900,
+        "cac_analysis_channels_tr_total": 531,
+        "budget_tracking_tr_total_virtAcc": 1895
+      },
+      "new_active": {
+        "cac_analysis_sum": 226,
+        "cac_analysis_channels_tr_total_paid_active": 78
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": -853,
+        "spend_ratio_budget_tr_over_cac_sum": 0.9685100413467218,
+        "signups_delta_channels_minus_sum": -349,
+        "virt_acc_delta_channels_minus_sum": -369,
+        "virt_acc_delta_budget_minus_sum": 995,
+        "active_delta_paid_active_minus_new_active": -148
+      },
+      "notes": [
+        "CAC Analysis has internal inconsistency: Sum(TR) vs Channels(TR) totals differ (signups/virt acc).",
+        "Virtual account counts differ drastically across sources (Budget Tracking vs CAC Analysis). Definitions likely differ.",
+        "Channels tab uses `paid_active` while Sum tab uses `new_active` \u2014 may not be comparable."
+      ]
+    },
+    "2026-02": {
+      "spend_usd": {
+        "cac_analysis_sum": 25811,
+        "budget_tracking_realized_tr": 35435,
+        "budget_tracking_realized_global": 57570
+      },
+      "signups": {
+        "cac_analysis_sum": 1721,
+        "cac_analysis_channels_tr_total": null
+      },
+      "virtual_accounts": {
+        "cac_analysis_sum": 580,
+        "cac_analysis_channels_tr_total": null,
+        "budget_tracking_tr_total_virtAcc": null
+      },
+      "new_active": {
+        "cac_analysis_sum": 124,
+        "cac_analysis_channels_tr_total_paid_active": null
+      },
+      "comparisons": {
+        "spend_delta_budget_tr_minus_cac_sum": 9624,
+        "spend_ratio_budget_tr_over_cac_sum": 1.3728642826701793,
+        "signups_delta_channels_minus_sum": null,
+        "virt_acc_delta_channels_minus_sum": null,
+        "virt_acc_delta_budget_minus_sum": null,
+        "active_delta_paid_active_minus_new_active": null
+      },
+      "notes": [
+        "Spend differs materially between Budget Tracking (realized) and CAC Analysis (attributed).",
+        "No CAC Analysis full-month channel totals in export for Feb 2026; only partial week (Feb 1-7) exists."
+      ]
+    }
+  }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turkey Deep Dive — CENOA GROWTH ENGINE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--surface:#f8f9fa;--surface2:#f0f1f3;--border:#e0e0e0;--accent:#00b85c;--accent-dim:rgba(0,184,92,.08);--accent-glow:rgba(0,184,92,.2);--text:#1a1a1a;--text-dim:#666;--text-bright:#000;--red:#f43f5e;--yellow:#fbbf24;--blue:#60a5fa}
+body{background:var(--bg);color:var(--text);font-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+
+/* Header */
+header{border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);height:54px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.header-brand{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;letter-spacing:.12em;color:var(--text-dim)}
+.header-brand span{color:var(--accent)}
+.header-pulse{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;margin-right:.4rem;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 6px transparent}}
+.back-link{font-size:.75rem;color:var(--text-dim);letter-spacing:.08em;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+
+/* Nav */
+.country-nav{display:flex;gap:.3rem;padding:.6rem 2rem;border-bottom:1px solid var(--border);background:#f8f9fa}
+.country-nav a{padding:.35rem .8rem;border-radius:18px;border:1px solid var(--border);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--text-dim);transition:all .25s}
+.country-nav a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.country-nav a.active{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 3rem}
+
+/* Page Title */
+.page-title{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.page-title .flag{font-size:2.5rem}
+.page-title h1{font-size:1.8rem;font-weight:800;letter-spacing:.04em}
+.page-title .status{font-size:.7rem;padding:.25rem .7rem;border-radius:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.status-active{background:var(--accent-dim);color:var(--accent)}
+.status-blocked{background:rgba(244,63,94,.15);color:var(--red)}
+.status-prelaunch{background:rgba(251,191,36,.15);color:var(--yellow)}
+
+/* Cards */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem}
+.card-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);margin-bottom:.6rem;font-weight:600}
+.card-full{grid-column:1/-1}
+
+/* Funnel */
+.funnel{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.funnel-step{text-align:center;flex:1;min-width:80px}
+.funnel-value{font-size:1.4rem;font-weight:800;color:var(--text-bright);font-variant-numeric:tabular-nums}
+.funnel-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-top:.1rem}
+.funnel-rate{font-size:.7rem;color:var(--accent);font-weight:700;margin-top:.15rem}
+.funnel-arrow{color:#333;font-size:1.2rem;flex-shrink:0}
+
+/* KPI */
+.kpi{text-align:center;padding:.5rem 0}
+.kpi-value{font-size:2rem;font-weight:800;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.kpi-value.red{color:var(--red)}
+.kpi-value.yellow{color:var(--yellow)}
+.kpi-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-top:.25rem}
+
+/* Table */
+.mini-table{width:100%;border-collapse:collapse}
+.mini-table th{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);text-align:left;padding:.3rem 0;border-bottom:1px solid var(--border);font-weight:600}
+.mini-table td{font-size:.8rem;padding:.35rem 0;border-bottom:1px solid rgba(34,34,34,.5);color:var(--text-bright);font-variant-numeric:tabular-nums}
+.mini-table td:last-child{text-align:right}
+.mini-table th:last-child{text-align:right}
+
+/* Tags */
+.tag{display:inline-block;font-size:.6rem;padding:.15rem .5rem;border-radius:6px;font-weight:700;letter-spacing:.06em;margin-right:.3rem}
+.tag-green{background:var(--accent-dim);color:var(--accent)}
+.tag-red{background:rgba(244,63,94,.15);color:var(--red)}
+.tag-yellow{background:rgba(251,191,36,.15);color:var(--yellow)}
+.tag-blue{background:rgba(59,130,246,.15);color:var(--blue)}
+
+/* List */
+.compact-list{list-style:none;padding:0}
+.compact-list li{font-size:.78rem;padding:.3rem 0;border-bottom:1px solid rgba(34,34,34,.5);color:var(--text)}
+.compact-list li:last-child{border-bottom:none}
+.compact-list li::before{content:'→';color:var(--accent);margin-right:.5rem;font-weight:700}
+
+/* Responsive */
+@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr}.funnel{flex-direction:column}.funnel-arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand"><div class="header-pulse"></div>CENOA <span>GROWTH ENGINE</span></div>
+  <a href="index.html" class="back-link">← BACK TO DASHBOARD</a>
+</header>
+
+<nav class="country-nav">
+  <a href="country-tr.html" class="active">🇹🇷 Turkey</a>
+  <a href="country-ng.html">🇳🇬 Nigeria</a>
+  <a href="country-eg.html">🇪🇬 Egypt</a>
+  <a href="country-pk.html">🇵🇰 Pakistan</a>
+</nav>
+
+<div class="container">
+
+  <div class="page-title">
+    <span class="flag">🇹🇷</span>
+    <h1>Turkey</h1>
+    <span class="status status-active">ACTIVE</span>
+  </div>
+
+  <!-- FUNNEL -->
+  <div class="card card-full" style="margin-bottom:1rem">
+    <div class="card-title">Acquisition Funnel</div>
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="funnel-value">5,178</div>
+        <div class="funnel-label">Installs</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">1,662</div>
+        <div class="funnel-label">Signups</div>
+        <div class="funnel-rate">32.1%</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">166</div>
+        <div class="funnel-label">KYC</div>
+        <div class="funnel-rate">3.2%</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">62</div>
+        <div class="funnel-label">VA Created</div>
+        <div class="funnel-rate">1.2%</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">5</div>
+        <div class="funnel-label">Withdraw</div>
+        <div class="funnel-rate">0.1%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value">$26.79</div>
+        <div class="kpi-label">TRUE CAC (MTD)</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value">3.14%</div>
+        <div class="kpi-label">D30 Retention</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value" style="color:var(--accent)">✅</div>
+        <div class="kpi-label">KYC Status</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Channel Performance + KYC -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Top Channels (Cost per Active)</div>
+      <table class="mini-table">
+        <tr><th>Channel</th><th>$/Active</th></tr>
+        <tr><td>Pmax</td><td>$19</td></tr>
+        <tr><td>Apple Search Ads</td><td>$23</td></tr>
+        <tr><td>Search</td><td>$25</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">KYC Platform Gap</div>
+      <table class="mini-table">
+        <tr><th>Platform</th><th>KYC Rate</th></tr>
+        <tr><td>Android</td><td style="color:var(--accent)">9.2%</td></tr>
+        <tr><td>iOS</td><td style="color:var(--red)">2.4%</td></tr>
+      </table>
+      <div style="margin-top:.6rem">
+        <span class="tag tag-yellow">⚠️ iOS gap — 3.8× lower than Android</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 90-Day Plan -->
+  <div class="card" style="margin-bottom:1rem">
+    <div class="card-title">90-Day Plan Summary</div>
+    <ul class="compact-list">
+      <li><strong>Month 1:</strong> Fix iOS KYC gap, optimize Pmax creative, launch TikTok test</li>
+      <li><strong>Month 2:</strong> Scale winning channels to $15K/mo, A/B test landing pages, push D30 retention to 5%</li>
+      <li><strong>Month 3:</strong> Target TRUE CAC &lt; $20, expand ASA keyword coverage, influencer pilot</li>
+      <li><strong>Key Risk:</strong> iOS KYC conversion must improve or 60% of paid traffic underperforms</li>
+      <li><strong>Budget:</strong> Ramp $8K → $12K → $15K/month as unit economics prove out</li>
+    </ul>
+  </div>
+
+  <!-- Key Insights -->
+  <div class="card">
+    <div class="card-title">Key Insights</div>
+    <ul class="compact-list">
+      <li>Primary revenue market — only country with working KYC + withdrawals</li>
+      <li>Pmax is most cost-efficient channel at $19/active user</li>
+      <li>KYC funnel works but iOS conversion is a critical gap (2.4% vs 9.2%)</li>
+      <li>32.1% signup rate is healthy but below NG/EG organic rates</li>
+      <li>D30 retention at 3.14% — best across all markets but still needs improvement</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "generated_at": "2026-03-21",
+    "attribution_period": "2026-03-14..2026-03-20",
+    "spend_proxy_method": "Average weekly spend from Sheets CAC Analysis weeks 1-8 Mar and 9-15 Mar (all countries) used as proxy for 14-20 Mar.",
+    "google_split_method": "googleadwords_int outcomes split into Google Search vs Pmax using spend share from Sheets proxy.",
+    "kyc_metric_note": "No explicit KYC submit/start event in provided attribution export. Sheet uses virt_acc / new_active as downstream proxies."
+  },
+  "buckets": [
+    {
+      "bucket": "Google Search",
+      "spend_proxy_weekly_usd": 790.0,
+      "attribution_outcomes": {
+        "installs": 27,
+        "signups": 7,
+        "withdrawals": 14,
+        "sources": [
+          "googleadwords_int"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 29.25925925925926,
+        "cost_per_signup": 112.85714285714286,
+        "cost_per_withdrawal": 56.42857142857143
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 446,
+        "signups": 223,
+        "virt_acc": 124,
+        "new_active": 31
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 6.370967741935484,
+        "cost_per_new_active": 25.483870967741936
+      }
+    },
+    {
+      "bucket": "Pmax",
+      "spend_proxy_weekly_usd": 805.5,
+      "attribution_outcomes": {
+        "installs": 27,
+        "signups": 7,
+        "withdrawals": 15,
+        "sources": [
+          "googleadwords_int"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 29.833333333333332,
+        "cost_per_signup": 115.07142857142857,
+        "cost_per_withdrawal": 53.7
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 300,
+        "signups": 146,
+        "virt_acc": 87,
+        "new_active": 42
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 9.258620689655173,
+        "cost_per_new_active": 19.178571428571427
+      }
+    },
+    {
+      "bucket": "Apple Search Ads",
+      "spend_proxy_weekly_usd": 600.5,
+      "attribution_outcomes": {
+        "installs": 75,
+        "signups": 22,
+        "withdrawals": 254,
+        "sources": [
+          "Apple Search Ads"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 8.006666666666666,
+        "cost_per_signup": 27.295454545454547,
+        "cost_per_withdrawal": 2.3641732283464565
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 109,
+        "signups": 66,
+        "virt_acc": 50,
+        "new_active": 26
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 12.01,
+        "cost_per_new_active": 22.660377358490567
+      }
+    },
+    {
+      "bucket": "Appnext",
+      "spend_proxy_weekly_usd": 446.5,
+      "attribution_outcomes": {
+        "installs": 273,
+        "signups": 24,
+        "withdrawals": 1,
+        "sources": [
+          "appnext_int"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 1.6355311355311355,
+        "cost_per_signup": 18.604166666666668,
+        "cost_per_withdrawal": 446.5
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 890,
+        "signups": 174,
+        "virt_acc": 24,
+        "new_active": 0
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 19.0,
+        "cost_per_new_active": 893.0
+      }
+    },
+    {
+      "bucket": "TikTok",
+      "spend_proxy_weekly_usd": 341.0,
+      "attribution_outcomes": {
+        "installs": 49,
+        "signups": 8,
+        "withdrawals": 0,
+        "sources": [
+          "tiktokglobal_int"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 6.959183673469388,
+        "cost_per_signup": 42.625,
+        "cost_per_withdrawal": null
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 88,
+        "signups": 58,
+        "virt_acc": 54,
+        "new_active": 12
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 6.256880733944954,
+        "cost_per_new_active": 28.416666666666668
+      }
+    },
+    {
+      "bucket": "Meta",
+      "spend_proxy_weekly_usd": 2754.0,
+      "attribution_outcomes": {
+        "installs": 122,
+        "signups": 22,
+        "withdrawals": 22,
+        "sources": [
+          "Social_instagram",
+          "zzgtechltmqk_int"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 22.57377049180328,
+        "cost_per_signup": 125.18181818181819,
+        "cost_per_withdrawal": 125.18181818181819
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 491,
+        "signups": 276,
+        "virt_acc": 108,
+        "new_active": 34
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 25.5,
+        "cost_per_new_active": 82.2089552238806
+      }
+    },
+    {
+      "bucket": "Referral",
+      "spend_proxy_weekly_usd": 0.0,
+      "attribution_outcomes": {
+        "installs": 7,
+        "signups": 3,
+        "withdrawals": 13,
+        "sources": [
+          "af_app_invites"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 0.0,
+        "cost_per_signup": 0.0,
+        "cost_per_withdrawal": 0.0
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 0,
+        "signups": 0,
+        "virt_acc": 0,
+        "new_active": 0
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": null,
+        "cost_per_new_active": null
+      }
+    },
+    {
+      "bucket": "Organic",
+      "spend_proxy_weekly_usd": 0.0,
+      "attribution_outcomes": {
+        "installs": 632,
+        "signups": 77,
+        "withdrawals": 487,
+        "sources": [
+          "Organic"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 0.0,
+        "cost_per_signup": 0.0,
+        "cost_per_withdrawal": 0.0
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 0,
+        "signups": 0,
+        "virt_acc": 0,
+        "new_active": 0
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": null,
+        "cost_per_new_active": null
+      }
+    },
+    {
+      "bucket": "Architect",
+      "spend_proxy_weekly_usd": 0.0,
+      "attribution_outcomes": {
+        "installs": 73,
+        "signups": 19,
+        "withdrawals": 0,
+        "sources": [
+          "Architect"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 0.0,
+        "cost_per_signup": 0.0,
+        "cost_per_withdrawal": null
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 0,
+        "signups": 0,
+        "virt_acc": 0,
+        "new_active": 0
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": null,
+        "cost_per_new_active": null
+      }
+    },
+    {
+      "bucket": "Other",
+      "spend_proxy_weekly_usd": 976.5,
+      "attribution_outcomes": {
+        "installs": 159,
+        "signups": 31,
+        "withdrawals": 65,
+        "sources": [
+          "Auto Pilot Tool",
+          "Egypt LTV Test",
+          "Eihracat Y\u0131ld\u0131zlar\u0131",
+          "Web Onboarding",
+          "byteboost2_int",
+          "cenoa.com",
+          "cenoacomtr"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": 6.1415094339622645,
+        "cost_per_signup": 31.5,
+        "cost_per_withdrawal": 15.023076923076923
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 182,
+        "signups": 78,
+        "virt_acc": 72,
+        "new_active": 32
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": 13.657342657342657,
+        "cost_per_new_active": 30.515625
+      }
+    },
+    {
+      "bucket": "Unattributed",
+      "spend_proxy_weekly_usd": 0.0,
+      "attribution_outcomes": {
+        "installs": 0,
+        "signups": 986,
+        "withdrawals": 1355,
+        "sources": [
+          "(none)"
+        ]
+      },
+      "cac_proxy": {
+        "cpi": null,
+        "cost_per_signup": 0.0,
+        "cost_per_withdrawal": 0.0
+      },
+      "sheet_weekly_avg_outcomes": {
+        "installs": 0,
+        "signups": 0,
+        "virt_acc": 0,
+        "new_active": 0
+      },
+      "sheet_cac": {
+        "cost_per_virt_acc": null,
+        "cost_per_new_active": null
+      }
+    }
+  ],
+  "spend_proxy_weekly_usd": {
+    "week_1_8_march": {
+      "Google Search": 0.0,
+      "Pmax": 1611.0,
+      "Apple Search Ads": 668.0,
+      "Appnext": 248.0,
+      "TikTok": 318.0,
+      "Meta": 3473.0,
+      "Referral": 0.0,
+      "Organic": 0.0,
+      "Architect": 0.0,
+      "Other": 963.0,
+      "Unattributed": 0.0
+    },
+    "week_9_15_march": {
+      "Google Search": 1580.0,
+      "Pmax": 0.0,
+      "Apple Search Ads": 533.0,
+      "Appnext": 645.0,
+      "TikTok": 364.0,
+      "Meta": 2035.0,
+      "Referral": 0.0,
+      "Organic": 0.0,
+      "Architect": 0.0,
+      "Other": 990.0,
+      "Unattributed": 0.0
+    },
+    "weekly_avg": {
+      "Google Search": 790.0,
+      "Pmax": 805.5,
+      "Apple Search Ads": 600.5,
+      "Appnext": 446.5,
+      "TikTok": 341.0,
+      "Meta": 2754.0,
+      "Referral": 0.0,
+      "Organic": 0.0,
+      "Architect": 0.0,
+      "Other": 976.5,
+      "Unattributed": 0.0
+    }
+  },
+  "debug": {
+    "google_spend_share": {
+      "google_search": 0.4951425885302413,
+      "pmax": 0.5048574114697587,
+      "spend_search": 790.0,
+      "spend_pmax": 805.5
+    },
+    "google_un_split_outcomes": {
+      "installs": 54,
+      "signups": 14,
+      "withdrawals": 29,
+      "sources": [
+        "googleadwords_int"
+      ]
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "generated_at": "2026-03-21T04:57:11+03:00",
+    "month": "2026-02",
+    "month_label": "February 2026",
+    "sources": {
+      "blended_cac": "data/blended-cac.json",
+      "sheets_cac": "data/sheets-cac-analysis.json",
+      "budget_pacing": "data/budget-pacing.json",
+      "channel_cac": "data/channel-cac.json",
+      "budget_efficiency": "data/budget-efficiency.json",
+      "weekly_actions": "data/weekly-actions.json",
+      "weekly_report": "data/weekly-report-latest.md",
+      "funnel_summary": "analysis/funnel-summary.md"
+    },
+    "data_quality_notes": [
+      "This is file-first best-effort. Some values are weekly snapshots if monthly aggregates were not available.",
+      "To improve: export month-level product KPIs (Amplitude) into data/ and rerun."
+    ]
+  },
+  "deck": {
+    "title": "Cenoa Performance Marketing — Monthly Executive Update (February 2026)",
+    "audience": "Exec",
+    "sections": [
+      {
+        "title": "Exec summary",
+        "slides": [
+          {
+            "title": "This month at a glance",
+            "type": "bullets",
+            "bullets": [
+              "**KYC is the single biggest funnel killer.** 94.2% of users who start KYC never submit — and outside Turkey, KYC completion is literally zero (BridgeXYZ doesn't render for NG/EG/PK).",
+              "**Turkey carries the business.** 95% of KYC submits, 57% of withdrawals, and the only market with a functioning end-to-end funnel.",
+              "**Nigeria and Egypt are blocked goldmines.** Together they represent 46% of installs and show strong feature engagement, but zero new-user activation due to the KYC hard block.",
+              "**iOS converts 3.8× worse than Android at KYC** (2.4% vs 9.2% Shown→Submit), and 62% of sign-ups come from web with almost no downstream conversion.",
+              "**Channel quality varies wildly.** Apple Search Ads delivers 254 withdrawals from 75 installs; appnext delivers 1 withdrawal from 273 installs. Budget reallocation is the fastest ROI lever after KYC."
+            ]
+          },
+          {
+            "title": "Most recent KPI pulse (weekly snapshot)",
+            "type": "callouts",
+            "callouts": [
+              "📲 Installs: 1,453 (▼36.1%)",
+              "📝 Signups: 1,219 (▼27.0%)",
+              "✅ KYC Submit: 185 (▼39.7%)",
+              "💳 Withdrawals: 2,236 (▬ flat)",
+              "👤 DAU avg: 3,075"
+            ],
+            "note": "Weekly snapshot included because month-aggregate product KPIs may not be available offline."
+          }
+        ]
+      },
+      {
+        "title": "KPI snapshot + deltas",
+        "slides": [
+          {
+            "title": "Turkey monthly unit economics — February 2026 vs January 2026",
+            "type": "table",
+            "table": {
+              "headers": [
+                "Metric",
+                "February 2026",
+                "January 2026",
+                "Δ"
+              ],
+              "rows": [
+                [
+                  "Spend (TR)",
+                  "$25,811",
+                  "$27,088",
+                  "-4.7%"
+                ],
+                [
+                  "Signups (TR)",
+                  "1,721",
+                  "2,751",
+                  "-37.4%"
+                ],
+                [
+                  "Virtual accounts (TR)",
+                  "580",
+                  "900",
+                  "-35.6%"
+                ],
+                [
+                  "New active (TR)",
+                  "124",
+                  "226",
+                  "-45.1%"
+                ],
+                [
+                  "CAC / Signup (TR)",
+                  "$15.00",
+                  "$9.85",
+                  "52.3%"
+                ],
+                [
+                  "CAC / Virtual acct (TR)",
+                  "$44.50",
+                  "$30.10",
+                  "47.8%"
+                ],
+                [
+                  "CAC / New active (TR)",
+                  "$208.15",
+                  "$119.86",
+                  "73.7%"
+                ]
+              ]
+            },
+            "notes": [
+              "Turkey metrics sourced from blended-cac / CAC analysis sheets (best-effort).",
+              "Global realized spend (budget tracking) for February 2026: $57,570"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Funnel + KYC issues",
+        "slides": [
+          {
+            "title": "Funnel health (latest available) — KYC bottleneck",
+            "type": "bullets",
+            "bullets": [
+              "KYC is the main bottleneck (shown→submit is low; non-TR markets are hard-blocked).",
+              "Attribution gap: majority of withdrawals are unattributed (“(none)”)."
+            ],
+            "references": [
+              "analysis/funnel-summary.md",
+              "data/kyc-deepdive-*.json"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "CAC & budget efficiency",
+        "slides": [
+          {
+            "title": "Channel efficiency (latest weekly view)",
+            "type": "insights",
+            "insights": {
+              "reallocation_plan": {
+                "channel": {
+                  "pause": [
+                    "Appnext",
+                    "TikTok"
+                  ],
+                  "freed_weekly_usd": 787.5,
+                  "reallocate_weekly_usd": {
+                    "Pmax": 500.0,
+                    "Google Search": 200.0,
+                    "Apple Search Ads": 87.5
+                  },
+                  "base_paid_total_weekly_usd": 6714.0,
+                  "new_paid_total_weekly_usd": 6714.0,
+                  "new_weekly_spend_by_channel_usd": {
+                    "Google Search": 990.0,
+                    "Pmax": 1305.5,
+                    "Apple Search Ads": 688.0,
+                    "Meta": 2754.0,
+                    "Other": 976.5
+                  }
+                },
+                "geo": {
+                  "move_from_TR_to_NG_EG_percent_of_TR_budget": 10,
+                  "split": {
+                    "NG": 60,
+                    "EG": 40
+                  },
+                  "guardrails": [
+                    "Do not scale NG/EG until KYC submit clicked > 0 in Amplitude.",
+                    "Revert test-pool budget if KYC submit stays 0 after 72h post-fix."
+                  ],
+                  "post_kyc_fix_additional_shift_percent_TR_to_NG_EG": "20-30"
+                }
+              },
+              "flags": {
+                "low_quality": [
+                  {
+                    "bucket": "TikTok",
+                    "reason": "installs>=20 and withdrawals==0",
+                    "installs": 49,
+                    "withdrawals": 0
+                  },
+                  {
+                    "bucket": "Appnext",
+                    "reason": "cheap CPI + near-zero downstream (new_active=0; withdrawals<=1)",
+                    "installs": 273,
+                    "withdrawals": 1,
+                    "sheet_new_active": 0
+                  }
+                ]
+              },
+              "meta": {
+                "generated_at": "2026-03-21T01:46:09",
+                "attribution_window": "2026-03-14..2026-03-20",
+                "spend_proxy_method": "Average weekly spend from Sheets CAC Analysis weeks 1-8 Mar and 9-15 Mar (all countries) used as proxy for 14-20 Mar.",
+                "notes": [
+                  "Channel CPI/CPA uses spend proxy + different-week outcomes; downstream uses Sheets virt_acc/new_active.",
+                  "Trafik Canavari export exposed only TR Only tab; no Pmax vs Search CTA breakdown available."
+                ]
+              }
+            },
+            "references": [
+              "data/budget-efficiency.json",
+              "data/channel-cac.json"
+            ]
+          },
+          {
+            "title": "Budget pacing (context)",
+            "type": "callouts",
+            "callouts": [
+              "Month tracked: 2026-03",
+              "Status: OVERSPENDING (pace 159.7%)",
+              "Expected spend: $33,871 | Est. actual: $54,082"
+            ],
+            "note": "Extrapolated from TR weekly cost ($9756/wk) scaled to all geos. 21 days elapsed. ⚠️ Real-time pacing needs fresh Sheets or ad-platform API pull.",
+            "references": [
+              "data/budget-pacing.json"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Attribution caveat",
+        "slides": [
+          {
+            "title": "How to interpret these numbers",
+            "type": "bullets",
+            "bullets": [
+              "Spend sources are mixed (finance budget tracking vs marketing-attributed spend).",
+              "Deposits/withdrawals are cross-cohort in current reporting (include returning users).",
+              "Large attribution loss in AppsFlyer/Amplitude join; treat channel ROI as directional."
+            ],
+            "references": [
+              "analysis/attribution-comparison.md",
+              "analysis/attribution-reconciliation.md",
+              "analysis/funnel-summary.md"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Market plans",
+        "slides": [
+          {
+            "title": "Market playbooks (links)",
+            "type": "links",
+            "links": [
+              {
+                "title": "Turkey 90D Plan",
+                "path": "analysis/turkey-90d-plan.md"
+              },
+              {
+                "title": "Nigeria Growth Plan",
+                "path": "analysis/nigeria-growth-plan.md"
+              },
+              {
+                "title": "Egypt Scaling Plan",
+                "path": "analysis/egypt-scaling-plan.md"
+              },
+              {
+                "title": "Pakistan Prelaunch Plan",
+                "path": "analysis/pakistan-prelaunch-plan.md"
+              },
+              {
+                "title": "Multi Market Expansion Playbook",
+                "path": "analysis/multi-market-expansion-playbook.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Next month action plan",
+        "slides": [
+          {
+            "title": "Top priorities",
+            "type": "actions",
+            "actions": [
+              {
+                "severity": "P0",
+                "owner": "Acquisition",
+                "title": "Cap budgets — overspending monthly pace",
+                "why": "Spend pace at ~159.7% of expected (expected $33,871 vs est. actual $54,082).",
+                "expectedImpact": "Avoid exceeding monthly budget; force reallocation to highest-quality channels."
+              },
+              {
+                "severity": "P0",
+                "owner": "Data",
+                "title": "Diagnose DAU WoW anomaly (↓46.0%)",
+                "why": "DAU changed ↓46.0% vs last week (5677.7 → 3065.0).",
+                "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages)."
+              },
+              {
+                "severity": "P0",
+                "owner": "Product",
+                "title": "Diagnose KYC Submit WoW anomaly (↓41.7%)",
+                "why": "KYC Submit changed ↓41.7% vs last week (307 → 179).",
+                "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages)."
+              },
+              {
+                "severity": "P0",
+                "owner": "Acquisition",
+                "title": "Pause & audit appnext (fraud pattern)",
+                "why": "1779 installs, 349 signups but only 47 virt_acc (2.6%) — suspicious downstream",
+                "expectedImpact": "Reduce low-quality traffic and protect downstream conversion."
+              },
+              {
+                "severity": "P0",
+                "owner": "Acquisition",
+                "title": "Pause twitter_ads (DEAD spend)",
+                "why": "$183 spent, 1 installs but 0 signups & 0 activations",
+                "expectedImpact": "Stop wasted spend and reallocate budget to healthy channels."
+              },
+              {
+                "severity": "P0",
+                "owner": "Acquisition",
+                "title": "Pause & audit appnext_dsp (fraud pattern)",
+                "why": "113 installs but only 2 signups (1.8% conversion) — fraud pattern",
+                "expectedImpact": "Reduce low-quality traffic and protect downstream conversion."
+              },
+              {
+                "severity": "P1",
+                "owner": "Acquisition",
+                "title": "Diagnose Installs WoW anomaly (↓36.3%)",
+                "why": "Installs changed ↓36.3% vs last week (2274 → 1448).",
+                "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages)."
+              },
+              {
+                "severity": "P1",
+                "owner": "Product",
+                "title": "Diagnose Virtual Account Opened WoW anomaly (↓31.3%)",
+                "why": "Virtual Account Opened changed ↓31.3% vs last week (632 → 434).",
+                "expectedImpact": "Identify root cause and unblock recovery within 24h (tracking, spend, funnel, outages)."
+              },
+              {
+                "severity": "P0",
+                "owner": "Product",
+                "title": "Escalate EG KYC blocked (0 submits)",
+                "why": "EG shows 206 installs / 64 signups but 0 KYC submits in country breakdown.",
+                "expectedImpact": "Unblock onboarding; recover KYC conversion in a priority geo."
+              },
+              {
+                "severity": "P0",
+                "owner": "Product",
+                "title": "Escalate NG KYC blocked (0 submits)",
+                "why": "NG shows 458 installs / 117 signups but 0 KYC submits in country breakdown.",
+                "expectedImpact": "Unblock onboarding; recover KYC conversion in a priority geo."
+              }
+            ],
+            "source": "data/weekly-actions.json (latest)"
+          }
+        ]
+      }
+    ],
+    "gamma_export": {
+      "status": "manual",
+      "instructions": [
+        "Gamma API export is not wired in this script.",
+        "Option A (fast): paste analysis/monthly-deck.md into Gamma → 'Create from text' and refine styling.",
+        "Option B (structured): use data/monthly-deck.json as the source-of-truth, then manually map sections/slides into Gamma."
+      ]
+    }
+  }
+}

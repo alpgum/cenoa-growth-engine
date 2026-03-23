@@ -1,0 +1,91 @@
+{
+  "marketing_appsflyer.daily_installs_campaign_tr": [
+    {
+      "date": "2026-03-01",
+      "platform": "android",
+      "media_source": "googleadwords_int",
+      "campaign": "Cenoa // Search // TR // Freelancer // Platform",
+      "installs": "1"
+    },
+    {
+      "date": "2026-03-01",
+      "platform": "android",
+      "media_source": "googleadwords_int",
+      "campaign": "Cenoa // Search // TR // Freelancer // Platform",
+      "installs": "1"
+    },
+    {
+      "date": "2026-02-25",
+      "platform": "android",
+      "media_source": "Eihracat Y\u0131ld\u0131zlar\u0131",
+      "campaign": "E-ihracat Y\u0131ld\u0131zlar\u0131 Home Page",
+      "installs": "1"
+    },
+    {
+      "date": "2026-02-28",
+      "platform": "android",
+      "media_source": "Eihracat Y\u0131ld\u0131zlar\u0131",
+      "campaign": "E-ihracat Y\u0131ld\u0131zlar\u0131 Home Page",
+      "installs": "1"
+    },
+    {
+      "date": "2026-02-26",
+      "platform": "ios",
+      "media_source": "Eihracat Y\u0131ld\u0131zlar\u0131",
+      "campaign": "E-ihracat Y\u0131ld\u0131zlar\u0131 Home Page",
+      "installs": "1"
+    }
+  ],
+  "marketing_appsflyer.weekly_combined_totals": [
+    {
+      "week": "2026-W11",
+      "platform": "android",
+      "country": "NG",
+      "channel": "google",
+      "installs": "1",
+      "clicks": "0",
+      "total_events": "64",
+      "unique_event_users": "1"
+    },
+    {
+      "week": "2026-W11",
+      "platform": "android",
+      "country": "NG",
+      "channel": "google",
+      "installs": "1",
+      "clicks": "0",
+      "total_events": "64",
+      "unique_event_users": "1"
+    },
+    {
+      "week": "2026-W11",
+      "platform": "android",
+      "country": "TR",
+      "channel": "google",
+      "installs": "2",
+      "clicks": "0",
+      "total_events": "86",
+      "unique_event_users": "2"
+    },
+    {
+      "week": "2026-W11",
+      "platform": "android",
+      "country": "TR",
+      "channel": "google",
+      "installs": "2",
+      "clicks": "0",
+      "total_events": "86",
+      "unique_event_users": "2"
+    },
+    {
+      "week": "2026-W11",
+      "platform": "android",
+      "country": "TR",
+      "channel": "referral_affi",
+      "installs": "2",
+      "clicks": "0",
+      "total_events": "112",
+      "unique_event_users": "2"
+    }
+  ]
+}

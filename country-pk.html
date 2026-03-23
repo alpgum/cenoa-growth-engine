@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Deep Dive — CENOA GROWTH ENGINE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--surface:#f8f9fa;--surface2:#f0f1f3;--border:#e0e0e0;--accent:#00b85c;--accent-dim:rgba(0,184,92,.08);--accent-glow:rgba(0,184,92,.2);--text:#1a1a1a;--text-dim:#666;--text-bright:#000;--red:#f43f5e;--yellow:#fbbf24;--blue:#60a5fa}
+body{background:var(--bg);color:var(--text);font-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+header{border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);height:54px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.header-brand{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;letter-spacing:.12em;color:var(--text-dim)}
+.header-brand span{color:var(--accent)}
+.header-pulse{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;margin-right:.4rem;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 6px transparent}}
+.back-link{font-size:.75rem;color:var(--text-dim);letter-spacing:.08em;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+.country-nav{display:flex;gap:.3rem;padding:.6rem 2rem;border-bottom:1px solid var(--border);background:#f8f9fa}
+.country-nav a{padding:.35rem .8rem;border-radius:18px;border:1px solid var(--border);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--text-dim);transition:all .25s}
+.country-nav a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.country-nav a.active{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.container{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 3rem}
+.page-title{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.page-title .flag{font-size:2.5rem}
+.page-title h1{font-size:1.8rem;font-weight:800;letter-spacing:.04em}
+.page-title .status{font-size:.7rem;padding:.25rem .7rem;border-radius:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.status-prelaunch{background:rgba(251,191,36,.15);color:var(--yellow)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem}
+.card-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);margin-bottom:.6rem;font-weight:600}
+.card-full{grid-column:1/-1}
+.funnel{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.funnel-step{text-align:center;flex:1;min-width:80px}
+.funnel-value{font-size:1.4rem;font-weight:800;color:var(--text-bright);font-variant-numeric:tabular-nums}
+.funnel-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-top:.1rem}
+.funnel-rate{font-size:.7rem;color:var(--accent);font-weight:700;margin-top:.15rem}
+.funnel-rate.blocked{color:var(--red)}
+.funnel-arrow{color:#333;font-size:1.2rem;flex-shrink:0}
+.kpi{text-align:center;padding:.5rem 0}
+.kpi-value{font-size:2rem;font-weight:800;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.kpi-value.yellow{color:var(--yellow)}
+.kpi-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-top:.25rem}
+.tag{display:inline-block;font-size:.6rem;padding:.15rem .5rem;border-radius:6px;font-weight:700;letter-spacing:.06em;margin-right:.3rem}
+.tag-yellow{background:rgba(251,191,36,.15);color:var(--yellow)}
+.tag-blue{background:rgba(59,130,246,.15);color:var(--blue)}
+.compact-list{list-style:none;padding:0}
+.compact-list li{font-size:.78rem;padding:.3rem 0;border-bottom:1px solid rgba(34,34,34,.5);color:var(--text)}
+.compact-list li:last-child{border-bottom:none}
+.compact-list li::before{content:'→';color:var(--accent);margin-right:.5rem;font-weight:700}
+.info-box{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem}
+.info-box .info-title{font-size:.85rem;font-weight:800;color:var(--blue);margin-bottom:.4rem}
+.info-box p{font-size:.78rem;color:var(--text);line-height:1.5}
+.warning-box{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem}
+.warning-box .warning-title{font-size:.85rem;font-weight:800;color:var(--yellow);margin-bottom:.4rem}
+.warning-box p{font-size:.78rem;color:var(--text);line-height:1.5}
+@media(max-width:900px){.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.funnel{flex-direction:column}.funnel-arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand"><div class="header-pulse"></div>CENOA <span>GROWTH ENGINE</span></div>
+  <a href="index.html" class="back-link">← BACK TO DASHBOARD</a>
+</header>
+
+<nav class="country-nav">
+  <a href="country-tr.html">🇹🇷 Turkey</a>
+  <a href="country-ng.html">🇳🇬 Nigeria</a>
+  <a href="country-eg.html">🇪🇬 Egypt</a>
+  <a href="country-pk.html" class="active">🇵🇰 Pakistan</a>
+</nav>
+
+<div class="container">
+
+  <div class="page-title">
+    <span class="flag">🇵🇰</span>
+    <h1>Pakistan</h1>
+    <span class="status status-prelaunch">PRE-LAUNCH</span>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-box">
+    <div class="info-title">🚀 Pre-Launch Phase</div>
+    <p>Pakistan is in pre-launch with minimal organic installs. $6K budget allocated but $0 spent. Waitlist is active with 2,291 sessions. Early signup rate of 76.7% is extremely promising.</p>
+  </div>
+
+  <div class="warning-box">
+    <div class="warning-title">⚠️ KYC Risk — Likely Same Bug as NG/EG</div>
+    <p>Pakistan likely has the same KYC pre-survey + handoff bug affecting Nigeria and Egypt. Must verify and fix before launching paid campaigns.</p>
+  </div>
+
+  <!-- FUNNEL (minimal) -->
+  <div class="card card-full" style="margin-bottom:1rem">
+    <div class="card-title">Early Funnel (Organic Only)</div>
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="funnel-value">30</div>
+        <div class="funnel-label">Installs</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">23</div>
+        <div class="funnel-label">Signups</div>
+        <div class="funnel-rate">76.7%</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">0</div>
+        <div class="funnel-label">KYC</div>
+        <div class="funnel-rate blocked">TBD</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">0</div>
+        <div class="funnel-label">VA Created</div>
+        <div class="funnel-rate blocked">—</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-value">0</div>
+        <div class="funnel-label">Withdraw</div>
+        <div class="funnel-rate blocked">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="grid-4">
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value">76.7%</div>
+        <div class="kpi-label">Signup Rate 🔥</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value">2,291</div>
+        <div class="kpi-label">Waitlist Sessions</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value yellow">$6K</div>
+        <div class="kpi-label">Budget Allocated</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi">
+        <div class="kpi-value">$0</div>
+        <div class="kpi-label">Spent So Far</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Launch Checklist -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Launch Prerequisites</div>
+      <ul class="compact-list">
+        <li><span class="tag tag-yellow">⏳</span> Verify KYC flow works for PK users</li>
+        <li><span class="tag tag-yellow">⏳</span> Fix pre-survey + handoff bug (if present)</li>
+        <li><span class="tag tag-blue">TODO</span> Set up paid channels (Meta, ASA)</li>
+        <li><span class="tag tag-blue">TODO</span> Create Urdu/English landing page</li>
+        <li><span class="tag tag-blue">TODO</span> Define channel mix for $6K budget</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Early Signals</div>
+      <ul class="compact-list">
+        <li>76.7% signup rate — highest across all markets</li>
+        <li>2,291 waitlist sessions = organic demand exists</li>
+        <li>Zero paid spend = all current users are organic</li>
+        <li>If KYC works, unit economics could rival Nigeria</li>
+        <li>$6K budget untouched — clean slate to optimize</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="card">
+    <div class="card-title">Launch Recommendations</div>
+    <ul class="compact-list">
+      <li><strong>Step 1:</strong> Fix KYC bug globally (benefits NG, EG, PK simultaneously)</li>
+      <li><strong>Step 2:</strong> Run small organic KYC test with existing 30 users</li>
+      <li><strong>Step 3:</strong> If KYC converts, start $1K/mo Meta test campaign</li>
+      <li><strong>Step 4:</strong> Ramp to $3K-$6K/mo based on CAC results</li>
+      <li><strong>Do NOT launch paid until KYC is confirmed working</strong></li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

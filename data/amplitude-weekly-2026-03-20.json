@@ -1,0 +1,55 @@
+{
+  "period": {
+    "current": {
+      "start": "2026-03-14",
+      "end": "2026-03-20"
+    },
+    "previous": {
+      "start": "2026-03-07",
+      "end": "2026-03-13"
+    }
+  },
+  "generated_at": "2026-03-21T01:22:37.733537",
+  "installs": {
+    "value": 1445,
+    "prev": 2274,
+    "delta": -36.5,
+    "direction": "down"
+  },
+  "signups": {
+    "value": 1207,
+    "prev": 1671,
+    "delta": -27.8,
+    "direction": "down"
+  },
+  "kyc_submits": {
+    "value": 179,
+    "prev": 307,
+    "delta": -41.7,
+    "direction": "down"
+  },
+  "withdrawals": {
+    "value": 2227,
+    "prev": 2214,
+    "delta": 0.6,
+    "direction": "up"
+  },
+  "deposits": {
+    "value": 1546,
+    "prev": 1642,
+    "delta": -5.8,
+    "direction": "down"
+  },
+  "kyc_started": {
+    "value": 3098,
+    "prev": 3351,
+    "delta": -7.5,
+    "direction": "down"
+  },
+  "dau": {
+    "value": 3060,
+    "prev": 5678,
+    "delta": -46.1,
+    "direction": "down"
+  }
+}

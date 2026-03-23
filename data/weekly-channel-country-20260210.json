@@ -1,0 +1,84 @@
+{
+  "period": "20260210-20260216",
+  "install": {
+    "event_type": "[AppsFlyer] Install",
+    "aggregator": "ms_country",
+    "totals": {
+      "Google Search | NG": 3000,
+      "Google Search | EG": 2702,
+      "Other | NG": 1131,
+      "Other | TR": 526,
+      "Organic | TR": 227,
+      "Other | EG": 199,
+      "Organic | NG": 109,
+      "ASA | TR": 83,
+      "Appnext | EG": 65,
+      "Organic | EG": 80,
+      "Appnext | TR": 48,
+      "Google Search | TR": 41,
+      "Google Search | Other": 80,
+      "Appnext | NG": 22,
+      "Organic | Other": 77,
+      "Other | Other": 34,
+      "TikTok | TR": 5,
+      "Referral | NG": 3,
+      "ASA | Other": 11,
+      "Referral | TR": 2,
+      "Appnext | Other": 2
+    }
+  },
+  "signup": {
+    "event_type": "Cenoa sign-up completed",
+    "aggregator": "ms_country",
+    "totals": {
+      "Organic | Other": 4047,
+      "Google Search | NG": 286,
+      "Organic | NG": 239,
+      "Google Search | EG": 177,
+      "Organic | TR": 236,
+      "Other | TR": 137,
+      "Organic | EG": 86,
+      "Other | NG": 86,
+      "ASA | TR": 36,
+      "Other | EG": 25,
+      "Google Search | TR": 8,
+      "ASA | Other": 7,
+      "Appnext | NG": 2,
+      "Appnext | TR": 2,
+      "Referral | NG": 1,
+      "Referral | TR": 1,
+      "Other | Other": 5,
+      "Google Search | Other": 1,
+      "TikTok | TR": 1
+    }
+  },
+  "kyc_submit": {
+    "event_type": "Bridgexyz KYC Component: Submit clicked",
+    "aggregator": "country",
+    "totals": {
+      "TR": 81,
+      "Other": 4,
+      "EG": 1
+    }
+  },
+  "virtual_account": {
+    "event_type": "Virtual account opened",
+    "aggregator": "country",
+    "totals": {
+      "TR": 310,
+      "NG": 42,
+      "Other": 38,
+      "EG": 11
+    }
+  },
+  "new_active": {
+    "event_type": "Withdraw Completed",
+    "aggregator": "country",
+    "totals": {
+      "TR": 514,
+      "NG": 294,
+      "Other": 94,
+      "EG": 8
+    }
+  }
+}

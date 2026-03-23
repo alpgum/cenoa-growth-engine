@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-03-22T18:57:34.159658",
+  "month": "2026-03",
+  "month_label": "March 2026 (dedicated tab)",
+  "budget": 50000,
+  "effective_budget": 42500,
+  "days_in_month": 31,
+  "days_elapsed": 22,
+  "expected_spend": 35483.87,
+  "actual_spend_estimate": 56657.52,
+  "pace_pct": 159.7,
+  "status": "OVERSPENDING",
+  "estimation_method": "weekly_tr_extrapolation",
+  "data_fresh": false,
+  "note": "Extrapolated from TR weekly cost ($9756/wk) scaled to all geos. 22 days elapsed. \u26a0\ufe0f Real-time pacing needs fresh Sheets or ad-platform API pull.",
+  "thresholds": {
+    "overspending": ">120% of expected pace",
+    "on_track": "80-120% of expected pace",
+    "underspending": "<80% of expected pace"
+  },
+  "historical_context": {
+    "jan_2026": {
+      "period": "1-31 Jan 2026",
+      "total_spend": 35552,
+      "budget": 50000,
+      "utilization_pct": 71.1
+    },
+    "feb_2026": {
+      "period": "1-28 Feb 2026",
+      "total_spend": 57570,
+      "budget": 50000,
+      "utilization_pct": 115.1
+    }
+  }
+}

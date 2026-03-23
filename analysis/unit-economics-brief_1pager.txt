@@ -1,0 +1,66 @@
+[030] Unit Economics — 1-page exec brief (Mar 14–20, 2026)
+
+GOAL
+Decide where to spend (channel + geo) given current funnel constraints, using CAC proxies + funnel reality check + directional LTV.
+
+EXEC SUMMARY
+- Growth is bottlenecked by KYC, not acquisition. Install→Signup is 83.5% (strong) but KYC Started→Submit is 5.8% (94% dropout). KYC submits are -41.7% WoW.
+- KYC completion is effectively Turkey-only right now. Mar 14–20: TR KYC submit=170; NG=0; EG=0 despite installs/signups.
+- Spend should follow quality + measurability: scale Apple Search Ads + Google Search/PMax; stop Appnext + keep TikTok paused.
+- You can’t “scale into” unit economics while KYC is broken in NG/EG: cheap CPI is not bankable if activation is blocked.
+- Measurement still leaks (unattributed dominates), but the KYC-by-country pattern is decisive.
+
+TOP KPIs (THIS WEEK, WoW)
+- Installs: 1,445 (-36.5%)
+- Sign-ups: 1,207 (-27.8%) | Install→Signup: 83.5%
+- KYC started: 3,098 (-7.5%)
+- KYC submits: 179 (-41.7%) | KYC Started→Submit: 5.8%
+- DAU (avg): 3,060 (-46.1%)
+- Deposits: 1,546 (-5.8%) [not cohort-pure]
+- Withdrawals: 2,227 (+0.6%) [existing base holding steady]
+
+GEO GATING INDICATOR (KYC submit clicked, Mar 14–20)
+- TR: 170
+- NG: 0
+- EG: 0
+
+BIGGEST BOTTLENECK
+KYC completion + geo gating:
+- Global KYC Started→Submit: 5.8% (death zone)
+- Outside TR it appears non-functional (NG/EG submit=0)
+
+GATING KPI (DO NOT SCALE WITHOUT THIS)
+Daily KYC submit rate by country (per signup and per install). Must be >0 and stable.
+
+CHANNEL DECISIONS (NOW)
+SCALE
+- Apple Search Ads: strongest intent + best downstream quality signal. Expand brand + competitor/generic.
+- Google Search + PMax: reliable quality; keep scaling once reporting split is cleaned up.
+
+STOP / KEEP PAUSED
+- Appnext: 273 installs → 1 withdrawal; sheet Cost/New Active ~ $893 (fraud/low-quality pattern).
+- TikTok: 49 installs → 0 withdrawals; treat as experiments only after activation is fixed.
+
+WATCHLIST
+- Meta: meaningful spend but attribution loss huge; don’t scale until attribution + creative/targeting iteration shows stable activation.
+- Other networks: keep only placements with verified virt_acc/new_active.
+
+COUNTRY REALLOCATION
+This week (KYC broken outside TR):
+- Shift incremental budget to Turkey (only geo with functioning KYC submit).
+- Keep NG/EG at small “verification budgets” only (enough to validate KYC fixes + track submit events).
+
+Once KYC is fixed (trigger: sustained non-zero KYC submit in NG/EG):
+- Nigeria becomes primary scale lever (sheet week Mar 9–15: Cost/VirtAcc ~$2; Cost/Paid Active ~$16).
+- Egypt secondary (Cost/VirtAcc ~$8; Cost/Paid Active ~$64).
+
+LTV NOTE (DIRECTIONAL)
+Per active user (scenario-based): TR base ~$72; NG base ~$28.8; EG base ~$21.6.
+Important: incremental LTV for newly acquired NG/EG users is ~0 until KYC works.
+
+NEXT 7 DAYS (5 ACTIONS)
+1) KYC incident triage (48h): confirm Bridge/Bridgexyz NG+EG doc/jurisdiction support; reproduce end-to-end; identify exact fail step.
+2) Geo gating dashboard: daily KYC submit counts + submit rate per signup by country; alert on drops to ~0.
+3) Budget move: reallocate from Appnext+TikTok into ASA + Google Search/PMax (TR-focused until KYC unlocks).
+4) Attribution repair: reduce “(none)” via AppsFlyer↔Amplitude mapping/deeplinks/web2app; goal: materially lower unattributed signups/withdrawals.
+5) Post-KYC scale plan: define go/no-go thresholds + staged budget ramps for NG/EG tied to KYC submit + paid-active conversion.

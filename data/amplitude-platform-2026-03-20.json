@@ -1,0 +1,99 @@
+{
+  "date_range": {
+    "start": "20260314",
+    "end": "20260320"
+  },
+  "generated_at": "2026-03-21T01:22:54.188539",
+  "events": {
+    "[AppsFlyer] Install": {
+      "total": 1445,
+      "platforms": [
+        {
+          "platform": "Android",
+          "count": 1275,
+          "percentage": 88.24
+        },
+        {
+          "platform": "iOS",
+          "count": 170,
+          "percentage": 11.76
+        }
+      ]
+    },
+    "Cenoa sign-up completed": {
+      "total": 1207,
+      "platforms": [
+        {
+          "platform": "(none)",
+          "count": 754,
+          "percentage": 62.47
+        },
+        {
+          "platform": "iOS",
+          "count": 232,
+          "percentage": 19.22
+        },
+        {
+          "platform": "Android",
+          "count": 221,
+          "percentage": 18.31
+        }
+      ]
+    },
+    "Bridgexyz KYC Component: Submit clicked": {
+      "total": 179,
+      "platforms": [
+        {
+          "platform": "Android",
+          "count": 140,
+          "percentage": 78.21
+        },
+        {
+          "platform": "iOS",
+          "count": 39,
+          "percentage": 21.79
+        }
+      ]
+    },
+    "Withdraw Completed": {
+      "total": 2227,
+      "platforms": [
+        {
+          "platform": "iOS",
+          "count": 1187,
+          "percentage": 53.3
+        },
+        {
+          "platform": "Android",
+          "count": 1033,
+          "percentage": 46.39
+        },
+        {
+          "platform": "(none)",
+          "count": 7,
+          "percentage": 0.31
+        }
+      ]
+    },
+    "Deposit Completed": {
+      "total": 1546,
+      "platforms": [
+        {
+          "platform": "iOS",
+          "count": 813,
+          "percentage": 52.59
+        },
+        {
+          "platform": "Android",
+          "count": 718,
+          "percentage": 46.44
+        },
+        {
+          "platform": "(none)",
+          "count": 15,
+          "percentage": 0.97
+        }
+      ]
+    }
+  }
+}

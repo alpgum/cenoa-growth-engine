@@ -1,0 +1,252 @@
+{
+  "generated_at": "2026-03-22T18:46:00+03:00",
+  "period": {
+    "month": "March 2026",
+    "total_days": 31,
+    "elapsed_days": 21,
+    "pacing_pct": 67.7,
+    "data_confirmed_through": "2026-03-15",
+    "data_estimated_through": "2026-03-21",
+    "estimation_method": "W2 (9-15 Mar) daily run-rate × 6 days for days 16-21"
+  },
+  "budget": {
+    "total_monthly": 50000,
+    "effective_monthly": 39700,
+    "subscriptions_monthly": 2689,
+    "note": "Effective = total minus subscriptions and unallocated reserve; marchBudget2026 shows $42,500 effective"
+  },
+  "expected_spend_at_pace": {
+    "total": 33871,
+    "note": "$50,000 × 67.7%"
+  },
+  "country_pacing": {
+    "TR": {
+      "planned_monthly": 23000,
+      "expected_at_pace": 15571,
+      "actual_confirmed_15d": 7824,
+      "estimated_21d": 11527,
+      "pacing_pct": 50.1,
+      "status": "UNDER_PACING",
+      "gap_vs_expected": -4044
+    },
+    "NG": {
+      "planned_monthly": 2200,
+      "expected_at_pace": 1489,
+      "actual_confirmed_15d": 230,
+      "estimated_21d": 427,
+      "pacing_pct": 19.4,
+      "status": "SEVERELY_UNDER_PACING",
+      "gap_vs_expected": -1062
+    },
+    "EG": {
+      "planned_monthly": 8500,
+      "expected_at_pace": 5752,
+      "actual_confirmed_15d": 5549,
+      "estimated_21d": 6919,
+      "pacing_pct": 81.4,
+      "status": "OVER_PACING",
+      "gap_vs_expected": 1167
+    },
+    "PK": {
+      "planned_monthly": 6000,
+      "expected_at_pace": 4061,
+      "actual_confirmed_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED",
+      "gap_vs_expected": -4061
+    }
+  },
+  "total_pacing": {
+    "planned_monthly": 39700,
+    "expected_at_pace": 26873,
+    "actual_confirmed_15d": 13603,
+    "estimated_21d": 18873,
+    "pacing_pct": 47.5,
+    "status": "UNDER_PACING",
+    "gap_vs_expected": -8000
+  },
+  "channel_pacing_TR": {
+    "Google": {
+      "planned_monthly": 3750,
+      "actual_15d": 1636,
+      "estimated_21d": 2305,
+      "pacing_pct": 61.5,
+      "status": "SLIGHTLY_UNDER",
+      "channels_included": ["pmax_search", "google_web2app", "google_search"]
+    },
+    "Meta": {
+      "planned_monthly": 750,
+      "actual_15d": 1327,
+      "estimated_21d": 1742,
+      "pacing_pct": 232.3,
+      "status": "OVER_PACING",
+      "note": "Spending 2.3× plan due to W2A + retargeting + onboarding test"
+    },
+    "AppleSearchAds": {
+      "planned_monthly": 2800,
+      "actual_15d": 1159,
+      "estimated_21d": 1587,
+      "pacing_pct": 56.7,
+      "status": "UNDER_PACING"
+    },
+    "TikTok": {
+      "planned_monthly": 1200,
+      "actual_15d": 682,
+      "estimated_21d": 994,
+      "pacing_pct": 82.8,
+      "status": "ON_PACE"
+    },
+    "Spaze_Appnext": {
+      "planned_monthly": 4500,
+      "actual_15d": 2663,
+      "estimated_21d": 3776,
+      "pacing_pct": 83.9,
+      "status": "ON_PACE"
+    },
+    "Twitter": {
+      "planned_monthly": 1000,
+      "actual_15d": 183,
+      "estimated_21d": 260,
+      "pacing_pct": 26.0,
+      "status": "UNDER_PACING"
+    },
+    "Affiliate_RAF_CRM": {
+      "planned_monthly": 3000,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "Influencer_Other": {
+      "planned_monthly": 4500,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "Reddit": {
+      "planned_monthly": 1000,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "LinkedIn": {
+      "planned_monthly": 500,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    }
+  },
+  "channel_pacing_EG": {
+    "Google": {
+      "planned_monthly": 1500,
+      "actual_15d": 1210,
+      "estimated_21d": 1553,
+      "pacing_pct": 103.6,
+      "status": "ON_PACE",
+      "channels_included": ["pmax_search", "pmax_get_paid_test", "pmax_ltv_test", "google_search"]
+    },
+    "Meta": {
+      "planned_monthly": 1500,
+      "actual_15d": 4181,
+      "estimated_21d": 4875,
+      "pacing_pct": 325.0,
+      "status": "SEVERELY_OVER",
+      "note": "Meta get_paid + ltv tests driving 3.25× plan; EG heavy Meta test cycle"
+    },
+    "AppleSearchAds": {
+      "planned_monthly": 500,
+      "actual_15d": 42,
+      "estimated_21d": 70,
+      "pacing_pct": 14.0,
+      "status": "UNDER_PACING"
+    },
+    "TikTok": {
+      "planned_monthly": 2400,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "AdNetworks": {
+      "planned_monthly": 600,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    }
+  },
+  "channel_pacing_NG": {
+    "Google": {
+      "planned_monthly": 310,
+      "actual_15d": 230,
+      "estimated_21d": 427,
+      "pacing_pct": 137.7,
+      "status": "OVER_PACING",
+      "note": "Only active channel; Google Search performing well"
+    },
+    "Meta": {
+      "planned_monthly": 150,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "Affiliate_RAF_CRM": {
+      "planned_monthly": 300,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    },
+    "Influencer_Other": {
+      "planned_monthly": 1440,
+      "actual_15d": 0,
+      "estimated_21d": 0,
+      "pacing_pct": 0.0,
+      "status": "NOT_STARTED"
+    }
+  },
+  "funnel_metrics_15d": {
+    "TR": {
+      "installs": 3289,
+      "signups": 1176,
+      "virt_acc": 776,
+      "new_active": 292,
+      "paid_active": 22,
+      "cost_per_install": 2.38,
+      "cost_per_signup": 6.65,
+      "cost_per_virt_acc": 10.08,
+      "cost_per_new_active": 26.79,
+      "true_cac_per_paid_active": 355.64
+    },
+    "NG": {
+      "installs": 1445,
+      "signups": 614,
+      "virt_acc": 260,
+      "new_active": 31,
+      "paid_active": 23,
+      "cost_per_install": 0.16,
+      "cost_per_signup": 0.37,
+      "cost_per_virt_acc": 0.88,
+      "cost_per_new_active": 7.42,
+      "true_cac_per_paid_active": 10.00,
+      "note": "Extremely low spend ($230) inflates efficiency; mostly organic funnel"
+    },
+    "EG": {
+      "installs": 1252,
+      "signups": 703,
+      "virt_acc": 217,
+      "new_active": 81,
+      "paid_active": 62,
+      "cost_per_install": 4.43,
+      "cost_per_signup": 7.89,
+      "cost_per_virt_acc": 25.57,
+      "cost_per_new_active": 68.51,
+      "true_cac_per_paid_active": 89.50
+    }
+  }
+}

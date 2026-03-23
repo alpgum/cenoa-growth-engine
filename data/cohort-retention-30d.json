@@ -1,0 +1,1867 @@
+{
+  "generated_at": "2026-03-21T02:22:25.877911+00:00",
+  "definition": {
+    "cohort": "signup_month_utc",
+    "signup_event": "Cenoa sign-up completed",
+    "retention_event": "Withdraw Completed",
+    "retention_day": 30,
+    "window_days": 7,
+    "inclusive_days": [
+      23,
+      37
+    ]
+  },
+  "included_cohorts": {
+    "start": "2025-04",
+    "end": "2026-01"
+  },
+  "export_window": {
+    "start": "2025-04-01",
+    "end": "2026-03-20",
+    "chunk_days": 14
+  },
+  "counts": {
+    "events_scanned": 37212054,
+    "events_matched": 165685,
+    "users_included": 44119
+  },
+  "cohorts": [
+    {
+      "cohort": "2025-04",
+      "signups": 3658,
+      "retained_30d": 149,
+      "retention_30d": 0.04073264078731547
+    },
+    {
+      "cohort": "2025-05",
+      "signups": 5571,
+      "retained_30d": 116,
+      "retention_30d": 0.02082211452162987
+    },
+    {
+      "cohort": "2025-06",
+      "signups": 4659,
+      "retained_30d": 73,
+      "retention_30d": 0.015668598411676324
+    },
+    {
+      "cohort": "2025-07",
+      "signups": 3519,
+      "retained_30d": 68,
+      "retention_30d": 0.01932367149758454
+    },
+    {
+      "cohort": "2025-08",
+      "signups": 4925,
+      "retained_30d": 79,
+      "retention_30d": 0.016040609137055836
+    },
+    {
+      "cohort": "2025-09",
+      "signups": 4046,
+      "retained_30d": 49,
+      "retention_30d": 0.012110726643598616
+    },
+    {
+      "cohort": "2025-10",
+      "signups": 3052,
+      "retained_30d": 66,
+      "retention_30d": 0.02162516382699869
+    },
+    {
+      "cohort": "2025-11",
+      "signups": 2920,
+      "retained_30d": 73,
+      "retention_30d": 0.025
+    },
+    {
+      "cohort": "2025-12",
+      "signups": 3802,
+      "retained_30d": 68,
+      "retention_30d": 0.01788532351394003
+    },
+    {
+      "cohort": "2026-01",
+      "signups": 7967,
+      "retained_30d": 97,
+      "retention_30d": 0.012175222794025355
+    }
+  ],
+  "cohorts_by_country": {
+    "2025-04": {
+      "TR": {
+        "signups": 648,
+        "retained_30d": 37,
+        "retention_30d": 0.05709876543209876
+      },
+      "Unknown": {
+        "signups": 2611,
+        "retained_30d": 93,
+        "retention_30d": 0.03561853695901953
+      },
+      "NG": {
+        "signups": 279,
+        "retained_30d": 10,
+        "retention_30d": 0.035842293906810034
+      },
+      "Congo (DRC)": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 8,
+        "retained_30d": 1,
+        "retention_30d": 0.125
+      },
+      "United States": {
+        "signups": 12,
+        "retained_30d": 1,
+        "retention_30d": 0.08333333333333333
+      },
+      "Poland": {
+        "signups": 5,
+        "retained_30d": 1,
+        "retention_30d": 0.2
+      },
+      "Latvia": {
+        "signups": 5,
+        "retained_30d": 1,
+        "retention_30d": 0.2
+      },
+      "Honduras": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ireland": {
+        "signups": 13,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "El Salvador": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Estonia": {
+        "signups": 3,
+        "retained_30d": 1,
+        "retention_30d": 0.3333333333333333
+      },
+      "Spain": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 6,
+        "retained_30d": 1,
+        "retention_30d": 0.16666666666666666
+      },
+      "Italy": {
+        "signups": 9,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Romania": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Singapore": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 10,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sri Lanka": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Czech Republic": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 3,
+        "retained_30d": 1,
+        "retention_30d": 0.3333333333333333
+      },
+      "Kenya": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Mozambique": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Malaysia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Israel": {
+        "signups": 2,
+        "retained_30d": 1,
+        "retention_30d": 0.5
+      },
+      "Bosnia and Herzegovina": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belarus": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bulgaria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 5,
+        "retained_30d": 1,
+        "retention_30d": 0.2
+      },
+      "Montenegro": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Uzbekistan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Morocco": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-05": {
+      "Unknown": {
+        "signups": 3776,
+        "retained_30d": 80,
+        "retention_30d": 0.0211864406779661
+      },
+      "NG": {
+        "signups": 269,
+        "retained_30d": 8,
+        "retention_30d": 0.02973977695167286
+      },
+      "TR": {
+        "signups": 1381,
+        "retained_30d": 27,
+        "retention_30d": 0.01955104996379435
+      },
+      "United Arab Emirates": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ireland": {
+        "signups": 8,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Romania": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Denmark": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 12,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 5,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 10,
+        "retained_30d": 1,
+        "retention_30d": 0.1
+      },
+      "Netherlands": {
+        "signups": 5,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kenya": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 5,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 10,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "New Zealand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Malaysia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Thailand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Latvia": {
+        "signups": 22,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Montenegro": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hungary": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Argentina": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bulgaria": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Albania": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kuwait": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sweden": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Iraq": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Greece": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Norway": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kosovo": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Russia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Colombia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Mexico": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "India": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-06": {
+      "Unknown": {
+        "signups": 3180,
+        "retained_30d": 47,
+        "retention_30d": 0.014779874213836478
+      },
+      "TR": {
+        "signups": 1056,
+        "retained_30d": 17,
+        "retention_30d": 0.016098484848484848
+      },
+      "NG": {
+        "signups": 309,
+        "retained_30d": 8,
+        "retention_30d": 0.025889967637540454
+      },
+      "Netherlands": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sweden": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 15,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Latvia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ireland": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Romania": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Saudi Arabia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 9,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kenya": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Montenegro": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Russia": {
+        "signups": 20,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 10,
+        "retained_30d": 1,
+        "retention_30d": 0.1
+      },
+      "Luxembourg": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Uzbekistan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Indonesia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Slovakia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bulgaria": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Singapore": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belarus": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "South Africa": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "India": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ukraine": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-07": {
+      "Unknown": {
+        "signups": 2481,
+        "retained_30d": 43,
+        "retention_30d": 0.017331721080209594
+      },
+      "TR": {
+        "signups": 702,
+        "retained_30d": 21,
+        "retention_30d": 0.029914529914529916
+      },
+      "NG": {
+        "signups": 252,
+        "retained_30d": 2,
+        "retention_30d": 0.007936507936507936
+      },
+      "Latvia": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 11,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bahrain": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 11,
+        "retained_30d": 1,
+        "retention_30d": 0.09090909090909091
+      },
+      "Uzbekistan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Portugal": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 4,
+        "retained_30d": 1,
+        "retention_30d": 0.25
+      },
+      "Bosnia and Herzegovina": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 5,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ireland": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sweden": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ukraine": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Qatar": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "New Zealand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "India": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Albania": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Indonesia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Saudi Arabia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Thailand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Luxembourg": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Libya": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Croatia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-08": {
+      "Unknown": {
+        "signups": 3414,
+        "retained_30d": 42,
+        "retention_30d": 0.012302284710017574
+      },
+      "NG": {
+        "signups": 272,
+        "retained_30d": 4,
+        "retention_30d": 0.014705882352941176
+      },
+      "TR": {
+        "signups": 1177,
+        "retained_30d": 33,
+        "retention_30d": 0.028037383177570093
+      },
+      "United States": {
+        "signups": 11,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 9,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Russia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Serbia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Congo (DRC)": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Portugal": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hong Kong": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Australia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Uzbekistan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Israel": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hungary": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-09": {
+      "TR": {
+        "signups": 908,
+        "retained_30d": 24,
+        "retention_30d": 0.02643171806167401
+      },
+      "Unknown": {
+        "signups": 2823,
+        "retained_30d": 23,
+        "retention_30d": 0.008147360963513992
+      },
+      "NG": {
+        "signups": 242,
+        "retained_30d": 2,
+        "retention_30d": 0.008264462809917356
+      },
+      "Germany": {
+        "signups": 10,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 20,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Thailand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "South Korea": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Latvia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "India": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Oman": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belarus": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Romania": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Greece": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Japan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Argentina": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kenya": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Portugal": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Moldova": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Tunisia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-10": {
+      "Unknown": {
+        "signups": 2147,
+        "retained_30d": 43,
+        "retention_30d": 0.020027945971122497
+      },
+      "United States": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "TR": {
+        "signups": 610,
+        "retained_30d": 20,
+        "retention_30d": 0.03278688524590164
+      },
+      "NG": {
+        "signups": 239,
+        "retained_30d": 3,
+        "retention_30d": 0.012552301255230125
+      },
+      "Taiwan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Brazil": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hong Kong": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Iraq": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Moldova": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "India": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Japan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Saudi Arabia": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Lithuania": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Panama": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kosovo": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Montenegro": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Vietnam": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Guatemala": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-11": {
+      "Unknown": {
+        "signups": 2100,
+        "retained_30d": 50,
+        "retention_30d": 0.023809523809523808
+      },
+      "NG": {
+        "signups": 224,
+        "retained_30d": 4,
+        "retention_30d": 0.017857142857142856
+      },
+      "TR": {
+        "signups": 524,
+        "retained_30d": 19,
+        "retention_30d": 0.03625954198473282
+      },
+      "Kenya": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 15,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Slovakia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Greece": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bosnia and Herzegovina": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Morocco": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Tunisia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Macedonia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Andorra": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Russia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Bulgaria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2025-12": {
+      "Unknown": {
+        "signups": 2710,
+        "retained_30d": 39,
+        "retention_30d": 0.014391143911439114
+      },
+      "TR": {
+        "signups": 631,
+        "retained_30d": 20,
+        "retention_30d": 0.03169572107765452
+      },
+      "NG": {
+        "signups": 270,
+        "retained_30d": 8,
+        "retention_30d": 0.02962962962962963
+      },
+      "United States": {
+        "signups": 17,
+        "retained_30d": 1,
+        "retention_30d": 0.058823529411764705
+      },
+      "Romania": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Philippines": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Indonesia": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 7,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Poland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sweden": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Georgia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Japan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Cyprus": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Lithuania": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "EG": {
+        "signups": 117,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Macedonia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Italy": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Latvia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "France": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Azerbaijan": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kenya": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Norway": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hong Kong": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    },
+    "2026-01": {
+      "Unknown": {
+        "signups": 5669,
+        "retained_30d": 38,
+        "retention_30d": 0.006703122243781972
+      },
+      "TR": {
+        "signups": 1197,
+        "retained_30d": 34,
+        "retention_30d": 0.028404344193817876
+      },
+      "Albania": {
+        "signups": 2,
+        "retained_30d": 1,
+        "retention_30d": 0.5
+      },
+      "NG": {
+        "signups": 680,
+        "retained_30d": 17,
+        "retention_30d": 0.025
+      },
+      "EG": {
+        "signups": 295,
+        "retained_30d": 1,
+        "retention_30d": 0.003389830508474576
+      },
+      "France": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Kingdom": {
+        "signups": 10,
+        "retained_30d": 1,
+        "retention_30d": 0.1
+      },
+      "Cyprus": {
+        "signups": 8,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Togo": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United States": {
+        "signups": 33,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Belgium": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Netherlands": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ghana": {
+        "signups": 6,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kenya": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Hungary": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Vietnam": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Macedonia": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Germany": {
+        "signups": 12,
+        "retained_30d": 2,
+        "retention_30d": 0.16666666666666666
+      },
+      "Azerbaijan": {
+        "signups": 4,
+        "retained_30d": 2,
+        "retention_30d": 0.5
+      },
+      "Poland": {
+        "signups": 4,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Austria": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Switzerland": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Spain": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Greece": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Oman": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "United Arab Emirates": {
+        "signups": 3,
+        "retained_30d": 1,
+        "retention_30d": 0.3333333333333333
+      },
+      "Italy": {
+        "signups": 3,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Canada": {
+        "signups": 2,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Benin": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Pakistan": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Finland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Norway": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Kosovo": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Zimbabwe": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Tunisia": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Sweden": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Lithuania": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Singapore": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Thailand": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Ireland": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "Portugal": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      },
+      "South Africa": {
+        "signups": 1,
+        "retained_30d": 0,
+        "retention_30d": 0.0
+      }
+    }
+  }
+}

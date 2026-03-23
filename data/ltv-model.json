@@ -1,0 +1,128 @@
+{
+  "model": {
+    "id": "[027]",
+    "name": "First-pass LTV model (proxy-based)",
+    "asOf": "2026-03-20",
+    "window": {
+      "start": "2026-03-14",
+      "end": "2026-03-20"
+    },
+    "definition": {
+      "formula": "LTV = (avg_monthly_gross_profit_per_active_user) * (expected_lifetime_months)",
+      "active_user_definition": "User who completes >=1 withdrawal in a month",
+      "gross_profit_driver": "FX margin (spread/fee) applied to withdrawal volume",
+      "expanded": {
+        "avg_monthly_gross_profit_per_active_user": "avg_monthly_withdrawal_volume_per_active_user * fx_margin_rate",
+        "ltv_per_active_user": "avg_monthly_withdrawal_volume_per_active_user * fx_margin_rate * expected_lifetime_months"
+      }
+    },
+    "notes": [
+      "Inputs contain event counts but not withdrawal amounts, unique users, or cohort-clean outcomes.",
+      "Transaction proxies (withdraw/deposit events) include returning users; they are demand/maturity signals rather than new-cohort LTV."
+    ]
+  },
+  "assumptions": {
+    "fx_margin_rate": {
+      "low": 0.003,
+      "base": 0.006,
+      "high": 0.01,
+      "units": "fraction of withdrawal volume"
+    },
+    "expected_lifetime_months": {
+      "low": 3,
+      "base": 6,
+      "high": 12
+    },
+    "avg_monthly_withdrawal_volume_usd_per_active_user": {
+      "TR": { "low": 1000, "base": 2000, "high": 5000 },
+      "NG": { "low": 400, "base": 800, "high": 2000 },
+      "EG": { "low": 300, "base": 600, "high": 1500 }
+    },
+    "scenario_construction": {
+      "low": "low volume + low margin + short lifetime",
+      "base": "base volume + base margin + medium lifetime",
+      "high": "high volume + high margin + long lifetime"
+    }
+  },
+  "observed_proxies_from_amplitude": {
+    "source_file": "projects/cenoa-performance-marketing/data/country-breakdown-20260320.json",
+    "weekly_event_totals": {
+      "TR": {
+        "installs": 670,
+        "signups": 226,
+        "kyc_started": 2594,
+        "kyc_submit": 170,
+        "withdraw_completed": 1177,
+        "deposit_completed": 961
+      },
+      "NG": {
+        "installs": 458,
+        "signups": 117,
+        "kyc_started": 230,
+        "kyc_submit": 0,
+        "withdraw_completed": 778,
+        "deposit_completed": 448
+      },
+      "EG": {
+        "installs": 206,
+        "signups": 64,
+        "kyc_started": 62,
+        "kyc_submit": 0,
+        "withdraw_completed": 23,
+        "deposit_completed": 22
+      }
+    },
+    "warnings": [
+      "Event totals are not unique users.",
+      "Withdraw/deposit totals are not cohort-pure (include returning users).",
+      "KYC Started includes returning users in some funnels; treat as directional only."
+    ]
+  },
+  "results": {
+    "ltv_usd_per_active_user": {
+      "TR": {
+        "low": 9.0,
+        "base": 72.0,
+        "high": 600.0
+      },
+      "NG": {
+        "low": 3.6,
+        "base": 28.8,
+        "high": 240.0
+      },
+      "EG": {
+        "low": 2.7,
+        "base": 21.6,
+        "high": 180.0
+      }
+    },
+    "optional_acquisition_adjusted": {
+      "description": "Very rough proxy: LTV_per_install ~= LTV_per_active_user * (KYC_submit / installs). Use only for CAC sanity checks.",
+      "activation_proxy": {
+        "TR": 0.2537313433,
+        "NG": 0.0,
+        "EG": 0.0
+      },
+      "ltv_usd_per_install": {
+        "TR": {
+          "low": 2.2835820896,
+          "base": 18.268656716,
+          "high": 152.23880597
+        },
+        "NG": { "low": 0.0, "base": 0.0, "high": 0.0 },
+        "EG": { "low": 0.0, "base": 0.0, "high": 0.0 }
+      },
+      "warnings": [
+        "KYC_submit/install is not a true activation rate; still not cohort-clean.",
+        "If some rails allow transactions without KYC, this proxy understates NG/EG new-cohort LTV."
+      ]
+    }
+  },
+  "missing_data_to_upgrade_model": [
+    "Withdrawal volume ($) by country (total + distribution; avg withdrawal amount).",
+    "Net margin on that volume by rail (FX spread/fee minus costs).",
+    "Unique transacting users per month by country and withdrawals-per-user.",
+    "Cohort retention curve by country (cohort by first withdrawal month).",
+    "Cohort-clean install->signup->KYC->first_withdrawal funnel by country."
+  ]
+}

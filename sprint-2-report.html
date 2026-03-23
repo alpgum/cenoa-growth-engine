@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprint 2 Report — Cenoa Growth Engine</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f8f9fa;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666;
+    --green: #22c55e;
+    --green-dim: rgba(34,197,94,0.12);
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.12);
+    --orange: #f59e0b;
+    --orange-dim: rgba(245,158,11,0.12);
+    --blue: #3b82f6;
+    --blue-dim: rgba(59,130,246,0.12);
+    --purple: #a855f7;
+    --purple-dim: rgba(168,85,247,0.12);
+    --cyan: #06b6d4;
+    --cyan-dim: rgba(6,182,212,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Inter', sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .container { max-width:900px; margin:0 auto; padding:24px 20px 60px; }
+
+  /* Header */
+  .header { text-align:center; padding:48px 0 32px; }
+  .header h1 { font-size:32px; font-weight:700; letter-spacing:-0.5px; }
+  .header .subtitle { color:var(--muted); font-size:15px; margin-top:8px; }
+  .header .badge { display:inline-block; background:var(--green-dim); color:var(--green); font-size:13px; font-weight:600; padding:4px 12px; border-radius:20px; margin-top:12px; }
+
+  /* Back link */
+  .back { display:inline-flex; align-items:center; gap:6px; color:var(--muted); font-size:13px; text-decoration:none; margin-bottom:12px; transition:color 0.2s; }
+  .back:hover { color:var(--green); }
+
+  /* Score bar */
+  .score-section { display:flex; gap:16px; margin:32px 0; flex-wrap:wrap; }
+  .score-card { flex:1; min-width:140px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .score-card .num { font-size:36px; font-weight:700; }
+  .score-card .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-top:4px; }
+  .score-card.green .num { color:var(--green); }
+  .score-card.orange .num { color:var(--orange); }
+  .score-card.blue .num { color:var(--blue); }
+  .score-card.purple .num { color:var(--purple); }
+
+  /* Section */
+  .section { margin-top:40px; }
+  .section h2 { font-size:20px; font-weight:600; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .section h2 .icon { font-size:22px; }
+
+  /* Finding cards */
+  .finding { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-bottom:12px; transition:background 0.15s; }
+  .finding:hover { background:var(--card-hover); box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .finding .tag { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; padding:3px 8px; border-radius:6px; display:inline-block; margin-bottom:8px; }
+  .finding .tag.critical { background:var(--red-dim); color:var(--red); }
+  .finding .tag.high { background:var(--orange-dim); color:var(--orange); }
+  .finding .tag.insight { background:var(--blue-dim); color:var(--blue); }
+  .finding .tag.win { background:var(--green-dim); color:var(--green); }
+  .finding .tag.purple { background:var(--purple-dim); color:var(--purple); }
+  .finding .tag.cyan { background:var(--cyan-dim); color:var(--cyan); }
+  .finding h3 { font-size:15px; font-weight:600; margin-bottom:4px; }
+  .finding p { font-size:14px; color:var(--muted); }
+  .finding .metric { font-size:22px; font-weight:700; color:var(--text); margin:6px 0; }
+
+  /* Grid */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .grid-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+  .grid-card .count { font-size:28px; font-weight:700; color:var(--green); }
+  .grid-card .desc { font-size:13px; color:var(--muted); margin-top:2px; }
+
+  /* Progress bar */
+  .progress-wrap { background:#1a1a1a; border-radius:8px; height:10px; margin:8px 0 4px; overflow:hidden; }
+  .progress-bar { height:100%; border-radius:8px; transition: width 0.5s; }
+
+  /* Automation table */
+  .auto-list { list-style:none; }
+  .auto-list li { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); font-size:14px; }
+  .auto-list li:last-child { border:none; }
+  .auto-list .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .auto-list .dot.green { background:var(--green); }
+  .auto-list .dot.blue { background:var(--blue); }
+  .auto-list .name { font-weight:500; min-width:220px; }
+  .auto-list .purpose { color:var(--muted); }
+
+  /* Widget list */
+  .widget-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:10px; }
+  .widget-item { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; font-size:13px; display:flex; align-items:center; gap:8px; transition:background 0.15s; }
+  .widget-item:hover { background:var(--card-hover); }
+  .widget-item .wi-icon { font-size:18px; flex-shrink:0; }
+  .widget-item .wi-name { font-weight:500; }
+
+  /* Deliverable row */
+  .deliverable { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 18px; margin-bottom:10px; display:flex; align-items:flex-start; gap:12px; transition:background 0.15s; }
+  .deliverable:hover { background:var(--card-hover); }
+  .deliverable .d-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
+  .deliverable .d-body h3 { font-size:14px; font-weight:600; margin-bottom:2px; }
+  .deliverable .d-body p { font-size:13px; color:var(--muted); }
+  .deliverable .d-metric { font-size:15px; font-weight:700; margin-left:auto; white-space:nowrap; padding-left:12px; }
+  .deliverable .d-metric.green { color:var(--green); }
+  .deliverable .d-metric.blue { color:var(--blue); }
+  .deliverable .d-metric.orange { color:var(--orange); }
+  .deliverable .d-metric.purple { color:var(--purple); }
+
+  /* Blocked */
+  .blocked { background:var(--card); border:1px solid #333; border-left:3px solid var(--orange); border-radius:12px; padding:16px 20px; margin-bottom:10px; }
+  .blocked .blabel { font-size:11px; font-weight:600; text-transform:uppercase; color:var(--orange); margin-bottom:4px; }
+  .blocked p { font-size:14px; color:var(--muted); }
+
+  /* Sprint breakdown */
+  .sprint-breakdown { display:flex; gap:12px; margin:16px 0; flex-wrap:wrap; }
+  .sprint-chip { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 20px; flex:1; min-width:200px; }
+  .sprint-chip .chip-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; }
+  .sprint-chip .chip-val { font-size:28px; font-weight:700; margin-top:2px; }
+  .sprint-chip .chip-sub { font-size:12px; color:var(--muted); margin-top:2px; }
+
+  /* Footer */
+  .footer { text-align:center; padding:40px 0 20px; color:var(--muted); font-size:12px; }
+
+  @media (max-width:600px) {
+    .score-section { flex-direction:column; }
+    .score-card .num { font-size:28px; }
+    .widget-grid { grid-template-columns: 1fr; }
+    .deliverable { flex-direction:column; }
+    .deliverable .d-metric { margin-left:0; padding-left:0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back">← Back to Dashboard</a>
+
+  <div class="header">
+    <h1>Cenoa Growth Engine — Sprint 2 Report</h1>
+    <div class="subtitle">March 22, 2026 · ~2 hours wall clock · 50 tasks</div>
+    <div class="badge">✅ 50/50 COMPLETE</div>
+  </div>
+
+  <!-- Score Cards -->
+  <div class="score-section">
+    <div class="score-card green"><div class="num">50/50</div><div class="label">Tasks Done</div></div>
+    <div class="score-card blue"><div class="num">~2h</div><div class="label">Wall Clock</div></div>
+    <div class="score-card purple"><div class="num">2.4m</div><div class="label">Avg / Task</div></div>
+  </div>
+
+  <!-- Sprint Breakdown -->
+  <div class="sprint-breakdown">
+    <div class="sprint-chip">
+      <div class="chip-label">Sprint 2A</div>
+      <div class="chip-val" style="color:var(--green)">30</div>
+      <div class="chip-sub">Monday Briefing infra + dashboard widgets</div>
+    </div>
+    <div class="sprint-chip">
+      <div class="chip-label">Sprint 2B</div>
+      <div class="chip-val" style="color:var(--blue)">20</div>
+      <div class="chip-sub">Growth execution deliverables + report</div>
+    </div>
+  </div>
+
+  <div style="padding:0 4px;">
+    <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
+      <span>Sprint 2 Progress</span><span>100%</span>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:100%;background:linear-gradient(90deg, var(--green), #4ade80);"></div></div>
+  </div>
+
+  <!-- Monday Briefing Infrastructure -->
+  <div class="section">
+    <h2><span class="icon">🛠️</span> Monday Briefing Infrastructure</h2>
+
+    <div class="finding" style="border:1px solid #2a4a2a;">
+      <span class="tag win">OPERATIONAL</span>
+      <h3>Fully Automated Monday Pipeline</h3>
+      <p>7 scripts chained into a single deployment command. <code>auto_deploy_cortex.sh</code> refreshes everything in one shot. Scheduled via <strong>launchd</strong> every Monday at 09:00 TRT.</p>
+    </div>
+
+    <ul class="auto-list">
+      <li><span class="dot green"></span><span class="name">kpi_auto_update.py</span><span class="purpose">Amplitude → data.json KPIs</span></li>
+      <li><span class="dot green"></span><span class="name">anomaly_detection.py</span><span class="purpose">>20% WoW anomaly flags</span></li>
+      <li><span class="dot green"></span><span class="name">campaign_health_check.py</span><span class="purpose">DEAD / BLEEDING / FRAUD / HEALTHY</span></li>
+      <li><span class="dot green"></span><span class="name">budget_pacing.py</span><span class="purpose">Monthly spend vs target alerts</span></li>
+      <li><span class="dot green"></span><span class="name">data_quality_monitor.py</span><span class="purpose">(none) share, organic inflation, BQ coverage</span></li>
+      <li><span class="dot green"></span><span class="name">weekly_actions.py</span><span class="purpose">Ranked P0/P1/P2 action items</span></li>
+      <li><span class="dot green"></span><span class="name">weekly_report.py</span><span class="purpose">Telegram-formatted weekly pulse</span></li>
+    </ul>
+
+    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Deploy Command</div>
+        <div style="font-size:14px;font-weight:600;font-family:monospace;margin-top:4px;color:var(--green);">./auto_deploy_cortex.sh</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Schedule</div>
+        <div style="font-size:14px;font-weight:600;margin-top:4px;color:var(--blue);">launchd · Mon 09:00 TRT</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;flex:1;min-width:180px;">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Data Layer</div>
+        <div style="font-size:14px;font-weight:600;margin-top:4px;color:var(--purple);">data.json v2 · 10 sections</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Upgrade -->
+  <div class="section">
+    <h2><span class="icon">📊</span> Dashboard Upgrade — 10 New Widgets</h2>
+
+    <div class="widget-grid">
+      <div class="widget-item"><span class="wi-icon">🔻</span><span class="wi-name">Funnel Waterfall</span></div>
+      <div class="widget-item"><span class="wi-icon">🌍</span><span class="wi-name">Geo Heatmap</span></div>
+      <div class="widget-item"><span class="wi-icon">🎯</span><span class="wi-name">Budget Gauge</span></div>
+      <div class="widget-item"><span class="wi-icon">📈</span><span class="wi-name">CAC Trend</span></div>
+      <div class="widget-item"><span class="wi-icon">🔁</span><span class="wi-name">Retention Matrix</span></div>
+      <div class="widget-item"><span class="wi-icon">🧩</span><span class="wi-name">Channel Mix</span></div>
+      <div class="widget-item"><span class="wi-icon">⚠️</span><span class="wi-name">Anomaly Alerts</span></div>
+      <div class="widget-item"><span class="wi-icon">✅</span><span class="wi-name">Data Quality</span></div>
+      <div class="widget-item"><span class="wi-icon">📋</span><span class="wi-name">Campaign Table v2</span></div>
+      <div class="widget-item"><span class="wi-icon">🎬</span><span class="wi-name">Weekly Actions v2</span></div>
+    </div>
+
+    <div style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted);">
+      All 10 widgets powered by <strong style="color:var(--text);">data.json v2</strong> — unified data layer with 10 new sections
+    </div>
+  </div>
+
+  <!-- Growth Execution Deliverables -->
+  <div class="section">
+    <h2><span class="icon">🚀</span> Growth Execution Deliverables</h2>
+
+    <div class="deliverable">
+      <span class="d-icon">📉</span>
+      <div class="d-body">
+        <h3>Marginal CAC Curves</h3>
+        <p>Pmax has 14.6× spend headroom before marginal CAC exceeds target. Data-driven scaling roadmap for every channel.</p>
+      </div>
+      <div class="d-metric green">14.6×</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🔁</span>
+      <div class="d-body">
+        <h3>Retention Analysis</h3>
+        <p>Turkey D30 retention at 3.14% — healthy. Egypt at 0.24% D30 — crisis-level churn requiring product intervention.</p>
+      </div>
+      <div class="d-metric orange">EG 0.24%</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🌱</span>
+      <div class="d-body">
+        <h3>Organic Strategy</h3>
+        <p>Roadmap to grow organic installs from 641 → 1,340/week. Blended cost of $1.69/install through ASO, content, and referral loops.</p>
+      </div>
+      <div class="d-metric green">$1.69</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🔑</span>
+      <div class="d-body">
+        <h3>ASA Keyword Expansion</h3>
+        <p>81 new Apple Search Ads keywords identified. 6–10× cheaper CPI than Google Ads equivalents.</p>
+      </div>
+      <div class="d-metric blue">81 kw</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🚫</span>
+      <div class="d-body">
+        <h3>Negative Keywords</h3>
+        <p>126 negative keywords to eliminate wasted spend across Google Ads campaigns. Projected savings: $558–$1,813/month.</p>
+      </div>
+      <div class="d-metric green">$558–1.8K</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">⚔️</span>
+      <div class="d-body">
+        <h3>Cenoa vs Payoneer Comparison</h3>
+        <p>Head-to-head analysis showing Cenoa saves users $756/year on average vs Payoneer. Key positioning for competitive landing pages.</p>
+      </div>
+      <div class="d-metric purple">$756/yr</div>
+    </div>
+
+    <div class="deliverable">
+      <span class="d-icon">🌐</span>
+      <div class="d-body">
+        <h3>Arabic LP Spec + Turkish A/B Variants</h3>
+        <p>Full Arabic landing page specification for MENA expansion. Turkish A/B test variants designed for conversion optimization.</p>
+      </div>
+      <div class="d-metric blue">2 LPs</div>
+    </div>
+  </div>
+
+  <!-- Key Insight -->
+  <div class="section">
+    <h2><span class="icon">💡</span> Key Insight</h2>
+
+    <div class="finding" style="border:1px solid #2a4a2a;">
+      <span class="tag win">STRATEGIC</span>
+      <h3>The Biggest Unlock Is Activation, Not Retention</h3>
+      <p style="margin-top:8px;">Retention in Turkey is actually solid (3.14% D30). The funnel hemorrhage happens between install → KYC → first transaction. Fixing activation (KYC completion, first-use experience) will move the needle far more than retention programs.</p>
+      <div style="display:flex;gap:32px;margin-top:14px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Turkey D30 Retention</div>
+          <div class="metric" style="color:var(--green)">3.14%</div>
+          <div style="font-size:11px;color:var(--muted)">Healthy — not the bottleneck</div>
+        </div>
+        <div style="display:flex;align-items:center;font-size:24px;color:var(--muted);">→</div>
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Focus Area</div>
+          <div class="metric" style="color:var(--blue)">Activation</div>
+          <div style="font-size:11px;color:var(--muted)">Install → KYC → First Tx</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blocked -->
+  <div class="section">
+    <h2><span class="icon">⏳</span> Blocked</h2>
+
+    <div class="blocked">
+      <div class="blabel">Needs GCP Action</div>
+      <p><strong>Google Sheets API</strong> — Needs enabling in Google Cloud Console for the service account to pull live budget/CAC data into the automation pipeline.</p>
+    </div>
+    <div class="blocked">
+      <div class="blabel">Needs Input</div>
+      <p><strong>GA4 Property ID</strong> — Numeric Property ID required (Admin → Property settings) to enable web traffic deep-dive and session analytics.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by Lucas (OpenClaw) · Cenoa Growth Engine · Sprint 2 · March 22, 2026
+  </div>
+
+</div>
+</body>
+</html>

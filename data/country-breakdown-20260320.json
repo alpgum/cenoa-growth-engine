@@ -1,0 +1,3886 @@
+{
+  "[AppsFlyer] Install": {
+    "data": {
+      "series": [
+        [
+          170,
+          152,
+          128,
+          60,
+          56,
+          56,
+          48
+        ],
+        [
+          81,
+          60,
+          64,
+          66,
+          65,
+          65,
+          57
+        ],
+        [
+          21,
+          12,
+          16,
+          17,
+          26,
+          51,
+          63
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          16,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          3,
+          8,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 670
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 458
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 206
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 23
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 17
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 8
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 6
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 6
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 6
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Nigeria"
+        ],
+        [
+          0,
+          "Egypt"
+        ],
+        [
+          0,
+          "Pakistan"
+        ],
+        [
+          0,
+          "United States"
+        ],
+        [
+          0,
+          "Ghana"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Kenya"
+        ],
+        [
+          0,
+          "United Kingdom"
+        ],
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "Cyprus"
+        ],
+        [
+          0,
+          "Saudi Arabia"
+        ],
+        [
+          0,
+          "Greece"
+        ],
+        [
+          0,
+          "United Arab Emirates"
+        ],
+        [
+          0,
+          "Canada"
+        ],
+        [
+          0,
+          "France"
+        ],
+        [
+          0,
+          "Indonesia"
+        ],
+        [
+          0,
+          "Netherlands"
+        ],
+        [
+          0,
+          "Serbia"
+        ],
+        [
+          0,
+          "Thailand"
+        ],
+        [
+          0,
+          "Afghanistan"
+        ],
+        [
+          0,
+          "Azerbaijan"
+        ],
+        [
+          0,
+          "Brazil"
+        ],
+        [
+          0,
+          "Gambia"
+        ],
+        [
+          0,
+          "Iceland"
+        ],
+        [
+          0,
+          "Ireland"
+        ],
+        [
+          0,
+          "Kuwait"
+        ],
+        [
+          0,
+          "Macedonia"
+        ],
+        [
+          0,
+          "Poland"
+        ],
+        [
+          0,
+          "Russia"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Sweden"
+        ],
+        [
+          0,
+          "Ukraine"
+        ],
+        [
+          0,
+          "Uzbekistan"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045367959,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 18,
+    "novaRequestDuration": 59,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 340105,
+      "max": 347097,
+      "p50": 341687.29312319524,
+      "p75": 342063.6134940486,
+      "p95": 342773.1538344401,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 34454,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "Y7lpzgA38Y"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045402248,
+        1774045402307
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "Y7lpzgA38Y",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 59,
+        "novaRuntime": 18,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 29044130
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 29044130,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Cenoa sign-up completed": {
+    "data": {
+      "series": [
+        [
+          117,
+          140,
+          94,
+          94,
+          87,
+          121,
+          101
+        ],
+        [
+          38,
+          42,
+          36,
+          46,
+          26,
+          22,
+          16
+        ],
+        [
+          14,
+          12,
+          24,
+          15,
+          24,
+          14,
+          14
+        ],
+        [
+          8,
+          3,
+          6,
+          4,
+          8,
+          19,
+          16
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          12,
+          2
+        ],
+        [
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 754
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 226
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 117
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 64
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 15
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Nigeria"
+        ],
+        [
+          0,
+          "Egypt"
+        ],
+        [
+          0,
+          "Pakistan"
+        ],
+        [
+          0,
+          "Ghana"
+        ],
+        [
+          0,
+          "Canada"
+        ],
+        [
+          0,
+          "Cyprus"
+        ],
+        [
+          0,
+          "United States"
+        ],
+        [
+          0,
+          "Australia"
+        ],
+        [
+          0,
+          "Azerbaijan"
+        ],
+        [
+          0,
+          "France"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Greece"
+        ],
+        [
+          0,
+          "Ireland"
+        ],
+        [
+          0,
+          "Italy"
+        ],
+        [
+          0,
+          "Maldives"
+        ],
+        [
+          0,
+          "Montenegro"
+        ],
+        [
+          0,
+          "Netherlands"
+        ],
+        [
+          0,
+          "Poland"
+        ],
+        [
+          0,
+          "Portugal"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Switzerland"
+        ],
+        [
+          0,
+          "Thailand"
+        ],
+        [
+          0,
+          "United Kingdom"
+        ],
+        [
+          0,
+          "Vietnam"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045369666,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 23,
+    "novaRequestDuration": 53,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 339813,
+      "max": 346805,
+      "p50": 341392.52035298065,
+      "p75": 341768.11652445764,
+      "p95": 342476.1919472285,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 34019,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "j8B0C2O9SY"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045403627,
+        1774045403680
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "j8B0C2O9SY",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 53,
+        "novaRuntime": 23,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 28300012
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 28300012,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Bridgexyz KYC Component: Submit clicked": {
+    "data": {
+      "series": [
+        [
+          25,
+          40,
+          27,
+          29,
+          17,
+          17,
+          15
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 170
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Georgia"
+        ],
+        [
+          0,
+          "Montenegro"
+        ],
+        [
+          0,
+          "Poland"
+        ],
+        [
+          0,
+          "Thailand"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045371311,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 23,
+    "novaRequestDuration": 47,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 340458,
+      "max": 347450,
+      "p50": 342037.52035298065,
+      "p75": 342413.11652445764,
+      "p95": 343121.1919472285,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 33579,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "CiE7LakEZR"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045404842,
+        1774045404889
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "CiE7LakEZR",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 47,
+        "novaRuntime": 23,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 23489728
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 23489728,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Withdraw Completed": {
+    "data": {
+      "series": [
+        [
+          100,
+          72,
+          209,
+          256,
+          213,
+          193,
+          134
+        ],
+        [
+          127,
+          94,
+          117,
+          119,
+          106,
+          106,
+          109
+        ],
+        [
+          9,
+          5,
+          11,
+          10,
+          13,
+          10,
+          7
+        ],
+        [
+          5,
+          1,
+          1,
+          3,
+          3,
+          3,
+          8
+        ],
+        [
+          2,
+          0,
+          3,
+          5,
+          4,
+          2,
+          7
+        ],
+        [
+          3,
+          1,
+          1,
+          6,
+          2,
+          3,
+          3
+        ],
+        [
+          6,
+          8,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          10,
+          0,
+          2,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          5,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 1177
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 778
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 65
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 24
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 23
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 19
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 17
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 16
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 9
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 6
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Nigeria"
+        ],
+        [
+          0,
+          "United States"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Egypt"
+        ],
+        [
+          0,
+          "United Kingdom"
+        ],
+        [
+          0,
+          "South Africa"
+        ],
+        [
+          0,
+          "Netherlands"
+        ],
+        [
+          0,
+          "Sweden"
+        ],
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "Azerbaijan"
+        ],
+        [
+          0,
+          "Italy"
+        ],
+        [
+          0,
+          "Ghana"
+        ],
+        [
+          0,
+          "Belgium"
+        ],
+        [
+          0,
+          "Hungary"
+        ],
+        [
+          0,
+          "Kenya"
+        ],
+        [
+          0,
+          "Taiwan"
+        ],
+        [
+          0,
+          "Thailand"
+        ],
+        [
+          0,
+          "Vietnam"
+        ],
+        [
+          0,
+          "France"
+        ],
+        [
+          0,
+          "Malta"
+        ],
+        [
+          0,
+          "Mexico"
+        ],
+        [
+          0,
+          "Bulgaria"
+        ],
+        [
+          0,
+          "Cyprus"
+        ],
+        [
+          0,
+          "Singapore"
+        ],
+        [
+          0,
+          "Austria"
+        ],
+        [
+          0,
+          "Canada"
+        ],
+        [
+          0,
+          "Norway"
+        ],
+        [
+          0,
+          "Poland"
+        ],
+        [
+          0,
+          "Saudi Arabia"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Albania"
+        ],
+        [
+          0,
+          "China"
+        ],
+        [
+          0,
+          "Finland"
+        ],
+        [
+          0,
+          "Indonesia"
+        ],
+        [
+          0,
+          "Portugal"
+        ],
+        [
+          0,
+          "Russia"
+        ],
+        [
+          0,
+          "Rwanda"
+        ],
+        [
+          0,
+          "Switzerland"
+        ],
+        [
+          0,
+          "Ukraine"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045372704,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 14,
+    "novaRequestDuration": 43,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 331851,
+      "max": 338843,
+      "p50": 333430.21192791045,
+      "p75": 333805.6243769003,
+      "p95": 334513.4001121237,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 33471,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "A3fXpEjUbC"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045406128,
+        1774045406171
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "A3fXpEjUbC",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 43,
+        "novaRuntime": 14,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 28581692
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 28581692,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "Deposit Completed": {
+    "data": {
+      "series": [
+        [
+          36,
+          25,
+          179,
+          254,
+          175,
+          162,
+          130
+        ],
+        [
+          48,
+          38,
+          75,
+          96,
+          46,
+          67,
+          78
+        ],
+        [
+          1,
+          0,
+          3,
+          4,
+          3,
+          3,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          8,
+          3,
+          2,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          4,
+          1,
+          1,
+          3
+        ],
+        [
+          4,
+          1,
+          1,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          4,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 961
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 448
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 22
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 18
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 15
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 12
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 11
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 9
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Nigeria"
+        ],
+        [
+          0,
+          "Egypt"
+        ],
+        [
+          0,
+          "United Kingdom"
+        ],
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "United States"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Azerbaijan"
+        ],
+        [
+          0,
+          "Italy"
+        ],
+        [
+          0,
+          "Belgium"
+        ],
+        [
+          0,
+          "Cyprus"
+        ],
+        [
+          0,
+          "Finland"
+        ],
+        [
+          0,
+          "Kenya"
+        ],
+        [
+          0,
+          "Malta"
+        ],
+        [
+          0,
+          "South Africa"
+        ],
+        [
+          0,
+          "Sweden"
+        ],
+        [
+          0,
+          "Thailand"
+        ],
+        [
+          0,
+          "Bulgaria"
+        ],
+        [
+          0,
+          "France"
+        ],
+        [
+          0,
+          "Ghana"
+        ],
+        [
+          0,
+          "Hungary"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Vietnam"
+        ],
+        [
+          0,
+          "Australia"
+        ],
+        [
+          0,
+          "China"
+        ],
+        [
+          0,
+          "Czech Republic"
+        ],
+        [
+          0,
+          "Israel"
+        ],
+        [
+          0,
+          "Macedonia"
+        ],
+        [
+          0,
+          "Netherlands"
+        ],
+        [
+          0,
+          "Portugal"
+        ],
+        [
+          0,
+          "Russia"
+        ],
+        [
+          0,
+          "Rwanda"
+        ],
+        [
+          0,
+          "Singapore"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045374034,
+    "wasCached": true,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": true,
+    "novaRuntime": 16,
+    "novaRequestDuration": 51,
+    "novaCost": 0,
+    "throttleTime": 0,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 333181,
+      "max": 340173,
+      "p50": 334759.9986511694,
+      "p75": 335135.3383124517,
+      "p95": 335843.00076026947,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 33404,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "7O0PsDdBll"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045407382,
+        1774045407433
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "7O0PsDdBll",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": true,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 0,
+        "novaCost": 0,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 51,
+        "novaRuntime": 16,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 28003639
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 28003639,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  },
+  "KYC Started": {
+    "data": {
+      "series": [
+        [
+          307,
+          298,
+          292,
+          434,
+          456,
+          414,
+          393
+        ],
+        [
+          17,
+          24,
+          56,
+          29,
+          46,
+          30,
+          28
+        ],
+        [
+          11,
+          14,
+          6,
+          5,
+          4,
+          12,
+          10
+        ],
+        [
+          6,
+          8,
+          3,
+          17,
+          9,
+          3,
+          2
+        ],
+        [
+          5,
+          9,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          2
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          2,
+          2,
+          9
+        ],
+        [
+          0,
+          0,
+          16,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          4,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "seriesCollapsed": [
+        [
+          {
+            "setId": "",
+            "value": 2594
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 230
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 62
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 48
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 22
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 19
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 17
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 17
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 10
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 10
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 9
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 7
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 6
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 5
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 4
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 3
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 2
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ],
+        [
+          {
+            "setId": "",
+            "value": 1
+          }
+        ]
+      ],
+      "seriesLabels": [
+        [
+          0,
+          "Turkey"
+        ],
+        [
+          0,
+          "Nigeria"
+        ],
+        [
+          0,
+          "Egypt"
+        ],
+        [
+          0,
+          "(none)"
+        ],
+        [
+          0,
+          "Ghana"
+        ],
+        [
+          0,
+          "Indonesia"
+        ],
+        [
+          0,
+          "Pakistan"
+        ],
+        [
+          0,
+          "Poland"
+        ],
+        [
+          0,
+          "Thailand"
+        ],
+        [
+          0,
+          "United States"
+        ],
+        [
+          0,
+          "Cyprus"
+        ],
+        [
+          0,
+          "Canada"
+        ],
+        [
+          0,
+          "United Kingdom"
+        ],
+        [
+          0,
+          "Germany"
+        ],
+        [
+          0,
+          "Saudi Arabia"
+        ],
+        [
+          0,
+          "Spain"
+        ],
+        [
+          0,
+          "Bulgaria"
+        ],
+        [
+          0,
+          "Austria"
+        ],
+        [
+          0,
+          "Kosovo"
+        ],
+        [
+          0,
+          "Kuwait"
+        ],
+        [
+          0,
+          "Portugal"
+        ],
+        [
+          0,
+          "Azerbaijan"
+        ],
+        [
+          0,
+          "Maldives"
+        ],
+        [
+          0,
+          "Montenegro"
+        ],
+        [
+          0,
+          "Serbia"
+        ],
+        [
+          0,
+          "Switzerland"
+        ],
+        [
+          0,
+          "Belarus"
+        ],
+        [
+          0,
+          "Georgia"
+        ],
+        [
+          0,
+          "Israel"
+        ],
+        [
+          0,
+          "Sweden"
+        ]
+      ],
+      "xValues": [
+        "2026-03-14",
+        "2026-03-15",
+        "2026-03-16",
+        "2026-03-17",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20"
+      ]
+    },
+    "timeComputed": 1774045409237,
+    "wasCached": false,
+    "cacheFreshness": "FRESH",
+    "allQueriesCached": false,
+    "novaRuntime": 560,
+    "novaRequestDuration": 815,
+    "novaCost": 11,
+    "throttleTime": 7,
+    "minSampleRate": 1.0,
+    "transformationIds": [],
+    "backend": "novaV2",
+    "realtimeDataMissing": false,
+    "timedOutRealtimeData": false,
+    "missedCacheAndNotComputed": false,
+    "realtimeProcessLag": {
+      "min": 361384,
+      "max": 368376,
+      "p50": 362962.9986511694,
+      "p75": 363338.3383124517,
+      "p95": 364046.00076026947,
+      "count": 600
+    },
+    "partialMergedAndNewUserInformation": false,
+    "prunedResult": false,
+    "hitChunkGroupByLimit": false,
+    "subcluster": 9,
+    "millisSinceComputed": 269,
+    "earliestServerReceivedTime": 9223372036854775807,
+    "queryIds": [
+      "K8vVFwxD9x"
+    ],
+    "numQueries": 1,
+    "numDistinctQueries": 1,
+    "novaRequestStartAndEndTimes": [
+      [
+        1774045408636,
+        1774045409451
+      ]
+    ],
+    "perQueryMetadata": [
+      {
+        "queryId": "K8vVFwxD9x",
+        "queryType": "MULTI_SEGMENTATION",
+        "cached": false,
+        "cacheFreshness": "FRESH",
+        "throttleTime": 7,
+        "novaCost": 11,
+        "minSampleRate": 1,
+        "realtimeDataMissing": false,
+        "externalDataMissing": false,
+        "timedOutRealtime": false,
+        "missedCacheAndNotComputed": false,
+        "prunedResult": false,
+        "hitChunkGroupByLimit": false,
+        "novaRequestDuration": 815,
+        "novaRuntime": 560,
+        "costMetadata": {
+          "eventsInTimeRange": 1141818,
+          "cpuTime": 30861425
+        },
+        "requestFreshness": "FRESH",
+        "qtsMetadata": {
+          "qtsRate": 1,
+          "numUsers": 0
+        }
+      }
+    ],
+    "prunedAmpIds": [],
+    "prunedApps": [],
+    "costMetadata": {
+      "cpuTime": 30861425,
+      "eventsInTimeRange": 1141818
+    },
+    "potentialCacheMissAnomaly": false,
+    "dacResolutionStartAndEndTimes": [],
+    "dacResolutionDuration": 0,
+    "crossCacheMetadata": {
+      "crossCache": false,
+      "offset": 0,
+      "cdcRunTime": 0
+    },
+    "potentialCDCHit": false,
+    "qtsMetadata": {
+      "qtsRate": 1,
+      "numUsers": 0
+    },
+    "longTimeRangeQuery": false,
+    "timeRangeSplitCount": 0,
+    "isPeriodOverPeriod": false,
+    "wasStreamed": false
+  }
+}

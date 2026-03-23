@@ -1,0 +1,970 @@
+{
+  "week": "Mar 14-20, 2026",
+  "updated": "2026-03-23 00:48 TRT",
+  "kpis": {
+    "installs": {
+      "value": 1455,
+      "prev": 2274,
+      "deltaPct": -36.0,
+      "direction": "down"
+    },
+    "signups": {
+      "value": 1219,
+      "prev": 1671,
+      "deltaPct": -27.0,
+      "direction": "down"
+    },
+    "kycSubmits": {
+      "value": 185,
+      "prev": 307,
+      "deltaPct": -39.7,
+      "direction": "down"
+    },
+    "virtualAccountOpened": {
+      "value": 436,
+      "prev": 632,
+      "deltaPct": -31.0,
+      "direction": "down"
+    },
+    "depositCompleted": {
+      "value": 1555,
+      "prev": 1642,
+      "deltaPct": -5.3,
+      "direction": "down"
+    },
+    "transferCompleted": {
+      "value": 790,
+      "prev": 796,
+      "deltaPct": -0.8,
+      "direction": "down"
+    },
+    "withdrawCompleted": {
+      "value": 2236,
+      "prev": 2214,
+      "deltaPct": 1.0,
+      "direction": "up"
+    },
+    "dauAvg": {
+      "value": 3094.7,
+      "prev": 5683.7,
+      "deltaPct": -45.6,
+      "direction": "down"
+    }
+  },
+  "countries": {
+    "TR": {
+      "installs": {
+        "value": 673,
+        "prev": 1123,
+        "deltaPct": -40.1
+      },
+      "signups": {
+        "value": 228,
+        "prev": 289,
+        "deltaPct": -21.1
+      }
+    },
+    "NG": {
+      "installs": {
+        "value": 462,
+        "prev": 600,
+        "deltaPct": -23.0
+      },
+      "signups": {
+        "value": 117,
+        "prev": 152,
+        "deltaPct": -23.0
+      }
+    },
+    "EG": {
+      "installs": {
+        "value": 209,
+        "prev": 430,
+        "deltaPct": -51.4
+      },
+      "signups": {
+        "value": 65,
+        "prev": 159,
+        "deltaPct": -59.1
+      }
+    },
+    "PK": {
+      "installs": {
+        "value": 23,
+        "prev": 1,
+        "deltaPct": 2200.0
+      },
+      "signups": {
+        "value": 15,
+        "prev": 0,
+        "deltaPct": 100.0
+      }
+    }
+  },
+  "highlights": [
+    "DAU ▼45.6%",
+    "KYC Submit ▼39.7%",
+    "Installs ▼36.0%"
+  ],
+  "channelPerformance": [
+    {
+      "name": "Meta",
+      "spend": 2035.0,
+      "installs": 476,
+      "cpi": 4.28,
+      "signups": 210,
+      "virt_acc": 84,
+      "new_active": 23,
+      "true_cac": 88.48,
+      "wow_delta": 0.0
+    },
+    {
+      "name": "Google Search",
+      "spend": 1580.0,
+      "installs": 893,
+      "cpi": 1.77,
+      "signups": 446,
+      "virt_acc": 248,
+      "new_active": 62,
+      "true_cac": 25.48,
+      "wow_delta": 0.0
+    },
+    {
+      "name": "Other",
+      "spend": 990.0,
+      "installs": 211,
+      "cpi": 4.69,
+      "signups": 92,
+      "virt_acc": 80,
+      "new_active": 33,
+      "true_cac": 30.0,
+      "wow_delta": 0.0
+    },
+    {
+      "name": "Appnext",
+      "spend": 645.0,
+      "installs": 853,
+      "cpi": 0.76,
+      "signups": 195,
+      "virt_acc": 24,
+      "new_active": 0,
+      "true_cac": null,
+      "wow_delta": 0.0
+    },
+    {
+      "name": "Apple Search Ads",
+      "spend": 533.0,
+      "installs": 88,
+      "cpi": 6.06,
+      "signups": 53,
+      "virt_acc": 42,
+      "new_active": 24,
+      "true_cac": 22.21,
+      "wow_delta": 0.0
+    },
+    {
+      "name": "TikTok",
+      "spend": 364.0,
+      "installs": 104,
+      "cpi": 3.5,
+      "signups": 81,
+      "virt_acc": 74,
+      "new_active": 10,
+      "true_cac": 36.4,
+      "wow_delta": 0.0
+    }
+  ],
+  "budgetPacing": {
+    "target": 50000,
+    "mtd_spend": 19182.86,
+    "pacing_pct": 38.4,
+    "days_elapsed": 20,
+    "days_total": 31,
+    "status": "UNDERSPENDING"
+  },
+  "weeklyTests": [
+    {
+      "name": "Egypt LTV creative test",
+      "hypothesis": "Localized Arabic creatives improve signup→virt_acc conversion by 20%",
+      "status": "running",
+      "metric": "signup_to_virt_acc_rate",
+      "result": null
+    },
+    {
+      "name": "TikTok web2app vs app-install",
+      "hypothesis": "Web2app flow yields higher quality users (lower CPI, higher activation)",
+      "status": "running",
+      "metric": "cpi_and_activation_rate",
+      "result": null
+    },
+    {
+      "name": "Meta retargeting image refresh",
+      "hypothesis": "New image creatives in retargeting improve CTR by 15%",
+      "status": "completed",
+      "metric": "ctr",
+      "result": "CTR improved 12% but CPI stayed flat — inconclusive"
+    },
+    {
+      "name": "Appnext fraud filter tightening",
+      "hypothesis": "Stricter targeting reduces fraud installs while maintaining volume",
+      "status": "planned",
+      "metric": "signup_conversion_rate",
+      "result": null
+    }
+  ],
+  "weeklyLearnings": [
+    {
+      "emoji": "🚨",
+      "finding": "Appnext shows fraud pattern: 1779 installs but only 2.6% virt_acc rate",
+      "impact": "Pausing Appnext DSP, tightening CPI_UA_TR targeting"
+    },
+    {
+      "emoji": "📉",
+      "finding": "DAU dropped 45.8% WoW — likely driven by install volume decrease across all channels",
+      "impact": "Need to stabilize paid acquisition before optimizing activation"
+    },
+    {
+      "emoji": "💡",
+      "finding": "Apple Search Ads has best downstream quality: 93 activations from 407 installs",
+      "impact": "Increasing ASA budget allocation by 20% next week"
+    },
+    {
+      "emoji": "🇪🇬",
+      "finding": "Egypt installs dropped 51.6% WoW — biggest country decline",
+      "impact": "Reviewing Egypt Meta campaigns; may need creative refresh"
+    }
+  ],
+  "cacTracking": [
+    {
+      "name": "Google Search",
+      "actual_cac": 25.48,
+      "target_cac": 25.0,
+      "status": "on_target"
+    },
+    {
+      "name": "Pmax",
+      "actual_cac": 19.18,
+      "target_cac": 20.0,
+      "status": "on_target"
+    },
+    {
+      "name": "Apple Search Ads",
+      "actual_cac": 23.1,
+      "target_cac": 25.0,
+      "status": "on_target"
+    },
+    {
+      "name": "Appnext",
+      "actual_cac": null,
+      "target_cac": 20.0,
+      "status": "above"
+    },
+    {
+      "name": "TikTok",
+      "actual_cac": 28.42,
+      "target_cac": 30.0,
+      "status": "on_target"
+    },
+    {
+      "name": "Meta",
+      "actual_cac": 81.0,
+      "target_cac": 60.0,
+      "status": "above"
+    },
+    {
+      "name": "Other",
+      "actual_cac": 30.52,
+      "target_cac": 30.0,
+      "status": "on_target"
+    }
+  ],
+  "platformSplit": {
+    "installs": {
+      "ios": 170,
+      "android": 1285
+    },
+    "signups": {
+      "ios": 235,
+      "android": 222
+    },
+    "withdrawals": {
+      "ios": 1192,
+      "android": 1037
+    }
+  },
+  "campaignHealth": [
+    {
+      "name": "appnext",
+      "status": "FRAUD",
+      "spend": 893,
+      "installs": 1779,
+      "note": "1779 installs, 349 signups but only 47 virt_acc (2.6%) — suspicious downstream"
+    },
+    {
+      "name": "appnext_dsp",
+      "status": "FRAUD",
+      "spend": 115,
+      "installs": 113,
+      "note": "113 installs but only 2 signups (1.8% conversion) — fraud pattern"
+    },
+    {
+      "name": "twitter_ads",
+      "status": "DEAD",
+      "spend": 183,
+      "installs": 1,
+      "note": "$183 spent, 1 installs but 0 signups & 0 activations"
+    },
+    {
+      "name": "google_app_ios",
+      "status": "BLEEDING",
+      "spend": 1510,
+      "installs": 62,
+      "note": "CPI $24.35 is 5.3× the average ($4.59)"
+    },
+    {
+      "name": "tiktok_web2app",
+      "status": "BLEEDING",
+      "spend": 1279,
+      "installs": 124,
+      "note": "CPI $10.31 is 2.2× the average ($4.59)"
+    },
+    {
+      "name": "onboarding_meta_test",
+      "status": "BLEEDING",
+      "spend": 101,
+      "installs": 3,
+      "note": "CPI $33.67 is 7.3× the average ($4.59)"
+    },
+    {
+      "name": "pmax_search",
+      "status": "HEALTHY",
+      "spend": 16844,
+      "installs": 2050,
+      "note": "CPI $8.22, 29% signup rate, 182 activations"
+    },
+    {
+      "name": "meta_web2app",
+      "status": "HEALTHY",
+      "spend": 4414,
+      "installs": 811,
+      "note": "CPI $5.44, 63% signup rate, 70 activations"
+    },
+    {
+      "name": "apple_ads",
+      "status": "HEALTHY",
+      "spend": 2217,
+      "installs": 407,
+      "note": "CPI $5.45, 63% signup rate, 93 activations"
+    },
+    {
+      "name": "meta_ltv_test",
+      "status": "HEALTHY",
+      "spend": 2204,
+      "installs": 402,
+      "note": "CPI $5.48, 49% signup rate, 23 activations"
+    },
+    {
+      "name": "meta_get_paid_test",
+      "status": "HEALTHY",
+      "spend": 1977,
+      "installs": 373,
+      "note": "CPI $5.30, 68% signup rate, 22 activations"
+    },
+    {
+      "name": "spaze",
+      "status": "HEALTHY",
+      "spend": 1770,
+      "installs": 363,
+      "note": "CPI $4.88, 43% signup rate, 64 activations"
+    },
+    {
+      "name": "spaze_dsp",
+      "status": "HEALTHY",
+      "spend": 1460,
+      "installs": 243,
+      "note": "CPI $6.01, 35% signup rate, 23 activations"
+    },
+    {
+      "name": "google_search",
+      "status": "HEALTHY",
+      "spend": 1127,
+      "installs": 801,
+      "note": "CPI $1.41, 49% signup rate, 47 activations"
+    },
+    {
+      "name": "meta_app_ios",
+      "status": "HEALTHY",
+      "spend": 936,
+      "installs": 164,
+      "note": "CPI $5.71, 65% signup rate, 32 activations"
+    },
+    {
+      "name": "pmax_get_paid_test",
+      "status": "HEALTHY",
+      "spend": 650,
+      "installs": 192,
+      "note": "CPI $3.39, 50% signup rate, 11 activations"
+    },
+    {
+      "name": "tiktok_app",
+      "status": "HEALTHY",
+      "spend": 572,
+      "installs": 381,
+      "note": "CPI $1.50, 15% signup rate, 17 activations"
+    },
+    {
+      "name": "google_web2app",
+      "status": "HEALTHY",
+      "spend": 453,
+      "installs": 92,
+      "note": "CPI $4.92, 55% signup rate, 15 activations"
+    },
+    {
+      "name": "pmax_ltv_test",
+      "status": "HEALTHY",
+      "spend": 423,
+      "installs": 132,
+      "note": "CPI $3.20, 47% signup rate, 6 activations"
+    },
+    {
+      "name": "tiktok_android_app",
+      "status": "HEALTHY",
+      "spend": 111,
+      "installs": 59,
+      "note": "CPI $1.88, 81% signup rate, 6 activations"
+    }
+  ],
+  "attributionQuality": {
+    "known_pct": 18.2,
+    "none_pct": 81.8,
+    "correction_factor": 5.48,
+    "trend": "stable"
+  },
+  "countrySpend": [
+    {
+      "code": "TR",
+      "country": "TR",
+      "flag": "🇹🇷",
+      "name": "Turkey",
+      "weeklySpend": 4320.0,
+      "weekly_spend": 4320.0,
+      "mtdSpend": 7824.0,
+      "mtd_spend": 7824.0,
+      "monthlyTarget": 23000.0,
+      "planned_monthly": 23000.0,
+      "pacing_pct": 34.0,
+      "cpi": 2.61,
+      "trueCAC": 35.41,
+      "deepDiveUrl": "country-tr.html"
+    },
+    {
+      "code": "EG",
+      "country": "EG",
+      "flag": "🇪🇬",
+      "name": "Egypt",
+      "weeklySpend": 1598.0,
+      "weekly_spend": 1598.0,
+      "mtdSpend": 5549.0,
+      "mtd_spend": 5549.0,
+      "monthlyTarget": 8500.0,
+      "planned_monthly": 8500.0,
+      "pacing_pct": 65.3,
+      "cpi": 3.6,
+      "trueCAC": 51.55,
+      "deepDiveUrl": "country-eg.html"
+    },
+    {
+      "code": "NG",
+      "country": "NG",
+      "flag": "🇳🇬",
+      "name": "Nigeria",
+      "weeklySpend": 229.0,
+      "weekly_spend": 229.0,
+      "mtdSpend": 230.0,
+      "mtd_spend": 230.0,
+      "monthlyTarget": 2200.0,
+      "planned_monthly": 2200.0,
+      "pacing_pct": 10.5,
+      "cpi": 0.35,
+      "trueCAC": 12.72,
+      "deepDiveUrl": "country-ng.html"
+    },
+    {
+      "code": "PK",
+      "country": "PK",
+      "flag": "🇵🇰",
+      "name": "Pakistan",
+      "weeklySpend": 0.0,
+      "weekly_spend": 0.0,
+      "mtdSpend": 0.0,
+      "mtd_spend": 0.0,
+      "monthlyTarget": 6000.0,
+      "planned_monthly": 6000.0,
+      "pacing_pct": 0.0,
+      "cpi": null,
+      "trueCAC": null,
+      "deepDiveUrl": "country-pk.html"
+    }
+  ],
+  "kycByCountry": [
+    {
+      "country": "Turkey",
+      "kyc_started": 2622,
+      "kyc_shown": 3066,
+      "kyc_submit": 176,
+      "conversion_rate": 6.7
+    },
+    {
+      "country": "Nigeria",
+      "kyc_started": 230,
+      "kyc_shown": 0,
+      "kyc_submit": 0,
+      "conversion_rate": 0.0
+    },
+    {
+      "country": "Egypt",
+      "kyc_started": 62,
+      "kyc_shown": 0,
+      "kyc_submit": 0,
+      "conversion_rate": 0.0
+    },
+    {
+      "country": "Pakistan",
+      "kyc_started": 17,
+      "kyc_shown": 0,
+      "kyc_submit": 0,
+      "conversion_rate": 0.0
+    }
+  ],
+  "weeklyAgenda": [
+    {
+      "priority": "P0",
+      "task": "Investigate & pause Appnext fraud sources",
+      "owner": "Performance Marketing",
+      "status": "in_progress"
+    },
+    {
+      "priority": "P0",
+      "task": "Stabilize install volume — reverse 36% WoW decline",
+      "owner": "Performance Marketing",
+      "status": "in_progress"
+    },
+    {
+      "priority": "P1",
+      "task": "Increase Apple Search Ads budget allocation +20%",
+      "owner": "Performance Marketing",
+      "status": "planned"
+    },
+    {
+      "priority": "P1",
+      "task": "Refresh Egypt Meta creatives (51.6% install drop)",
+      "owner": "Creative Team",
+      "status": "planned"
+    },
+    {
+      "priority": "P1",
+      "task": "Fix attribution gap — 81% of signups are (none)",
+      "owner": "Data Engineering",
+      "status": "planned"
+    },
+    {
+      "priority": "P2",
+      "task": "Set up Google App iOS alternative (CPI $24.35 bleeding)",
+      "owner": "Performance Marketing",
+      "status": "backlog"
+    },
+    {
+      "priority": "P2",
+      "task": "Plan Pakistan market entry test",
+      "owner": "Growth",
+      "status": "backlog"
+    }
+  ],
+  "campaignPerformance": [
+    {
+      "name": "Cenoa_CPI_UA_TR",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Appnext",
+      "channelIcon": "⚠️",
+      "spend": null,
+      "installs": 10616,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=appnext_int"
+    },
+    {
+      "name": "890668",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 1120,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=byteboost2_int"
+    },
+    {
+      "name": "890670",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 720,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=byteboost2_int"
+    },
+    {
+      "name": "TR_Meta_web2app_MIX_CVR_Android_AddToCart_012126",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 344,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "cenoa.com homepage",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 152,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=cenoa.com"
+    },
+    {
+      "name": "tr_asa_appinstall_brand_exact_all_02.06.2025",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Apple",
+      "channelIcon": "🍎",
+      "spend": null,
+      "installs": 152,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Apple Search Ads"
+    },
+    {
+      "name": "E-ihracat Yıldızları Home Page",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 120,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Eihracat Yıldızları"
+    },
+    {
+      "name": "TR_Meta_web2app_MIX_RTGT_AddPaymentInfo_022726_Images",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 112,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "cenoa.comtr homepage",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 112,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=cenoacomtr"
+    },
+    {
+      "name": "TR-Discovery-24.10.2025",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Apple",
+      "channelIcon": "🍎",
+      "spend": null,
+      "installs": 72,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Apple Search Ads"
+    },
+    {
+      "name": "TR_Meta_web2app_MIX_RTGT_AddToCart_022726_Images",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 56,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "Google // Cenoa // Search // TR // Pure Brand",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Google",
+      "channelIcon": "🔍",
+      "spend": null,
+      "installs": 48,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=googleadwords_int"
+    },
+    {
+      "name": "tr_asa_appinstall_brand_broad_all_02.06.2025",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Apple",
+      "channelIcon": "🍎",
+      "spend": null,
+      "installs": 48,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Apple Search Ads"
+    },
+    {
+      "name": "Instagram",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 40,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Social_instagram"
+    },
+    {
+      "name": "Invite a Friend",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 32,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=af_app_invites"
+    },
+    {
+      "name": "TR_Meta_web2app_MIX_CVR_ALL_AddToCart_022326_ExcVisitors",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 32,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "tr_asa_appinstall_competitor_all_02.06.2025",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Apple",
+      "channelIcon": "🍎",
+      "spend": null,
+      "installs": 24,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Apple Search Ads"
+    },
+    {
+      "name": "tr_asa_appinstall_generic_all_02.06.2025",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Apple",
+      "channelIcon": "🍎",
+      "spend": null,
+      "installs": 24,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Apple Search Ads"
+    },
+    {
+      "name": "TR_Meta_web2app_MIX_Leads_ALL_012926",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 16,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "none",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 16,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=zzgtechltmqk_int"
+    },
+    {
+      "name": "Cenoa // Search // TR // Freelancer // Platform",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Google",
+      "channelIcon": "🔍",
+      "spend": null,
+      "installs": 8,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=googleadwords_int"
+    },
+    {
+      "name": "Google // Cenoa // Pmax // TR // E-ihracat // Architect // KYC_Start",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Google",
+      "channelIcon": "🔍",
+      "spend": null,
+      "installs": 8,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=googleadwords_int"
+    },
+    {
+      "name": "TR_Meta_App_MIX_CVR_iOS_AddToCart_022526_ExcAppUsers",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Meta",
+      "channelIcon": "📘",
+      "spend": null,
+      "installs": 8,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=Facebook Ads"
+    },
+    {
+      "name": "easyinventory-payin",
+      "country": "TR",
+      "countryFlag": "🇹🇷",
+      "channel": "Other",
+      "channelIcon": "📡",
+      "spend": null,
+      "installs": 8,
+      "cpi": null,
+      "newActives": null,
+      "trueCAC": null,
+      "wowDelta": 0,
+      "health": "healthy",
+      "action": "watch",
+      "commentary": "(BQ extract) media_source=easyinventory"
+    }
+  ],
+  "lastUpdated": "2026-03-23T00:48:52.044929+03:00"
+}
