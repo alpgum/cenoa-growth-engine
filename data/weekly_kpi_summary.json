@@ -1,0 +1,709 @@
+{
+  "generated_at": "2026-03-24T08:20:01+03:00",
+  "data_as_of": "2026-03-24T01:32:39+03:00",
+  "funnel_rates": {
+    "install": 1355,
+    "signup": 1229,
+    "kycStart": 3002,
+    "kycComplete": 146,
+    "withdraw": 2144,
+    "install_to_signup": 0.907,
+    "signup_to_kycStart": 2.4426,
+    "kycStart_to_kycComplete": 0.0486,
+    "kycComplete_to_withdraw": 14.6849,
+    "install_to_withdraw": 1.5823
+  },
+  "wow_delta": {},
+  "country_breakdown": {
+    "TR": {
+      "install": 477,
+      "signup": 220,
+      "kycStart": 2488,
+      "kycComplete": 140,
+      "withdraw": 1123,
+      "install_to_signup": 0.4612,
+      "signup_to_kycStart": 11.3091,
+      "kycStart_to_kycComplete": 0.0563,
+      "kyc_dropout_rate": 0.9437,
+      "kyc_blocked": false
+    },
+    "NG": {
+      "install": 430,
+      "signup": 105,
+      "kycStart": 211,
+      "kycComplete": 0,
+      "withdraw": 773,
+      "install_to_signup": 0.2442,
+      "signup_to_kycStart": 2.0095,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "EG": {
+      "install": 334,
+      "signup": 92,
+      "kycStart": 72,
+      "kycComplete": 0,
+      "withdraw": 24,
+      "install_to_signup": 0.2754,
+      "signup_to_kycStart": 0.7826,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "PK": {
+      "install": 28,
+      "signup": 23,
+      "kycStart": 16,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.8214,
+      "signup_to_kycStart": 0.6957,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "US": {
+      "install": 17,
+      "signup": 2,
+      "kycStart": 13,
+      "kycComplete": 0,
+      "withdraw": 63,
+      "install_to_signup": 0.1176,
+      "signup_to_kycStart": 6.5,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "DE": {
+      "install": 8,
+      "signup": 1,
+      "kycStart": 13,
+      "kycComplete": 0,
+      "withdraw": 27,
+      "install_to_signup": 0.125,
+      "signup_to_kycStart": 13.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "GB": {
+      "install": 6,
+      "signup": 2,
+      "kycStart": 7,
+      "kycComplete": 0,
+      "withdraw": 15,
+      "install_to_signup": 0.3333,
+      "signup_to_kycStart": 3.5,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "GH": {
+      "install": 5,
+      "signup": 3,
+      "kycStart": 8,
+      "kycComplete": 0,
+      "withdraw": 5,
+      "install_to_signup": 0.6,
+      "signup_to_kycStart": 2.6667,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "KE": {
+      "install": 5,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 7,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "SA": {
+      "install": 5,
+      "signup": 1,
+      "kycStart": 4,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": 0.2,
+      "signup_to_kycStart": 4.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "AE": {
+      "install": 5,
+      "signup": 1,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.2,
+      "signup_to_kycStart": 0.0,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "XX": {
+      "install": 4,
+      "signup": 763,
+      "kycStart": 41,
+      "kycComplete": 0,
+      "withdraw": 7,
+      "install_to_signup": 190.75,
+      "signup_to_kycStart": 0.0537,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "CY": {
+      "install": 3,
+      "signup": 2,
+      "kycStart": 9,
+      "kycComplete": 0,
+      "withdraw": 3,
+      "install_to_signup": 0.6667,
+      "signup_to_kycStart": 4.5,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "FR": {
+      "install": 3,
+      "signup": 1,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 4,
+      "install_to_signup": 0.3333,
+      "signup_to_kycStart": 0.0,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "GR": {
+      "install": 3,
+      "signup": 1,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.3333,
+      "signup_to_kycStart": 0.0,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "MY": {
+      "install": 2,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "NL": {
+      "install": 2,
+      "signup": 1,
+      "kycStart": 1,
+      "kycComplete": 0,
+      "withdraw": 7,
+      "install_to_signup": 0.5,
+      "signup_to_kycStart": 1.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "PL": {
+      "install": 2,
+      "signup": 1,
+      "kycStart": 17,
+      "kycComplete": 1,
+      "withdraw": 2,
+      "install_to_signup": 0.5,
+      "signup_to_kycStart": 17.0,
+      "kycStart_to_kycComplete": 0.0588,
+      "kyc_dropout_rate": 0.9412,
+      "kyc_blocked": false
+    },
+    "TH": {
+      "install": 2,
+      "signup": 1,
+      "kycStart": 10,
+      "kycComplete": 1,
+      "withdraw": 3,
+      "install_to_signup": 0.5,
+      "signup_to_kycStart": 10.0,
+      "kycStart_to_kycComplete": 0.1,
+      "kyc_dropout_rate": 0.9,
+      "kyc_blocked": false
+    },
+    "AF": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "AZ": {
+      "install": 1,
+      "signup": 1,
+      "kycStart": 2,
+      "kycComplete": 0,
+      "withdraw": 8,
+      "install_to_signup": 1.0,
+      "signup_to_kycStart": 2.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "BR": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "GE": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 1,
+      "kycComplete": 1,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 1.0,
+      "kyc_dropout_rate": 0.0,
+      "kyc_blocked": false
+    },
+    "HU": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 4,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "IS": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 1,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "ID": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 37,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "IQ": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "KW": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 3,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "ME": {
+      "install": 1,
+      "signup": 1,
+      "kycStart": 9,
+      "kycComplete": 1,
+      "withdraw": 5,
+      "install_to_signup": 1.0,
+      "signup_to_kycStart": 9.0,
+      "kycStart_to_kycComplete": 0.1111,
+      "kyc_dropout_rate": 0.8889,
+      "kyc_blocked": false
+    },
+    "RU": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "RS": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 5,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "SE": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 1,
+      "kycComplete": 0,
+      "withdraw": 10,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "UA": {
+      "install": 1,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": 0.0,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "CA": {
+      "install": 0,
+      "signup": 3,
+      "kycStart": 10,
+      "kycComplete": 0,
+      "withdraw": 2,
+      "install_to_signup": null,
+      "signup_to_kycStart": 3.3333,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "IR": {
+      "install": 0,
+      "signup": 1,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": null,
+      "signup_to_kycStart": 0.0,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "MA": {
+      "install": 0,
+      "signup": 1,
+      "kycStart": 2,
+      "kycComplete": 0,
+      "withdraw": 4,
+      "install_to_signup": null,
+      "signup_to_kycStart": 2.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "PO": {
+      "install": 0,
+      "signup": 1,
+      "kycStart": 3,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": null,
+      "signup_to_kycStart": 3.0,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "VI": {
+      "install": 0,
+      "signup": 1,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 3,
+      "install_to_signup": null,
+      "signup_to_kycStart": 0.0,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "SP": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 5,
+      "kycComplete": 2,
+      "withdraw": 3,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.4,
+      "kyc_dropout_rate": 0.6,
+      "kyc_blocked": false
+    },
+    "BU": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 4,
+      "kycComplete": 0,
+      "withdraw": 2,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "AU": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 3,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "KO": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 3,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "GU": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 2,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "SW": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 1,
+      "kycComplete": 0,
+      "withdraw": 0,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": 0.0,
+      "kyc_dropout_rate": 1.0,
+      "kyc_blocked": true
+    },
+    "SO": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 16,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "BE": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 5,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "IT": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 5,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "SI": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 3,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "TA": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 3,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "FI": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    },
+    "RW": {
+      "install": 0,
+      "signup": 0,
+      "kycStart": 0,
+      "kycComplete": 0,
+      "withdraw": 1,
+      "install_to_signup": null,
+      "signup_to_kycStart": null,
+      "kycStart_to_kycComplete": null,
+      "kyc_dropout_rate": null,
+      "kyc_blocked": false
+    }
+  },
+  "channel_cac": [],
+  "budget": {
+    "target": 50000,
+    "spent": 57570,
+    "remaining": -7570
+  },
+  "alerts": [
+    {
+      "severity": "P0",
+      "type": "kyc_dropout",
+      "message": "KYC completion rate is 4.9% — 95.1% dropout. This is the #1 growth blocker."
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "NG: KYC BLOCKED — 211 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "EG: KYC BLOCKED — 72 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "PK: KYC BLOCKED — 16 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "US: KYC BLOCKED — 13 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "DE: KYC BLOCKED — 13 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "GB: KYC BLOCKED — 7 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "GH: KYC BLOCKED — 8 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "XX: KYC BLOCKED — 41 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "CY: KYC BLOCKED — 9 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "ID: KYC BLOCKED — 37 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "RS: KYC BLOCKED — 5 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "kyc_blocked",
+      "message": "CA: KYC BLOCKED — 10 started, 0 completed"
+    },
+    {
+      "severity": "P1",
+      "type": "budget_overspend",
+      "message": "Budget overspent by $7,570 (target: $50,000)"
+    }
+  ]
+}

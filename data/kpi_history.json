@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2026-03-24T08:20:01+03:00",
+    "funnel": {
+      "install": 1355,
+      "signup": 1229,
+      "kycStart": 3002,
+      "kycComplete": 146,
+      "withdraw": 2144,
+      "install_to_signup": 0.907,
+      "signup_to_kycStart": 2.4426,
+      "kycStart_to_kycComplete": 0.0486,
+      "kycComplete_to_withdraw": 14.6849,
+      "install_to_withdraw": 1.5823
+    }
+  }
+]

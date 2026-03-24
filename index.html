@@ -17,6 +17,17 @@ a{color:var(--accent);text-decoration:none}
 ::-webkit-scrollbar-track{background:#f5f5f5}
 ::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
 
+/* Data Freshness Indicator */
+.freshness-bar{display:flex;align-items:center;gap:.6rem;padding:.55rem 1.2rem;font-size:.78rem;font-weight:600;letter-spacing:.03em;border-bottom:1px solid var(--border);transition:background .3s}
+.freshness-bar .fresh-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.freshness-bar.fresh{background:rgba(0,184,92,.06);color:#059669}
+.freshness-bar.fresh .fresh-dot{background:#22c55e;box-shadow:0 0 6px rgba(34,197,94,.4)}
+.freshness-bar.stale{background:rgba(245,158,11,.06);color:#d97706}
+.freshness-bar.stale .fresh-dot{background:#f59e0b;box-shadow:0 0 6px rgba(245,158,11,.4)}
+.freshness-bar.old{background:rgba(239,68,68,.06);color:#dc2626}
+.freshness-bar.old .fresh-dot{background:#ef4444;box-shadow:0 0 6px rgba(239,68,68,.4);animation:pulse-red 1.5s infinite}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 4px rgba(239,68,68,.3)}50%{box-shadow:0 0 12px rgba(239,68,68,.6)}}
+
 /* Executive Summary */
 .exec-summary{padding:2.5rem 2rem 2rem;max-width:1400px;margin:0 auto;position:relative;z-index:2;overflow:hidden}
 .exec-status{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;margin-bottom:1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
@@ -973,6 +984,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   </nav>
 </header>
 
+<!-- DATA FRESHNESS INDICATOR -->
+<div class="freshness-bar" id="freshnessBar" style="display:none">
+  <span class="fresh-dot"></span>
+  <span id="freshnessText">Checking data freshness...</span>
+</div>
 
 <!-- DATA LOADING BANNER -->
 <div class="data-banner error" id="dataBannerError">
@@ -2127,6 +2143,32 @@ function renderDashboard(data) {
       } else tsEl.textContent='⚠️ No timestamp';
     } else if (D.updated) { tsEl.textContent='Data as of: '+D.updated; }
     else tsEl.textContent='⚠️ No timestamp';
+  }
+
+  // --- DATA FRESHNESS INDICATOR ---
+  const freshBar = document.getElementById('freshnessBar');
+  const freshText = document.getElementById('freshnessText');
+  if (freshBar && freshText) {
+    if (D.lastUpdated) {
+      const dt = new Date(D.lastUpdated);
+      if (!isNaN(dt.getTime())) {
+        const hoursAgo = Math.round((Date.now() - dt.getTime()) / 3600000);
+        freshBar.style.display = 'flex';
+        if (hoursAgo < 6) {
+          freshBar.className = 'freshness-bar fresh';
+          freshText.textContent = hoursAgo <= 0
+            ? 'Data is up to date (just now)'
+            : 'Last updated: ' + hoursAgo + ' hour' + (hoursAgo === 1 ? '' : 's') + ' ago — Data is fresh';
+        } else if (hoursAgo < 24) {
+          freshBar.className = 'freshness-bar stale';
+          freshText.textContent = 'Last updated: ' + hoursAgo + ' hours ago — Consider refreshing data';
+        } else {
+          const daysAgo = Math.round(hoursAgo / 24);
+          freshBar.className = 'freshness-bar old';
+          freshText.textContent = 'Last updated: ' + daysAgo + ' day' + (daysAgo === 1 ? '' : 's') + ' ago — Data is stale! Run the pipeline to refresh.';
+        }
+      } else { freshBar.style.display = 'none'; }
+    } else { freshBar.style.display = 'none'; }
   }
 
   // --- EXEC SUMMARY → week, kpis, channelPerformance, budgetPacing, attributionQuality ---
